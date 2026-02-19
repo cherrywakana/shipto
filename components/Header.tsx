@@ -1,11 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 const navLinks = [
-  { label: 'Product', href: '#product' },
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'ショップ一覧', href: '/shops' },
+  { label: '記事', href: '/articles' },
+  { label: '使い方', href: '/guide' },
 ]
 
 export default function Header() {
@@ -19,119 +20,77 @@ export default function Header() {
   }, [])
 
   return (
-    <header
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        padding: '0 clamp(1.5rem, 5vw, 4rem)',
-        height: '64px',
+    <header style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 100,
+      padding: '0 clamp(1.5rem, 5vw, 4rem)',
+      height: '64px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      backgroundColor: scrolled ? 'rgba(240, 248, 255, 0.92)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(16px)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(0, 180, 216, 0.15)' : '1px solid transparent',
+      transition: 'background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s',
+    }}>
+      {/* Logo */}
+      <Link href="/" style={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: scrolled ? 'rgba(245,245,240,0.88)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid var(--gray-100)' : '1px solid transparent',
-        transition: 'background-color 0.4s var(--ease-out), border-color 0.4s var(--ease-out), backdrop-filter 0.4s',
-      }}
-    >
-      {/* Logo */}
-      <a
-        href="/"
-        style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: '1.25rem',
-          letterSpacing: '-0.03em',
-          color: 'var(--black)',
-        }}
-      >
-        Forma
-      </a>
+        gap: '0.5rem',
+        textDecoration: 'none',
+      }}>
+        {/* Wave mark */}
+        <svg width="28" height="20" viewBox="0 0 28 20" fill="none">
+          <path d="M 2 8 Q 7 2 12 8 Q 17 14 22 8 Q 25 4 26 6" stroke="#00B4D8" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+          <path d="M 2 13 Q 7 7 12 13 Q 17 19 22 13 Q 25 9 26 11" stroke="#0096C7" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6"/>
+        </svg>
+        <span style={{
+          fontFamily: 'Georgia, serif',
+          fontSize: '1.2rem',
+          letterSpacing: '0.05em',
+          color: '#0A2342',
+          fontWeight: 'normal',
+        }}>
+          ShipTo
+        </span>
+      </Link>
 
       {/* Desktop nav */}
-      <nav
-        aria-label="Primary"
-        style={{
-          display: 'flex',
-          gap: '2.5rem',
-          alignItems: 'center',
-        }}
-        className="desktop-nav"
-      >
+      <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }} className="desktop-nav">
         {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.75rem',
-              fontWeight: 400,
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              color: 'var(--gray-700)',
-              position: 'relative',
-              paddingBottom: '2px',
-              transition: 'color 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              ;(e.currentTarget as HTMLElement).style.color = 'var(--black)'
-            }}
-            onMouseLeave={(e) => {
-              ;(e.currentTarget as HTMLElement).style.color = 'var(--gray-700)'
-            }}
-          >
+          <Link key={link.href} href={link.href} className="nav-link" style={{
+            fontFamily: 'Georgia, serif',
+            fontSize: '0.85rem',
+            color: '#2C5F7A',
+            textDecoration: 'none',
+            letterSpacing: '0.02em',
+            transition: 'color 0.2s',
+          }}>
             {link.label}
-            <span
-              style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: '1px',
-                backgroundColor: 'var(--black)',
-                transform: 'scaleX(0)',
-                transformOrigin: 'left',
-                transition: 'transform 0.3s var(--ease-out)',
-              }}
-              className="nav-underline"
-            />
-          </a>
+          </Link>
         ))}
-
-        <a
-          href="#pricing"
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.75rem',
-            fontWeight: 500,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            color: 'var(--white)',
-            backgroundColor: 'var(--black)',
-            padding: '0.55rem 1.25rem',
-            border: '1px solid var(--black)',
-            transition: 'background-color 0.25s, color 0.25s',
-          }}
-          onMouseEnter={(e) => {
-            const el = e.currentTarget as HTMLElement
-            el.style.backgroundColor = 'var(--white)'
-            el.style.color = 'var(--black)'
-          }}
-          onMouseLeave={(e) => {
-            const el = e.currentTarget as HTMLElement
-            el.style.backgroundColor = 'var(--black)'
-            el.style.color = 'var(--white)'
-          }}
-        >
-          Get Started
-        </a>
+        <Link href="/articles" style={{
+          fontFamily: 'Georgia, serif',
+          fontSize: '0.82rem',
+          color: '#ffffff',
+          backgroundColor: '#0096C7',
+          padding: '0.5rem 1.25rem',
+          borderRadius: '2rem',
+          textDecoration: 'none',
+          letterSpacing: '0.02em',
+          transition: 'background-color 0.2s',
+        }} className="cta-btn">
+          記事を読む
+        </Link>
       </nav>
 
-      {/* Mobile menu toggle */}
+      {/* Mobile toggle */}
       <button
-        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
         onClick={() => setMenuOpen(!menuOpen)}
         style={{
           display: 'none',
@@ -145,77 +104,60 @@ export default function Header() {
         className="mobile-toggle"
       >
         {[0, 1, 2].map((i) => (
-          <span
-            key={i}
-            style={{
-              display: 'block',
-              width: '22px',
-              height: '1px',
-              backgroundColor: 'var(--black)',
-              transition: 'transform 0.3s var(--ease-out), opacity 0.3s',
-              transform:
-                menuOpen
-                  ? i === 0
-                    ? 'translateY(6px) rotate(45deg)'
-                    : i === 1
-                    ? 'scaleX(0)'
-                    : 'translateY(-6px) rotate(-45deg)'
-                  : 'none',
-              opacity: menuOpen && i === 1 ? 0 : 1,
-            }}
-          />
+          <span key={i} style={{
+            display: 'block',
+            width: '22px',
+            height: '1.5px',
+            backgroundColor: '#0A2342',
+            transition: 'transform 0.3s ease, opacity 0.3s',
+            transform: menuOpen
+              ? i === 0 ? 'translateY(6px) rotate(45deg)'
+              : i === 1 ? 'scaleX(0)'
+              : 'translateY(-6px) rotate(-45deg)'
+              : 'none',
+            opacity: menuOpen && i === 1 ? 0 : 1,
+          }} />
         ))}
       </button>
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: '64px',
-            left: 0,
-            right: 0,
-            backgroundColor: 'var(--white)',
-            borderBottom: '1px solid var(--gray-100)',
-            padding: '2rem clamp(1.5rem, 5vw, 4rem)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1.5rem',
-          }}
-        >
+        <div style={{
+          position: 'fixed',
+          top: '64px',
+          left: 0,
+          right: 0,
+          backgroundColor: 'rgba(240, 248, 255, 0.98)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: '1px solid rgba(0, 180, 216, 0.15)',
+          padding: '2rem clamp(1.5rem, 5vw, 4rem)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1.5rem',
+        }}>
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.875rem',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                color: 'var(--gray-700)',
-              }}
-            >
+            <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: '1rem',
+              color: '#2C5F7A',
+              textDecoration: 'none',
+            }}>
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#pricing"
-            onClick={() => setMenuOpen(false)}
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.875rem',
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              color: 'var(--white)',
-              backgroundColor: 'var(--black)',
-              padding: '0.75rem 1.5rem',
-              textAlign: 'center',
-              marginTop: '0.5rem',
-            }}
-          >
-            Get Started
-          </a>
+          <Link href="/articles" onClick={() => setMenuOpen(false)} style={{
+            fontFamily: 'Georgia, serif',
+            fontSize: '0.9rem',
+            color: '#ffffff',
+            backgroundColor: '#0096C7',
+            padding: '0.75rem 1.5rem',
+            borderRadius: '2rem',
+            textAlign: 'center',
+            textDecoration: 'none',
+            marginTop: '0.5rem',
+          }}>
+            記事を読む
+          </Link>
         </div>
       )}
 
@@ -224,9 +166,8 @@ export default function Header() {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: flex !important; }
         }
-        a:hover .nav-underline {
-          transform: scaleX(1) !important;
-        }
+        .nav-link:hover { color: #00B4D8 !important; }
+        .cta-btn:hover { background-color: #0A2342 !important; }
       `}</style>
     </header>
   )
