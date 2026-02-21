@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 const navLinks = [
-  { label: 'ショップ一覧', href: '/shops' },
+  { label: 'ショップ', href: '/shops' },
   { label: '記事', href: '/articles' },
-  { label: '使い方', href: '/guide' },
+  { label: 'ガイド', href: '/guide' },
 ]
 
 export default function Header() {
@@ -27,137 +27,94 @@ export default function Header() {
       right: 0,
       zIndex: 100,
       padding: '0 clamp(1.5rem, 5vw, 4rem)',
-      height: '64px',
+      height: '60px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      backgroundColor: scrolled ? 'rgba(240, 248, 255, 0.92)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(16px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(0, 180, 216, 0.15)' : '1px solid transparent',
-      transition: 'background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s',
+      backgroundColor: scrolled ? 'rgba(255,255,255,0.85)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(20px)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : '1px solid transparent',
+      transition: 'all 0.3s ease',
     }}>
-      {/* Logo */}
-      <Link href="/" style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem',
-        textDecoration: 'none',
-      }}>
-        {/* Wave mark */}
-        <svg width="28" height="20" viewBox="0 0 28 20" fill="none">
-          <path d="M 2 8 Q 7 2 12 8 Q 17 14 22 8 Q 25 4 26 6" stroke="#00B4D8" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-          <path d="M 2 13 Q 7 7 12 13 Q 17 19 22 13 Q 25 9 26 11" stroke="#0096C7" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6"/>
-        </svg>
+      <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.1rem' }}>
         <span style={{
-          fontFamily: 'Georgia, serif',
-          fontSize: '1.2rem',
-          letterSpacing: '0.05em',
-          color: '#0A2342',
-          fontWeight: 'normal',
-        }}>
-          ShipTo
-        </span>
+          fontSize: '1.15rem',
+          fontWeight: 700,
+          letterSpacing: '-0.03em',
+          color: '#0f172a',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        }}>ShipTo</span>
+        <span style={{
+          fontSize: '1.15rem',
+          fontWeight: 700,
+          letterSpacing: '-0.03em',
+          background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        }}>JP</span>
       </Link>
 
-      {/* Desktop nav */}
-      <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }} className="desktop-nav">
+      <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="desktop-nav">
         {navLinks.map((link) => (
           <Link key={link.href} href={link.href} className="nav-link" style={{
-            fontFamily: 'Georgia, serif',
-            fontSize: '0.85rem',
-            color: '#2C5F7A',
+            fontSize: '0.875rem',
+            color: '#64748b',
             textDecoration: 'none',
-            letterSpacing: '0.02em',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+            fontWeight: 500,
             transition: 'color 0.2s',
-          }}>
-            {link.label}
-          </Link>
+          }}>{link.label}</Link>
         ))}
-        <Link href="/articles" style={{
-          fontFamily: 'Georgia, serif',
-          fontSize: '0.82rem',
-          color: '#ffffff',
-          backgroundColor: '#0096C7',
+        <Link href="/articles" className="header-cta" style={{
+          fontSize: '0.875rem',
+          fontWeight: 600,
+          color: 'white',
+          background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
           padding: '0.5rem 1.25rem',
-          borderRadius: '2rem',
+          borderRadius: '8px',
           textDecoration: 'none',
-          letterSpacing: '0.02em',
-          transition: 'background-color 0.2s',
-        }} className="cta-btn">
-          記事を読む
-        </Link>
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+          transition: 'opacity 0.2s, transform 0.2s',
+          boxShadow: '0 1px 3px rgba(99,102,241,0.3)',
+        }}>記事を読む</Link>
       </nav>
 
-      {/* Mobile toggle */}
       <button
-        aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+        aria-label="メニュー"
         onClick={() => setMenuOpen(!menuOpen)}
-        style={{
-          display: 'none',
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: '4px',
-          flexDirection: 'column',
-          gap: '5px',
-        }}
+        style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: '4px', flexDirection: 'column', gap: '5px' }}
         className="mobile-toggle"
       >
         {[0, 1, 2].map((i) => (
           <span key={i} style={{
-            display: 'block',
-            width: '22px',
-            height: '1.5px',
-            backgroundColor: '#0A2342',
-            transition: 'transform 0.3s ease, opacity 0.3s',
-            transform: menuOpen
-              ? i === 0 ? 'translateY(6px) rotate(45deg)'
-              : i === 1 ? 'scaleX(0)'
-              : 'translateY(-6px) rotate(-45deg)'
-              : 'none',
+            display: 'block', width: '20px', height: '1.5px', backgroundColor: '#0f172a',
+            transition: 'transform 0.3s, opacity 0.3s',
+            transform: menuOpen ? i === 0 ? 'translateY(6.5px) rotate(45deg)' : i === 1 ? 'scaleX(0)' : 'translateY(-6.5px) rotate(-45deg)' : 'none',
             opacity: menuOpen && i === 1 ? 0 : 1,
           }} />
         ))}
       </button>
 
-      {/* Mobile drawer */}
       {menuOpen && (
         <div style={{
-          position: 'fixed',
-          top: '64px',
-          left: 0,
-          right: 0,
-          backgroundColor: 'rgba(240, 248, 255, 0.98)',
-          backdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(0, 180, 216, 0.15)',
-          padding: '2rem clamp(1.5rem, 5vw, 4rem)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1.5rem',
+          position: 'fixed', top: '60px', left: 0, right: 0,
+          backgroundColor: 'rgba(255,255,255,0.98)', backdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(0,0,0,0.06)',
+          padding: '1.5rem clamp(1.5rem, 5vw, 4rem)',
+          display: 'flex', flexDirection: 'column', gap: '1.25rem',
         }}>
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '1rem',
-              color: '#2C5F7A',
-              textDecoration: 'none',
-            }}>
-              {link.label}
-            </Link>
+              fontSize: '1rem', color: '#334155', textDecoration: 'none', fontWeight: 500,
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+            }}>{link.label}</Link>
           ))}
           <Link href="/articles" onClick={() => setMenuOpen(false)} style={{
-            fontFamily: 'Georgia, serif',
-            fontSize: '0.9rem',
-            color: '#ffffff',
-            backgroundColor: '#0096C7',
-            padding: '0.75rem 1.5rem',
-            borderRadius: '2rem',
-            textAlign: 'center',
-            textDecoration: 'none',
-            marginTop: '0.5rem',
-          }}>
-            記事を読む
-          </Link>
+            fontSize: '0.9rem', fontWeight: 600, color: 'white',
+            background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+            padding: '0.75rem 1.5rem', borderRadius: '8px', textAlign: 'center', textDecoration: 'none',
+          }}>記事を読む</Link>
         </div>
       )}
 
@@ -166,8 +123,8 @@ export default function Header() {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: flex !important; }
         }
-        .nav-link:hover { color: #00B4D8 !important; }
-        .cta-btn:hover { background-color: #0A2342 !important; }
+        .nav-link:hover { color: #0f172a !important; }
+        .header-cta:hover { opacity: 0.9 !important; transform: translateY(-1px) !important; }
       `}</style>
     </header>
   )

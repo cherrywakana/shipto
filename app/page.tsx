@@ -4,129 +4,109 @@ import Header from '@/components/Header'
 import Link from 'next/link'
 
 const categories = [
-  { label: 'ファッション', icon: '👗', count: '120+ショップ' },
-  { label: 'コスメ・美容', icon: '💄', count: '80+ショップ' },
-  { label: '電化製品', icon: '📱', count: '60+ショップ' },
-  { label: 'インテリア', icon: '🏠', count: '50+ショップ' },
-  { label: 'スポーツ', icon: '🏃', count: '40+ショップ' },
-  { label: '食品・お酒', icon: '🍷', count: '30+ショップ' },
+  { label: 'ファッション', icon: '👗', href: '/shops?category=fashion' },
+  { label: 'コスメ・美容', icon: '💄', href: '/shops?category=cosmetics' },
+  { label: '電化製品', icon: '📱', href: '/shops?category=electronics' },
+  { label: 'インテリア', icon: '🏠', href: '/shops?category=interior' },
+  { label: 'スポーツ', icon: '🏃', href: '/shops?category=sports' },
+  { label: '食品・お酒', icon: '🍷', href: '/shops?category=food' },
 ]
 
-const features = [
-  {
-    title: '日本発送対応',
-    body: '日本への発送に対応しているショップだけを厳選。安心して購入できます。',
-    icon: '🚢',
-  },
-  {
-    title: '関税・送料を解説',
-    body: '初めての方でも安心。関税や送料の仕組みをわかりやすく解説しています。',
-    icon: '📦',
-  },
-  {
-    title: 'ブランドから探せる',
-    body: '欲しいブランドがどのショップで買えるかを一発で検索できます。',
-    icon: '🔍',
-  },
+const stats = [
+  { value: '300+', label: 'ショップ掲載数' },
+  { value: '1,000+', label: 'ブランド対応' },
+  { value: '50+', label: 'ガイド記事' },
 ]
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
         <style>{`
-          :root {
-            --ocean-deep: #0A2342;
-            --ocean-mid: #0096C7;
-            --ocean-light: #00B4D8;
-            --ocean-pale: #90E0EF;
-            --ocean-foam: #CAF0F8;
-            --sky: #F0F8FF;
-            --text-dark: #0A2342;
-            --text-mid: #2C5F7A;
-            --text-light: #5A8FA8;
-          }
-
-          @keyframes waveFloat {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            33% { transform: translateY(-8px) translateX(4px); }
-            66% { transform: translateY(4px) translateX(-4px); }
-          }
+          * { box-sizing: border-box; margin: 0; padding: 0; }
 
           @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
           }
-
-          @keyframes drawWave {
-            from { stroke-dashoffset: 1000; }
-            to { stroke-dashoffset: 0; }
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
           }
 
-          .hero-wave { animation: waveFloat 8s ease-in-out infinite; }
-          .fade-up-1 { animation: fadeUp 0.8s ease both 0.1s; }
-          .fade-up-2 { animation: fadeUp 0.8s ease both 0.3s; }
-          .fade-up-3 { animation: fadeUp 0.8s ease both 0.5s; }
-          .fade-up-4 { animation: fadeUp 0.8s ease both 0.7s; }
+          .fade-1 { animation: fadeUp 0.7s ease both 0.1s; }
+          .fade-2 { animation: fadeUp 0.7s ease both 0.25s; }
+          .fade-3 { animation: fadeUp 0.7s ease both 0.4s; }
+          .fade-4 { animation: fadeUp 0.7s ease both 0.55s; }
 
-          .category-card {
-            background: rgba(255,255,255,0.7);
-            border: 1px solid rgba(0, 180, 216, 0.2);
-            border-radius: 16px;
-            padding: 1.5rem;
+          .cat-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.25rem;
             text-align: center;
             text-decoration: none;
-            color: var(--text-dark);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-            backdrop-filter: blur(8px);
+            color: #0f172a;
+            display: block;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
           }
-          .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 150, 199, 0.15);
-            background: rgba(255,255,255,0.95);
-          }
-
-          .feature-card {
-            background: rgba(255,255,255,0.6);
-            border: 1px solid rgba(0, 180, 216, 0.15);
-            border-radius: 20px;
-            padding: clamp(1.5rem, 3vw, 2.5rem);
-            backdrop-filter: blur(8px);
-          }
-
-          .cta-primary {
-            background: var(--ocean-mid);
-            color: white;
-            padding: 0.9rem 2.5rem;
-            border-radius: 3rem;
-            text-decoration: none;
-            font-family: Georgia, serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.03em;
-            transition: background 0.2s, transform 0.2s;
-            display: inline-block;
-          }
-          .cta-primary:hover {
-            background: var(--ocean-deep);
+          .cat-card:hover {
+            border-color: #6366f1;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.12);
             transform: translateY(-2px);
           }
 
-          .cta-secondary {
-            color: var(--ocean-mid);
-            padding: 0.9rem 2rem;
-            border-radius: 3rem;
-            border: 1.5px solid var(--ocean-pale);
-            text-decoration: none;
-            font-family: Georgia, serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.03em;
-            transition: border-color 0.2s, color 0.2s;
+          .cta-primary {
             display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.35);
+          }
+          .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.4);
+          }
+
+          .cta-secondary {
+            display: inline-block;
+            background: white;
+            color: #334155;
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
           }
           .cta-secondary:hover {
-            border-color: var(--ocean-mid);
-            color: var(--ocean-deep);
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transform: translateY(-1px);
+          }
+
+          .articles-cta-btn {
+            display: inline-block;
+            background: white;
+            color: #6366f1;
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+          }
+          .articles-cta-btn:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-1px);
           }
         `}</style>
 
@@ -139,348 +119,237 @@ export default function Home() {
           padding: 'clamp(8rem, 15vw, 12rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem)',
           position: 'relative',
           overflow: 'hidden',
-          background: 'linear-gradient(160deg, #f0f8ff 0%, #e0f4fc 40%, #caf0f8 100%)',
+          background: 'linear-gradient(135deg, #ffffff 0%, #f8f7ff 40%, #ede9fe 100%)',
         }}>
-          {/* Decorative waves in background */}
+          {/* Background blobs */}
           <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
-            <svg
-              viewBox="0 0 1200 600"
-              style={{
-                position: 'absolute',
-                bottom: '-10%',
-                left: '-5%',
-                width: '110%',
-                opacity: 0.12,
-              }}
-              className="hero-wave"
-            >
-              <path d="M 0 300 Q 150 200 300 300 Q 450 400 600 300 Q 750 200 900 300 Q 1050 400 1200 300 L 1200 600 L 0 600 Z" fill="#0096C7"/>
-              <path d="M 0 350 Q 200 250 400 350 Q 600 450 800 350 Q 1000 250 1200 350 L 1200 600 L 0 600 Z" fill="#00B4D8"/>
-              <path d="M 0 400 Q 250 320 500 400 Q 750 480 1000 400 Q 1100 360 1200 380 L 1200 600 L 0 600 Z" fill="#48CAE4"/>
-            </svg>
-
-            {/* Floating circles */}
             <div style={{
-              position: 'absolute',
-              top: '15%',
-              right: '8%',
-              width: '300px',
-              height: '300px',
-              borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(0,180,216,0.08) 0%, transparent 70%)',
+              position: 'absolute', top: '10%', right: '-5%',
+              width: '600px', height: '600px', borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)',
+              animation: 'float 8s ease-in-out infinite',
             }}/>
             <div style={{
-              position: 'absolute',
-              top: '40%',
-              right: '20%',
-              width: '180px',
-              height: '180px',
-              borderRadius: '50%',
-              border: '1px solid rgba(0,180,216,0.15)',
+              position: 'absolute', bottom: '0%', left: '-10%',
+              width: '500px', height: '500px', borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)',
+              animation: 'float 10s ease-in-out infinite 2s',
             }}/>
             <div style={{
-              position: 'absolute',
-              top: '25%',
-              right: '15%',
-              width: '80px',
-              height: '80px',
-              borderRadius: '50%',
-              border: '1px solid rgba(0,180,216,0.2)',
+              position: 'absolute', top: '30%', right: '15%',
+              width: '200px', height: '200px', borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(167,139,250,0.15) 0%, transparent 70%)',
+              animation: 'float 6s ease-in-out infinite 1s',
             }}/>
           </div>
 
-          <div style={{ position: 'relative', maxWidth: '700px' }}>
-            <p className="fade-up-1" style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '0.8rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--ocean-mid)',
-              marginBottom: '1.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-            }}>
-              <svg width="32" height="10" viewBox="0 0 32 10" fill="none">
-                <path d="M 2 5 Q 8 1 14 5 Q 20 9 26 5 Q 29 3 30 4" stroke="#0096C7" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-              </svg>
-              海外通販ガイド
-            </p>
-
-            <h1 className="fade-up-2" style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(2.5rem, 7vw, 5.5rem)',
-              lineHeight: 1.1,
-              letterSpacing: '-0.02em',
-              color: 'var(--ocean-deep)',
+          <div style={{ position: 'relative', maxWidth: '760px' }}>
+            {/* Badge */}
+            <div className="fade-1" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)',
+              borderRadius: '100px', padding: '0.35rem 1rem',
               marginBottom: '1.75rem',
             }}>
-              世界中の
-              <br />
-              <em style={{ fontStyle: 'italic', color: 'var(--ocean-mid)' }}>ショッピング</em>を、
-              <br />
-              日本から。
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#6366f1', display: 'block' }}/>
+              <span style={{ fontSize: '0.8rem', fontWeight: 500, color: '#6366f1', letterSpacing: '0.02em' }}>
+                日本から買える海外通販ガイド
+              </span>
+            </div>
+
+            <h1 className="fade-2" style={{
+              fontSize: 'clamp(2.5rem, 7vw, 5rem)',
+              fontWeight: 800,
+              letterSpacing: '-0.04em',
+              lineHeight: 1.08,
+              color: '#0f172a',
+              marginBottom: '1.5rem',
+            }}>
+              世界中のショッピングを、<br />
+              <span style={{
+                background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
+                日本から。
+              </span>
             </h1>
 
-            <p className="fade-up-3" style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)',
-              color: 'var(--text-mid)',
-              lineHeight: 1.85,
+            <p className="fade-3" style={{
+              fontSize: 'clamp(1rem, 1.8vw, 1.2rem)',
+              color: '#64748b',
+              lineHeight: 1.75,
               marginBottom: '2.5rem',
-              maxWidth: '42ch',
+              maxWidth: '48ch',
+              fontWeight: 400,
             }}>
-              日本発送対応の海外通販サイトをまとめてご紹介。
+              日本発送対応の海外通販サイトを厳選してご紹介。
               ブランドから探せて、関税や送料の情報もわかります。
             </p>
 
-            <div className="fade-up-4" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Link href="/shops" className="cta-primary">
-                ショップを探す
-              </Link>
-              <Link href="/articles" className="cta-secondary">
-                ガイドを読む
-              </Link>
+            <div className="fade-4" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <Link href="/shops" className="cta-primary">ショップを探す →</Link>
+              <Link href="/articles" className="cta-secondary">ガイドを読む</Link>
+            </div>
+
+            {/* Stats */}
+            <div className="fade-4" style={{
+              display: 'flex', gap: '2.5rem', marginTop: '3.5rem', flexWrap: 'wrap',
+            }}>
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em' }}>
+                    {s.value}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#94a3b8', marginTop: '0.2rem', fontWeight: 500 }}>
+                    {s.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Wave divider */}
-        <div style={{ overflow: 'hidden', lineHeight: 0, background: 'linear-gradient(160deg, #f0f8ff 0%, #e0f4fc 100%)' }}>
-          <svg viewBox="0 0 1200 80" style={{ display: 'block', width: '100%' }}>
-            <path d="M 0 40 Q 150 10 300 40 Q 450 70 600 40 Q 750 10 900 40 Q 1050 70 1200 40 L 1200 80 L 0 80 Z" fill="white"/>
-          </svg>
-        </div>
-
         {/* ---- Categories ---- */}
         <section style={{
           padding: 'clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem)',
-          background: 'white',
+          background: '#f8fafc',
         }}>
-          <div style={{ marginBottom: 'clamp(2.5rem, 5vw, 4rem)', textAlign: 'center' }}>
-            <p style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '0.75rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--ocean-light)',
-              marginBottom: '0.75rem',
-            }}>
-              カテゴリから探す
-            </p>
-            <h2 style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
-              letterSpacing: '-0.02em',
-              color: 'var(--ocean-deep)',
-              lineHeight: 1.2,
-            }}>
-              何をお探しですか？
-            </h2>
-          </div>
+          <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
+              <p style={{
+                fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.1em',
+                textTransform: 'uppercase', color: '#6366f1', marginBottom: '0.75rem',
+              }}>カテゴリ</p>
+              <h2 style={{
+                fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800,
+                letterSpacing: '-0.03em', color: '#0f172a',
+              }}>何をお探しですか？</h2>
+            </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 180px), 1fr))',
-            gap: '1rem',
-            maxWidth: '900px',
-            margin: '0 auto',
-          }}>
-            {categories.map((cat) => (
-              <Link key={cat.label} href={`/shops?category=${cat.label}`} className="category-card">
-                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{cat.icon}</div>
-                <div style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '0.9rem',
-                  color: 'var(--ocean-deep)',
-                  marginBottom: '0.25rem',
-                }}>
-                  {cat.label}
-                </div>
-                <div style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '0.7rem',
-                  color: 'var(--text-light)',
-                  letterSpacing: '0.05em',
-                }}>
-                  {cat.count}
-                </div>
-              </Link>
-            ))}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 150px), 1fr))',
+              gap: '1rem',
+            }}>
+              {categories.map((cat) => (
+                <Link key={cat.label} href={cat.href} className="cat-card">
+                  <div style={{ fontSize: '1.75rem', marginBottom: '0.6rem' }}>{cat.icon}</div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#1e293b' }}>{cat.label}</div>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
-
-        {/* Wave divider */}
-        <div style={{ overflow: 'hidden', lineHeight: 0, background: 'white' }}>
-          <svg viewBox="0 0 1200 80" style={{ display: 'block', width: '100%' }}>
-            <path d="M 0 40 Q 200 70 400 40 Q 600 10 800 40 Q 1000 70 1200 40 L 1200 80 L 0 80 Z" fill="#f0f8ff"/>
-          </svg>
-        </div>
 
         {/* ---- Features ---- */}
         <section style={{
           padding: 'clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem)',
-          background: 'linear-gradient(180deg, #f0f8ff 0%, #e8f4fb 100%)',
+          background: 'white',
         }}>
-          <div style={{ marginBottom: 'clamp(2.5rem, 5vw, 4rem)', textAlign: 'center' }}>
-            <p style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '0.75rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--ocean-light)',
-              marginBottom: '0.75rem',
-            }}>
-              ShipToの特徴
-            </p>
-            <h2 style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
-              letterSpacing: '-0.02em',
-              color: 'var(--ocean-deep)',
-            }}>
-              安心して海外通販を。
-            </h2>
-          </div>
+          <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
+              <p style={{
+                fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.1em',
+                textTransform: 'uppercase', color: '#6366f1', marginBottom: '0.75rem',
+              }}>特徴</p>
+              <h2 style={{
+                fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800,
+                letterSpacing: '-0.03em', color: '#0f172a',
+              }}>安心して海外通販を。</h2>
+            </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
-            gap: '1.5rem',
-            maxWidth: '960px',
-            margin: '0 auto',
-          }}>
-            {features.map((f) => (
-              <div key={f.title} className="feature-card">
-                <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>{f.icon}</div>
-                <h3 style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '1.1rem',
-                  color: 'var(--ocean-deep)',
-                  marginBottom: '0.6rem',
-                  letterSpacing: '-0.01em',
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '1.5rem',
+            }}>
+              {[
+                { icon: '🚢', title: '日本発送対応ショップのみ', body: '日本への発送に対応しているショップだけを厳選。安心して購入できます。' },
+                { icon: '📦', title: '関税・送料も丸わかり', body: '初めての方でも安心。関税や送料の仕組みをわかりやすく解説しています。' },
+                { icon: '🔍', title: 'ブランドから探せる', body: '欲しいブランドがどのショップで買えるかを一発で検索できます。' },
+              ].map((f) => (
+                <div key={f.title} style={{
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '16px',
+                  padding: 'clamp(1.5rem, 3vw, 2rem)',
                 }}>
-                  {f.title}
-                </h3>
-                <p style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '0.88rem',
-                  color: 'var(--text-mid)',
-                  lineHeight: 1.8,
-                }}>
-                  {f.body}
-                </p>
-              </div>
-            ))}
+                  <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>{f.icon}</div>
+                  <h3 style={{
+                    fontSize: '1rem', fontWeight: 700, color: '#0f172a',
+                    marginBottom: '0.6rem', letterSpacing: '-0.01em',
+                  }}>{f.title}</h3>
+                  <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.75 }}>{f.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ---- Articles CTA ---- */}
         <section style={{
           padding: 'clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem)',
-          background: 'var(--ocean-deep)',
+          background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+          textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',
-          textAlign: 'center',
         }}>
-          {/* Background waves */}
-          <div style={{ position: 'absolute', inset: 0, opacity: 0.08, pointerEvents: 'none' }}>
-            <svg viewBox="0 0 1200 300" style={{ width: '100%', height: '100%' }}>
-              <path d="M 0 150 Q 200 80 400 150 Q 600 220 800 150 Q 1000 80 1200 150 L 1200 300 L 0 300 Z" fill="#00B4D8"/>
-              <path d="M 0 180 Q 250 110 500 180 Q 750 250 1000 180 Q 1100 155 1200 165 L 1200 300 L 0 300 Z" fill="#48CAE4"/>
-            </svg>
+          <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+            <div style={{
+              position: 'absolute', top: '-30%', right: '-10%',
+              width: '500px', height: '500px', borderRadius: '50%',
+              background: 'rgba(255,255,255,0.06)',
+            }}/>
+            <div style={{
+              position: 'absolute', bottom: '-20%', left: '-5%',
+              width: '400px', height: '400px', borderRadius: '50%',
+              background: 'rgba(255,255,255,0.04)',
+            }}/>
           </div>
 
           <div style={{ position: 'relative' }}>
             <p style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '0.75rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--ocean-pale)',
-              marginBottom: '1rem',
-            }}>
-              ガイド記事
-            </p>
+              fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.1em',
+              textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: '1rem',
+            }}>ガイド記事</p>
             <h2 style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
-              color: 'white',
-              letterSpacing: '-0.02em',
-              marginBottom: '1rem',
-              lineHeight: 1.2,
-            }}>
-              海外通販、はじめてみませんか。
-            </h2>
+              fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', fontWeight: 800,
+              color: 'white', letterSpacing: '-0.03em', marginBottom: '1rem', lineHeight: 1.2,
+            }}>海外通販、はじめてみませんか。</h2>
             <p style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '0.95rem',
-              color: 'var(--ocean-pale)',
-              lineHeight: 1.8,
-              marginBottom: '2.5rem',
-              maxWidth: '42ch',
-              margin: '0 auto 2.5rem',
+              fontSize: '1rem', color: 'rgba(255,255,255,0.8)',
+              lineHeight: 1.8, marginBottom: '2.5rem',
+              maxWidth: '42ch', margin: '0 auto 2.5rem',
             }}>
-              関税のこと、送料のこと、おすすめショップまで。
-              初心者向けのガイド記事を揃えています。
+              関税・送料・おすすめショップまで。初心者向けのガイドを揃えています。
             </p>
-            <Link href="/articles" style={{
-              background: 'white',
-              color: 'var(--ocean-deep)',
-              padding: '0.9rem 2.5rem',
-              borderRadius: '3rem',
-              textDecoration: 'none',
-              fontFamily: 'Georgia, serif',
-              fontSize: '0.95rem',
-              letterSpacing: '0.02em',
-              display: 'inline-block',
-              transition: 'background 0.2s, transform 0.2s',
-            }} className="articles-cta">
-              記事を読む →
-            </Link>
+            <Link href="/articles" className="articles-cta-btn">記事を読む →</Link>
           </div>
         </section>
 
         {/* ---- Footer ---- */}
         <footer style={{
-          padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
-          background: '#061829',
+          padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem)',
+          background: '#0f172a',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
           gap: '1rem',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <svg width="24" height="16" viewBox="0 0 28 20" fill="none">
-              <path d="M 2 8 Q 7 2 12 8 Q 17 14 22 8 Q 25 4 26 6" stroke="#00B4D8" strokeWidth="2" strokeLinecap="round" fill="none"/>
-              <path d="M 2 13 Q 7 7 12 13 Q 17 19 22 13 Q 25 9 26 11" stroke="#0096C7" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6"/>
-            </svg>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.1rem' }}>
+            <span style={{ fontSize: '1rem', fontWeight: 700, color: 'white', letterSpacing: '-0.02em' }}>ShipTo</span>
             <span style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '1rem',
-              color: 'white',
-              letterSpacing: '0.05em',
-            }}>
-              ShipTo
-            </span>
+              fontSize: '1rem', fontWeight: 700, letterSpacing: '-0.02em',
+              background: 'linear-gradient(135deg, #818cf8, #a78bfa)',
+              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+            }}>JP</span>
           </div>
-          <p style={{
-            fontFamily: 'Georgia, serif',
-            fontSize: '0.72rem',
-            letterSpacing: '0.05em',
-            color: 'rgba(255,255,255,0.35)',
-          }}>
-            © {new Date().getFullYear()} ShipTo. All rights reserved.
+          <p style={{ fontSize: '0.75rem', color: '#475569' }}>
+            © {new Date().getFullYear()} ShipToJP. All rights reserved.
           </p>
         </footer>
-
-        <style>{`
-          .articles-cta:hover {
-            background: var(--ocean-foam) !important;
-            transform: translateY(-2px) !important;
-          }
-        `}</style>
       </main>
     </>
   )

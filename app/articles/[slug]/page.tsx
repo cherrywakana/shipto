@@ -18,22 +18,9 @@ export default async function ArticlePage({
   if (!post) return (
     <>
       <Header />
-      <main style={{
-        padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem)',
-        background: 'linear-gradient(160deg, #f0f8ff 0%, #e0f4fc 100%)',
-        minHeight: '100vh',
-      }}>
-        <p style={{ fontFamily: 'Georgia, serif', color: '#5A8FA8', marginBottom: '1.5rem' }}>
-          記事が見つかりません。
-        </p>
-        <Link href="/articles" style={{
-          fontFamily: 'Georgia, serif',
-          fontSize: '0.88rem',
-          color: '#0096C7',
-          textDecoration: 'none',
-        }}>
-          ← 記事一覧に戻る
-        </Link>
+      <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem)', minHeight: '100vh', background: '#f8fafc' }}>
+        <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>記事が見つかりません。</p>
+        <Link href="/articles" style={{ color: '#6366f1', textDecoration: 'none', fontWeight: 600 }}>← 記事一覧に戻る</Link>
       </main>
     </>
   )
@@ -41,208 +28,106 @@ export default async function ArticlePage({
   return (
     <>
       <Header />
-      <main style={{ background: 'white' }}>
+      <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', background: 'white' }}>
         <style>{`
-          .back-link { color: #0096C7; text-decoration: none; transition: color 0.2s; }
-          .back-link:hover { color: #0A2342; }
+          .back-link { color: #6366f1; text-decoration: none; font-weight: 500; font-size: 0.875rem; transition: opacity 0.2s; }
+          .back-link:hover { opacity: 0.7; }
+          .shops-btn { display: inline-block; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 0.6rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.875rem; transition: all 0.2s; box-shadow: 0 2px 8px rgba(99,102,241,0.3); }
+          .shops-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(99,102,241,0.4); }
+
           .article-body h2 {
-            font-family: Georgia, serif;
             font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            letter-spacing: -0.02em;
-            color: #0A2342;
+            font-weight: 700;
+            color: #0f172a;
             margin: 2.5rem 0 1rem;
             line-height: 1.3;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+            letter-spacing: -0.02em;
           }
           .article-body h3 {
-            font-family: Georgia, serif;
             font-size: 1.05rem;
-            color: #0A2342;
+            font-weight: 700;
+            color: #1e293b;
             margin: 2rem 0 0.75rem;
           }
           .article-body p {
-            margin-bottom: 1.5rem;
-            font-family: Georgia, serif;
             font-size: clamp(0.9rem, 1.5vw, 1rem);
-            color: #2C5F7A;
+            color: #334155;
             line-height: 1.9;
-          }
-          .article-body a {
-            color: #0096C7;
-            text-underline-offset: 3px;
-          }
-          .article-body ul, .article-body ol {
-            padding-left: 1.5rem;
             margin-bottom: 1.5rem;
           }
-          .article-body li {
-            font-family: Georgia, serif;
-            font-size: 0.95rem;
-            color: #2C5F7A;
-            line-height: 1.8;
-            margin-bottom: 0.4rem;
-          }
-          .article-body strong { font-weight: bold; color: #0A2342; }
+          .article-body a { color: #6366f1; text-underline-offset: 3px; }
+          .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+          .article-body li { font-size: 0.95rem; color: #334155; line-height: 1.8; margin-bottom: 0.4rem; }
+          .article-body strong { font-weight: 700; color: #0f172a; }
         `}</style>
 
         {/* Hero */}
         <section style={{
           padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem)',
-          background: 'linear-gradient(160deg, #f0f8ff 0%, #e0f4fc 60%, #caf0f8 100%)',
-          position: 'relative',
-          overflow: 'hidden',
+          background: 'linear-gradient(135deg, #ffffff 0%, #f8f7ff 40%, #ede9fe 100%)',
         }}>
-          <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.06 }}>
-            <svg viewBox="0 0 1200 300" style={{ width: '100%', position: 'absolute', bottom: 0 }}>
-              <path d="M 0 200 Q 200 140 400 200 Q 600 260 800 200 Q 1000 140 1200 200 L 1200 300 L 0 300 Z" fill="#0096C7"/>
-            </svg>
-          </div>
-
-          <div style={{ position: 'relative', maxWidth: '760px' }}>
-            <Link href="/articles" className="back-link" style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '0.8rem',
-              letterSpacing: '0.05em',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              marginBottom: '2rem',
-            }}>
-              ← 記事一覧
-            </Link>
-
+          <div style={{ maxWidth: '760px' }}>
+            <Link href="/articles" className="back-link" style={{ display: 'inline-block', marginBottom: '2rem' }}>← 記事一覧</Link>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
               {post.category && (
                 <span style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '0.65rem',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: '#0096C7',
-                  backgroundColor: 'rgba(0, 180, 216, 0.1)',
-                  padding: '0.2rem 0.75rem',
-                  borderRadius: '2rem',
-                  border: '1px solid rgba(0, 180, 216, 0.25)',
-                }}>
-                  {post.category}
-                </span>
+                  fontSize: '0.7rem', fontWeight: 600, color: '#6366f1',
+                  background: 'rgba(99,102,241,0.08)', padding: '0.2rem 0.75rem',
+                  borderRadius: '100px', border: '1px solid rgba(99,102,241,0.15)',
+                }}>{post.category}</span>
               )}
               {post.created_at && (
-                <span style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '0.75rem',
-                  color: '#5A8FA8',
-                }}>
-                  {new Date(post.created_at).toLocaleDateString('ja-JP', {
-                    year: 'numeric', month: 'long', day: 'numeric',
-                  })}
+                <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
+                  {new Date(post.created_at).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </span>
               )}
             </div>
-
             <h1 style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(1.75rem, 4vw, 3rem)',
-              letterSpacing: '-0.02em',
-              color: '#0A2342',
-              lineHeight: 1.2,
-            }}>
-              {post.title}
-            </h1>
+              fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800,
+              letterSpacing: '-0.03em', color: '#0f172a', lineHeight: 1.2,
+            }}>{post.title}</h1>
           </div>
         </section>
 
-        {/* Wave */}
-        <div style={{ overflow: 'hidden', lineHeight: 0, background: 'linear-gradient(160deg, #f0f8ff 0%, #caf0f8 100%)' }}>
-          <svg viewBox="0 0 1200 60" style={{ display: 'block', width: '100%' }}>
-            <path d="M 0 30 Q 150 5 300 30 Q 450 55 600 30 Q 750 5 900 30 Q 1050 55 1200 30 L 1200 60 L 0 60 Z" fill="white"/>
-          </svg>
-        </div>
-
-        {/* Article content */}
-        <section style={{
-          padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem)',
-        }}>
+        {/* Content */}
+        <section style={{ padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem)' }}>
           <div style={{ maxWidth: '720px', margin: '0 auto' }}>
-            {/* Thumbnail */}
             {post.thumbnail_url && (
               <div style={{
                 marginBottom: 'clamp(2rem, 4vw, 3rem)',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                aspectRatio: '16 / 9',
-                boxShadow: '0 8px 32px rgba(0, 150, 199, 0.12)',
+                borderRadius: '16px', overflow: 'hidden',
+                aspectRatio: '16/9',
+                boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
               }}>
-                <img
-                  src={post.thumbnail_url}
-                  alt={post.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
+                <img src={post.thumbnail_url} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
               </div>
             )}
 
-            {/* Body */}
-            <div
-              className="article-body"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            <div className="article-body" dangerouslySetInnerHTML={{ __html: post.content }}/>
 
-            {/* Footer nav */}
             <div style={{
-              marginTop: 'clamp(3rem, 6vw, 5rem)',
-              paddingTop: '2rem',
-              borderTop: '1px solid rgba(0, 180, 216, 0.15)',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              gap: '1rem',
+              marginTop: 'clamp(3rem, 6vw, 5rem)', paddingTop: '2rem',
+              borderTop: '1px solid #e2e8f0',
+              display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem',
             }}>
-              <Link href="/articles" className="back-link" style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: '0.85rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-              }}>
-                ← 記事一覧に戻る
-              </Link>
-              <Link href="/shops" style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: '0.85rem',
-                color: 'white',
-                backgroundColor: '#0096C7',
-                padding: '0.6rem 1.5rem',
-                borderRadius: '2rem',
-                textDecoration: 'none',
-                transition: 'background 0.2s',
-              }} className="shops-link">
-                ショップを探す →
-              </Link>
+              <Link href="/articles" className="back-link">← 記事一覧に戻る</Link>
+              <Link href="/shops" className="shops-btn">ショップを探す →</Link>
             </div>
           </div>
         </section>
 
         {/* Footer */}
         <footer style={{
-          padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
-          background: '#061829',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem',
+          padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem)',
+          background: '#0f172a',
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem',
         }}>
-          <span style={{ fontFamily: 'Georgia, serif', fontSize: '1rem', color: 'white', letterSpacing: '0.05em' }}>
-            ShipTo
-          </span>
-          <p style={{ fontFamily: 'Georgia, serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)' }}>
-            © {new Date().getFullYear()} ShipTo. All rights reserved.
-          </p>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ fontSize: '1rem', fontWeight: 700, color: 'white' }}>ShipTo</span>
+            <span style={{ fontSize: '1rem', fontWeight: 700, background: 'linear-gradient(135deg, #818cf8, #a78bfa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>JP</span>
+          </div>
+          <p style={{ fontSize: '0.75rem', color: '#475569' }}>© {new Date().getFullYear()} ShipToJP. All rights reserved.</p>
         </footer>
-
-        <style>{`.shops-link:hover { background: #0A2342 !important; }`}</style>
       </main>
     </>
   )
