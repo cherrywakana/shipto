@@ -4,36 +4,42 @@ import Header from '@/components/Header'
 
 export const dynamic = 'force-dynamic'
 
-interface SearchParams {
-    category?: string
-}
+export default async function ShopsPage(props: any) {
+    // Next.js 15+ では searchParams は Promise になる場合がある
+    // あらゆる環境に対応するため、await で解決してから使用する
+    let searchParams = props.searchParams;
+    if (searchParams instanceof Promise) {
+        searchParams = await searchParams;
+    }
 
-export default async function ShopsPage({
-    searchParams,
-}: {
-    searchParams: Promise<SearchParams>
-}) {
-    const { category } = await searchParams
+    const category = searchParams?.category;
 
+    // DBクエリの実行
     let query = supabase
         .from('shops')
-        .select('*')
+        .select('id, name, slug, url, country, category, image_url, description')
         .order('name', { ascending: true })
 
     if (category) {
-        query = query.eq('category', category)
+        // もし配列で渡ってきた場合でも対応できるようにする
+        const categoryValue = Array.isArray(category) ? category[0] : category;
+        query = query.eq('category', categoryValue)
     }
 
-    const { data: shops } = await query
+    const { data: shops, error } = await query
+
+    if (error) {
+        console.error('Supabase error in /shops:', error)
+    }
 
     const categories = [
         { label: 'すべて', href: '/shops' },
-        { label: 'ラグジュアリー・百貨店', href: '/shops?category=ラグジュアリー・百貨店' },
-        { label: 'セレクト・トレンド', href: '/shops?category=セレクト・トレンド' },
-        { label: 'ストリート・スニーカー', href: '/shops?category=ストリート・スニーカー' },
-        { label: 'アウトドア', href: '/shops?category=アウトドア' },
-        { label: 'アウトレット・リセール', href: '/shops?category=アウトレット・リセール' },
-        { label: 'アジア・トレンド', href: '/shops?category=アジア・トレンド' },
+        { label: 'ラグジュアリー・百貨店', icon: '💎', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・百貨店') },
+        { label: 'セレクト・トレンド', icon: '👗', href: '/shops?category=' + encodeURIComponent('セレクト・トレンド') },
+        { label: 'ストリート・スニーカー', icon: '👟', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
+        { label: 'アウトドア', icon: '🏕️', href: '/shops?category=' + encodeURIComponent('アウトドア') },
+        { label: 'アウトレット・リセール', icon: '🏷️', href: '/shops?category=' + encodeURIComponent('アウトレット・リセール') },
+        { label: 'アジア・トレンド', icon: '🇰🇷', href: '/shops?category=' + encodeURIComponent('アジア・トレンド') },
     ]
 
     return (
@@ -82,20 +88,8 @@ export default async function ShopsPage({
             border-color: #6366f1;
             color: #6366f1;
           }
-          .badge-japan {
-            background: #ecfdf5;
-            color: #059669;
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-          }
         `}</style>
 
-                {/* Hero Section */}
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem',
                     background: 'linear-gradient(135deg, #ffffff 0%, #f8f7ff 40%, #ede9fe 100%)',
@@ -108,12 +102,7 @@ export default async function ShopsPage({
                     }}>
                         ショップ名鑑
                     </h1>
-                    <p style={{ fontSize: '1.125rem', color: '#64748b', maxWidth: '600px', margin: '0 auto 2.5rem', lineHeight: 1.6 }}>
-                        日本発送に対応した世界中の人気ショップを厳選。<br />
-                        あなたにぴったりのショップを見つけましょう。
-                    </p>
 
-                    {/* Category Tabs */}
                     <div style={{
                         display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '1000px', margin: '0 auto'
                     }}>
@@ -132,17 +121,7 @@ export default async function ShopsPage({
                     </div>
                 </section>
 
-                {/* Grid Section */}
                 <section style={{ padding: '4rem clamp(1.5rem, 5vw, 4rem)', maxWidth: '1280px', margin: '0 auto' }}>
-                    <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                        <div>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>
-                                {category || 'すべてのショップ'}
-                            </h2>
-                            <p style={{ fontSize: '0.875rem', color: '#94a3b8' }}>{shops?.length || 0}件のショップが見つかりました</p>
-                        </div>
-                    </div>
-
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))',
@@ -150,17 +129,17 @@ export default async function ShopsPage({
                     }}>
                         {shops?.map((shop) => (
                             <div key={shop.id} className="shop-card">
-                                <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
+                                <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative' }}>
                                     {shop.image_url ? (
-                                        <img src={shop.image_url} alt={shop.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img
+                                            src={shop.image_url}
+                                            alt={shop.name}
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                            loading="lazy"
+                                        />
                                     ) : (
                                         <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem' }}>🛍️</div>
                                     )}
-                                    <div style={{ position: 'absolute', top: '1rem', right: '1rem' }}>
-                                        <div className="badge-japan">
-                                            <span>🚢</span> 日本発送対応
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div style={{ padding: '1.5rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
@@ -172,7 +151,6 @@ export default async function ShopsPage({
                                     </div>
 
                                     <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{shop.name}</h3>
-
                                     <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.6, marginBottom: '1.5rem', flexGrow: 1 }}>
                                         {shop.description}
                                     </p>
@@ -191,13 +169,10 @@ export default async function ShopsPage({
                                                 borderRadius: '12px',
                                                 fontSize: '0.875rem',
                                                 fontWeight: 600,
-                                                textDecoration: 'none',
-                                                transition: 'opacity 0.2s'
+                                                textDecoration: 'none'
                                             }}
-                                            onMouseOver={(e) => e.currentTarget.style.opacity = '0.9'}
-                                            onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
                                         >
-                                            公式サイトを見る
+                                            公式サイト
                                         </a>
                                         {shop.slug && (
                                             <Link
@@ -212,16 +187,7 @@ export default async function ShopsPage({
                                                     fontSize: '0.875rem',
                                                     fontWeight: 600,
                                                     textDecoration: 'none',
-                                                    border: '1px solid #e2e8f0',
-                                                    transition: 'all 0.2s'
-                                                }}
-                                                onMouseOver={(e) => {
-                                                    e.currentTarget.style.borderColor = '#0f172a';
-                                                    e.currentTarget.style.background = '#f8fafc';
-                                                }}
-                                                onMouseOut={(e) => {
-                                                    e.currentTarget.style.borderColor = '#e2e8f0';
-                                                    e.currentTarget.style.background = 'white';
+                                                    border: '1px solid #e2e8f0'
                                                 }}
                                             >
                                                 解説ガイド
@@ -233,27 +199,18 @@ export default async function ShopsPage({
                         ))}
                     </div>
 
-                    {shops?.length === 0 && (
+                    {(!shops || shops.length === 0) && !error && (
                         <div style={{ textAlign: 'center', padding: '5rem 0' }}>
-                            <div style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>🔍</div>
-                            <p style={{ color: '#64748b', fontSize: '1.125rem' }}>該当するショップはまだありません。</p>
-                            <Link href="/shops" style={{ color: '#6366f1', fontWeight: 600, marginTop: '1rem', display: 'inline-block' }}>
-                                すべてのショップを見る
-                            </Link>
+                            <p style={{ color: '#64748b' }}>該当するショップが見つかりませんでした。</p>
+                        </div>
+                    )}
+
+                    {error && (
+                        <div style={{ textAlign: 'center', padding: '5rem 0', color: '#ef4444' }}>
+                            <p>データの取得中にエラーが発生しました。</p>
                         </div>
                     )}
                 </section>
-
-                {/* Footer */}
-                <footer style={{
-                    padding: '4rem clamp(1.5rem, 5vw, 4rem)',
-                    background: '#0f172a',
-                    color: 'white',
-                    textAlign: 'center',
-                    marginTop: '4rem'
-                }}>
-                    <p style={{ fontSize: '0.875rem', color: '#94a3b8' }}>© {new Date().getFullYear()} ShipToJP. All rights reserved.</p>
-                </footer>
             </main>
         </>
     )
