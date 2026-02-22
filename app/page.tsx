@@ -4,12 +4,12 @@ import Header from '@/components/Header'
 import Link from 'next/link'
 
 const categories = [
-  { label: 'ファッション', icon: '👗', href: '/shops?category=fashion' },
-  { label: 'コスメ・美容', icon: '💄', href: '/shops?category=cosmetics' },
-  { label: '電化製品', icon: '📱', href: '/shops?category=electronics' },
-  { label: 'インテリア', icon: '🏠', href: '/shops?category=interior' },
-  { label: 'スポーツ', icon: '🏃', href: '/shops?category=sports' },
-  { label: '食品・お酒', icon: '🍷', href: '/shops?category=food' },
+  { label: 'ラグジュアリー・百貨店', icon: '💎', href: '/shops?category=ラグジュアリー・百貨店' },
+  { label: 'セレクト・トレンド', icon: '👗', href: '/shops?category=セレクト・トレンド' },
+  { label: 'ストリート・スニーカー', icon: '👟', href: '/shops?category=ストリート・スニーカー' },
+  { label: 'アウトドア', icon: '🏕️', href: '/shops?category=アウトドア' },
+  { label: 'アウトレット・リセール', icon: '🏷️', href: '/shops?category=アウトレット・リセール' },
+  { label: 'アジア・トレンド', icon: '🇰🇷', href: '/shops?category=アジア・トレンド' },
 ]
 
 const stats = [
