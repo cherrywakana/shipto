@@ -59,6 +59,38 @@ export default async function ArticlePage({
           .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
           .article-body li { font-size: 0.95rem; color: #334155; line-height: 1.8; margin-bottom: 0.4rem; }
           .article-body strong { font-weight: 700; color: #0f172a; }
+
+          /* CTAボックス - ここを変えると全記事に反映される */
+          .article-cta {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: #f8f7ff;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(99,102,241,0.15);
+          }
+          .article-cta p {
+            font-size: 1rem !important;
+            color: #334155 !important;
+            margin-bottom: 1.25rem !important;
+            font-weight: 500;
+          }
+          .article-cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white !important;
+            padding: 0.85rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.3);
+          }
+          .article-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.4);
+          }
         `}</style>
 
         {/* Hero */}
@@ -99,11 +131,11 @@ export default async function ArticlePage({
                 aspectRatio: '16/9',
                 boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
               }}>
-                <img src={post.thumbnail_url} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
+                <img src={post.thumbnail_url} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             )}
 
-            <div className="article-body" dangerouslySetInnerHTML={{ __html: post.content }}/>
+            <div className="article-body" dangerouslySetInnerHTML={{ __html: post.content }} />
 
             <div style={{
               marginTop: 'clamp(3rem, 6vw, 5rem)', paddingTop: '2rem',
