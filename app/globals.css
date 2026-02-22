@@ -111,3 +111,31 @@ video {
   background: var(--gray-300);
   border-radius: 2px;
 }
+
+/* ---------- CTA Button ---------- */
+
+.article-cta {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.article-cta-btn {
+  display: inline-block;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1.2rem 3rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: sans-serif;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.article-cta-btn:hover {
+  background-color: var(--gray-700);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
