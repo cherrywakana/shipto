@@ -175,14 +175,6 @@ export default async function ShopDetailPage({
                             </div>
                             <div className="info-body">
                                 {shop.shipping_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
-                                {shop.shipping_url && (
-                                    <div style={{ marginTop: '0.75rem' }}>
-                                        <a href={shop.shipping_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: '#6366f1', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontWeight: 500 }}>
-                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                            公式サイトのエビデンスを見る
-                                        </a>
-                                    </div>
-                                )}
                             </div>
                         </div>
 
@@ -193,14 +185,6 @@ export default async function ShopDetailPage({
                             </div>
                             <div className="info-body">
                                 {shop.tax_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
-                                {shop.tax_url && (
-                                    <div style={{ marginTop: '0.75rem' }}>
-                                        <a href={shop.tax_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: '#6366f1', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontWeight: 500 }}>
-                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                            公式の関税ルールを見る
-                                        </a>
-                                    </div>
-                                )}
                             </div>
                         </div>
 
@@ -211,15 +195,12 @@ export default async function ShopDetailPage({
                             </div>
                             <div className="info-body">
                                 {shop.fee_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
-                                {shop.fee_url && (
-                                    <div style={{ marginTop: '0.75rem' }}>
-                                        <a href={shop.fee_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: '#6366f1', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontWeight: 500 }}>
-                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                            公式の配送料金・日数を見る
-                                        </a>
-                                    </div>
-                                )}
                             </div>
+                        </div>
+
+                        <div style={{ padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '1rem', fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6 }}>
+                            <strong style={{ color: '#475569', display: 'block', marginBottom: '0.25rem' }}>⚠️ ご注意・免責事項</strong>
+                            掲載されている情報は調査時点のものです。配送や関税に関する最新の正確なルールは、ご自身で必ず公式サイトをご確認ください。
                         </div>
 
                         <div className="article-cta">
