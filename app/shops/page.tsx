@@ -176,7 +176,7 @@ export default async function ShopsPage(props: any) {
                                         </a>
                                         {shop.slug && (
                                             <Link
-                                                href={`/articles/${shop.slug}-guide`}
+                                                href={`/shops/${shop.slug}`}
                                                 style={{
                                                     flex: 1,
                                                     textAlign: 'center',

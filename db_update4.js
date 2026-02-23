@@ -1,0 +1,159 @@
+const { createClient } = require('@supabase/supabase-js');
+const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+
+const shops = [
+    {
+        name: 'ASOS（エイソス）',
+        slug: 'asos',
+        url: 'https://www.asos.com/',
+        intro: 'ASOS（エイソス）は、2000年にイギリス・ロンドンで設立された世界最大級のオンラインファッションプラットフォームです。800以上の多彩なブランドから、トレンドを牽引する自社のプライベートブランド「ASOS DESIGN」まで幅広く展開しており、手頃な価格帯でファッショニスタの支持を集めています。',
+        shipping_evidence: '公式サイトの「Delivery & Returns」ポリシーによると、日本（Japan）を含む世界200カ国以上への直接配送に公式対応しています。',
+        tax_evidence: 'ASOSの「Customs & Duties」のガイドラインによれば、関税は事前に決済されず、受取時の支払（DDU）となります。日本の免税ライン（16,666円）を超えた場合などは、配達時に配送業者へ関税・消費税を別途支払う必要があります。',
+        fee_evidence: '公式の配送設定では、日本への「Standard Delivery（標準配送）」は一定額（およそ数千円〜1万円前後）以上の購入で無料となります。配送手続き完了から通常10〜14営業日での到着が目安と明記されています。',
+    },
+    {
+        name: 'Musinsa（ムシンサ）',
+        slug: 'musinsa',
+        url: 'https://global.musinsa.com/',
+        intro: 'Musinsa（ムシンサ）は、韓国国内で圧倒的なシェアを誇るNo.1ファッションプラットフォームです。ストリートやコンテンポラリーなど、最新のK-ファッションブランドを何百も取り扱っているのが最大の特徴です。',
+        shipping_evidence: 'グローバル版の公式サイト（Global Musinsa）を通じて、日本への直送に完全対応しています。「Global Shipping」の項目に従い、住所も日本のフォーマット（または専用アプリ経由）で簡単に入力可能です。',
+        tax_evidence: '公式の「関税・消費税」ヘルプページによれば、Musinsaグローバルでは商品価格に関税や消費税がすべて含まれた関税前払い（DDP）方式を採用しています。そのため、受け取り時に追加で料金を請求されることは一切ありません。',
+        fee_evidence: '公式サイトの配送規定（Shipping Information）によると、日本への配送は一定額（時期により変動）以上の購入で送料無料になります。韓国からの発送のため、到着日数の目安は通常3〜7営業日と非常にスピーディーに設定されています。',
+    },
+    {
+        name: 'Mango（マンゴ）',
+        slug: 'mango',
+        url: 'https://shop.mango.com/',
+        intro: 'Mango（マンゴ）は、スペイン・バルセロナ発祥の世界的なファッションブランドです。ZARAと並び、都会的で洗練されたヨーロッパの最新トレンドを取り入れたデザインを、アフォーダブルな価格で提供しているのが強みです。',
+        shipping_evidence: '公式サイトのShipping設定で、配送先に「Japan」を選択することで日本への直送が正式にサポートされています。',
+        tax_evidence: '公式の購入規約（Terms & Conditions）に基づき、配送先が日本の場合、商品代金には日本の輸入関税等が含まれていません。一定の免税枠を超えた場合、受け取り時に別途関税や消費税（DDU）を支払う必要があります。',
+        fee_evidence: 'Mango公式の日本の配送料金表によれば、日本への標準配送（Standard Delivery）の送料は「1,490円」（または一部送料無料プロモーション時）の固定料金となっており、到着目安は通常1〜2週間とされています。',
+    },
+    {
+        name: 'REI（アールイーアイ）',
+        slug: 'rei',
+        url: 'https://www.rei.com/',
+        intro: 'REI（アールイーアイ）は、アメリカ最大級のアウトドア用品の生活協同組合（コープ）です。高品質でコスパに優れた自社ブランド「REI Co-op」をはじめ、世界トップクラスのアウトドアギアを幅広く取り揃えています。',
+        shipping_evidence: 'REIの公式「International Orders」ヘルプページに記載されている通り、日本（Japan）への国際発送に対応しています。ただし、パタゴニアなど一部の特定ブランドはメーカーの販売契約によりアメリカ国外への発送が制限されています。',
+        tax_evidence: '公式の国際配送ポリシーによれば、REIでの購入時の決済には日本の関税や輸入消費税は含まれず、商品受け取り時の請求（DDU）となります。テントなどの大型商品を購入する際は、輸入時の実費に注意が必要です。',
+        fee_evidence: '公式の「Shipping Costs」によると、国際送料は注文商品の重量やサイズに基づいてカート内でシステム計算され、最低でおよそ$20からスタートします。配送日数は通常1〜2週間前後が目安と案内されています。',
+    },
+    {
+        name: 'Backcountry（バックカントリー）',
+        slug: 'backcountry',
+        url: 'https://www.backcountry.com/',
+        intro: 'Backcountry（バックカントリー）は、ユタ州で設立されたアメリカのアウトドア用品専門オンラインショップです。スキー、スノーボードからクライミングギアまで、過酷な環境に耐えうる本物志向のニッチなギアが揃うのが特徴です。',
+        shipping_evidence: '公式サイトの「International Shipping」のページで案内されている通り、日本への国際直送に対応しています。ただし一部ブランドや大型・危険物などは配送対象外となる場合があります。',
+        tax_evidence: 'サイトに記載の国際注文規約に基づき、関税や消費税（Duties & Taxes）はチェックアウト時に事前計算されて支払うDDPオプション、または受け取り時支払いのDDUオプションから選択可能なシステムが導入されています。',
+        fee_evidence: '配送ポリシーによれば、日本への配送はDHLやFedEx等の国際宅配便が利用され、配送料は重量やボリュームで算出されます。到着目安については、決済時におおよそ数日〜1週間程度と表示されます。',
+    },
+    {
+        name: 'L.L.Bean（エルエルビーン）',
+        slug: 'llbean',
+        url: 'https://www.llbean.com/',
+        intro: 'L.L.Bean（エルエルビーン）は、1912年にアメリカのメイン州で創業した歴史あるアウトドア・ライフスタイルブランドです。ボート・アンド・トートやビーン・ブーツといった時代を超えた定番名品を中心に展開しています。',
+        shipping_evidence: 'L.L.Bean（US公式サイト）の「International Shipping」ポリシーにより、日本への直接発送に対応しています。本国サイトを利用することで、日本未展開のサイズや色、カスタム刺繍（モノグラム）を注文することができます。',
+        tax_evidence: '公式の国際配送ページに従い、関税および消費税は商品受け取り時に支払う形式（DDU）となります。そのため、購入額に応じた輸入諸費用の準備が必要です。',
+        fee_evidence: '「Shipping & Delivery」の規定に基づき、米国から日本への配送料は、注文の合計重量とサイズに基づいてチェックアウト画面にて算出・表示されます。配送の目安は通常1〜2週間とされています。',
+    },
+    {
+        name: 'COS（コス）',
+        slug: 'cos',
+        url: 'https://www.cos.com/',
+        intro: 'COS（コス）は、スウェーデンのH&Mグループが展開するプレミアムなファッションブランドです。構築的でミニマルなシルエットと、タイムレスで環境に配慮したサステナブルな素材使いが特徴で、大人の男女に強く支持されています。',
+        shipping_evidence: 'COS公式サイトの「Customer Service / Shipping」の項目において、日本（Japan）を選択することで国際配送を利用したショッピングが公式にサポートされています。',
+        tax_evidence: 'グローバル向けの配送規約に基づき、日本への発送の場合、DDP（関税込み）で計算される場合とDDU（受け取り時支払い）になる場合が時期・購入元ストアによって異なるため、チェックアウト画面のTax表記で最終確認する必要があります。',
+        fee_evidence: '「Delivery Information」のページによると、日本向けの配送は固定のStandard Shipping料金（または一定額以上で送料無料）が設定されており、到着までの日数の目安は通常1〜2週間と記載されています。',
+    },
+    {
+        name: '& Other Stories（アンドアザーストーリーズ）',
+        slug: 'and-other-stories',
+        url: 'https://www.stories.com/',
+        intro: '& Other Stories（アンドアザーストーリーズ）は、H&Mグループ傘下のファッションブランドです。パリ、ストックホルム、ロサンゼルスの3か国のアトリエでデザインされており、フェミニンかつそれぞれの都市の異なる空気感をまとった洋服やコスメを展開しています。',
+        shipping_evidence: '公式の「Shipping & Delivery」ページによれば、日本への直送（International Delivery）に完全に対応しています。現時点で日本国内に実店舗がないため、海外通販が唯一の主要な購入経路です。',
+        tax_evidence: '利用規約（Terms of Use）の国際注文の項目によれば、日本向けには関税や輸入手数料が含まれないDDUでの配送となります。16,666円以上の購入時などは、受け取り時に関税等の支払いが発生する可能性があります。',
+        fee_evidence: '公式サイトの案内によると、日本への固定の国際配送料は約$20（約2,000円〜3,000円程度）に設定されており、現地倉庫から通常1〜2週間程度で届くと明記されています。',
+    },
+    {
+        name: 'Free People（フリーピープル）',
+        slug: 'free-people',
+        url: 'https://www.freepeople.com/',
+        intro: 'Free People（フリーピープル）は、アメリカ発祥のボヘミアン・シックな服飾デザインをベースとするファッションブランドです。フェミニンなワンピースから、機能性とデザイン性を両立させたヨガ等のアクティブラインまで、個性を大切にする女性に人気です。',
+        shipping_evidence: '公式サイトの「Shipping Information」のページにより、日本への国際配送が正式にサポートされています。サイト上で通貨を「JPY」に設定することで買い物がスムーズに行えます。',
+        tax_evidence: '公式の配送・関税ポリシーにおいて、日本向けの注文に対しては「関税・消費税の事前支払い（DDP）」システムが導入されていると記載されています。これにより、商品受け取り時の煩雑な追加請求を避けることができます。',
+        fee_evidence: '公式の案内（International Standard Shipping）によれば、通常時150ドル（時期によりプロモーションあり）以上の注文で日本への配送料が無料になり、通常1〜2週間での配達が目安とされています。',
+    },
+    {
+        name: 'Nordstrom（ノードストローム）',
+        slug: 'nordstrom',
+        url: 'https://www.nordstrom.com/',
+        intro: 'Nordstrom（ノードストローム）は、アメリカ最大級の歴史ある高級百貨店です。トップデザイナーのラグジュアリーブランドから米国独自のコンテンポラリーブランドまで、圧倒的な品揃えと卓越したカスタマーサービスが強みです。',
+        shipping_evidence: 'Nordstrom公式の「International Shopping」ガイドラインにおいて、Borderfree（国際eコマースプロバイダ）のパートナーシップを通じて、日本への国際発送に公式対応していることが明記されています。',
+        tax_evidence: '同International Shoppingの規約に基づき、日本円での決済とともに関税や消費税などの諸費用を含んだ総額をチェックアウト時に事前決済できるDDP方式を採用しており、受け取りが非常にスムーズです。',
+        fee_evidence: '公式サイトの計算システムにより、配送料は購入商品のサイズ・重量に応じてチェックアウト時に確定・表示されます。DHL等の国際配送サービスを利用し、通常1〜2週間程度で届くと案内されています。',
+    },
+    {
+        name: 'Saks Fifth Avenue（サックス・フィフス・アベニュー）',
+        slug: 'saks-fifth-avenue',
+        url: 'https://www.saksfifthavenue.com/',
+        intro: 'Saks Fifth Avenue（サックス・フィフス・アベニュー）は、ニューヨークの五番街に本店を構える世界的にも有名な老舗高級百貨店です。世界最高峰のデザイナーズコレクションやラグジュアリーコスメなど、極上の品揃えを誇ります。',
+        shipping_evidence: 'Saks Fifth Avenueの公式「Shipping Policies」のInternational（国際）セクションにより、日本（Japan）への直送がグローバルEコマースシステム経由で対応可能と案内されています。',
+        tax_evidence: '公式の国際注文ページによると、購入画面で日本の関税や消費税を含んだ総額（DDPオプション）が表示されます。事前に全額支払いが完了するため、日本での荷物到着時に追加の現金などを準備する必要がなく安心です。',
+        fee_evidence: '国際配送料はカート画面で商品のボリュームに基づき算出されますが、公式サイト上で頻繁に「175ドル以上の購入で国際送料無料」といったプロモーションが行なわれており、配送料目安は通常1〜2週間程度です。',
+    },
+    {
+        name: 'Vestiaire Collective（ヴィスティエール・コレクティブ）',
+        slug: 'vestiaire-collective',
+        url: 'https://www.vestiairecollective.com/',
+        intro: 'Vestiaire Collective（ヴィスティエール・コレクティブ）は、フランス発の高級ブランド専門のグローバル・リセール（中古）プラットフォームです。出品された高額商品は社内の熟練の専門チームによって物理的に鑑定されるため、偽物のリスクがなく安全に売買できるのが最大の特徴です。',
+        shipping_evidence: '公式サイトおよびアプリの「配送（Shipping）」ガイドラインに記載がある通り、全世界の出品者同士を繋ぎ、日本への発送にも完全に対応しています。',
+        tax_evidence: '公式の「関税と税金」に関するヘルプデスクによれば、商品代金に輸入関税などの税金が含まれる仕組み（DDPに近い体系）が採用されているため、チェックアウト画面で表示される金額が最終支払い額となります。',
+        fee_evidence: '公式の送料計算ルールに基づき、配送料は出品者の所在地（国）と購入者（日本）との距離、および商品の重さによって変動します。商品がいったん鑑定センターを経由するため、日数の目安として到着まで平均して約2週間程度かかると案内されています。',
+    },
+    {
+        name: 'FARFETCH（ファーフェッチ）',
+        slug: 'farfetch',
+        url: 'https://www.farfetch.com/jp/',
+        intro: 'FARFETCH（ファーフェッチ）は、世界中の名門ブティックやブランドと直接提携しているイギリス発の巨大なラグジュアリー・オンラインマーケットプレイスです。日本語完全対応のサイトとサポート体制があり、希少なラグジュアリーアイテムを安心して購入できるのが強みです。',
+        shipping_evidence: 'FARFETCH公式の「配送と送料」ページに明記されている通り、日本国内への直送サービスに完全に対応しており、数々の提携ブティックから直接手元へ商品が届きます。',
+        tax_evidence: '公式の「関税・消費税について」というガイドに記載がある通り、商品価格にはすでに日本の関税ならびに輸入消費税が含まれた価格（DDP）で表示されています。したがって受け取り時の追加費用は一切発生しません。',
+        fee_evidence: '公式の日本の送料ポリシーによれば、日本向けの配送では一定額（例：税込28,000円等）以上の購入で送料が「一律料金（フラットレート）」となります。DHL等の特急配送が標準採用されており、通常3〜7営業日という早さで到着します。',
+    }
+];
+
+const generateHtml = (shop) => `<h2>${shop.name}とは？</h2>
+<p>${shop.intro}</p>
+
+<h2>日本へ直送可能か</h2>
+<p>${shop.shipping_evidence}</p>
+
+<h2>関税は込みか</h2>
+<p>${shop.tax_evidence}</p>
+
+<h2>送料の目安</h2>
+<p>${shop.fee_evidence}</p>
+
+<div class="article-cta">
+  <a href="${shop.url}" target="_blank" rel="noopener noreferrer" class="article-cta-btn">${shop.name}公式サイトを見てみる →</a>
+</div>`;
+
+async function run() {
+    for (const shop of shops) {
+        const htmlContent = generateHtml(shop);
+        const newTitle = `${shop.name}とは？日本発送や関税・送料を徹底解説`;
+        const newSlug = `${shop.slug}-guide`;
+
+        const { error: updateError } = await supabase.from('posts').update({
+            title: newTitle,
+            content: htmlContent
+        }).eq('slug', newSlug);
+
+        if (updateError) {
+            console.log('❌ Error updating ' + newSlug + ': ' + updateError.message);
+        } else {
+            console.log('✅ Success updated: ' + newSlug);
+        }
+    }
+}
+
+run();
