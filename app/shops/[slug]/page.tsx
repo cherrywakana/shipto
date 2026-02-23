@@ -152,6 +152,14 @@ export default async function ShopDetailPage({
                             </div>
                             <div className="info-body">
                                 {shop.shipping_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
+                                {shop.shipping_url && (
+                                    <div style={{ marginTop: '0.75rem' }}>
+                                        <a href={shop.shipping_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: '#6366f1', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontWeight: 500 }}>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                            公式サイトのエビデンスを見る
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -162,6 +170,14 @@ export default async function ShopDetailPage({
                             </div>
                             <div className="info-body">
                                 {shop.tax_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
+                                {shop.tax_url && (
+                                    <div style={{ marginTop: '0.75rem' }}>
+                                        <a href={shop.tax_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: '#6366f1', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontWeight: 500 }}>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                            公式の関税ルールを見る
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -172,6 +188,14 @@ export default async function ShopDetailPage({
                             </div>
                             <div className="info-body">
                                 {shop.fee_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
+                                {shop.fee_url && (
+                                    <div style={{ marginTop: '0.75rem' }}>
+                                        <a href={shop.fee_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: '#6366f1', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontWeight: 500 }}>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                            公式の配送料金・日数を見る
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         </div>
 
