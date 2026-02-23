@@ -17,7 +17,8 @@ export default async function ShopsPage(props: any) {
     // DBクエリの実行
     let query = supabase
         .from('shops')
-        .select('id, name, slug, url, country, category, image_url, description')
+        .select('id, name, slug, url, country, category, image_url, description, is_affiliate')
+        .order('is_affiliate', { ascending: false })
         .order('name', { ascending: true })
 
     if (category) {
