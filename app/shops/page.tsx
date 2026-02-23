@@ -1,37 +1,14 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import { Suspense } from 'react'
 import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 60 // 60秒間キャッシュを利用
 
 export default async function ShopsPage(props: any) {
-    // Next.js 15+ では searchParams は Promise になる場合がある
-    // あらゆる環境に対応するため、await で解決してから使用する
-    let searchParams = props.searchParams;
-    if (searchParams instanceof Promise) {
-        searchParams = await searchParams;
-    }
-
+    const searchParams = await props.searchParams;
     const category = searchParams?.category;
-
-    // DBクエリの実行
-    let query = supabase
-        .from('shops')
-        .select('id, name, slug, url, country, category, image_url, description, is_affiliate')
-        .order('is_affiliate', { ascending: false })
-        .order('name', { ascending: true })
-
-    if (category) {
-        // もし配列で渡ってきた場合でも対応できるようにする
-        const categoryValue = Array.isArray(category) ? category[0] : category;
-        query = query.eq('category', categoryValue)
-    }
-
-    const { data: shops, error } = await query
-
-    if (error) {
-        console.error('Supabase error in /shops:', error)
-    }
 
     const categories = [
         { label: 'すべて', href: '/shops' },
@@ -89,6 +66,10 @@ export default async function ShopsPage(props: any) {
             border-color: #6366f1;
             color: #6366f1;
           }
+          @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+          }
         `}</style>
 
                 <section style={{
@@ -123,96 +104,121 @@ export default async function ShopsPage(props: any) {
                 </section>
 
                 <section style={{ padding: '4rem clamp(1.5rem, 5vw, 4rem)', maxWidth: '1280px', margin: '0 auto' }}>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))',
-                        gap: '2rem',
-                    }}>
-                        {shops?.map((shop) => (
-                            <div key={shop.id} className="shop-card">
-                                <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative' }}>
-                                    {shop.image_url ? (
-                                        <img
-                                            src={shop.image_url}
-                                            alt={shop.name}
-                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                            loading="lazy"
-                                        />
-                                    ) : (
-                                        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem' }}>🛍️</div>
-                                    )}
-                                </div>
-
-                                <div style={{ padding: '1.5rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                                        <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#6366f1', background: 'rgba(99,102,241,0.1)', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
-                                            {shop.category}
-                                        </span>
-                                        <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>📍 {shop.country}</span>
-                                    </div>
-
-                                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{shop.name}</h3>
-                                    <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.6, marginBottom: '1.5rem', flexGrow: 1 }}>
-                                        {shop.description}
-                                    </p>
-
-                                    <div style={{ display: 'flex', gap: '0.75rem' }}>
-                                        <a
-                                            href={shop.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            style={{
-                                                flex: 1,
-                                                textAlign: 'center',
-                                                background: '#0f172a',
-                                                color: 'white',
-                                                padding: '0.75rem',
-                                                borderRadius: '12px',
-                                                fontSize: '0.875rem',
-                                                fontWeight: 600,
-                                                textDecoration: 'none'
-                                            }}
-                                        >
-                                            公式サイト
-                                        </a>
-                                        {shop.slug && (
-                                            <Link
-                                                href={`/shops/${shop.slug}`}
-                                                style={{
-                                                    flex: 1,
-                                                    textAlign: 'center',
-                                                    background: 'white',
-                                                    color: '#0f172a',
-                                                    padding: '0.75rem',
-                                                    borderRadius: '12px',
-                                                    fontSize: '0.875rem',
-                                                    fontWeight: 600,
-                                                    textDecoration: 'none',
-                                                    border: '1px solid #e2e8f0'
-                                                }}
-                                            >
-                                                解説ガイド
-                                            </Link>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {(!shops || shops.length === 0) && !error && (
-                        <div style={{ textAlign: 'center', padding: '5rem 0' }}>
-                            <p style={{ color: '#64748b' }}>該当するショップが見つかりませんでした。</p>
+                    <Suspense fallback={
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))', gap: '2rem' }}>
+                            {[1, 2, 3].map(i => (
+                                <div key={i} style={{ height: '400px', background: '#f1f5f9', borderRadius: '20px', animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }} />
+                            ))}
                         </div>
-                    )}
-
-                    {error && (
-                        <div style={{ textAlign: 'center', padding: '5rem 0', color: '#ef4444' }}>
-                            <p>データの取得中にエラーが発生しました。</p>
-                        </div>
-                    )}
+                    }>
+                        <ShopList category={category} />
+                    </Suspense>
                 </section>
             </main>
         </>
+    )
+}
+
+async function ShopList({ category }: { category: string | string[] | undefined }) {
+    // DBクエリの実行
+    let query = supabase
+        .from('shops')
+        .select('id, name, slug, url, country, category, image_url, description, is_affiliate')
+        .order('is_affiliate', { ascending: false })
+        .order('name', { ascending: true })
+
+    if (category) {
+        const categoryValue = Array.isArray(category) ? category[0] : category;
+        query = query.eq('category', categoryValue)
+    }
+
+    const { data: shops, error } = await query
+
+    if (error) {
+        return <div style={{ textAlign: 'center', padding: '5rem 0', color: '#ef4444' }}><p>読み込みエラーが発生しました</p></div>
+    }
+
+    if (!shops || shops.length === 0) {
+        return <div style={{ textAlign: 'center', padding: '5rem 0' }}><p style={{ color: '#64748b' }}>該当するショップが見つかりませんでした。</p></div>
+    }
+
+    return (
+        <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))',
+            gap: '2rem',
+        }}>
+            {shops.map((shop) => (
+                <div key={shop.id} className="shop-card">
+                    <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
+                        {shop.image_url ? (
+                            <Image
+                                src={shop.image_url}
+                                alt={shop.name}
+                                fill
+                                style={{ objectFit: 'cover' }}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            />
+                        ) : (
+                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem' }}>🛍️</div>
+                        )}
+                    </div>
+
+                    <div style={{ padding: '1.5rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#6366f1', background: 'rgba(99,102,241,0.1)', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
+                                {shop.category}
+                            </span>
+                            <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>📍 {shop.country}</span>
+                        </div>
+
+                        <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{shop.name}</h3>
+                        <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.6, marginBottom: '1.5rem', flexGrow: 1 }}>
+                            {shop.description}
+                        </p>
+
+                        <div style={{ display: 'flex', gap: '0.75rem' }}>
+                            <a
+                                href={shop.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    flex: 1,
+                                    textAlign: 'center',
+                                    background: '#0f172a',
+                                    color: 'white',
+                                    padding: '0.75rem',
+                                    borderRadius: '12px',
+                                    fontSize: '0.875rem',
+                                    fontWeight: 600,
+                                    textDecoration: 'none'
+                                }}
+                            >
+                                公式サイト
+                            </a>
+                            {shop.slug && (
+                                <Link
+                                    href={`/shops/${shop.slug}`}
+                                    style={{
+                                        flex: 1,
+                                        textAlign: 'center',
+                                        background: 'white',
+                                        color: '#0f172a',
+                                        padding: '0.75rem',
+                                        borderRadius: '12px',
+                                        fontSize: '0.875rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        border: '1px solid #e2e8f0'
+                                    }}
+                                >
+                                    解説ガイド
+                                </Link>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
     )
 }
