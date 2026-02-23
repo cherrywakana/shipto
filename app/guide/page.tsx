@@ -1,10 +1,7 @@
+'use client'
+
 import Header from '@/components/Header'
 import Link from 'next/link'
-
-export const metadata = {
-    title: '海外通販ガイド - ShipToJP',
-    description: '海外通販の仕組みから関税、送料、トラブル対応まで、初心者の方でも安心して利用するための基本知識をまとめています。'
-}
 
 export default function GuidePage() {
     const sections = [
