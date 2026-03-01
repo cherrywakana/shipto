@@ -8,17 +8,16 @@ description: [ショップサムネイルの作成・登録手順]
 ## Step 1: スクリーンショットの撮影
 ブラウザエージェントを使用して、公式サイトのファーストビューを撮影します。
 
-1. `scripts/temp_assets/` ディレクトリを作成（なければ）。
-2. ブラウザエージェントに以下のタスクを依頼します：
-   - 「[ショップURL]にアクセスし、クッキーバナー等を閉じた後、上半分のスクリーンショットを [slug].png として撮影して」
-3. 撮影されたファイルを `scripts/temp_assets/` に配置します。
+1. `scripts/assets/` ディレクトリを使用します。
+2. ブラウザエージェント等で公式サイトのスクリーンショットを [slug].png として撮影します。
+3. 撮影されたファイルを `scripts/assets/` に配置します。
 
 ## Step 2: 画像の最適化 (WebP変換)
 読み込み速度向上のため、PNGをWebP形式に変換します。
 
 // turbo
 ```bash
-cwebp scripts/temp_assets/[slug].png -o scripts/temp_assets/[slug].webp
+cwebp scripts/assets/[slug].png -o scripts/assets/[slug].webp
 ```
 
 ## Step 3: ストレージへのアップロードとDB反映
@@ -28,12 +27,12 @@ cwebp scripts/temp_assets/[slug].png -o scripts/temp_assets/[slug].webp
 2. 以下のコマンドを実行します。
 // turbo
 ```bash
-node scripts/upload_thumbnails.js
+npm run upload-thumbnails
 ```
 ※ 環境変数（`NEXT_PUBLIC_SUPABASE_URL`等）が必要です。
 
 ## Step 4: 後片付け
-アップロードが完了したら、`scripts/temp_assets/` 内の一時ファイルを削除してクリーンな状態に保ちます。
+アップロードが完了したら、`scripts/assets/` 内の一時ファイルを削除して整理してください。
 
 ## 注意事項
 - ストレージのバケット名は `shop-thumbnails` です。

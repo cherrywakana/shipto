@@ -14,7 +14,7 @@ description: [アフィリエイト情報の同期手順]
 // turbo
    以下のコマンドをプロジェクトルートで実行します。
    ```bash
-   node scripts/sync_affiliates.js
+   npm run sync-affiliates
    ```
 
 3. **実行結果の確認**

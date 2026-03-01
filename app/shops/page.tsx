@@ -125,7 +125,7 @@ async function ShopList({ category }: { category: string | string[] | undefined 
     // DBクエリの実行
     let query = supabase
         .from('shops')
-        .select('id, name, slug, url, country, category, image_url, description, is_affiliate')
+        .select('id, name, slug, url, country, category, image_url, description, is_affiliate, ships_to_japan')
         .order('is_affiliate', { ascending: false })
         .order('name', { ascending: true })
 
@@ -153,6 +153,15 @@ async function ShopList({ category }: { category: string | string[] | undefined 
             {shops.map((shop) => (
                 <div key={shop.id} className="shop-card">
                     <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
+                        {shop.ships_to_japan === false && (
+                            <div style={{
+                                position: 'absolute', top: '10px', right: '10px',
+                                background: 'rgba(239, 68, 68, 0.9)', color: 'white',
+                                padding: '0.2rem 0.6rem', borderRadius: '6px',
+                                fontSize: '0.7rem', fontWeight: 700, zIndex: 1,
+                                backdropFilter: 'blur(4px)',
+                            }}>直送不可</div>
+                        )}
                         {shop.image_url ? (
                             <Image
                                 src={shop.image_url}

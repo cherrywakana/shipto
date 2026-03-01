@@ -138,6 +138,27 @@ export default async function ShopDetailPage({
                                 marginBottom: '1.5rem'
                             }}>{shop.name}</h1>
 
+                            {shop.ships_to_japan === false && (
+                                <div style={{
+                                    background: '#fff7ed',
+                                    border: '1px solid #fed7aa',
+                                    borderRadius: '12px',
+                                    padding: '1rem',
+                                    marginBottom: '1.5rem',
+                                    display: 'flex',
+                                    gap: '0.75rem',
+                                    alignItems: 'flex-start',
+                                }}>
+                                    <span style={{ fontSize: '1.25rem' }}>⚠️</span>
+                                    <div>
+                                        <p style={{ fontSize: '0.9rem', fontWeight: 700, color: '#9a3412', marginBottom: '0.25rem' }}>日本への直接発送に未対応の可能性があります</p>
+                                        <p style={{ fontSize: '0.85rem', color: '#c2410c', lineHeight: 1.5 }}>
+                                            このショップは現在、日本への直接発送に対応していない、または制限がある可能性があります。最新の配送ポリシーは必ず公式サイトでご確認ください。
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+
                             <p style={{
                                 fontSize: '1.1rem', color: '#475569', lineHeight: 1.8,
                             }}>
@@ -169,13 +190,20 @@ export default async function ShopDetailPage({
                 <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)' }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
 
-                        <div className="info-card">
+                        <div className="info-card" style={{
+                            background: shop.ships_to_japan === false ? '#fffcf0' : 'white',
+                            border: shop.ships_to_japan === false ? '1px solid #fde68a' : '1px solid #e2e8f0'
+                        }}>
                             <div className="info-title">
                                 <span style={{ fontSize: '1.5rem' }}>✈️</span>
                                 日本へ直送可能か
                             </div>
                             <div className="info-body">
-                                {shop.shipping_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
+                                {shop.ships_to_japan === false ? (
+                                    <strong style={{ color: '#b45309' }}>直送不可の可能性があります。公式情報を必ずご確認ください。</strong>
+                                ) : (
+                                    shop.shipping_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'
+                                )}
                             </div>
                         </div>
 

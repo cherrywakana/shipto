@@ -20,3 +20,6 @@ description: note×Amazonアソシエイト自律最適化サイクルの実行
 ## 監視項目
 - `data/logs/` の最新ログを確認し、エラーが出ていないかチェックする。
 - SQLiteデータベース内の `performance_logs` テーブルを確認する。
+
+> [!NOTE]
+> 現在、`collect`, `analyze`, `execute`, `learn` の各スクリプトは移行作業中のため、実装待ちの状態です。

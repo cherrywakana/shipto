@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync-affiliates": "node scripts/sync_affiliates.js",
+    "upload-thumbnails": "node scripts/upload_thumbnails.js",
+    "update-shipping": "node scripts/update_shipping_status.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.97.0",

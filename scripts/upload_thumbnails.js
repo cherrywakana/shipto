@@ -5,11 +5,11 @@ const path = require('path');
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
 const shops = [
-    { slug: 'cettire', filePath: 'scripts/temp_assets/cettire.webp' },
-    { slug: 'the-outnet', filePath: 'scripts/temp_assets/the-outnet.webp' },
-    { slug: 'lookfantastic', filePath: 'scripts/temp_assets/lookfantastic.webp' },
-    { slug: 'giglio', filePath: 'scripts/temp_assets/giglio.webp' },
-    { slug: 'sneakersnstuff', filePath: 'scripts/temp_assets/sneakersnstuff.webp' }
+    { slug: 'cettire', filePath: 'scripts/assets/cettire.webp' },
+    { slug: 'the-outnet', filePath: 'scripts/assets/the-outnet.webp' },
+    { slug: 'lookfantastic', filePath: 'scripts/assets/lookfantastic.webp' },
+    { slug: 'giglio', filePath: 'scripts/assets/giglio.webp' },
+    { slug: 'sneakersnstuff', filePath: 'scripts/assets/sneakersnstuff.webp' }
 ];
 
 async function upload() {
