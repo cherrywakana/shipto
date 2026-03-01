@@ -1,6 +1,21 @@
 const { createClient } = require('@supabase/supabase-js');
 const axios = require('axios');
 
+const fs = require('fs');
+const path = require('path');
+
+// Load environment variables from .env.local if not already set
+const envPath = path.resolve(__dirname, '../.env.local');
+if (fs.existsSync(envPath)) {
+    const envFile = fs.readFileSync(envPath, 'utf8');
+    envFile.split('\n').forEach(line => {
+        const [key, value] = line.split('=');
+        if (key && value && !process.env[key.trim()]) {
+            process.env[key.trim()] = value.trim();
+        }
+    });
+}
+
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));

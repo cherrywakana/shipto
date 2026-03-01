@@ -5,11 +5,16 @@ const path = require('path');
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
 const shops = [
-    { slug: 'cettire', filePath: 'scripts/assets/cettire.webp' },
-    { slug: 'the-outnet', filePath: 'scripts/assets/the-outnet.webp' },
-    { slug: 'lookfantastic', filePath: 'scripts/assets/lookfantastic.webp' },
-    { slug: 'giglio', filePath: 'scripts/assets/giglio.webp' },
-    { slug: 'sneakersnstuff', filePath: 'scripts/assets/sneakersnstuff.webp' }
+    { slug: 'stadium-goods', filePath: 'scripts/assets/stadium-goods.webp' },
+    { slug: 'jd-sports', filePath: 'scripts/assets/jd-sports.webp' },
+    { slug: 'beyond-retro', filePath: 'scripts/assets/beyond-retro.webp' },
+    { slug: 'footasylum', filePath: 'scripts/assets/footasylum.webp' },
+    { slug: 'triads', filePath: 'scripts/assets/triads.webp' },
+    { slug: 'allike-store', filePath: 'scripts/assets/allike-store.webp' },
+    { slug: 'bodega', filePath: 'scripts/assets/bodega.webp' },
+    { slug: 'klekt', filePath: 'scripts/assets/klekt.webp' },
+    { slug: 'flight-club', filePath: 'scripts/assets/flight-club.webp' },
+    { slug: 'urban-industry', filePath: 'scripts/assets/urban-industry.webp' }
 ];
 
 async function upload() {

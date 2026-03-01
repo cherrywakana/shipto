@@ -6,7 +6,7 @@ description: note×Amazonアソシエイト自律最適化サイクルの実行
 
 // turbo
 1. 最新データの収集
-`npm run collect`
+`npm run collect-brands`
 
 2. パフォーマンス分析と戦略策定
 `npm run analyze`

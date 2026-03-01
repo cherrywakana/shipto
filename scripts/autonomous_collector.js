@@ -4,6 +4,21 @@ const stealth = require('puppeteer-extra-plugin-stealth')();
 
 chromium.use(stealth);
 
+const fs = require('fs');
+const path = require('path');
+
+// Load environment variables from .env.local if not already set
+const envPath = path.resolve(__dirname, '../.env.local');
+if (fs.existsSync(envPath)) {
+    const envFile = fs.readFileSync(envPath, 'utf8');
+    envFile.split('\n').forEach(line => {
+        const [key, value] = line.split('=');
+        if (key && value && !process.env[key.trim()]) {
+            process.env[key.trim()] = value.trim();
+        }
+    });
+}
+
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -17,9 +32,54 @@ const SHOP_RULES = {
     'mytheresa': (slug) => `https://www.mytheresa.com/jp/en/men/designers/${slug}`,
     'net-a-porter': (slug) => `https://www.net-a-porter.com/en-jp/shop/designer/${slug}`,
     'the-outnet': (slug) => `https://www.theoutnet.com/ja-jp/shop/designers/${slug}`,
-    'shopbop': (slug) => `https://www.shopbop.com/${slug}/br/v=1/73023.htm`, // 実際は一部IDが必要だが、検索URLにフォールバック可能
+    'shopbop': (slug) => `https://www.shopbop.com/${slug}/br/v=1/73023.htm`,
     'hbx': (slug) => `https://hbx.com/jp/men/brands/${slug}`,
     'end': (slug) => `https://www.endclothing.com/jp/brands/${slug}`,
+    'end-clothing': (slug) => `https://www.endclothing.com/jp/brands/${slug}`,
+    'stadium-goods': (slug) => `https://www.stadiumgoods.com/en-jp/shopping/${slug}`,
+    'jd-sports': (slug) => `https://www.jdsports.co.uk/brand/${slug}/`,
+    'beyond-retro': (slug) => `https://www.beyondretro.com/search?q=${slug}`,
+    'footasylum': (slug) => `https://www.footasylum.com/brands/${slug}/`,
+    'triads': (slug) => `https://www.triads.co.uk/collections/${slug}`,
+    'allike-store': (slug) => `https://www.allikestore.com/collections/${slug}`,
+    'bodega': (slug) => `https://bdgastore.com/collections/${slug}`,
+    'klekt': (slug) => `https://www.klekt.com/catalog/sneakers?brand=${slug}`,
+    'flight-club': (slug) => `https://www.flightclub.com/${slug}`,
+    'urban-industry': (slug) => `https://www.urbanindustry.co.uk/collections/${slug}`,
+    'foot-patrol': (slug) => `https://www.footpatrol.com/brand/${slug}/`,
+    'size': (slug) => `https://www.size.co.uk/brand/${slug}/`,
+    'asphaltgold': (slug) => `https://www.asphaltgold.com/en/collections/${slug}`,
+    'overkill': (slug) => `https://www.overkillshop.com/en/brands/${slug}`,
+    'mr-porter': (slug) => `https://www.mrporter.com/en-jp/mens/designers/${slug}`,
+    'rei': (slug) => `https://www.rei.com/brand/${slug}`,
+    'sneakersnstuff': (slug) => `https://www.sneakersnstuff.com/en/search/searchbytext?key=${slug}`,
+    'mango': (slug) => `https://shop.mango.com/jp/search?kw=${slug}`,
+    'vestiaire-collective': (slug) => `https://www.vestiairecollective.com/designers/${slug}/`,
+    'nordstrom': (slug) => `https://www.nordstrom.com/brands/${slug}`,
+    'selfridges': (slug) => `https://www.selfridges.com/JP/en/cat/${slug}/`,
+    'revolve': (slug) => `https://www.revolve.com/${slug}/br/`,
+    'and-other-stories': (slug) => `https://www.stories.com/en/search.html?q=${slug}`,
+    'harrods': (slug) => `https://www.harrods.com/en-jp/shopping/${slug}`,
+    'ln-cc': (slug) => `https://www.ln-cc.com/en/designers/${slug}/`,
+    'stockx': (slug) => `https://stockx.com/search?s=${slug}`,
+    'cos': (slug) => `https://www.cos.com/en/search.html?q=${slug}`,
+    'giglio': (slug) => `https://www.giglio.com/eng/designers/${slug}/`,
+    '24s': (slug) => `https://www.24s.com/en-jp/${slug}`,
+    'svd': (slug) => `https://www.sivasdescalzo.com/en/designers/${slug}`,
+    'asos': (slug) => `https://www.asos.com/search/?q=${slug}`,
+    'goat': (slug) => `https://www.goat.com/search?query=${slug}`,
+    'backcountry': (slug) => `https://www.backcountry.com/${slug}`,
+    'yoox': (slug) => `https://www.yoox.com/jp/men/shoponline/${slug}`,
+    'fwrd': (slug) => `https://www.fwrd.com/brand/${slug}/`,
+    'italist': (slug) => `https://www.italist.com/en-jp/designers/${slug}/`,
+    'musinsa': (slug) => `https://global.musinsa.com/jp/brands/${slug}`,
+    'lookfantastic': (slug) => `https://www.lookfantastic.jp/brands/${slug}.list`,
+    'browns-fashion': (slug) => `https://www.brownsfashion.com/jp/shopping/men/${slug}/items.aspx`,
+    'garmentory': (slug) => `https://www.garmentory.com/sale/all/all/designer/${slug}`,
+    'llbean': (slug) => `https://www.llbean.co.jp/search?q=${slug}`,
+    'bstn': (slug) => `https://www.bstn.com/en/brands/${slug}`,
+    'saks-fifth-avenue': (slug) => `https://www.saksfifthavenue.com/brand/${slug}`,
+    'slamjam': (slug) => `https://slamjam.com/collections/${slug}`,
 };
 
 async function verifyBrandPage(page, url) {
