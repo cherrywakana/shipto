@@ -176,11 +176,24 @@ async function ShopList({ category }: { category: string | string[] | undefined 
                     </div>
 
                     <div style={{ padding: '1.5rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
                             <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#6366f1', background: 'rgba(99,102,241,0.1)', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
                                 {shop.category}
                             </span>
                             <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>📍 {shop.country}</span>
+                            <span style={{
+                                fontSize: '0.75rem',
+                                fontWeight: 600,
+                                color: shop.ships_to_japan === false ? '#ef4444' : '#10b981',
+                                background: shop.ships_to_japan === false ? 'rgba(239, 68, 68, 0.1)' : 'rgba(16, 185, 129, 0.1)',
+                                padding: '0.2rem 0.6rem',
+                                borderRadius: '4px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.2rem'
+                            }}>
+                                {shop.ships_to_japan === false ? '❌ 直送不可' : '✈️ 日本直送OK'}
+                            </span>
                         </div>
 
                         <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{shop.name}</h3>
