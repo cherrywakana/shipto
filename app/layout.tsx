@@ -2,12 +2,15 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ShipToJP - 日本から買える海外通販ガイド',
+  title: 'Direct Found - 日本から買える海外通販ガイド',
   description: '日本発送対応の海外通販サイトを厳選してご紹介。ブランドから探せて、関税や送料の情報もわかります。',
+  metadataBase: new URL('https://directfound.com'),
   openGraph: {
-    title: 'ShipToJP - 日本から買える海外通販ガイド',
+    title: 'Direct Found - 日本から買える海外通販ガイド',
     description: '日本発送対応の海外通販サイトを厳選してご紹介。ブランドから探せて、関税や送料の情報もわかります。',
     type: 'website',
+    url: 'https://directfound.com',
+    siteName: 'Direct Found',
   },
 }
 

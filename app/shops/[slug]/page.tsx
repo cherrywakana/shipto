@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 export default async function ShopDetailPage({
@@ -215,18 +216,7 @@ export default async function ShopDetailPage({
                     </div>
                 </section>
 
-                {/* Footer */}
-                <footer style={{
-                    padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem)',
-                    background: '#0f172a',
-                    display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem',
-                }}>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ fontSize: '1rem', fontWeight: 700, color: 'white' }}>ShipTo</span>
-                        <span style={{ fontSize: '1rem', fontWeight: 700, background: 'linear-gradient(135deg, #818cf8, #a78bfa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>JP</span>
-                    </div>
-                    <p style={{ fontSize: '0.75rem', color: '#475569' }}>© {new Date().getFullYear()} ShipToJP. All rights reserved.</p>
-                </footer>
+                <Footer />
             </main>
         </>
     )

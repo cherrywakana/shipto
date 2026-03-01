@@ -43,7 +43,7 @@ export default function Header() {
           letterSpacing: '-0.03em',
           color: '#0f172a',
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}>ShipTo</span>
+        }}>Direct</span>
         <span style={{
           fontSize: '1.15rem',
           fontWeight: 700,
@@ -52,7 +52,7 @@ export default function Header() {
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}>JP</span>
+        }}>Found</span>
       </Link>
 
       <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="desktop-nav">

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Suspense } from 'react'
 import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const revalidate = 60 // 60秒間キャッシュを利用
 
@@ -114,6 +115,7 @@ export default async function ShopsPage(props: any) {
                         <ShopList category={category} />
                     </Suspense>
                 </section>
+                <Footer />
             </main>
         </>
     )

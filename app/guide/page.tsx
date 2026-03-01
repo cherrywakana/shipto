@@ -1,6 +1,7 @@
 'use client'
 
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 export default function GuidePage() {
@@ -111,7 +112,7 @@ export default function GuidePage() {
                         </Link>
                     </div>
                 </section>
-
+                <Footer />
             </main>
         </>
     )

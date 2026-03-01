@@ -1,6 +1,7 @@
 'use client'
 
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 const categories = [
@@ -128,19 +129,19 @@ export default function Home() {
               width: '600px', height: '600px', borderRadius: '50%',
               background: 'radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)',
               animation: 'float 8s ease-in-out infinite',
-            }}/>
+            }} />
             <div style={{
               position: 'absolute', bottom: '0%', left: '-10%',
               width: '500px', height: '500px', borderRadius: '50%',
               background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)',
               animation: 'float 10s ease-in-out infinite 2s',
-            }}/>
+            }} />
             <div style={{
               position: 'absolute', top: '30%', right: '15%',
               width: '200px', height: '200px', borderRadius: '50%',
               background: 'radial-gradient(circle, rgba(167,139,250,0.15) 0%, transparent 70%)',
               animation: 'float 6s ease-in-out infinite 1s',
-            }}/>
+            }} />
           </div>
 
           <div style={{ position: 'relative', maxWidth: '760px' }}>
@@ -151,7 +152,7 @@ export default function Home() {
               borderRadius: '100px', padding: '0.35rem 1rem',
               marginBottom: '1.75rem',
             }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#6366f1', display: 'block' }}/>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#6366f1', display: 'block' }} />
               <span style={{ fontSize: '0.8rem', fontWeight: 500, color: '#6366f1', letterSpacing: '0.02em' }}>
                 日本から買える海外通販ガイド
               </span>
@@ -300,12 +301,12 @@ export default function Home() {
               position: 'absolute', top: '-30%', right: '-10%',
               width: '500px', height: '500px', borderRadius: '50%',
               background: 'rgba(255,255,255,0.06)',
-            }}/>
+            }} />
             <div style={{
               position: 'absolute', bottom: '-20%', left: '-5%',
               width: '400px', height: '400px', borderRadius: '50%',
               background: 'rgba(255,255,255,0.04)',
-            }}/>
+            }} />
           </div>
 
           <div style={{ position: 'relative' }}>
@@ -329,27 +330,7 @@ export default function Home() {
         </section>
 
         {/* ---- Footer ---- */}
-        <footer style={{
-          padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem)',
-          background: '#0f172a',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem',
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.1rem' }}>
-            <span style={{ fontSize: '1rem', fontWeight: 700, color: 'white', letterSpacing: '-0.02em' }}>ShipTo</span>
-            <span style={{
-              fontSize: '1rem', fontWeight: 700, letterSpacing: '-0.02em',
-              background: 'linear-gradient(135deg, #818cf8, #a78bfa)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>JP</span>
-          </div>
-          <p style={{ fontSize: '0.75rem', color: '#475569' }}>
-            © {new Date().getFullYear()} ShipToJP. All rights reserved.
-          </p>
-        </footer>
+        <Footer />
       </main>
     </>
   )
