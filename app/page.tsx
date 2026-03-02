@@ -5,18 +5,20 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 const categories = [
-  { label: 'ラグジュアリー・百貨店', icon: '💎', href: '/shops?category=ラグジュアリー・百貨店' },
-  { label: 'セレクト・トレンド', icon: '👗', href: '/shops?category=セレクト・トレンド' },
-  { label: 'ストリート・スニーカー', icon: '👟', href: '/shops?category=ストリート・スニーカー' },
-  { label: 'アウトドア', icon: '🏕️', href: '/shops?category=アウトドア' },
-  { label: 'アウトレット・リセール', icon: '🏷️', href: '/shops?category=アウトレット・リセール' },
-  { label: 'アジア・トレンド', icon: '🇰🇷', href: '/shops?category=アジア・トレンド' },
+  { label: 'ストリート・スニーカー', icon: '👟', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
+  { label: 'ラグジュアリー・百貨店', icon: '💎', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・百貨店') },
+  { label: 'セレクト・トレンド', icon: '👗', href: '/shops?category=' + encodeURIComponent('セレクト・トレンド') },
+  { label: 'コスメ・ビューティー', icon: '💄', href: '/shops?category=' + encodeURIComponent('コスメ・ビューティー'), isNew: true },
+  { label: 'アウトドア', icon: '🏕️', href: '/shops?category=' + encodeURIComponent('アウトドア') },
+  { label: 'アウトレット・リセール', icon: '🏷️', href: '/shops?category=' + encodeURIComponent('アウトレット・リセール') },
+  { label: 'アジア・トレンド', icon: '🇰🇷', href: '/shops?category=' + encodeURIComponent('アジア・トレンド') },
+  { label: 'ヴィンテージ・古着', icon: '🧥', href: '/shops?category=' + encodeURIComponent('ヴィンテージ・古着'), isNew: true },
 ]
 
 const stats = [
-  { value: '300+', label: 'ショップ掲載数' },
-  { value: '1,000+', label: 'ブランド対応' },
-  { value: '50+', label: 'ガイド記事' },
+  { value: '60+', label: '掲載ショップ数' },
+  { value: '20+', label: '注目ブランド' },
+  { value: '50+', label: '徹底ガイド記事' },
 ]
 
 export default function Home() {
@@ -230,13 +232,21 @@ export default function Home() {
 
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 150px), 1fr))',
-              gap: '1rem',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 180px), 1fr))',
+              gap: '1.25rem',
             }}>
-              {categories.map((cat) => (
-                <Link key={cat.label} href={cat.href} className="cat-card">
-                  <div style={{ fontSize: '1.75rem', marginBottom: '0.6rem' }}>{cat.icon}</div>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#1e293b' }}>{cat.label}</div>
+              {categories.map((cat: any) => (
+                <Link key={cat.label} href={cat.href} className="cat-card" style={{ position: 'relative' }}>
+                  {cat.isNew && (
+                    <span style={{
+                      position: 'absolute', top: '-8px', right: '-8px',
+                      background: '#ef4444', color: 'white', fontSize: '0.65rem',
+                      fontWeight: 800, padding: '2px 8px', borderRadius: '100px',
+                      boxShadow: '0 2px 8px rgba(239, 68, 68, 0.4)',
+                    }}>NEW</span>
+                  )}
+                  <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{cat.icon}</div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#1e293b' }}>{cat.label}</div>
                 </Link>
               ))}
             </div>
