@@ -84,7 +84,7 @@ export default async function ArticlesPage() {
                                                         </span>
                                                     )}
                                                     <span style={{ color: '#64748b' }}>
-                                                        {new Date(post.created_at).toLocaleDateString('ja-JP')}
+                                                        {post.created_at ? new Date(post.created_at).toLocaleDateString('ja-JP') : ''}
                                                     </span>
                                                 </div>
                                                 <h2 style={{

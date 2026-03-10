@@ -117,7 +117,7 @@ export default async function ArticleDetailPage({
                                 }}>{post.category}</span>
                             )}
                             <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>
-                                🗓️ {new Date(post.created_at).toLocaleDateString('ja-JP')}
+                                {post.created_at ? `🗓️ ${new Date(post.created_at).toLocaleDateString('ja-JP')}` : ''}
                             </span>
                         </div>
 
