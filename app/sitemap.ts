@@ -19,6 +19,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/brands`,
+            lastModified: new Date(),
+            changeFrequency: 'daily' as const,
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/shops`,
             lastModified: new Date(),
             changeFrequency: 'daily' as const,
@@ -67,6 +73,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.6,
         }))
         routes.push(...articleRoutes)
+    }
+
+    // Get dynamic brands from DB
+    const { data: brands } = await supabase
+        .from('brands')
+        .select('slug, created_at')
+
+    if (brands) {
+        const brandRoutes = brands.map((brand) => ({
+            url: `${baseUrl}/brands/${brand.slug}`,
+            lastModified: new Date(brand.created_at || new Date()),
+            changeFrequency: 'daily' as const,
+            priority: 0.8,
+        }))
+        routes.push(...brandRoutes)
     }
 
     return routes

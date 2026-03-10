@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 const navLinks = [
   { label: 'ショップ', href: '/shops' },
+  { label: 'ブランド', href: '/brands' },
   { label: '記事', href: '/articles' },
   { label: 'ガイド', href: '/guide' },
 ]
