@@ -48,6 +48,7 @@ export default async function BrandDetailPage({
       shops:shop_id (
         name,
         slug,
+        url,
         image_url,
         description,
         is_affiliate
@@ -97,7 +98,7 @@ export default async function BrandDetailPage({
                     {availableShops.length > 0 ? (
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}>
                             {availableShops.map((shop: any) => (
-                                <Link key={shop.slug} href={`/shops/${shop.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <a key={shop.slug} href={shop.brand_url || shop.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                                     <div style={{
                                         background: 'white', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0',
                                         boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)', transition: 'all 0.3s', height: '100%',
@@ -126,11 +127,12 @@ export default async function BrandDetailPage({
                                                 {shop.description}
                                             </p>
                                         </div>
-                                        <div style={{ padding: '1rem 1.5rem', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'flex-end' }}>
-                                            <span style={{ fontSize: '0.875rem', fontWeight: 600, color: '#6366f1' }}>詳細を見る →</span>
+                                        <div style={{ padding: '1rem 1.5rem', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '0.4rem' }}>
+                                            <span style={{ fontSize: '0.875rem', fontWeight: 600, color: '#6366f1' }}>ショップへ移動</span>
+                                            <span style={{ fontSize: '0.75rem' }}>↗️</span>
                                         </div>
                                     </div>
-                                </Link>
+                                </a>
                             ))}
                         </div>
                     ) : (
