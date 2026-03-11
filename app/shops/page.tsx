@@ -60,19 +60,19 @@ export default async function ShopsPage(props: any) {
             gap: 0.5rem;
           }
           .cat-tab.active {
-            background: #0f172a;
+            background: #111110;
             color: white;
-            box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
+            box-shadow: 0 10px 15px -3px rgba(17, 17, 16, 0.2), 0 0 0 2px var(--cognac-mid);
           }
           .cat-tab.inactive {
             background: white;
-            color: #64748b;
-            border-color: #e2e8f0;
+            color: #6b6b69;
+            border-color: #e5e5e3;
           }
           .cat-tab.inactive:hover {
-            background: #f8fafc;
-            border-color: #cbd5e1;
-            color: #0f172a;
+            background: #fafaf9;
+            border-color: #d4d4d2;
+            color: #111110;
             transform: translateY(-1px);
           }
           @keyframes pulse {
@@ -89,7 +89,7 @@ export default async function ShopsPage(props: any) {
                 }}>
                     <h1 style={{
                         fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 850,
-                        letterSpacing: '-0.04em', color: '#0f172a', lineHeight: 1.1, marginBottom: '1.5rem',
+                        letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '1.5rem',
                     }}>
                         ショップ一覧
                     </h1>

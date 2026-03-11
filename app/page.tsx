@@ -69,9 +69,10 @@ export default async function Home() {
           .marquee-dot {
             width: 3px;
             height: 3px;
-            background: #d4d4d2;
+            background: var(--cognac);
             border-radius: 50%;
             flex-shrink: 0;
+            opacity: 0.5;
           }
 
 
@@ -116,7 +117,7 @@ export default async function Home() {
             font-size: 0.65rem;
             font-weight: 700;
             letter-spacing: 0.12em;
-            color: #c8c8c6;
+            color: var(--cognac);
             margin-bottom: 0.25rem;
           }
           .cat-name-v2 {
@@ -193,9 +194,10 @@ export default async function Home() {
           .article-card-link {
             margin-top: auto;
             font-size: 0.75rem;
-            font-weight: 600;
-            color: #a1a19f;
+            font-weight: 700;
+            color: var(--cognac);
             letter-spacing: 0.04em;
+            text-transform: uppercase;
           }
         `}</style>
 

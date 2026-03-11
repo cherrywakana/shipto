@@ -41,23 +41,24 @@ export default function GuidePage() {
     return (
         <>
             <Header />
-            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', background: '#f8fafc', minHeight: '100vh' }}>
+            <main style={{ fontFamily: 'var(--font-sans)', background: 'var(--bg)', minHeight: '100vh' }}>
 
                 {/* Hero Section */}
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem',
                     background: '#fafaf9',
                     textAlign: 'center',
-                    borderBottom: '1px solid #e2e8f0',
+                    borderBottom: '1px solid #e5e5e3',
                 }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                         <h1 style={{
-                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 850,
-                            letterSpacing: '-0.04em', color: '#0f172a', lineHeight: 1.1, marginBottom: '1.5rem',
+                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 800,
+                            letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '1.5rem',
+                            fontFamily: 'var(--font-serif)',
                         }}>
                             海外通販ガイド
                         </h1>
-                        <p style={{ fontSize: '1.125rem', color: '#64748b', lineHeight: 1.6 }}>
+                        <p style={{ fontSize: '1rem', color: '#6b6b69', lineHeight: 1.6 }}>
                             初めての海外通販でも安心して楽しめるよう、<br />知っておきたい基礎知識やコツを分かりやすくまとめました。
                         </p>
                     </div>
@@ -67,12 +68,12 @@ export default function GuidePage() {
                 <section style={{ padding: '4rem clamp(1.5rem, 5vw, 4rem)', maxWidth: '900px', margin: '0 auto' }}>
                     <div style={{ display: 'grid', gap: '3rem' }}>
                         {sections.map((section) => (
-                            <div key={section.title} style={{ background: 'white', borderRadius: '24px', padding: '2.5rem', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+                            <div key={section.title} style={{ background: 'white', borderRadius: '24px', padding: '2.5rem', border: '1px solid #e5e5e3', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                                     <span style={{ fontSize: '2rem' }}>{section.icon}</span>
-                                    <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>{section.title}</h2>
+                                    <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#111110', margin: 0, fontFamily: 'var(--font-serif)' }}>{section.title}</h2>
                                 </div>
-
+ 
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                                     {section.articles.map((article) => (
                                         <Link
@@ -83,16 +84,15 @@ export default function GuidePage() {
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 gap: '0.75rem',
-                                                color: '#334155',
-                                                fontSize: '1.1rem',
+                                                color: '#333332',
+                                                fontSize: '1rem',
                                                 fontWeight: 500,
                                                 padding: '0.5rem 0',
                                                 transition: 'color 0.2s',
                                             }}
-                                            onMouseEnter={(e) => e.currentTarget.style.color = '#111110'}
-                                            onMouseLeave={(e) => e.currentTarget.style.color = '#334155'}
+                                            className="guide-link"
                                         >
-                                            <span style={{ color: '#94a3b8' }}>•</span>
+                                            <span style={{ color: 'var(--cognac)', fontSize: '1.2rem' }}>•</span>
                                             {article.title}
                                         </Link>
                                     ))}
@@ -101,16 +101,20 @@ export default function GuidePage() {
                         ))}
                     </div>
 
-                    <div style={{ marginTop: '5rem', padding: '3rem', background: '#0f172a', borderRadius: '24px', textAlign: 'center', color: 'white' }}>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem' }}>お探しの情報はありましたか？</h3>
-                        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>ブランド別の個別ガイドは、各ショップ詳細ページからもご確認いただけます。</p>
+                    <div style={{ marginTop: '5rem', padding: '3.5rem clamp(1.5rem, 5vw, 3rem)', background: '#111110', borderRadius: '24px', textAlign: 'center', color: 'white' }}>
+                        <h3 style={{ fontSize: '1.75rem', fontWeight: 700, marginBottom: '1rem', fontFamily: 'var(--font-serif)' }}>お探しの情報はありましたか？</h3>
+                        <p style={{ color: '#a1a19f', marginBottom: '2.5rem', fontSize: '0.95rem' }}>ブランド別の個別ガイドは、各ショップ詳細ページからもご確認いただけます。</p>
                         <Link href="/shops" style={{
-                            display: 'inline-block', background: 'white', color: '#0f172a', padding: '1rem 2.5rem', borderRadius: '999px',
-                            textDecoration: 'none', fontWeight: 700, transition: 'transform 0.2s'
-                        }}>
+                            display: 'inline-block', background: 'white', color: '#111110', padding: '0.85rem 2.5rem', borderRadius: '8px',
+                            textDecoration: 'none', fontWeight: 700, fontSize: '0.875rem', transition: 'all 0.2s'
+                        }} className="guide-footer-btn">
                             ショップ一覧へ戻る
                         </Link>
                     </div>
+                    <style>{`
+                        .guide-link:hover { color: var(--cognac) !important; }
+                        .guide-footer-btn:hover { background: #e8e8e6 !important; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+                    `}</style>
                 </section>
                 <Footer />
             </main>

@@ -36,7 +36,7 @@ export default async function BrandsPage() {
     return (
         <>
             <Header />
-            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', background: '#f8fafc', minHeight: '100vh' }}>
+            <main style={{ fontFamily: 'var(--font-sans)', background: 'var(--bg)', minHeight: '100vh' }}>
 
                 {/* Hero Section */}
                 <section style={{
@@ -47,12 +47,13 @@ export default async function BrandsPage() {
                 }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                         <h1 style={{
-                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 850,
-                            letterSpacing: '-0.04em', color: '#0f172a', lineHeight: 1.1, marginBottom: '1.5rem',
+                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 800,
+                            letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '1.5rem',
+                            fontFamily: 'var(--font-serif)',
                         }}>
                             ブランド一覧
                         </h1>
-                        <p style={{ fontSize: '1.125rem', color: '#64748b', lineHeight: 1.6 }}>
+                        <p style={{ fontSize: '1rem', color: '#6b6b69', lineHeight: 1.6 }}>
                             お気に入りのブランドを取り扱うショップを探す
                         </p>
                     </div>
@@ -65,10 +66,10 @@ export default async function BrandsPage() {
                         {keys.map(key => (
                             <a key={key} href={`#section-${key}`} style={{
                                 width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                background: 'white', border: '1px solid #e2e8f0', borderRadius: '8px',
+                                background: 'white', border: '1px solid #e5e5e3', borderRadius: '8px',
                                 textDecoration: 'none', color: '#111110', fontWeight: 600, fontSize: '0.9rem',
                                 transition: 'all 0.2s',
-                            }}>
+                            }} className="brand-index-link">
                                 {key}
                             </a>
                         ))}
@@ -78,23 +79,24 @@ export default async function BrandsPage() {
                         {keys.map(key => (
                             <div key={key} id={`section-${key}`}>
                                 <h2 style={{
-                                    fontSize: '2rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem',
-                                    borderBottom: '2px solid #111110', display: 'inline-block', paddingRight: '1rem'
+                                    fontSize: '2rem', fontWeight: 800, color: '#111110', marginBottom: '2rem',
+                                    borderBottom: '2px solid var(--cognac)', display: 'inline-block', paddingRight: '1rem',
+                                    fontFamily: 'var(--font-serif)',
                                 }}>
                                     {key}
                                 </h2>
                                 <div style={{
                                     display: 'grid',
-                                    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-                                    gap: '1rem'
+                                    gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                                    gap: '1.25rem'
                                 }}>
                                     {groupedBrands[key]?.map(brand => (
                                         <Link key={brand.id} href={`/brands/${brand.slug}`} style={{
-                                            textDecoration: 'none', color: '#475569', fontSize: '1rem',
-                                            padding: '0.5rem 1rem', background: 'white', borderRadius: '8px',
-                                            border: '1px solid #e2e8f0', transition: 'all 0.2s',
-                                            fontWeight: 500,
-                                        }}>
+                                            textDecoration: 'none', color: '#333332', fontSize: '0.95rem',
+                                            padding: '0.75rem 1.25rem', background: 'white', borderRadius: '12px',
+                                            border: '1px solid #e5e5e3', transition: 'all 0.2s',
+                                            fontWeight: 500, display: 'flex', alignItems: 'center',
+                                        }} className="brand-link-card">
                                             {brand.name}
                                         </Link>
                                     ))}
@@ -102,6 +104,10 @@ export default async function BrandsPage() {
                             </div>
                         ))}
                     </div>
+                    <style>{`
+                        .brand-index-link:hover { border-color: var(--cognac) !important; color: var(--cognac) !important; transform: translateY(-2px); }
+                        .brand-link-card:hover { border-color: #d4d4d2 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transform: translateY(-1px); }
+                    `}</style>
                 </section>
 
                 <Footer />

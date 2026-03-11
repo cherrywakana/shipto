@@ -40,7 +40,7 @@ export default function Header() {
         <span style={{
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
           width: '28px', height: '28px', borderRadius: '7px',
-          background: '#111110', color: '#fafaf9',
+          background: 'var(--cognac)', color: '#fafaf9',
           fontSize: '0.75rem', fontWeight: 800, letterSpacing: '-0.03em',
           fontFamily: 'var(--font-sans)',
         }}>DF</span>
