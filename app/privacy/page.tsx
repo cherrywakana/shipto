@@ -62,7 +62,7 @@ export default function PrivacyPage() {
                 {/* Hero Section */}
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #f8f7ff 40%, #ede9fe 100%)',
+                    background: '#fafaf9',
                     textAlign: 'center',
                     borderBottom: '1px solid #e2e8f0',
                 }}>

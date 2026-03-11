@@ -52,7 +52,7 @@ export default async function ShopDetailPage({
             font-size: 2rem;
             margin-bottom: 1rem;
             display: inline-block;
-            background: #f8f7ff;
+            background: #fafaf9;
             padding: 1rem;
             border-radius: 12px;
           }
@@ -79,7 +79,7 @@ export default async function ShopDetailPage({
             margin-bottom: 2rem;
             text-align: center;
             padding: 2rem 1.5rem;
-            background: linear-gradient(135deg, #f8f7ff 0%, #ede9fe 100%);
+            background: #f3f3f1;
             border-radius: 24px;
             border: 1px solid rgba(99,102,241,0.15);
           }
@@ -109,7 +109,7 @@ export default async function ShopDetailPage({
                 {/* Hero */}
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem)',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #f8f7ff 40%, #ede9fe 100%)',
+                    background: '#fafaf9',
                     borderBottom: '1px solid #e2e8f0'
                 }}>
                     <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>

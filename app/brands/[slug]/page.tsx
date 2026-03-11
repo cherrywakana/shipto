@@ -81,7 +81,7 @@ export default async function BrandDetailPage({
                 {/* Header Section */}
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #f8f7ff 40%, #ede9fe 100%)',
+                    background: '#fafaf9',
                     borderBottom: '1px solid #e2e8f0',
                 }}>
                     <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
