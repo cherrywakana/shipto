@@ -125,7 +125,10 @@ const NEGATIVE_KEYWORDS = [
     'oops... we were unable to find', // Size?
     'search results for: ""',
     'no matching items',
-    '現在、お客様の条件に一致する項目はありません'
+    '現在、お客様の条件に一致する項目はありません',
+    '商品が見つかりません',
+    '0 of 0 products',
+    '0 products'
 ];
 
 async function verifyBrandPage(page, url, brandName) {

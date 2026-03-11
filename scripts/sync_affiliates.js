@@ -73,18 +73,45 @@ async function syncAffiliates() {
         let isMatch = false;
         try {
             const urlObj = new URL(shop.url);
-            const host = urlObj.hostname.toLowerCase().replace(/^www\./, '');
+            const shopHost = urlObj.hostname.toLowerCase().replace(/^www\./, '');
+            const shopParts = shopHost.split('.');
 
-            if (affiliateDomains.has(host)) {
-                isMatch = true;
+            // Check for exact match or subdomain match
+            // e.g., if affiliateDomains has 'jdsports.com', it should match 'global.jdsports.com'
+            for (const affDomain of affiliateDomains) {
+                if (shopHost === affDomain || shopHost.endsWith('.' + affDomain)) {
+                    isMatch = true;
+                    break;
+                }
+                // Reverse check: if shopHost is 'jdsports.com' and affDomain is 'global.jdsports.com'
+                if (affDomain.endsWith('.' + shopHost)) {
+                    isMatch = true;
+                    break;
+                }
             }
+
+            // Fallback: name based matching for known big brands if domain fails
+            if (!isMatch) {
+                const normalizedShopName = shop.name.toLowerCase();
+                const knownAffiliates = ['jd sports', 'jdsports', 'ssense', 'farfetch', 'mytheresa'];
+                if (knownAffiliates.some(name => normalizedShopName.includes(name))) {
+                    // Double check if any affiliate domain contains the brand name
+                    for (const affDomain of affiliateDomains) {
+                        if (affDomain.includes('jdsports') && normalizedShopName.includes('jd sports')) {
+                            isMatch = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
         } catch (e) {
             console.warn(`Could not parse URL for shop: ${shop.name} (${shop.url})`);
         }
 
         if (isMatch) {
             await supabase.from('shops').update({ is_affiliate: true }).eq('id', shop.id);
-            console.log(`✅ Affiliate: ${shop.name}`);
+            console.log(`✅ Affiliate Found: ${shop.name} (${shop.url})`);
         } else {
             await supabase.from('shops').update({ is_affiliate: false }).eq('id', shop.id);
             console.log(`⚪ Non-Affiliate: ${shop.name}`);

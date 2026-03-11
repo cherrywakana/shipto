@@ -16,73 +16,86 @@ if (fs.existsSync(envPath)) {
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
-const shops = [
-    { slug: 'stadium-goods', filePath: 'scripts/assets/stadium-goods.webp' },
-    { slug: 'jd-sports', filePath: 'scripts/assets/jd-sports.webp' },
-    { slug: 'beyond-retro', filePath: 'scripts/assets/beyond-retro.webp' },
-    { slug: 'footasylum', filePath: 'scripts/assets/footasylum.webp' },
-    { slug: 'triads', filePath: 'scripts/assets/triads.webp' },
-    { slug: 'allike-store', filePath: 'scripts/assets/allike-store.webp' },
-    { slug: 'bodega', filePath: 'scripts/assets/bodega.webp' },
-    { slug: 'klekt', filePath: 'scripts/assets/klekt.webp' },
-    { slug: 'flight-club', filePath: 'scripts/assets/flight-club.webp' },
-    { slug: 'urban-industry', filePath: 'scripts/assets/urban-industry.webp' },
-    // New Shops
-    { slug: 'cult-beauty', filePath: 'scripts/assets/cult-beauty.webp' },
-    { slug: 'antonioli', filePath: 'scripts/assets/antonioli.webp' },
-    { slug: 'beauty-bay', filePath: 'scripts/assets/beauty-bay.webp' },
-    { slug: 'tres-bien', filePath: 'scripts/assets/tres-bien.webp' },
-    { slug: 'goodhood', filePath: 'scripts/assets/goodhood.webp' },
-    { slug: 'foot-district', filePath: 'scripts/assets/foot-district.webp' },
-    { slug: 'naked-cph', filePath: 'scripts/assets/naked-cph.webp' },
-    { slug: 'olive-young', filePath: 'scripts/assets/olive-young.webp' },
-    { slug: 'yesstyle', filePath: 'scripts/assets/yesstyle.webp' },
-    { slug: 'vintage-qoo', filePath: 'scripts/assets/vintage-qoo.webp' },
-    { slug: 'ragtag', filePath: 'scripts/assets/ragtag.webp' },
-    { slug: 'hedy', filePath: 'scripts/assets/hedy.webp' },
-    { slug: 'playful', filePath: 'scripts/assets/playful.webp' },
-    { slug: 'sephora', filePath: 'scripts/assets/sephora.webp' },
-    { slug: 'liberty-london', filePath: 'scripts/assets/liberty-london.webp' },
-    { slug: 'veja', filePath: 'scripts/assets/veja.webp' },
-    { slug: 'space-nk', filePath: 'scripts/assets/space-nk.webp' },
-    { slug: 'currentbody', filePath: 'scripts/assets/currentbody.webp' },
-    { slug: 'kith', filePath: 'scripts/assets/kith.webp' },
-    { slug: 'patta', filePath: 'scripts/assets/patta.webp' },
-    { slug: 'highsnobiety', filePath: 'scripts/assets/highsnobiety.webp' }
-];
+async function uploadFile(slug, filePath) {
+    const fileContent = fs.readFileSync(filePath);
+    const fileName = `${slug}.webp`;
 
-async function upload() {
-    for (const shop of shops) {
-        const fileContent = fs.readFileSync(shop.filePath);
-        const fileName = `${shop.slug}.webp`;
+    console.log(`\n🚀 Uploading ${fileName} to storage...`);
+    const { data, error } = await supabase.storage
+        .from('shop-thumbnails')
+        .upload(fileName, fileContent, {
+            contentType: 'image/webp',
+            upsert: true
+        });
 
-        console.log(`Uploading ${fileName}...`);
-        const { data, error } = await supabase.storage
-            .from('shop-thumbnails')
-            .upload(fileName, fileContent, {
-                contentType: 'image/webp',
-                upsert: true
-            });
+    if (error) {
+        console.error(`  ❌ Error uploading ${fileName}:`, error.message);
+        return;
+    }
 
-        if (error) {
-            console.error(`Error uploading ${fileName}:`, error.message);
-            continue;
-        }
+    // キャッシュバスターとしてタイムスタンプを付与
+    const timestamp = Date.now();
+    const imageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/shop-thumbnails/${fileName}?t=${timestamp}`;
 
-        const imageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/shop-thumbnails/${fileName}`;
+    console.log(`  🔗 Updating database for ${slug}...`);
+    const { error: dbError } = await supabase
+        .from('shops')
+        .update({ image_url: imageUrl })
+        .eq('slug', slug);
 
-        console.log(`Updating database for ${shop.slug}...`);
-        const { error: dbError } = await supabase
-            .from('shops')
-            .update({ image_url: imageUrl })
-            .eq('slug', shop.slug);
-
-        if (dbError) {
-            console.error(`Error updating DB for ${shop.slug}:`, dbError.message);
-        } else {
-            console.log(`Successfully updated ${shop.slug} with ${imageUrl}`);
-        }
+    if (dbError) {
+        console.error(`  ❌ Error updating DB for ${slug}:`, dbError.message);
+    } else {
+        console.log(`  ✨ Successfully updated ${slug} with ${imageUrl}`);
     }
 }
 
-upload();
+async function start() {
+    const assetsDir = path.join(__dirname, 'assets', 'shops');
+    const downloadsShopsDir = path.join(require('os').homedir(), 'Downloads', 'directfound-shops');
+
+    // 다운ロードフォルダにキャプチャ画像があれば手元に移動する
+    if (fs.existsSync(downloadsShopsDir)) {
+        console.log('--- Checking Downloads/directfound-shops/ for new captures ---');
+        const dlFiles = fs.readdirSync(downloadsShopsDir).filter(f => f.endsWith('.webp'));
+
+        dlFiles.forEach(f => {
+            const oldPath = path.join(downloadsShopsDir, f);
+            const newPath = path.join(assetsDir, f);
+            fs.renameSync(oldPath, newPath);
+            console.log(`  📥 Moved ${f} from Downloads to assets/shops/`);
+        });
+    }
+
+    const args = process.argv.slice(2);
+
+    // 引数（slug）があればそれだけを処理
+    if (args.length > 0) {
+        const slug = args[0];
+        const filePath = path.join(assetsDir, `${slug}.webp`);
+        if (fs.existsSync(filePath)) {
+            await uploadFile(slug, filePath);
+        } else {
+            console.error(`Error: File not found at ${filePath}`);
+        }
+        return;
+    }
+
+    // 引数がない場合は assets ディレクトリ内の全ての .webp を処理
+    console.log('\n--- Scanning scripts/assets/shops/ for .webp files ---');
+    const files = fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp'));
+
+    if (files.length === 0) {
+        console.log('No .webp files found in scripts/assets/shops/');
+        return;
+    }
+
+    for (const file of files) {
+        const slug = path.basename(file, '.webp');
+        const filePath = path.join(assetsDir, file);
+        await uploadFile(slug, filePath);
+    }
+}
+
+start().catch(console.error);
+
