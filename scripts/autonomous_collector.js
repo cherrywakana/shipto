@@ -130,7 +130,11 @@ const NEGATIVE_KEYWORDS = [
     '0 of 0 products',
     '0 products',
     'まだ商品がありません',
-    'hbx.catalog.no_products'
+    'hbx.catalog.no_products',
+    'お探しのアイテムが見つかりませんでした',
+    'お探しのページが見つかりません',
+    'Pre-owned',
+    '中古'
 ];
 
 async function verifyBrandPage(page, url, brandName) {
