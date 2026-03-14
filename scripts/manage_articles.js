@@ -170,6 +170,18 @@ async function publishArticle(postData, localImagePath = null) {
     }
 
     console.log('✅ Article published successfully!');
+
+    // 5. Update brand flag (Best effort - won't fail if column doesn't exist)
+    try {
+        const brandSlugForFlag = postData.slug.replace('-overseas-shopping-guide', '');
+        await supabase
+            .from('brands')
+            .update({ has_guide_article: true })
+            .eq('slug', brandSlugForFlag);
+        console.log(`ℹ️ Updated has_guide_article flag for: ${brandSlugForFlag}`);
+    } catch (e) {
+        // Silently ignore if column doesn't exist yet
+    }
 }
 
 // Module exports for use in other generation scripts

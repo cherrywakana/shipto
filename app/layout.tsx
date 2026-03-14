@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     url: 'https://directfound.com',
     siteName: 'Direct Found',
   },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({

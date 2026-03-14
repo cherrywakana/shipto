@@ -235,8 +235,14 @@ async function verifyBrandPage(page, url, brandName) {
 async function runAutonomousCollector() {
     console.log('--- 🤖 Autonomous Brand Collector Starting ---');
 
-    // 1. 調査対象のブランドを取得（1件ずつ丁寧に回る）
-    const { data: brands, error: brandError } = await supabase.from('brands').select('*');
+    // 1. 調査対象のブランドを取得（引数があれば特定、なければ全件）
+    const targetBrandSlug = process.argv[2];
+    let query = supabase.from('brands').select('*');
+    if (targetBrandSlug) {
+        query = query.eq('slug', targetBrandSlug);
+        console.log(`🎯 Targeting specific brand: ${targetBrandSlug}`);
+    }
+    const { data: brands, error: brandError } = await query;
     if (brandError) throw brandError;
 
     // 2. ブラウザを起動（Stealthモード）
