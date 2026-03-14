@@ -21,6 +21,7 @@ export default async function ShopsPage(props: any) {
         { label: 'アウトレット・リセール', href: '/shops?category=' + encodeURIComponent('アウトレット・リセール') },
         { label: 'アジア・トレンド', href: '/shops?category=' + encodeURIComponent('アジア・トレンド') },
         { label: 'ヴィンテージ・古着', href: '/shops?category=' + encodeURIComponent('ヴィンテージ・古着') },
+        { label: 'サイクル・スポーツ', href: '/shops?category=' + encodeURIComponent('サイクル・スポーツ') },
     ]
 
     return (
