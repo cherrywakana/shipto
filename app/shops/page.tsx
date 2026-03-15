@@ -16,7 +16,7 @@ export default async function ShopsPage(props: any) {
         { label: 'ラグジュアリー・ハイブランド', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・ハイブランド') },
         { label: 'ストリート・スニーカー', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
         { label: 'スポーツ・アウトドア', href: '/shops?category=' + encodeURIComponent('スポーツ・アウトドア') },
-        { label: '自転車・サイクル', href: '/shops?category=' + encodeURIComponent('自転車・サイクル') },
+        { label: '自転車・パーツ', href: '/shops?category=' + encodeURIComponent('自転車・パーツ') },
         { label: '韓国・アジアトレンド', href: '/shops?category=' + encodeURIComponent('韓国・アジアトレンド') },
     ]
 
