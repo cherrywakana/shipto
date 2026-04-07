@@ -43,6 +43,8 @@ export default async function Home() {
     <>
       <Header />
       <main>
+        {/* Impact.com affiliate verification */}
+        <div style={{ display: 'none' }}>Impact-Site-Verification: 204b2504-8f49-41e6-b979-1a1077b19bdb</div>
         <style>{`
           /* ─── Marquee ─── */
           @keyframes marquee {
