@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/api/',
         },
-        sitemap: 'https://directfound.com/sitemap.xml',
+        sitemap: 'https://original-price.com/sitemap.xml',
     }
 }

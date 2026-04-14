@@ -42,3 +42,6 @@ next-env.d.ts
 
 # shop thumbnails workdir
 /scripts/assets/
+
+# Google Indexing API
+google-indexing-service-account.json

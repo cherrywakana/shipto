@@ -4,8 +4,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: '運営者情報 - Direct Found',
-    description: 'Direct Foundの運営方針、掲載基準、アフィリエイトプログラムについて。日本への直送に対応した信頼できる海外通販サイトだけを厳選して紹介しています。',
+    title: '運営者情報 - Original Price',
+    description: 'Original Priceの運営方針、掲載基準、アフィリエイトプログラムについて。日本への直送に対応した信頼できる海外通販サイトだけを厳選して紹介しています。',
 }
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
         {
             icon: '🎯',
             title: 'サイトの目的',
-            content: 'Direct Foundは、日本から安心して利用できる海外通販サイトの情報を提供するガイドサイトです。海外通販に興味があっても「関税はどうなるの？」「ちゃんと届くの？」といった不安を解消し、世界中のショッピングをもっと身近なものにすることを目指しています。',
+            content: 'Original Priceは、日本から安心して利用できる海外通販サイトの情報を提供するガイドサイトです。海外通販に興味があっても「関税はどうなるの？」「ちゃんと届くの？」といった不安を解消し、世界中のショッピングをもっと身近なものにすることを目指しています。',
         },
         {
             icon: '✅',
@@ -34,7 +34,7 @@ export default function AboutPage() {
             icon: '📧',
             title: 'お問い合わせ',
             content: 'サイトに関するお問い合わせ、掲載情報の修正依頼、新しいショップの掲載リクエストなどがございましたら、お気軽にご連絡ください。',
-            email: 'contact@directfound.com',
+            email: 'contact@original-price.com',
         },
     ]
 
@@ -58,7 +58,7 @@ export default function AboutPage() {
                             運営者情報
                         </h1>
                         <p style={{ fontSize: '1.125rem', color: '#64748b', lineHeight: 1.6 }}>
-                            Direct Foundについて
+                            Original Priceについて
                         </p>
                     </div>
                 </section>

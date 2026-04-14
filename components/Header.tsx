@@ -47,7 +47,7 @@ export default function Header() {
         <span style={{
           fontSize: '1rem', fontWeight: 700, letterSpacing: '-0.03em',
           color: '#111110', fontFamily: 'var(--font-sans)',
-        }}>Direct Found</span>
+        }}>Original Price</span>
       </Link>
 
       {/* Desktop Nav */}

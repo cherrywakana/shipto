@@ -1,20 +1,26 @@
 import type { Metadata } from 'next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Direct Found - 日本から買える海外通販ガイド',
-  description: '日本発送対応の海外通販サイトを厳選してご紹介。ブランドから探せて、関税や送料の情報もわかります。',
-  metadataBase: new URL('https://directfound.com'),
+  title: 'Original Price - 海外通販の現地価格をチェック',
+  description: '日本発送対応の海外通販サイトを厳選してご紹介。関税や送料を含めた現地価格に近いお得な情報を届けます。',
+  metadataBase: new URL('https://original-price.com'),
   openGraph: {
-    title: 'Direct Found - 日本から買える海外通販ガイド',
-    description: '日本発送対応の海外通販サイトを厳選してご紹介。ブランドから探せて、関税や送料の情報もわかります。',
+    title: 'Original Price - 海外通販の現地価格をチェック',
+    description: '日本発送対応の海外通販サイトを厳選してご紹介。関税や送料を含めた現地価格に近いお得な情報を届けます。',
     type: 'website',
-    url: 'https://directfound.com',
-    siteName: 'Direct Found',
+    url: 'https://original-price.com',
+    siteName: 'Original Price',
   },
   icons: {
     icon: '/favicon.svg',
     apple: '/favicon.svg',
+  },
+  alternates: {
+    types: {
+      'application/rss+xml': [{ url: 'feed.xml', title: 'Direct Found - 最新記事' }],
+    },
   },
 }
 
@@ -28,6 +34,9 @@ export default function RootLayout({
       <body>
         {children}
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   )
 }

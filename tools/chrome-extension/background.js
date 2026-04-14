@@ -147,7 +147,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
                     chrome.downloads.download({
                         url: webpDataUrl,
-                        filename: `directfound-shops/${slug}.webp`,
+                        filename: `original-price-shops/${slug}.webp`,
                         saveAs: false
                     }, (downloadId) => {
                         if (chrome.runtime.lastError) {

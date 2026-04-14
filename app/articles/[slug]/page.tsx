@@ -21,7 +21,7 @@ export async function generateMetadata({
 
     if (!post) {
         return {
-            title: '記事が見つかりません | Direct Found',
+            title: '記事が見つかりません | Original Price',
         }
     }
 
@@ -33,14 +33,14 @@ export async function generateMetadata({
         ?.slice(0, 120) + '...'
 
     return {
-        title: `${post.title} | Direct Found`,
+        title: `${post.title} | Original Price`,
         description: plainText,
         openGraph: {
             title: post.title,
             description: plainText,
             type: 'article',
-            url: `https://directfound.com/articles/${slug}`,
-            siteName: 'Direct Found',
+            url: `https://original-price.com/articles/${slug}`,
+            siteName: 'Original Price',
             ...(post.thumbnail_url && {
                 images: [
                     {
@@ -139,17 +139,17 @@ export default async function ArticleDetailPage({
         dateModified: post.updated_at || post.created_at,
         author: {
             '@type': 'Organization',
-            name: 'Direct Found',
-            url: 'https://directfound.com',
+            name: 'Original Price',
+            url: 'https://original-price.com',
         },
         publisher: {
             '@type': 'Organization',
-            name: 'Direct Found',
-            url: 'https://directfound.com',
+            name: 'Original Price',
+            url: 'https://original-price.com',
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://directfound.com/articles/${slug}`,
+            '@id': `https://original-price.com/articles/${slug}`,
         },
     }
 

@@ -1,5 +1,5 @@
 {
-  "name": "directfound",
+  "name": "original-price",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,10 +12,14 @@
     "collect-brands": "node scripts/autonomous_collector.js"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.6",
     "@supabase/supabase-js": "^2.97.0",
     "axios": "^1.13.6",
     "cheerio": "^1.2.0",
+    "dotenv": "^17.4.1",
     "fs": "^0.0.1-security",
+    "google-auth-library": "^10.6.2",
+    "googleapis": "^171.4.0",
     "next": "16.1.6",
     "playwright": "^1.58.2",
     "playwright-extra": "^4.3.6",

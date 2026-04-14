@@ -90,6 +90,18 @@ getShops();'
 
 ---
 
-## Step 5: 公開後の監査
+## Step 5: Googleインデックス申請（高速化）
+記事公開直後にGoogleにインデックスを促す通知を送ります。
+
+1. **スクリプトの実行**:
+   ```bash
+   node scripts/google_indexing.js https://original-price.com/articles/[brand]-overseas-shopping-guide
+   ```
+   *初回実行時は `google-indexing-service-account.json` の設定が必要です。*
+
+---
+
+## Step 6: 公開後の監査
 1. **外部リンク確認**: 画像やボタンをクリックして、DBに登録された `brand_url` へ正しく飛ぶか確認。
-2. **不備の発見**: 外部リンクが `null` だったり、画像が崩れている場合は、記事を修正するのではなく、まず **DBの情報を修正（manage_shop.mdに従う）** してから記事を再生成する。
+2. **RSSフィード確認**: `https://original-price.com/feed.xml` に新着記事が反映されているか確認（Google発見を助けます）。
+3. **不備の発見**: 外部リンクが `null` だったり、画像が崩れている場合は、記事を修正するのではなく、まず **DBの情報を修正（manage_shop.mdに従う）** してから記事を再生成する。
