@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -33,6 +34,10 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         {children}
+        <Script 
+          src="https://s.skimresources.com/js/156009X1622316.skimlinks.js" 
+          strategy="lazyOnload"
+        />
       </body>
       {process.env.NEXT_PUBLIC_GA_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
