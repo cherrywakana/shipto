@@ -27,6 +27,17 @@ const INDEXED_PATHS = new Set([
   '/brands/stussy',
 ])
 
+// 旧サイトの特定パスを新サイトの正規記事パスへリダイレクトするマップ
+const REDIRECT_MAP: Record<string, string> = {
+  '/outdoorbrand/patagonia/shoplist': '/articles/patagonia-overseas-shopping-guide',
+  '/fashionbrand/adidas/adidas-list': '/articles/adidas-overseas-shopping-guide',
+  '/fashionbrand/nike/nikelist': '/articles/nike-overseas-shopping-guide',
+  '/fashionbrand/newbalance/shoplist-2': '/articles/new-balance-overseas-shopping-guide',
+  '/outdoorbrand/arcteryx/bestshop-6': '/articles/arcteryx-overseas-shopping-guide',
+  '/outdoorbrand/thenorthface/bestshop-7': '/articles/the-north-face-overseas-shopping-guide',
+  '/overseasshop/tax': '/articles/overseas-shopping-customs-tax',
+}
+
 export function middleware(request: NextRequest) {
   const host = (request.headers.get('x-forwarded-host') || request.headers.get('host') || '').toLowerCase()
   const { pathname } = request.nextUrl
@@ -37,6 +48,19 @@ export function middleware(request: NextRequest) {
 
   // デバッグ用レスポンスヘッダーの設定
   const logInfo = `Host: ${host}, Path: ${normalizedPath}`;
+
+  // 特定パスのリダイレクト判定 (新旧ドメイン共通)
+  if (REDIRECT_MAP[normalizedPath]) {
+    const url = request.nextUrl.clone()
+    url.host = 'original-price.com'
+    url.pathname = REDIRECT_MAP[normalizedPath]
+    url.protocol = 'https:'
+    url.port = ''
+    
+    const res = NextResponse.redirect(url, 301)
+    res.headers.set('x-middleware-debug', `REDIRECT_MAP: ${logInfo} -> ${REDIRECT_MAP[normalizedPath]}`)
+    return res
+  }
   
   // 旧ドメイン判定
   if (host.includes('directfound.com')) {
