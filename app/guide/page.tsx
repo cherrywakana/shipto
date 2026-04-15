@@ -35,6 +35,13 @@ export default function GuidePage() {
                 { title: '海外通販で偽物をつかまないための見分け方', slug: 'overseas-shopping-avoid-fakes' },
                 { title: '海外通販の関税が高すぎた場合はどうする？', slug: 'overseas-shopping-customs-too-high' },
             ]
+        },
+        {
+            title: 'おすすめショップ',
+            icon: '🛍️',
+            articles: [
+                { title: '【2026年最新】メンズ海外通販サイトおすすめ10選', slug: 'fashionshop/lists/mens' },
+            ]
         }
     ]
 
@@ -78,7 +85,7 @@ export default function GuidePage() {
                                     {section.articles.map((article) => (
                                         <Link
                                             key={article.slug}
-                                            href={`/articles/${article.slug}`}
+                                            href={article.slug.includes('/') ? `/${article.slug}` : `/articles/${article.slug}`}
                                             style={{
                                                 textDecoration: 'none',
                                                 display: 'flex',
