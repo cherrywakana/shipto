@@ -5,8 +5,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: '取り扱いブランド一覧 - Direct Found',
-    description: 'Direct Foundで紹介している海外通販サイトで取り扱いのあるブランド一覧です。欲しいブランドがどこのショップで買えるか探せます。',
+    title: '取り扱いブランド一覧 - Original Price',
+    description: 'Original Priceで紹介している海外通販サイトで取り扱いのあるブランド一覧です。欲しいブランドがどこのショップで買えるか探せます。',
 }
 
 export const revalidate = 3600 // 1時間ごとに更新

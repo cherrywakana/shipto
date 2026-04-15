@@ -3,8 +3,8 @@ import Footer from '@/components/Footer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'プライバシーポリシー - Direct Found',
-    description: 'Direct Foundのプライバシーポリシー、免責事項、Cookie利用方針について。',
+    title: 'プライバシーポリシー - Original Price',
+    description: 'Original Priceのプライバシーポリシー、免責事項、Cookie利用方針について。',
 }
 
 export default function PrivacyPage() {
@@ -12,7 +12,7 @@ export default function PrivacyPage() {
         {
             title: '個人情報の取り扱い',
             paragraphs: [
-                '当サイト（Direct Found、以下「当サイト」）は、ユーザーの個人情報を適切に管理し、保護することに努めています。',
+                '当サイト（Original Price、以下「当サイト」）は、ユーザーの個人情報を適切に管理し、保護することに努めています。',
                 '当サイトでは、お問い合わせフォーム等を通じてお名前やメールアドレスなどの個人情報をご提供いただく場合があります。取得した個人情報は、お問い合わせへの回答やサービスの改善目的にのみ使用し、ご本人の同意なく第三者に提供することはありません。',
             ],
         },

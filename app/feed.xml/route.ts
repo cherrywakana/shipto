@@ -27,7 +27,7 @@ export async function GET() {
   const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Direct Found - 最新記事</title>
+    <title>Original Price - 最新記事</title>
     <link>${baseUrl}</link>
     <description>日本発送対応の海外通販サイトを厳選してご紹介</description>
     <language>ja</language>

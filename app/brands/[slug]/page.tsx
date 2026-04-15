@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { data: brand } = await supabase.from('brands').select('name').eq('slug', slug).single()
 
     return {
-        title: `${brand?.name || 'ブランド'}が買える海外通販サイト一覧 - Direct Found`,
+        title: `${brand?.name || 'ブランド'}が買える海外通販サイト一覧 - Original Price`,
         description: `${brand?.name || 'ブランド'}を取り扱っている、日本発送対応の海外通販サイトを厳選。送料や関税の情報もまとめています。`,
     }
 }

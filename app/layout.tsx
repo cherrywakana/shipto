@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     types: {
-      'application/rss+xml': [{ url: 'feed.xml', title: 'Direct Found - 最新記事' }],
+      'application/rss+xml': [{ url: 'feed.xml', title: 'Original Price - 最新記事' }],
     },
   },
 }

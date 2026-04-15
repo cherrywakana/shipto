@@ -43,7 +43,7 @@ export default function Header() {
           background: 'var(--accent-brand)', color: '#fafaf9',
           fontSize: '0.75rem', fontWeight: 800, letterSpacing: '-0.03em',
           fontFamily: 'var(--font-sans)',
-        }}>DF</span>
+        }}>OP</span>
         <span style={{
           fontSize: '1rem', fontWeight: 700, letterSpacing: '-0.03em',
           color: '#111110', fontFamily: 'var(--font-sans)',

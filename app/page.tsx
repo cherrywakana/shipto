@@ -216,7 +216,7 @@ export default async function Home() {
             {/* Left text */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div className="fade-up delay-1">
-                <span className="tag">Direct Found — 海外通販ガイド</span>
+                <span className="tag">Original Price — 海外通販ガイド</span>
               </div>
 
               <h1 className="fade-up delay-2" style={{
@@ -253,9 +253,9 @@ export default async function Home() {
                 borderTop: '1px solid #e5e5e3', flexWrap: 'wrap',
               }}>
                 {[
-                  { v: '60+', l: '掲載ショップ' },
-                  { v: '20+', l: '注目ブランド' },
-                  { v: '50+', l: 'ガイド記事' },
+                  { v: '80+', l: '掲載ショップ' },
+                  { v: '30+', l: '注目ブランド' },
+                  { v: '100+', l: 'ガイド記事' },
                 ].map(s => (
                   <div key={s.l}>
                     <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.04em', color: '#111110', lineHeight: 1 }}>{s.v}</div>
