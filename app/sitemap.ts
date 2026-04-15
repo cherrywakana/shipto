@@ -65,12 +65,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         .select('slug, updated_at')
 
     if (posts) {
-        const postRoutes = posts.map((post) => ({
-            url: `${baseUrl}/articles/${post.slug}`,
-            lastModified: new Date(post.updated_at || new Date()),
-            changeFrequency: 'weekly' as const,
-            priority: 0.9,
-        }))
+        const postRoutes = posts.map((post) => {
+            let url;
+            if (post.slug.includes('/') && !post.slug.startsWith('articles/')) {
+                // Legacy path already has category in it
+                url = `${baseUrl}/${post.slug}`;
+            } else if (post.slug.startsWith('articles/')) {
+                url = `${baseUrl}/${post.slug}`;
+            } else {
+                url = `${baseUrl}/articles/${post.slug}`;
+            }
+            return {
+                url,
+                lastModified: new Date(post.updated_at || new Date()),
+                changeFrequency: 'weekly' as const,
+                priority: 0.9,
+            };
+        })
         routes.push(...postRoutes)
     }
 
