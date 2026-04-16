@@ -332,25 +332,31 @@ export default async function Home() {
               </div>
 
               <div className="articles-grid">
-                {articles.map((article) => (
-                  <Link key={article.slug} href={`/articles/${article.slug}`} className="article-card-v2">
-                    {article.thumbnail_url && (
-                      <img
-                        src={article.thumbnail_url}
-                        alt={article.title}
-                        className="article-card-img"
-                        loading="lazy"
-                      />
-                    )}
-                    <div className="article-card-body">
-                      {article.category && (
-                        <span className="article-card-cat">{article.category}</span>
+                {articles.map((article) => {
+                  const href = article.slug.includes('/') && !article.slug.startsWith('articles/')
+                    ? `/${article.slug}`
+                    : `/articles/${article.slug}`;
+                  
+                  return (
+                    <Link key={article.slug} href={href} className="article-card-v2">
+                      {article.thumbnail_url && (
+                        <img
+                          src={article.thumbnail_url}
+                          alt={article.title}
+                          className="article-card-img"
+                          loading="lazy"
+                        />
                       )}
-                      <h3 className="article-card-title">{article.title}</h3>
-                      <span className="article-card-link">続きを読む →</span>
-                    </div>
-                  </Link>
-                ))}
+                      <div className="article-card-body">
+                        {article.category && (
+                          <span className="article-card-cat">{article.category}</span>
+                        )}
+                        <h3 className="article-card-title">{article.title}</h3>
+                        <span className="article-card-link">続きを読む →</span>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </section>

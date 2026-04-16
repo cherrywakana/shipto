@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { addExternalLinkAttributes } from '@/lib/utils'
@@ -32,6 +33,10 @@ export async function generateMetadata({
         ?.trim()
         ?.slice(0, 120) + '...'
 
+    const postUrl = slug.includes('/') && !slug.startsWith('articles/')
+        ? `https://original-price.com/${slug}`
+        : `https://original-price.com/articles/${slug}`
+
     return {
         title: `${post.title} | Original Price`,
         description: plainText,
@@ -39,7 +44,7 @@ export async function generateMetadata({
             title: post.title,
             description: plainText,
             type: 'article',
-            url: `https://original-price.com/articles/${slug}`,
+            url: postUrl,
             siteName: 'Original Price',
             ...(post.thumbnail_url && {
                 images: [
@@ -102,6 +107,15 @@ export default async function ArticleDetailPage({
     params: Promise<{ slug: string }>
 }) {
     const { slug } = await params
+    const isLegacyPath = slug.includes('/') && !slug.startsWith('articles/')
+    
+    if (isLegacyPath) {
+        redirect(`/${slug}`);
+    }
+
+    const postUrl = isLegacyPath
+        ? `https://original-price.com/${slug}`
+        : `https://original-price.com/articles/${slug}`
 
     const { data: post } = await supabase
         .from('posts')
@@ -149,7 +163,7 @@ export default async function ArticleDetailPage({
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://original-price.com/articles/${slug}`,
+            '@id': postUrl,
         },
     }
 

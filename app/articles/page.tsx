@@ -45,58 +45,64 @@ export default async function ArticlesPage() {
                                 gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
                                 gap: '2rem'
                             }}>
-                                {posts.map((post) => (
-                                    <Link key={post.id} href={`/articles/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                                        <article style={{
-                                            background: 'white',
-                                            borderRadius: '16px',
-                                            overflow: 'hidden',
-                                            border: '1px solid #e2e8f0',
-                                            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
-                                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                                            height: '100%',
-                                            display: 'flex',
-                                            flexDirection: 'column'
-                                        }}>
-                                            <div style={{
-                                                width: '100%',
-                                                aspectRatio: '16/9',
-                                                backgroundColor: '#e2e8f0',
-                                                position: 'relative'
+                                {posts.map((post) => {
+                                    const href = post.slug.includes('/') && !post.slug.startsWith('articles/')
+                                        ? `/${post.slug}`
+                                        : `/articles/${post.slug}`;
+
+                                    return (
+                                        <Link key={post.id} href={href} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                            <article style={{
+                                                background: 'white',
+                                                borderRadius: '16px',
+                                                overflow: 'hidden',
+                                                border: '1px solid #e2e8f0',
+                                                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+                                                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                                height: '100%',
+                                                display: 'flex',
+                                                flexDirection: 'column'
                                             }}>
-                                                {post.thumbnail_url ? (
-                                                    <img
-                                                        src={post.thumbnail_url}
-                                                        alt={post.title}
-                                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                                    />
-                                                ) : (
-                                                    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '2rem' }}>
-                                                        <span role="img" aria-label="article">📝</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', fontSize: '0.85rem' }}>
-                                                    {post.category && (
-                                                        <span style={{ fontWeight: 600, color: '#111110', background: 'rgba(17,17,16,0.06)', padding: '0.2rem 0.6rem', borderRadius: '100px' }}>
-                                                            {post.category}
-                                                        </span>
-                                                    )}
-                                                    <span style={{ color: '#64748b' }}>
-                                                        {post.created_at ? new Date(post.created_at).toLocaleDateString('ja-JP') : ''}
-                                                    </span>
-                                                </div>
-                                                <h2 style={{
-                                                    fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', lineHeight: 1.4, marginBottom: '0.5rem',
-                                                    display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'
+                                                <div style={{
+                                                    width: '100%',
+                                                    aspectRatio: '16/9',
+                                                    backgroundColor: '#e2e8f0',
+                                                    position: 'relative'
                                                 }}>
-                                                    {post.title}
-                                                </h2>
-                                            </div>
-                                        </article>
-                                    </Link>
-                                ))}
+                                                    {post.thumbnail_url ? (
+                                                        <img
+                                                            src={post.thumbnail_url}
+                                                            alt={post.title}
+                                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                                        />
+                                                    ) : (
+                                                        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: '2rem' }}>
+                                                            <span role="img" aria-label="article">📝</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', fontSize: '0.85rem' }}>
+                                                        {post.category && (
+                                                            <span style={{ fontWeight: 600, color: '#111110', background: 'rgba(17,17,16,0.06)', padding: '0.2rem 0.6rem', borderRadius: '100px' }}>
+                                                                {post.category}
+                                                            </span>
+                                                        )}
+                                                        <span style={{ color: '#64748b' }}>
+                                                            {post.created_at ? new Date(post.created_at).toLocaleDateString('ja-JP') : ''}
+                                                        </span>
+                                                    </div>
+                                                    <h2 style={{
+                                                        fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', lineHeight: 1.4, marginBottom: '0.5rem',
+                                                        display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'
+                                                    }}>
+                                                        {post.title}
+                                                    </h2>
+                                                </div>
+                                            </article>
+                                        </Link>
+                                    );
+                                })}
                             </div>
                         ) : (
                             <div style={{ textAlign: 'center', padding: '5rem 0', color: '#64748b' }}>
