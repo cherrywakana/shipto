@@ -10,7 +10,8 @@
     "sync-affiliates": "node scripts/sync_affiliates.js",
     "sync-thumbnails": "node scripts/sync_thumbnails.js",
     "collect-brands": "node scripts/autonomous_collector.js",
-    "verify-shop-policies": "node scripts/verify_shop_policies.js"
+    "verify-shop-policies": "node scripts/verify_shop_policies.js",
+    "normalize-shops": "node scripts/normalize_shops_for_discovery.cjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",

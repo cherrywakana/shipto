@@ -2,8 +2,15 @@ import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { CORE_GUIDE_LINKS, getShopComparisonItems, getShopFitBullets, getShopWarningBullets } from '@/lib/shopInsights'
+import { CORE_GUIDE_LINKS } from '@/lib/shopInsights'
 import { formatJapaneseDate, getLastVerifiedAt } from '@/lib/utils'
+import {
+    getOfficialLinks,
+    getReferenceNotes,
+    getShopChecklist,
+    getShopLead,
+    getShopTakeaways,
+} from '@/lib/shopDetail'
 
 export default async function ShopDetailPage({
     params,
@@ -18,290 +25,211 @@ export default async function ShopDetailPage({
         .eq('slug', slug)
         .single()
 
-    const comparisonItems = getShopComparisonItems(shop || {})
-    const fitBullets = getShopFitBullets(shop || {})
-    const warningBullets = getShopWarningBullets(shop || {})
+    if (!shop) {
+        return (
+            <>
+                <Header />
+                <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem)', minHeight: '100vh', background: '#f8fafc' }}>
+                    <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>ショップが見つかりません。</p>
+                    <Link href="/shops" style={{ color: '#111110', textDecoration: 'none', fontWeight: 600 }}>← ショップ一覧に戻る</Link>
+                </main>
+                <Footer />
+            </>
+        )
+    }
 
-    if (!shop) return (
-        <>
-            <Header />
-            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem)', minHeight: '100vh', background: '#f8fafc' }}>
-                <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>ショップが見つかりません。</p>
-                <Link href="/shops" style={{ color: '#111110', textDecoration: 'none', fontWeight: 600 }}>← ショップ一覧に戻る</Link>
-            </main>
-        </>
-    )
+    const lead = getShopLead(shop)
+    const takeaways = getShopTakeaways(shop)
+    const referenceNotes = getReferenceNotes(shop)
+    const checklist = getShopChecklist(shop)
+    const officialLinks = getOfficialLinks(shop)
+    const lastVerified = formatJapaneseDate(getLastVerifiedAt(shop)) || '未登録'
 
     return (
         <>
             <Header />
-            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', background: 'white' }}>
-                <style>{`
-          .back-link { color: #111110; text-decoration: none; font-weight: 500; font-size: 0.875rem; transition: opacity 0.2s; }
-          .back-link:hover { opacity: 0.7; }
-          
-          .info-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            transition: transform 0.3s ease;
-          }
-          .info-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-          }
-          
-          .info-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            background: #fafaf9;
-            padding: 1rem;
-            border-radius: 12px;
-          }
-
-          .info-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-          }
-
-          .info-body {
-            font-size: 1rem;
-            color: #334155;
-            line-height: 1.8;
-          }
-
-          /* CTA Button */
-          .article-cta {
-            margin-top: 3rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background: #f3f3f1;
-            border-radius: 24px;
-            border: 1px solid rgba(99,102,241,0.15);
-          }
-          .article-cta-btn {
-            display: inline-block;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            padding: 0.85rem 2rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            font-size: 1rem;
-            line-height: 1.4;
-            max-width: 100%;
-            white-space: normal;
-          }
-          .article-cta-btn:hover {
-            background-color: #333333;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-          }
-        `}</style>
-
-                {/* Hero */}
+            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', background: '#fcfcfb', color: '#111827' }}>
                 <section style={{
-                    padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem)',
-                    background: '#fafaf9',
-                    borderBottom: '1px solid #e2e8f0'
+                    padding: 'clamp(7.5rem, 12vw, 9.5rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 4.5rem)',
+                    borderBottom: '1px solid #e7e5e4',
+                    background: 'linear-gradient(180deg, #fafaf9 0%, #ffffff 100%)',
                 }}>
-                    <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
+                    <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
+                        <Link href="/shops" style={{ color: '#44403c', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem', display: 'inline-block', marginBottom: '1.8rem' }}>
+                            ← ショップ一覧に戻る
+                        </Link>
 
-                        <div style={{ flex: '1 1 min(400px, 100%)' }}>
-                            <Link href="/shops" className="back-link" style={{ display: 'inline-block', marginBottom: '2rem' }}>← ショップ一覧に戻る</Link>
-
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
-                                {shop.category && (
-                                    <span style={{
-                                        fontSize: '0.8rem', fontWeight: 600, color: '#111110',
-                                        background: 'rgba(17,17,16,0.06)', padding: '0.3rem 1rem',
-                                        borderRadius: '100px',
-                                    }}>{shop.category}</span>
-                                )}
-                                {shop.country && (
-                                    <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>
-                                        📍 {shop.country}発祥
+                        <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+                            <div style={{ flex: '1 1 560px', minWidth: 0 }}>
+                                <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                                    {shop.category && (
+                                        <span style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.04em', color: '#7c2d12', background: '#ffedd5', borderRadius: '999px', padding: '0.35rem 0.8rem' }}>
+                                            {shop.category}
+                                        </span>
+                                    )}
+                                    {shop.country && (
+                                        <span style={{ fontSize: '0.84rem', color: '#57534e', background: '#f5f5f4', borderRadius: '999px', padding: '0.35rem 0.8rem' }}>
+                                            {shop.country}
+                                        </span>
+                                    )}
+                                    <span style={{ fontSize: '0.84rem', color: shop.ships_to_japan === false ? '#9a3412' : '#166534', background: shop.ships_to_japan === false ? '#fff7ed' : '#ecfdf5', borderRadius: '999px', padding: '0.35rem 0.8rem' }}>
+                                        {shop.ships_to_japan === false ? '日本発送は要確認' : '日本から確認しやすい候補'}
                                     </span>
-                                )}
-                                <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>
-                                    最終確認 {formatJapaneseDate(getLastVerifiedAt(shop)) || '未登録'}
-                                </span>
+                                </div>
+
+                                <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.7rem)', lineHeight: 1.1, letterSpacing: '-0.04em', marginBottom: '1.2rem' }}>
+                                    {shop.name}
+                                </h1>
+
+                                <p style={{ fontSize: '1.06rem', lineHeight: 1.85, color: '#44403c', maxWidth: '720px', marginBottom: '1rem' }}>
+                                    {lead}
+                                </p>
+                                <p style={{ fontSize: '0.93rem', lineHeight: 1.75, color: '#78716c', maxWidth: '720px' }}>
+                                    このページは、日本に送れるショップを探すための参考ページです。最新の送料・関税・配送条件は、購入前に公式サイトをご確認ください。
+                                </p>
                             </div>
 
-                            <h1 style={{
-                                fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800,
-                                letterSpacing: '-0.03em', color: '#0f172a', lineHeight: 1.2,
-                                marginBottom: '1.5rem'
-                            }}>{shop.name}</h1>
-
-                            {shop.ships_to_japan === false && (
-                                <div style={{
-                                    background: '#fff7ed',
-                                    border: '1px solid #fed7aa',
-                                    borderRadius: '12px',
-                                    padding: '1rem',
-                                    marginBottom: '1.5rem',
-                                    display: 'flex',
-                                    gap: '0.75rem',
-                                    alignItems: 'flex-start',
-                                }}>
-                                    <span style={{ fontSize: '1.25rem' }}>⚠️</span>
+                            <div style={{
+                                flex: '0 1 280px',
+                                minWidth: '260px',
+                                background: '#ffffff',
+                                border: '1px solid #e7e5e4',
+                                borderRadius: '24px',
+                                padding: '1.35rem 1.4rem',
+                                boxShadow: '0 20px 45px -30px rgba(0, 0, 0, 0.18)',
+                            }}>
+                                <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#a8a29e', marginBottom: '0.8rem' }}>
+                                    Quick Note
+                                </p>
+                                <div style={{ display: 'grid', gap: '0.85rem' }}>
                                     <div>
-                                        <p style={{ fontSize: '0.9rem', fontWeight: 700, color: '#9a3412', marginBottom: '0.25rem' }}>日本への直接発送に未対応の可能性があります</p>
-                                        <p style={{ fontSize: '0.85rem', color: '#c2410c', lineHeight: 1.5 }}>
-                                            このショップは現在、日本への直接発送に対応していない、または制限がある可能性があります。最新の配送ポリシーは必ず公式サイトでご確認ください。
-                                        </p>
+                                        <div style={{ fontSize: '0.8rem', color: '#a8a29e', marginBottom: '0.2rem' }}>位置づけ</div>
+                                        <div style={{ fontWeight: 700, lineHeight: 1.5 }}>日本から探しやすいショップの入口</div>
+                                    </div>
+                                    <div>
+                                        <div style={{ fontSize: '0.8rem', color: '#a8a29e', marginBottom: '0.2rem' }}>最終確認</div>
+                                        <div style={{ fontWeight: 700, lineHeight: 1.5 }}>{lastVerified}</div>
+                                    </div>
+                                    <div>
+                                        <div style={{ fontSize: '0.8rem', color: '#a8a29e', marginBottom: '0.2rem' }}>購入前に見る場所</div>
+                                        <div style={{ fontWeight: 700, lineHeight: 1.5 }}>公式ヘルプとチェックアウト画面</div>
                                     </div>
                                 </div>
-                            )}
-
-                            <p style={{
-                                fontSize: '1.1rem', color: '#475569', lineHeight: 1.8,
-                            }}>
-                                {shop.description}
-                            </p>
-                            <p style={{ marginTop: '1rem', color: '#8b8b89', lineHeight: 1.7, fontSize: '0.92rem' }}>
-                                このページの情報はショップ探しの参考用です。送料・関税・配送条件の最新情報は、購入前に公式サイトでご確認ください。
-                            </p>
-                        </div>
-
-                        {shop.image_url && (
-                            <div style={{
-                                flex: '1 1 300px',
-                                borderRadius: '24px',
-                                overflow: 'hidden',
-                                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)',
-                                aspectRatio: '16/9',
-                                backgroundColor: '#f1f5f9'
-                            }}>
-                                <img
-                                    src={shop.image_url}
-                                    alt={shop.name}
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                />
                             </div>
-                        )}
-
+                        </div>
                     </div>
                 </section>
 
-                {/* Content Details */}
-                <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)' }}>
-                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                <section style={{ padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem) 0' }}>
+                    <div style={{ maxWidth: '1040px', margin: '0 auto', display: 'grid', gap: '1.25rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
+                        {takeaways.map((item, index) => (
+                            <div key={index} style={{ background: '#ffffff', border: '1px solid #eceae7', borderRadius: '20px', padding: '1.3rem 1.35rem' }}>
+                                <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#a8a29e', marginBottom: '0.65rem' }}>
+                                    Point {index + 1}
+                                </p>
+                                <p style={{ margin: 0, lineHeight: 1.75, color: '#292524' }}>{item}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
-                            {comparisonItems.map((item) => (
-                                <div key={item.label} style={{
-                                    border: '1px solid #e2e8f0',
-                                    borderRadius: '16px',
-                                    padding: '1rem 1.1rem',
-                                    background: item.tone === 'warning' ? '#fffaf0' : '#fafaf9'
-                                }}>
-                                    <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8b8b89', marginBottom: '0.45rem' }}>{item.label}</div>
-                                    <div style={{ color: '#0f172a', lineHeight: 1.55, fontWeight: 600, fontSize: '0.95rem' }}>{item.value}</div>
-                                    <div style={{ marginTop: '0.45rem', color: '#8b8b89', fontSize: '0.8rem', lineHeight: 1.5 }}>参考メモ。最新条件は公式サイト確認前提です。</div>
+                <section style={{ padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 6vw, 5rem)' }}>
+                    <div style={{ maxWidth: '1040px', margin: '0 auto', display: 'grid', gap: '1.5rem', gridTemplateColumns: 'minmax(0, 1.5fr) minmax(280px, 0.95fr)' }}>
+                        <div style={{ display: 'grid', gap: '1.5rem' }}>
+                            <section style={{ background: '#ffffff', border: '1px solid #eceae7', borderRadius: '24px', padding: '1.6rem' }}>
+                                <h2 style={{ fontSize: '1.35rem', marginBottom: '1rem' }}>日本から使うときの参考メモ</h2>
+                                <div style={{ display: 'grid', gap: '1rem' }}>
+                                    {referenceNotes.map((note) => (
+                                        <div key={note.label} style={{ paddingBottom: '1rem', borderBottom: '1px solid #f0eeeb' }}>
+                                            <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#a8a29e', marginBottom: '0.35rem' }}>
+                                                {note.label}
+                                            </p>
+                                            <p style={{ margin: 0, lineHeight: 1.8, color: '#44403c' }}>{note.body}</p>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            </section>
 
-                        <div className="info-card">
-                            <div className="info-title">
-                                <span style={{ fontSize: '1.5rem' }}>🎯</span>
-                                このページでわかること
-                            </div>
-                            <div className="info-body">
-                                <ul style={{ margin: 0, paddingLeft: '1.1rem' }}>
-                                    {fitBullets.map((bullet) => (
-                                        <li key={bullet} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
+                            <section style={{ background: '#ffffff', border: '1px solid #eceae7', borderRadius: '24px', padding: '1.6rem' }}>
+                                <h2 style={{ fontSize: '1.35rem', marginBottom: '1rem' }}>購入前チェック</h2>
+                                <ul style={{ margin: 0, paddingLeft: '1.1rem', lineHeight: 1.9, color: '#44403c' }}>
+                                    {checklist.map((item) => (
+                                        <li key={item} style={{ marginBottom: '0.55rem' }}>{item}</li>
                                     ))}
-                                    <li style={{ marginBottom: '0.5rem' }}>日本から使えそうかをざっくり把握しやすいこと</li>
-                                    <li>購入前にどの公式ページを確認すべきか見つけやすいこと</li>
                                 </ul>
-                            </div>
+                            </section>
                         </div>
 
-                        <div className="info-card" style={{
-                            background: shop.ships_to_japan === false ? '#fffcf0' : 'white',
-                            border: shop.ships_to_japan === false ? '1px solid #fde68a' : '1px solid #e2e8f0'
-                        }}>
-                            <div className="info-title">
-                                <span style={{ fontSize: '1.5rem' }}>✈️</span>
-                                日本発送の参考メモ
-                            </div>
-                            <div className="info-body">
-                                {shop.ships_to_japan === false ? (
-                                    <strong style={{ color: '#b45309' }}>現時点では日本発送に制限がある可能性があります。購入前に公式情報をご確認ください。</strong>
-                                ) : (
-                                    shop.shipping_guide || '日本発送に関する参考メモはまだありません。公式サイトをご確認ください。'
-                                )}
-                            </div>
-                        </div>
-
-                        <div className="info-card">
-                            <div className="info-title">
-                                <span style={{ fontSize: '1.5rem' }}>⚠️</span>
-                                購入前に確認したいこと
-                            </div>
-                            <div className="info-body">
-                                <ul style={{ margin: 0, paddingLeft: '1.1rem' }}>
-                                    {warningBullets.map((bullet) => (
-                                        <li key={bullet} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
+                        <div style={{ display: 'grid', gap: '1.5rem', alignContent: 'start' }}>
+                            <section style={{ background: '#fffaf5', border: '1px solid #f3e8d8', borderRadius: '24px', padding: '1.5rem' }}>
+                                <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>公式で確認するページ</h2>
+                                <p style={{ color: '#6b7280', lineHeight: 1.75, marginBottom: '1rem' }}>
+                                    条件が変わりやすい情報は、下のリンク先で最終確認する前提にしています。
+                                </p>
+                                <div style={{ display: 'grid', gap: '0.85rem' }}>
+                                    {officialLinks.map((link) => (
+                                        <a
+                                            key={`${link.label}-${link.href}`}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{
+                                                display: 'block',
+                                                background: '#ffffff',
+                                                border: '1px solid #eadfce',
+                                                borderRadius: '18px',
+                                                padding: '1rem 1.05rem',
+                                                color: '#111827',
+                                                textDecoration: 'none',
+                                            }}
+                                        >
+                                            <div style={{ fontWeight: 700, marginBottom: '0.3rem' }}>{link.label} ↗</div>
+                                            <div style={{ color: '#6b7280', lineHeight: 1.65, fontSize: '0.92rem' }}>{link.description}</div>
+                                        </a>
                                     ))}
-                                    <li style={{ marginBottom: '0.5rem' }}>送料・関税・配送日数は購入時期や配送先で変わることがあります。</li>
-                                    <li>最終判断は公式サイトの配送ポリシーとチェックアウト画面で行ってください。</li>
-                                </ul>
-                            </div>
-                        </div>
+                                </div>
+                            </section>
 
-                        <div style={{ padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '1rem', fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6 }}>
-                            <strong style={{ color: '#475569', display: 'block', marginBottom: '0.25rem' }}>⚠️ このページの位置づけ</strong>
-                            当サイトは「日本に送れるショップを見つけるための入口」として情報を整理しています。掲載内容は参考情報であり、配送や関税などの最新条件は必ず公式サイトをご確認ください。
-                        </div>
+                            <section style={{ background: '#ffffff', border: '1px solid #eceae7', borderRadius: '24px', padding: '1.5rem' }}>
+                                <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#a8a29e', marginBottom: '0.75rem' }}>
+                                    あわせて読む
+                                </p>
+                                <div style={{ display: 'grid', gap: '0.75rem' }}>
+                                    {CORE_GUIDE_LINKS.map((guide) => (
+                                        <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none', color: '#111827', fontWeight: 600 }}>
+                                            {guide.title} →
+                                        </Link>
+                                    ))}
+                                </div>
+                            </section>
 
-                        <div style={{ border: '1px solid #e2e8f0', borderRadius: '16px', padding: '1.3rem 1.4rem', background: '#fafaf9', marginBottom: '2rem' }}>
-                            <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.8rem' }}>
-                                あわせて読むと安心
-                            </p>
-                            <div style={{ display: 'grid', gap: '0.75rem' }}>
-                                {CORE_GUIDE_LINKS.map((guide) => (
-                                    <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none', color: '#0f172a', fontWeight: 600 }}>
-                                        {guide.title} →
-                                    </Link>
-                                ))}
-                            </div>
-                            <div style={{ marginTop: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-                                <Link href="/brands" style={{ textDecoration: 'none', color: '#64748b', fontWeight: 600 }}>ブランドから探す</Link>
-                                <Link href="/shops" style={{ textDecoration: 'none', color: '#64748b', fontWeight: 600 }}>ショップ一覧に戻る</Link>
-                            </div>
+                            <section style={{ background: '#111827', color: '#ffffff', borderRadius: '24px', padding: '1.5rem' }}>
+                                <h2 style={{ fontSize: '1.2rem', marginBottom: '0.7rem' }}>最新条件は公式サイトへ</h2>
+                                <p style={{ color: 'rgba(255,255,255,0.78)', lineHeight: 1.75, marginBottom: '1rem' }}>
+                                    当サイトはショップ探しの入口です。最終的な送料・関税・配送可否は、公式サイトとチェックアウト画面でご確認ください。
+                                </p>
+                                <a
+                                    href={shop.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'inline-block',
+                                        textDecoration: 'none',
+                                        background: '#ffffff',
+                                        color: '#111827',
+                                        fontWeight: 700,
+                                        padding: '0.82rem 1.2rem',
+                                        borderRadius: '999px',
+                                    }}
+                                >
+                                    公式サイトを開く →
+                                </a>
+                            </section>
                         </div>
-
-                        <div className="article-cta">
-                            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1.25rem', color: '#0f172a' }}>
-                                最新条件は公式サイトで確認しましょう
-                            </h3>
-                            <a href={shop.url} target="_blank" rel="noopener noreferrer" className="article-cta-btn">
-                                公式サイトを確認する →
-                            </a>
-                        </div>
-
                     </div>
                 </section>
-
-                <Footer />
             </main>
+            <Footer />
         </>
     )
 }
