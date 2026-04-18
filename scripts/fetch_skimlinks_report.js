@@ -97,8 +97,19 @@ function parseCsv(text) {
 
     if (rows.length === 0) return [];
 
-    const headers = rows[0].map((header) => header.trim());
-    return rows.slice(1).map((values) => {
+    const headerIndex = rows.findIndex((row) => {
+        const normalized = row.map((value) => String(value).trim());
+        return normalized.includes('ページ')
+            || normalized.includes('Page')
+            || normalized.includes('マーチャント')
+            || normalized.includes('Merchant')
+            || normalized.includes('広告主別');
+    });
+
+    if (headerIndex === -1) return [];
+
+    const headers = rows[headerIndex].map((header) => header.trim());
+    return rows.slice(headerIndex + 1).map((values) => {
         const item = {};
         headers.forEach((header, index) => {
             item[header] = values[index] || '';
@@ -106,6 +117,29 @@ function parseCsv(text) {
         return item;
     });
 }
+
+const COLUMN_ALIASES = {
+    'ページ': 'Page',
+    'Page': 'Page',
+    'マーチャント': 'Merchant',
+    'Merchant': 'Merchant',
+    '広告主別': 'Merchant',
+    'インプレッション': 'Impressions',
+    'Impressions': 'Impressions',
+    'クリック数': 'Clicks',
+    'Clicks': 'Clicks',
+    'CTR': 'CTR',
+    '注文件数': 'Sales',
+    'Sales': 'Sales',
+    'コンバージョン率': 'Conversion Rate',
+    'Conversion Rate': 'Conversion Rate',
+    '注文額': 'Order Value',
+    'Order Value': 'Order Value',
+    '報酬': 'Revenue',
+    'Revenue': 'Revenue',
+    'RPM': 'RPM',
+    'EPC': 'EPC',
+};
 
 function normalizeNumber(value) {
     if (typeof value === 'number') return value;
@@ -122,14 +156,18 @@ function normalizeRows(rows) {
 
         Object.entries(row).forEach(([key, value]) => {
             const trimmedKey = String(key).trim();
+            const canonicalKey = COLUMN_ALIASES[trimmedKey] || trimmedKey;
             const trimmedValue = typeof value === 'string' ? value.trim() : value;
-            normalized[trimmedKey] = trimmedValue;
+            normalized[canonicalKey] = trimmedValue;
         });
 
         if ('Revenue' in normalized) normalized.Revenue = normalizeNumber(normalized.Revenue);
         if ('Clicks' in normalized) normalized.Clicks = normalizeNumber(normalized.Clicks);
         if ('Sales' in normalized) normalized.Sales = normalizeNumber(normalized.Sales);
         if ('Order Value' in normalized) normalized['Order Value'] = normalizeNumber(normalized['Order Value']);
+        if ('Impressions' in normalized) normalized.Impressions = normalizeNumber(normalized.Impressions);
+        if ('RPM' in normalized) normalized.RPM = normalizeNumber(normalized.RPM);
+        if ('EPC' in normalized) normalized.EPC = normalizeNumber(normalized.EPC);
 
         return normalized;
     });
