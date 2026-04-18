@@ -34,6 +34,52 @@ function getCategory(shop) {
     return cleanText(shop.category) || '海外通販'
 }
 
+function getTaxGuide(shop) {
+    if (isMarketplace(shop)) {
+        return '出品者や発送元で関税・消費税の扱いが変わりやすいタイプです。購入直前の総額を見ておくと安心です。'
+    }
+
+    switch (shop.category) {
+        case 'ラグジュアリー・ハイブランド':
+            return '高額帯の商品も多いため、受け取り時の追加費用が出るかを見ておきたいショップです。'
+        case 'ストリート・スニーカー':
+            return '抽選品や限定品では発送元が変わることもあるため、会計時の表示確認が大切です。'
+        case '韓国・アジアトレンド':
+            return '比較的買いやすい価格帯が多い一方で、注文額しだいで税金の扱いが変わることがあります。'
+        case 'コスメ・ビューティー':
+            return '化粧品は内容物や配送方法で扱いが変わることがあるため、会計時の表示を確認しておきたいです。'
+        case 'スポーツ・アウトドア':
+            return '大型商品やブランド制限があると、税金や手数料の見え方が変わることがあります。'
+        case '自転車・パーツ':
+            return 'パーツや完成車は金額差が大きいため、購入前に総額の見え方を確認しておくと安心です。'
+        default:
+            return '注文内容や発送元で税金の扱いが変わることがあるため、会計時の表示を見ておくと安心です。'
+    }
+}
+
+function getFeeGuide(shop) {
+    if (isMarketplace(shop)) {
+        return '送料は出品者や倉庫の場所で差が出やすいタイプです。商品ごとに確認する前提が合っています。'
+    }
+
+    switch (shop.category) {
+        case 'ラグジュアリー・ハイブランド':
+            return 'エクスプレス配送中心のことが多く、送料は無料条件や注文金額で変わりやすいです。'
+        case 'ストリート・スニーカー':
+            return '通常配送よりも、抽選商品や限定商品で送料条件が変わりやすいショップです。'
+        case '韓国・アジアトレンド':
+            return '比較的使いやすい送料設定のことが多いですが、まとめ買いか単品買いかで差が出ます。'
+        case 'コスメ・ビューティー':
+            return '軽い商品が多い一方で、配送方法や内容物で送料や配送日数がぶれやすいです。'
+        case 'スポーツ・アウトドア':
+            return 'ギアのサイズや重量で送料差が出やすく、配送日数も商品によってぶれやすいです。'
+        case '自転車・パーツ':
+            return '小物と大型パーツで送料差が大きく、配送会社によって到着日数も変わりやすいです。'
+        default:
+            return '送料や配送日数は注文金額や配送方法で差が出やすいショップです。'
+    }
+}
+
 function normalizePolicyUrl(url) {
     if (!url) return null
 
@@ -55,33 +101,19 @@ function normalizePolicyUrl(url) {
 }
 
 function buildShippingGuide(shop) {
-    const name = shop.name || shop.slug
-
     if (shop.ships_to_japan === false) {
-        return `${name} は日本発送に制限がある可能性があるショップとして掲載しています。配送対象国や対象ブランドは変わることがあるため、購入前に公式サイトをご確認ください。`
+        return '日本発送はできない、または制限がある可能性があります。'
     }
 
-    if (isMarketplace(shop)) {
-        return `${name} は日本から注文できる候補として掲載しています。マーケットプレイス型のため、発送可否や配送条件は商品や販売元ごとに変わることがあります。`
-    }
-
-    return `${name} は日本からチェックしやすい${getCategory(shop)}ショップ候補として掲載しています。最新の配送条件や対象ブランドは公式サイトをご確認ください。`
+    return '日本発送に対応しているショップ候補です。'
 }
 
 function buildTaxGuide(shop) {
-    if (isMarketplace(shop)) {
-        return '関税・消費税の扱いは出品者や発送元によって変わることがあります。最終金額はチェックアウト画面と公式ヘルプをご確認ください。'
-    }
-
-    return '関税・消費税の扱いは注文金額、発送元、時期によって変わることがあります。最新条件は公式サイトまたはチェックアウト画面でご確認ください。'
+    return getTaxGuide(shop)
 }
 
 function buildFeeGuide(shop) {
-    if (isMarketplace(shop)) {
-        return '送料や配送日数は出品者、倉庫、配送方法によって変わることがあります。商品ページとチェックアウト画面をご確認ください。'
-    }
-
-    return '送料や配送日数は注文金額や配送方法で変わります。最新の料金や到着目安は公式サイトをご確認ください。'
+    return getFeeGuide(shop)
 }
 
 function buildDescription(shop) {

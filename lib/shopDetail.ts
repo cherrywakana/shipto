@@ -56,6 +56,52 @@ function getCategoryLabel(shop: ShopDetailRecord): string {
     return shop.category || '海外通販'
 }
 
+function getTaxFallback(shop: ShopDetailRecord): string {
+    if (isMarketplace(shop)) {
+        return '出品者や発送元で扱いが変わりやすいタイプです。購入直前の総額を見ておくと安心です。'
+    }
+
+    switch (shop.category) {
+        case 'ラグジュアリー・ハイブランド':
+            return '高額帯の商品も多いため、受け取り時の追加費用が出るかを見ておきたいショップです。'
+        case 'ストリート・スニーカー':
+            return '抽選品や限定品では発送元が変わることもあるため、会計時の表示確認が大切です。'
+        case '韓国・アジアトレンド':
+            return '比較的買いやすい価格帯が多い一方で、注文額しだいで税金の扱いが変わることがあります。'
+        case 'コスメ・ビューティー':
+            return '化粧品は内容物や配送方法で扱いが変わることがあるため、会計時の表示を確認しておきたいです。'
+        case 'スポーツ・アウトドア':
+            return '大型商品やブランド制限があると、税金や手数料の見え方が変わることがあります。'
+        case '自転車・パーツ':
+            return 'パーツや完成車は金額差が大きいため、購入前に総額の見え方を確認しておくと安心です。'
+        default:
+            return '注文内容や発送元で税金の扱いが変わることがあるため、会計時の表示を見ておくと安心です。'
+    }
+}
+
+function getFeeFallback(shop: ShopDetailRecord): string {
+    if (isMarketplace(shop)) {
+        return '送料は出品者や倉庫の場所で差が出やすいタイプです。商品ごとに確認する前提が合っています。'
+    }
+
+    switch (shop.category) {
+        case 'ラグジュアリー・ハイブランド':
+            return 'エクスプレス配送中心のことが多く、送料は無料条件や注文金額で変わりやすいです。'
+        case 'ストリート・スニーカー':
+            return '通常配送よりも、抽選商品や限定商品で送料条件が変わりやすいショップです。'
+        case '韓国・アジアトレンド':
+            return '比較的使いやすい送料設定のことが多いですが、まとめ買いか単品買いかで差が出ます。'
+        case 'コスメ・ビューティー':
+            return '軽い商品が多い一方で、配送方法や内容物で送料や配送日数がぶれやすいです。'
+        case 'スポーツ・アウトドア':
+            return 'ギアのサイズや重量で送料差が出やすく、配送日数も商品によってぶれやすいです。'
+        case '自転車・パーツ':
+            return '小物と大型パーツで送料差が大きく、配送会社によって到着日数も変わりやすいです。'
+        default:
+            return '送料や配送日数は注文金額や配送方法で差が出やすいショップです。'
+    }
+}
+
 export function getShopLead(shop: ShopDetailRecord): string {
     if (shop.description) return shop.description
 
@@ -87,21 +133,13 @@ export function getShopTakeaways(shop: ShopDetailRecord): string[] {
 
 export function getReferenceNotes(shop: ShopDetailRecord): ReferenceNote[] {
     const shippingFallback = shop.ships_to_japan === false
-        ? '日本発送は制限の可能性があります。購入前に公式サイトで配送対象国をご確認ください。'
-        : '日本向け注文の導線があるショップ候補として掲載しています。最新の配送条件は公式サイトでご確認ください。'
-
-    const taxFallback = isMarketplace(shop)
-        ? '関税や消費税の扱いは出品者や発送元で変わることがあります。最終金額はチェックアウト画面をご確認ください。'
-        : '関税や消費税の扱いは注文内容や発送元で変わることがあります。最新条件は公式サイトをご確認ください。'
-
-    const feeFallback = isMarketplace(shop)
-        ? '送料は出品者や倉庫の場所で変わることがあります。商品ページとチェックアウト画面をご確認ください。'
-        : '送料や配送日数は注文金額や配送方法で変わります。最新の料金は公式サイトをご確認ください。'
+        ? '日本発送はできない、または制限がある可能性があります。'
+        : '日本発送に対応しているショップ候補です。'
 
     return [
-        { label: '日本発送', body: excerpt(shop.shipping_guide, 92) || shippingFallback },
-        { label: '関税・消費税', body: excerpt(shop.tax_guide, 92) || taxFallback },
-        { label: '送料・配送', body: excerpt(shop.fee_guide, 92) || feeFallback },
+        { label: '日本発送', body: shippingFallback },
+        { label: '関税・消費税', body: excerpt(shop.tax_guide, 92) || getTaxFallback(shop) },
+        { label: '送料・配送', body: excerpt(shop.fee_guide, 92) || getFeeFallback(shop) },
     ]
 }
 
