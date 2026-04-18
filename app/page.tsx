@@ -15,7 +15,7 @@ const MARQUEE_NAMES = [
 export default async function Home() {
   const { data: articles } = await supabase
     .from('posts')
-    .select('title, slug, thumbnail_url, category, created_at, updated_at')
+    .select('title, slug, thumbnail_url, category, created_at')
     .not('thumbnail_url', 'is', null)
     .order('created_at', { ascending: false })
     .limit(3)
@@ -359,7 +359,7 @@ export default async function Home() {
                         )}
                         <h3 className="article-card-title">{article.title}</h3>
                         <span style={{ fontSize: '0.72rem', color: '#8b8b89' }}>
-                          最終確認 {formatJapaneseDate(article.updated_at || article.created_at) || '未登録'}
+                          最終確認 {formatJapaneseDate(article.created_at) || '未登録'}
                         </span>
                         <span className="article-card-link">続きを読む →</span>
                       </div>

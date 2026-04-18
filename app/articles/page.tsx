@@ -9,7 +9,7 @@ export const revalidate = 60 // Revalidate cache every 60 seconds
 export default async function ArticlesPage() {
     const { data: posts } = await supabase
         .from('posts')
-        .select('id, slug, title, thumbnail_url, category, created_at, updated_at')
+        .select('id, slug, title, thumbnail_url, category, created_at')
         .order('created_at', { ascending: false })
 
     return (
@@ -90,7 +90,7 @@ export default async function ArticlesPage() {
                                                             </span>
                                                         )}
                                                         <span style={{ color: '#64748b' }}>
-                                                            最終確認 {formatJapaneseDate(post.updated_at || post.created_at) || '未登録'}
+                                                            最終確認 {formatJapaneseDate(post.created_at) || '未登録'}
                                                         </span>
                                                     </div>
                                                     <h2 style={{
