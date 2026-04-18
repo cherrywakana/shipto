@@ -3,6 +3,8 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from 'next/script'
 import './globals.css'
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-HJ20PZTJNT'
+
 export const metadata: Metadata = {
   title: 'Original Price - 海外通販の現地価格をチェック',
   description: '日本発送対応の海外通販サイトを厳選してご紹介。関税や送料を含めた現地価格に近いお得な情報を届けます。',
@@ -39,8 +41,8 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
       </body>
-      {process.env.NEXT_PUBLIC_GA_ID && (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      {GA_ID && (
+        <GoogleAnalytics gaId={GA_ID} />
       )}
     </html>
   )
