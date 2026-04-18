@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { CORE_GUIDE_LINKS, getShopComparisonItems, getShopFitBullets, getShopWarningBullets } from '@/lib/shopInsights'
 import { formatJapaneseDate, getLastVerifiedAt } from '@/lib/utils'
+import { getShopVerificationFields, getVerificationToneStyles } from '@/lib/shopVerification'
 
 export default async function ShopDetailPage({
     params,
@@ -21,6 +22,7 @@ export default async function ShopDetailPage({
     const comparisonItems = getShopComparisonItems(shop || {})
     const fitBullets = getShopFitBullets(shop || {})
     const warningBullets = getShopWarningBullets(shop || {})
+    const verificationFields = getShopVerificationFields(shop || {})
 
     if (!shop) return (
         <>
@@ -215,6 +217,57 @@ export default async function ShopDetailPage({
 
                         <div className="info-card">
                             <div className="info-title">
+                                <span style={{ fontSize: '1.5rem' }}>🔎</span>
+                                確認ステータス
+                            </div>
+                            <div style={{ display: 'grid', gap: '1rem' }}>
+                                {verificationFields.map((field) => {
+                                    const tone = getVerificationToneStyles(field.tone)
+
+                                    return (
+                                        <div key={field.key} style={{
+                                            border: `1px solid ${tone.border}`,
+                                            borderRadius: '16px',
+                                            background: tone.background,
+                                            padding: '1rem 1.1rem',
+                                        }}>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '0.6rem' }}>
+                                                <div style={{ fontWeight: 700, color: '#0f172a' }}>{field.label}</div>
+                                                <span style={{
+                                                    fontSize: '0.78rem',
+                                                    fontWeight: 700,
+                                                    color: tone.text,
+                                                    background: '#ffffff',
+                                                    border: `1px solid ${tone.border}`,
+                                                    borderRadius: '999px',
+                                                    padding: '0.25rem 0.7rem',
+                                                }}>
+                                                    {field.statusLabel}
+                                                </span>
+                                            </div>
+                                            <p style={{ margin: '0 0 0.55rem', color: '#0f172a', fontWeight: 600, lineHeight: 1.6 }}>{field.summary}</p>
+                                            <p style={{ margin: 0, color: '#475569', lineHeight: 1.7, fontSize: '0.94rem' }}>{field.detail}</p>
+                                            <div style={{ display: 'flex', gap: '0.9rem', flexWrap: 'wrap', marginTop: '0.75rem', fontSize: '0.88rem' }}>
+                                                {field.sourceUrl && (
+                                                    <a href={field.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#0f172a', fontWeight: 600, textDecoration: 'none' }}>
+                                                        {field.sourceLabel} ↗
+                                                    </a>
+                                                )}
+                                                <span style={{ color: '#64748b' }}>
+                                                    最終確認 {field.verifiedAt || '未登録'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <p style={{ marginTop: '1rem', marginBottom: 0, color: '#64748b', fontSize: '0.88rem', lineHeight: 1.7 }}>
+                                根拠URLが登録されている項目だけを「確認済み」としています。根拠URLがないものは本文があっても「要再確認」として扱います。
+                            </p>
+                        </div>
+
+                        <div className="info-card">
+                            <div className="info-title">
                                 <span style={{ fontSize: '1.5rem' }}>🎯</span>
                                 このショップが向いている人
                             </div>
@@ -241,26 +294,6 @@ export default async function ShopDetailPage({
                                 ) : (
                                     shop.shipping_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'
                                 )}
-                            </div>
-                        </div>
-
-                        <div className="info-card">
-                            <div className="info-title">
-                                <span style={{ fontSize: '1.5rem' }}>📝</span>
-                                関税は込みか
-                            </div>
-                            <div className="info-body">
-                                {shop.tax_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
-                            </div>
-                        </div>
-
-                        <div className="info-card">
-                            <div className="info-title">
-                                <span style={{ fontSize: '1.5rem' }}>📦</span>
-                                送料の目安
-                            </div>
-                            <div className="info-body">
-                                {shop.fee_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'}
                             </div>
                         </div>
 

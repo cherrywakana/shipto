@@ -62,7 +62,7 @@ export function getShopComparisonItems(shop: ShopInsight): ComparisonItem[] {
     return [
         {
             label: '日本発送',
-            value: shop.ships_to_japan === false ? '直送不可または制限あり' : '日本から注文しやすい可能性',
+            value: shop.ships_to_japan === false ? '直送不可または制限あり' : '要確認または対応中',
             tone: shop.ships_to_japan === false ? 'warning' : 'positive',
         },
         {
@@ -97,7 +97,7 @@ export function getShopComparisonItems(shop: ShopInsight): ComparisonItem[] {
 export function getShopFitBullets(shop: ShopInsight): string[] {
     const bullets: string[] = []
 
-    if (shop.ships_to_japan !== false) bullets.push('日本から注文しやすいショップを探している人向け')
+    if (shop.ships_to_japan !== false) bullets.push('日本発送に対応するショップ候補を比較したい人向け')
     if (detectTaxMode(shop.tax_guide).includes('関税込み')) bullets.push('受け取り時の追加費用をできるだけ避けたい人向け')
     if ((shop.popularity_score || 0) >= 70) bullets.push('定番ショップから比較したい人向け')
     if (shop.category) bullets.push(`${shop.category}系の買い回り先を探している人向け`)

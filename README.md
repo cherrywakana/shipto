@@ -30,4 +30,5 @@ npm run dev
 本番反映が必要な通常の修正は、`push` まで終えてはじめて完了です。  
 「まだ本番に出したくない」と明示された場合だけ、push を止めます。
 
-詳しい手順は [docs/OPERATIONS.md](/Users/reona/projects/directfound/docs/OPERATIONS.md) を見てください。
+詳しい手順は [docs/OPERATIONS.md](/Users/reona/projects/directfound/docs/OPERATIONS.md) を見てください。  
+ショップ情報の確認ルールは [docs/SHOP_VERIFICATION.md](/Users/reona/projects/directfound/docs/SHOP_VERIFICATION.md) にまとめています。
