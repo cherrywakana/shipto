@@ -133,8 +133,10 @@ export function getShopTakeaways(shop: ShopDetailRecord): string[] {
 
 export function getReferenceNotes(shop: ShopDetailRecord): ReferenceNote[] {
     const shippingFallback = shop.ships_to_japan === false
-        ? '日本発送はできない、または制限がある可能性があります。'
-        : '日本発送に対応しているショップ候補です。'
+        ? '× 未対応・制限あり'
+        : shop.ships_to_japan === true
+            ? '○ 対応'
+            : '△ 要確認'
 
     return [
         { label: '日本発送', body: shippingFallback },

@@ -102,10 +102,14 @@ function normalizePolicyUrl(url) {
 
 function buildShippingGuide(shop) {
     if (shop.ships_to_japan === false) {
-        return '日本発送はできない、または制限がある可能性があります。'
+        return '× 未対応・制限あり'
     }
 
-    return '日本発送に対応しているショップ候補です。'
+    if (shop.ships_to_japan === true) {
+        return '○ 対応'
+    }
+
+    return '△ 要確認'
 }
 
 function buildTaxGuide(shop) {
