@@ -11,18 +11,68 @@ export const revalidate = 60 // 60秒間キャッシュを利用
 type ShopsPageProps = {
     searchParams?: Promise<{
         category?: string | string[]
+        q?: string | string[]
     }>
+}
+
+function getSingleParam(value: string | string[] | undefined) {
+    return Array.isArray(value) ? value[0] : value
+}
+
+function buildShopHref(categoryLabel: string, q: string | undefined) {
+    const params = new URLSearchParams()
+
+    if (categoryLabel !== 'すべて') {
+        params.set('category', categoryLabel)
+    }
+
+    if (q) {
+        params.set('q', q)
+    }
+
+    const queryString = params.toString()
+    return queryString ? `/shops?${queryString}` : '/shops'
 }
 
 export default async function ShopsPage(props: ShopsPageProps) {
     const searchParams = await props.searchParams;
-    const category = searchParams?.category;
+    const category = getSingleParam(searchParams?.category);
+    const q = getSingleParam(searchParams?.q)?.trim();
 
     return (
         <>
             <Header />
             <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', minHeight: '100vh', background: '#f8fafc' }}>
                 <style>{`
+          .search-form-inline {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.8fr) auto;
+            gap: 0.75rem;
+            max-width: 980px;
+            margin: 0 auto 1.5rem;
+          }
+          .search-input,
+          .search-select {
+            width: 100%;
+            min-height: 52px;
+            border: 1px solid #d6d3d1;
+            border-radius: 14px;
+            background: #ffffff;
+            color: #111110;
+            font-size: 0.95rem;
+            padding: 0 1rem;
+          }
+          .search-submit {
+            min-height: 52px;
+            border: none;
+            border-radius: 14px;
+            background: #111110;
+            color: #fafaf9;
+            padding: 0 1.2rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+          }
           .shop-card {
             background: white;
             border: 1px solid #e2e8f0;
@@ -72,6 +122,11 @@ export default async function ShopsPage(props: ShopsPageProps) {
             0%, 100% { opacity: 1; }
             50% { opacity: .5; }
           }
+          @media (max-width: 820px) {
+            .search-form-inline {
+              grid-template-columns: 1fr;
+            }
+          }
         `}</style>
 
                 <section style={{
@@ -87,6 +142,33 @@ export default async function ShopsPage(props: ShopsPageProps) {
                         ショップ一覧
                     </h1>
 
+                    <form action="/shops" className="search-form-inline">
+                        <input
+                            type="text"
+                            name="q"
+                            defaultValue={q || ''}
+                            className="search-input"
+                            placeholder="ショップ名・ブランド名・カテゴリで検索"
+                        />
+                        <select name="category" defaultValue={category || ''} className="search-select">
+                            <option value="">すべて</option>
+                            {SHOP_CATEGORIES.filter((cat) => cat.label !== 'すべて').map((cat) => (
+                                <option key={cat.label} value={cat.label}>
+                                    {cat.label}
+                                </option>
+                            ))}
+                        </select>
+                        <button type="submit" className="search-submit">検索する</button>
+                    </form>
+
+                    {(q || category) && (
+                        <p style={{ color: '#6b6b69', marginBottom: '1.5rem', fontSize: '0.92rem' }}>
+                            {q ? `「${q}」` : 'キーワードなし'}
+                            {category ? ` / ${category}` : ''}
+                            {' '}の条件で表示中
+                        </p>
+                    )}
+
                     <div style={{
                         display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '1000px', margin: '0 auto'
                     }}>
@@ -95,7 +177,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
                             return (
                                 <Link
                                     key={cat.label}
-                                    href={cat.href}
+                                    href={buildShopHref(cat.label, q)}
                                     className={`cat-tab ${isActive ? 'active' : 'inactive'}`}
                                 >
                                     {cat.label}
@@ -113,7 +195,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
                             ))}
                         </div>
                     }>
-                        <ShopList category={category} />
+                        <ShopList category={category} q={q} />
                     </Suspense>
                 </section>
                 <Footer />
@@ -122,7 +204,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
     )
 }
 
-async function ShopList({ category }: { category: string | string[] | undefined }) {
+async function ShopList({ category, q }: { category: string | undefined, q: string | undefined }) {
     // DBクエリの実行
     let query = supabase
         .from('shops')
@@ -133,8 +215,11 @@ async function ShopList({ category }: { category: string | string[] | undefined 
         .order('name', { ascending: true })
 
     if (category) {
-        const categoryValue = Array.isArray(category) ? category[0] : category;
-        query = query.eq('category', categoryValue)
+        query = query.eq('category', category)
+    }
+
+    if (q) {
+        query = query.or(`name.ilike.%${q}%,description.ilike.%${q}%,category.ilike.%${q}%`)
     }
 
     const { data: shops, error } = await query

@@ -2,429 +2,590 @@ import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import { HOME_CATEGORY_CARDS } from '@/lib/shopCategories'
-import { formatJapaneseDate } from '@/lib/utils'
 
-const MARQUEE_NAMES = [
-  'SSENSE', 'FARFETCH', 'HARRODS', 'SELFRIDGES', 'MYTHERESA',
-  'MR PORTER', 'NET-A-PORTER', 'CETTIRE', 'GIGLIO', '24S',
-  'ANTONIOLI', 'LUISAVIAROMA', 'YOOX', 'REVOLVE', 'NORDSTROM',
-  'STOCKX', 'GOAT', 'END.', 'KITH', 'DOVER STREET',
-]
+export const revalidate = 3600
+
+type FeaturedShop = {
+  id: number
+  name: string
+  slug: string
+  url: string
+  country: string | null
+  category: string | null
+  image_url: string | null
+  description: string | null
+  ships_to_japan: boolean | null
+}
+
+const SEARCH_SUGGESTIONS = [
+  { label: 'SSENSE', href: '/shops?q=SSENSE' },
+  { label: 'スニーカー', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
+  { label: '韓国ブランド', href: '/shops?category=' + encodeURIComponent('韓国・アジアトレンド') },
+  { label: 'ラグジュアリー', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・ハイブランド') },
+  { label: '自転車パーツ', href: '/shops?category=' + encodeURIComponent('自転車・パーツ') },
+  { label: 'コスメ', href: '/shops?category=' + encodeURIComponent('コスメ・ビューティー') },
+] as const
+
+function formatCount(value: number | null | undefined, fallback: string) {
+  if (typeof value !== 'number' || Number.isNaN(value)) return fallback
+  if (value >= 1000) return `${Math.floor(value / 100) * 100}+`
+  return `${value}+`
+}
+
+function getShopBadge(shop: FeaturedShop) {
+  if (shop.ships_to_japan === true) return '日本配送OK'
+  if (shop.ships_to_japan === false) return '配送条件を確認'
+  return '配送可否を確認'
+}
 
 export default async function Home() {
-  const { data: articles } = await supabase
-    .from('posts')
-    .select('title, slug, thumbnail_url, category, created_at')
-    .not('thumbnail_url', 'is', null)
-    .order('created_at', { ascending: false })
-    .limit(3)
+  const [shopCountResult, shippableCountResult, featuredShopsResult] = await Promise.all([
+    supabase.from('shops').select('id', { count: 'exact', head: true }),
+    supabase.from('shops').select('id', { count: 'exact', head: true }).eq('ships_to_japan', true),
+    supabase
+      .from('shops')
+      .select('id, name, slug, url, country, category, image_url, description, ships_to_japan')
+      .neq('ships_to_japan', false)
+      .order('is_affiliate', { ascending: false })
+      .order('popularity_score', { ascending: false })
+      .order('name', { ascending: true })
+      .limit(6),
+  ])
+
+  const featuredShops = (featuredShopsResult.data ?? []) as FeaturedShop[]
 
   return (
     <>
       <Header />
-      <main>
-        {/* Impact.com affiliate verification */}
+      <main id="main-content">
         <div style={{ display: 'none' }}>Impact-Site-Verification: 204b2504-8f49-41e6-b979-1a1077b19bdb</div>
+
         <style>{`
-          /* ─── Marquee ─── */
-          @keyframes marquee {
-            from { transform: translateX(0); }
-            to   { transform: translateX(-50%); }
+          .home-shell {
+            padding-inline: clamp(1.25rem, 5vw, 3rem);
           }
-          .marquee-track {
+          .home-container {
+            max-width: 1160px;
+            margin: 0 auto;
+          }
+          .search-hero {
+            padding-block: clamp(7rem, 13vw, 9rem) clamp(3rem, 6vw, 4.5rem);
+            border-bottom: 1px solid #e5e5e3;
+            background:
+              radial-gradient(circle at top right, rgba(17, 17, 16, 0.06), transparent 28rem),
+              linear-gradient(180deg, #ffffff 0%, #f7f7f5 100%);
+          }
+          .search-hero-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+            gap: clamp(1.5rem, 4vw, 3rem);
+            align-items: start;
+          }
+          .search-hero-copy {
             display: flex;
-            width: max-content;
-            animation: marquee 28s linear infinite;
+            flex-direction: column;
+            gap: 1.4rem;
           }
-          .marquee-track:hover { animation-play-state: paused; }
-          .marquee-item {
+          .search-lead {
+            font-size: clamp(1rem, 1.7vw, 1.08rem);
+            color: #5f5f5d;
+            line-height: 1.8;
+            max-width: 42ch;
+          }
+          .search-form-shell {
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid #e5e5e3;
+            border-radius: 28px;
+            padding: clamp(1rem, 2.5vw, 1.35rem);
+            box-shadow: 0 18px 50px rgba(17, 17, 16, 0.08);
+          }
+          .search-form {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(160px, 0.75fr) auto;
+            gap: 0.8rem;
+            align-items: stretch;
+          }
+          .search-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+          }
+          .search-label {
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8a8a88;
+          }
+          .search-input,
+          .search-select {
+            width: 100%;
+            min-height: 52px;
+            border: 1px solid #dfdfdc;
+            border-radius: 16px;
+            background: #ffffff;
+            color: #111110;
+            font-size: 0.96rem;
+            padding: 0 1rem;
+            outline: none;
+          }
+          .search-input:focus,
+          .search-select:focus {
+            border-color: #111110;
+          }
+          .search-submit {
+            min-height: 52px;
+            align-self: end;
+            border: none;
+            border-radius: 16px;
+            background: #111110;
+            color: #fafaf9;
+            padding: 0 1.25rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+          }
+          .suggestion-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-top: 1rem;
+          }
+          .suggestion-chip {
             display: inline-flex;
             align-items: center;
-            gap: 1.5rem;
-            padding: 0 1.5rem;
-            font-size: 0.72rem;
+            padding: 0.62rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid #e5e5e3;
+            background: #ffffff;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: #333332;
+          }
+          .search-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding-top: 0.2rem;
+          }
+          .hero-panel {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid #e5e5e3;
+            border-radius: 24px;
+            padding: 1.25rem;
+            box-shadow: 0 18px 48px rgba(17, 17, 16, 0.06);
+          }
+          .hero-panel-list {
+            display: grid;
+            gap: 0.8rem;
+            margin-top: 1rem;
+          }
+          .hero-panel-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 0.75rem;
+            align-items: center;
+            padding: 0.85rem 0.9rem;
+            border-radius: 16px;
+            background: #fcfcfb;
+            border: 1px solid #efefec;
+          }
+          .hero-panel-rank {
+            width: 1.8rem;
+            height: 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            background: #111110;
+            color: #fafaf9;
+            font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 0.14em;
-            color: #a1a19f;
+          }
+          .section-link {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #6b6b69;
+            text-decoration: none;
+            border-bottom: 1px solid #c8c8c6;
+            padding-bottom: 1px;
             white-space: nowrap;
           }
-          .marquee-dot {
-            width: 3px;
-            height: 3px;
-            background: var(--accent-brand);
-            border-radius: 50%;
-            flex-shrink: 0;
-            opacity: 0.5;
+          .section-link:hover {
+            color: #111110;
+            border-color: #111110;
           }
-
-
-
-          /* ─── Category grid ─── */
-          .cat-grid-v2 {
+          .category-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1px;
             background: #e5e5e3;
             border: 1px solid #e5e5e3;
-            border-radius: 14px;
+            border-radius: 18px;
             overflow: hidden;
           }
-          @media (max-width: 640px) {
-            .cat-grid-v2 { grid-template-columns: repeat(2, 1fr); }
-          }
-          .cat-item-v2 {
+          .category-card {
             background: #ffffff;
-            padding: 1.75rem 1.5rem;
+            padding: 1.6rem 1.4rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            text-decoration: none;
-            color: inherit;
-            transition: background 0.15s;
+            min-height: 150px;
             position: relative;
-            overflow: hidden;
           }
-          .cat-item-v2::after {
+          .category-card::after {
             content: '→';
             position: absolute;
-            bottom: 1.25rem;
-            right: 1.25rem;
-            font-size: 0.9rem;
+            right: 1.2rem;
+            bottom: 1.1rem;
             color: #c8c8c6;
-            transition: color 0.15s, transform 0.15s;
           }
-          .cat-item-v2:hover { background: #fafaf9; }
-          .cat-item-v2:hover::after { color: #111110; transform: translate(2px, -2px); }
-          .cat-num {
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: var(--accent-brand);
-            margin-bottom: 0.25rem;
-          }
-          .cat-name-v2 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #111110;
-            letter-spacing: -0.02em;
-            line-height: 1.3;
-          }
-          .cat-sub {
-            font-size: 0.78rem;
-            color: #a1a19f;
-            line-height: 1.5;
-            margin-top: 0.15rem;
-          }
-
-          /* ─── Article cards ─── */
-          .articles-grid {
+          .results-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
           }
-          @media (max-width: 768px) {
-            .articles-grid { grid-template-columns: 1fr; }
-          }
-          .article-card-v2 {
-            display: flex;
-            flex-direction: column;
+          .result-card {
             border: 1px solid #e5e5e3;
-            border-radius: 12px;
+            border-radius: 18px;
             overflow: hidden;
             background: #ffffff;
-            text-decoration: none;
-            color: inherit;
-            transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s;
-          }
-          .article-card-v2:hover {
-            box-shadow: 0 12px 32px rgba(0,0,0,0.07);
-            transform: translateY(-3px);
-            border-color: #d0d0ce;
-          }
-          .article-card-img {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            display: block;
-            background: #f3f3f1;
-          }
-          .article-card-body {
-            padding: 1.25rem 1.25rem 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+          }
+          .result-card:hover {
+            transform: translateY(-2px);
+            border-color: #d0d0ce;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+          }
+          .result-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: #f3f3f1;
+          }
+          .result-body {
+            padding: 1.1rem 1.1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
             flex: 1;
           }
-          .article-card-cat {
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #a1a19f;
+          .result-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
           }
-          .article-card-title {
-            font-size: 0.9rem;
+          .result-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.28rem 0.62rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
             font-weight: 700;
-            color: #111110;
-            letter-spacing: -0.02em;
-            line-height: 1.45;
+            background: #f3f3f1;
+            color: #333332;
+          }
+          .result-desc {
+            font-size: 0.88rem;
+            color: #6b6b69;
+            line-height: 1.7;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
           }
-          .article-card-link {
+          .result-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
             margin-top: auto;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent-brand);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+          }
+          .entry-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+          }
+          .entry-card {
+            border: 1px solid #e5e5e3;
+            border-radius: 20px;
+            background: #ffffff;
+            padding: 1.35rem;
+          }
+          @media (max-width: 980px) {
+            .search-hero-layout,
+            .results-grid,
+            .entry-grid {
+              grid-template-columns: 1fr;
+            }
+            .search-form {
+              grid-template-columns: 1fr;
+            }
+          }
+          @media (max-width: 768px) {
+            .category-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+          @media (max-width: 640px) {
+            .search-hero {
+              padding-top: 6.5rem;
+            }
           }
         `}</style>
 
-        {/* ════════════════════════════════ HERO */}
-        <section style={{
-          padding: 'clamp(8rem, 14vw, 10rem) clamp(1.25rem, 5vw, 3rem) clamp(4rem, 6vw, 5rem)',
-          borderBottom: '1px solid #e5e5e3',
-        }}>
-          <div style={{
-            maxWidth: '1160px', margin: '0 auto',
-            display: 'flex', alignItems: 'center',
-            gap: 'clamp(2rem, 5vw, 5rem)',
-          }}>
-            {/* Left text */}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        <section className="search-hero home-shell">
+          <div className="home-container search-hero-layout">
+            <div className="search-hero-copy">
               <div className="fade-up delay-1">
-                <span className="tag">Original Price — 海外通販ガイド</span>
+                <span className="tag">shop search</span>
               </div>
 
-              <h1 className="fade-up delay-2" style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(3rem, 7.5vw, 6rem)',
-                fontWeight: 700,
-                letterSpacing: '-0.035em',
-                lineHeight: 1.02,
-                color: '#111110',
-              }}>
-                世界中のショッピングを、<br />
-                <em style={{ fontStyle: 'italic', color: '#888886' }}>日本から。</em>
-              </h1>
+              <div className="fade-up delay-2">
+                <h1
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(3rem, 7vw, 5.3rem)',
+                    fontWeight: 700,
+                    letterSpacing: '-0.045em',
+                    lineHeight: 1.02,
+                    color: '#111110',
+                  }}
+                >
+                  海外通販サイトを
+                  <br />
+                  検索して見つける。
+                </h1>
+              </div>
 
-              <p className="fade-up delay-3" style={{
-                fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)',
-                color: '#6b6b69',
-                lineHeight: 1.75,
-                maxWidth: '40ch',
-                letterSpacing: '-0.01em',
-              }}>
-                日本に送れる海外通販サイトを見つけやすく整理。
-                ざっくりした参考情報を載せつつ、最新条件は公式サイトで確認しやすい形を目指しています。
+              <p className="search-lead fade-up delay-3">
+                ショップ名でも、カテゴリでも探せます。日本から使いやすい海外通販サイトを一覧でチェックできます。
               </p>
 
-              <div className="fade-up delay-4" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <Link href="/shops" className="btn btn-primary">ショップを探す →</Link>
-                <Link href="/brands" className="btn btn-secondary">ブランドから探す</Link>
+              <div className="search-form-shell fade-up delay-4">
+                <form action="/shops" className="search-form">
+                  <label className="search-field">
+                    <span className="search-label">キーワード</span>
+                    <input
+                      type="text"
+                      name="q"
+                      className="search-input"
+                      placeholder="ショップ名・ブランド名・カテゴリ"
+                    />
+                  </label>
+
+                  <label className="search-field">
+                    <span className="search-label">カテゴリ</span>
+                    <select name="category" className="search-select" defaultValue="">
+                      <option value="">すべて</option>
+                      {HOME_CATEGORY_CARDS.map((category) => (
+                        <option key={category.label} value={category.label}>
+                          {category.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+
+                  <button type="submit" className="search-submit">検索する</button>
+                </form>
+
+                <div className="suggestion-row" aria-label="人気の検索">
+                  {SEARCH_SUGGESTIONS.map((item) => (
+                    <Link key={item.href} href={item.href} className="suggestion-chip">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
 
-              {/* Stats row */}
-              <div className="fade-up delay-5" style={{
-                display: 'flex', gap: '2.5rem', paddingTop: '1rem',
-                borderTop: '1px solid #e5e5e3', flexWrap: 'wrap',
-              }}>
-                {[
-                  { v: '80+', l: '掲載ショップ' },
-                  { v: 'Japan', l: '発送可ショップ' },
-                  { v: '100+', l: 'ガイド記事' },
-                ].map(s => (
-                  <div key={s.l}>
-                    <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.04em', color: '#111110', lineHeight: 1 }}>{s.v}</div>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 600, color: '#a1a19f', letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: '0.3rem' }}>{s.l}</div>
+              <div className="search-meta fade-up delay-5">
+                <div>
+                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1 }}>
+                    {formatCount(shopCountResult.count, '80+')}
                   </div>
-                ))}
+                  <div style={{ fontSize: '0.74rem', fontWeight: 700, color: '#8a8a88', letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: '0.35rem' }}>
+                    掲載ショップ
+                  </div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1 }}>
+                    {formatCount(shippableCountResult.count, '60+')}
+                  </div>
+                  <div style={{ fontSize: '0.74rem', fontWeight: 700, color: '#8a8a88', letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: '0.35rem' }}>
+                    日本配送対応
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        <section style={{
-          padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 3rem)',
-          borderBottom: '1px solid #e5e5e3',
-          background: '#ffffff',
-        }}>
-          <div style={{
-            maxWidth: '1160px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '1rem',
-          }}>
-            {[
-              ['探しやすい', '日本に送れるショップ候補を見つけやすく整理'],
-              ['参考メモつき', '送料や関税はざっくり把握できるよう補足'],
-              ['最新は公式確認', '購入前に公式サイトで条件を確認しやすい導線にする'],
-            ].map(([title, body]) => (
-              <div key={title} style={{ border: '1px solid #e5e5e3', borderRadius: '16px', padding: '1.25rem 1.35rem', background: '#fafaf9' }}>
-                <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.7rem' }}>{title}</p>
-                <p style={{ margin: 0, color: '#555553', lineHeight: 1.65, fontSize: '0.92rem' }}>{body}</p>
+            <aside className="hero-panel fade-up delay-4">
+              <p className="section-label" style={{ marginBottom: 0 }}>人気ショップ</p>
+              <h2 style={{ fontSize: '1.35rem', letterSpacing: '-0.03em', lineHeight: 1.3 }}>
+                よく見られている候補
+              </h2>
+              <div className="hero-panel-list">
+                {featuredShops.slice(0, 4).map((shop, index) => (
+                  <Link key={shop.id} href={`/shops/${shop.slug}`} className="hero-panel-item">
+                    <span className="hero-panel-rank">{index + 1}</span>
+                    <div>
+                      <p style={{ fontWeight: 700, lineHeight: 1.35 }}>{shop.name}</p>
+                      <p style={{ fontSize: '0.82rem', color: '#6b6b69', marginTop: '0.15rem' }}>
+                        {[shop.category, shop.country].filter(Boolean).join(' / ')}
+                      </p>
+                    </div>
+                    <span style={{ fontSize: '0.8rem', color: '#8a8a88', fontWeight: 700 }}>→</span>
+                  </Link>
+                ))}
               </div>
-            ))}
+            </aside>
           </div>
         </section>
 
-        {/* ════════════════════════════════ MARQUEE */}
-        <div style={{
-          borderBottom: '1px solid #e5e5e3',
-          padding: '1rem 0',
-          overflow: 'hidden',
-          background: '#ffffff',
-        }}>
-          <div className="marquee-track">
-            {[...MARQUEE_NAMES, ...MARQUEE_NAMES].map((name, i) => (
-              <span key={i} className="marquee-item">
-                {name}
-                <span className="marquee-dot" />
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* ════════════════════════════════ CATEGORIES */}
-        <section style={{
-          padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 5vw, 3rem)',
-          borderBottom: '1px solid #e5e5e3',
-          background: '#fafaf9',
-        }}>
-          <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
-            <div style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-                <p className="section-label">カテゴリ</p>
-                <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-                  <h2 className="section-title">何をお探しですか？</h2>
-                <Link href="/shops" style={{ fontSize: '0.82rem', fontWeight: 600, color: '#6b6b69', textDecoration: 'none', borderBottom: '1px solid #c8c8c6', paddingBottom: '1px', whiteSpace: 'nowrap' }}>
-                  すべて見る →
+        <section
+          className="home-shell"
+          style={{
+            paddingBlock: 'clamp(3.8rem, 7vw, 5rem)',
+            borderBottom: '1px solid #e5e5e3',
+            background: '#fafaf9',
+          }}
+        >
+          <div className="home-container">
+            <div style={{ marginBottom: 'clamp(2rem, 4vw, 2.6rem)' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
+                <div>
+                  <p className="section-label">カテゴリ検索</p>
+                  <h2 className="section-title">カテゴリからすばやく絞る。</h2>
+                </div>
+                <Link href="/shops" className="section-link">
+                  すべてのショップを見る →
                 </Link>
               </div>
             </div>
 
-            <div className="cat-grid-v2">
-              {HOME_CATEGORY_CARDS.map((cat, i) => (
-                <Link key={cat.label} href={cat.href} className="cat-item-v2">
-                  <span className="cat-num">0{i + 1}</span>
-                  <span className="cat-name-v2">{cat.label}</span>
-                  <span className="cat-sub">{cat.sub}</span>
+            <div className="category-grid">
+              {HOME_CATEGORY_CARDS.map((category, index) => (
+                <Link key={category.label} href={category.href} className="category-card">
+                  <span style={{ fontSize: '0.66rem', fontWeight: 700, letterSpacing: '0.12em', color: '#111110' }}>
+                    0{index + 1}
+                  </span>
+                  <span style={{ fontSize: '0.98rem', fontWeight: 700, lineHeight: 1.4, letterSpacing: '-0.02em' }}>
+                    {category.label}
+                  </span>
+                  <span style={{ fontSize: '0.82rem', color: '#7a7a78', lineHeight: 1.65 }}>
+                    {category.sub}
+                  </span>
                 </Link>
               ))}
             </div>
-            <p style={{ marginTop: '1rem', color: '#8b8b89', fontSize: '0.88rem', lineHeight: 1.7 }}>
-              掲載情報はショップ探しの参考用です。送料・関税・配送条件は変更されるため、購入前に各ショップの公式案内をご確認ください。
-            </p>
           </div>
         </section>
 
-        {/* ════════════════════════════════ LATEST ARTICLES */}
-        {articles && articles.length > 0 && (
-          <section style={{
-            padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 5vw, 3rem)',
-            borderBottom: '1px solid #e5e5e3',
-            background: '#ffffff',
-          }}>
-            <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
-              <div style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-                <p className="section-label">記事</p>
+        {featuredShops.length > 0 && (
+          <section
+            className="home-shell"
+            style={{
+              paddingBlock: 'clamp(4rem, 7vw, 5.5rem)',
+              borderBottom: '1px solid #e5e5e3',
+              background: '#ffffff',
+            }}
+          >
+            <div className="home-container">
+              <div style={{ marginBottom: 'clamp(2rem, 4vw, 2.6rem)' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-                  <h2 className="section-title">最新のガイドを読む。</h2>
-                  <Link href="/articles" style={{ fontSize: '0.82rem', fontWeight: 600, color: '#6b6b69', textDecoration: 'none', borderBottom: '1px solid #c8c8c6', paddingBottom: '1px', whiteSpace: 'nowrap' }}>
-                    すべての記事 →
+                  <div>
+                    <p className="section-label">検索結果の一例</p>
+                    <h2 className="section-title">まず見ておきたいサイト。</h2>
+                  </div>
+                  <Link href="/shops" className="section-link">
+                    一覧ページで比較する →
                   </Link>
                 </div>
               </div>
 
-              <div className="articles-grid">
-                {articles.map((article) => {
-                  const href = article.slug.includes('/') && !article.slug.startsWith('articles/')
-                    ? `/${article.slug}`
-                    : `/articles/${article.slug}`;
-                  
-                  return (
-                    <Link key={article.slug} href={href} className="article-card-v2">
-                      {article.thumbnail_url && (
-                        <img
-                          src={article.thumbnail_url}
-                          alt={article.title}
-                          className="article-card-img"
-                          loading="lazy"
+              <div className="results-grid">
+                {featuredShops.map((shop) => (
+                  <article key={shop.id} className="result-card">
+                    <div className="result-image">
+                      {shop.image_url ? (
+                        <Image
+                          src={shop.image_url}
+                          alt={shop.name}
+                          fill
+                          sizes="(max-width: 980px) 100vw, 50vw"
+                          style={{ objectFit: 'cover' }}
                         />
+                      ) : (
+                        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a1a19f' }}>
+                          画像準備中
+                        </div>
                       )}
-                      <div className="article-card-body">
-                        {article.category && (
-                          <span className="article-card-cat">{article.category}</span>
-                        )}
-                        <h3 className="article-card-title">{article.title}</h3>
-                        <span style={{ fontSize: '0.72rem', color: '#8b8b89' }}>
-                          最終確認 {formatJapaneseDate(article.created_at) || '未登録'}
-                        </span>
-                        <span className="article-card-link">続きを読む →</span>
+                    </div>
+                    <div className="result-body">
+                      <div className="result-badges">
+                        {shop.category && <span className="result-badge">{shop.category}</span>}
+                        {shop.country && <span className="result-badge">{shop.country}</span>}
+                        <span className="result-badge">{getShopBadge(shop)}</span>
                       </div>
-                    </Link>
-                  );
-                })}
+                      <h3 style={{ fontSize: '1.12rem', lineHeight: 1.35, letterSpacing: '-0.02em' }}>
+                        {shop.name}
+                      </h3>
+                      {shop.description && (
+                        <p className="result-desc">{shop.description}</p>
+                      )}
+                      <div className="result-actions">
+                        <Link href={`/shops/${shop.slug}`} style={{ fontSize: '0.83rem', fontWeight: 700 }}>
+                          詳細を見る →
+                        </Link>
+                        <a href={shop.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.83rem', fontWeight: 700, color: '#6b6b69', textDecoration: 'none' }}>
+                          公式サイト ↗
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </section>
         )}
 
-        {/* ════════════════════════════════ DARK CTA */}
-        <section style={{
-          padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 3rem)',
-          background: '#111110',
-        }}>
-          <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
-            <div style={{
-              display: 'flex', alignItems: 'center',
-              justifyContent: 'space-between', gap: '3rem', flexWrap: 'wrap',
-            }}>
-              <div>
-                <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', color: '#555553', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-                  はじめての方へ
-                </p>
-                <h2 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                  fontWeight: 700,
-                  letterSpacing: '-0.03em',
-                  color: '#fafaf9',
-                  lineHeight: 1.1,
-                  maxWidth: '20ch',
-                }}>
-                  海外通販、<br />
-                  <em style={{ fontStyle: 'italic', color: 'rgba(250,250,249,0.45)' }}>はじめてみませんか。</em>
-                </h2>
-              </div>
+        <section
+          className="home-shell"
+          style={{
+            paddingBlock: 'clamp(3.8rem, 7vw, 5rem)',
+            borderBottom: '1px solid #e5e5e3',
+            background: '#fafaf9',
+          }}
+        >
+          <div className="home-container">
+            <div style={{ marginBottom: 'clamp(2rem, 4vw, 2.4rem)' }}>
+              <p className="section-label">探し方</p>
+              <h2 className="section-title">ブランドや一覧からも探せます。</h2>
+            </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flexShrink: 0 }}>
-                <Link href="/guide" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                  background: '#fafaf9', color: '#111110',
-                  padding: '0.85rem 1.75rem', borderRadius: '6px',
-                  fontSize: '0.875rem', fontWeight: 700,
-                  textDecoration: 'none', letterSpacing: '-0.01em',
-                  transition: 'background 0.15s',
-                }}>
-                  初心者ガイドを読む →
-                </Link>
-                <Link href="/articles" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                  color: '#555553',
-                  padding: '0.85rem 1.75rem', borderRadius: '6px',
-                  border: '1px solid #2a2a28',
-                  fontSize: '0.875rem', fontWeight: 600,
-                  textDecoration: 'none', letterSpacing: '-0.01em',
-                  transition: 'border-color 0.15s, color 0.15s',
-                }}>
-                  ブランド記事一覧
-                </Link>
-              </div>
+            <div className="entry-grid">
+              <Link href="/brands" className="entry-card">
+                <h3 style={{ fontSize: '1.05rem', letterSpacing: '-0.02em', lineHeight: 1.4 }}>ブランドから探す</h3>
+                <p style={{ marginTop: '0.5rem', color: '#5f5f5d', lineHeight: 1.75, fontSize: '0.9rem' }}>
+                  欲しいブランドが決まっているときは、取り扱いショップをブランド一覧から探せます。
+                </p>
+              </Link>
+
+              <Link href="/shops" className="entry-card">
+                <h3 style={{ fontSize: '1.05rem', letterSpacing: '-0.02em', lineHeight: 1.4 }}>ショップ一覧で比較する</h3>
+                <p style={{ marginTop: '0.5rem', color: '#5f5f5d', lineHeight: 1.75, fontSize: '0.9rem' }}>
+                  まとめて見比べたいときは、一覧ページでカテゴリやキーワードを組み合わせて探せます。
+                </p>
+              </Link>
+
+              <Link href="/guide" className="entry-card">
+                <h3 style={{ fontSize: '1.05rem', letterSpacing: '-0.02em', lineHeight: 1.4 }}>ガイドを読む</h3>
+                <p style={{ marginTop: '0.5rem', color: '#5f5f5d', lineHeight: 1.75, fontSize: '0.9rem' }}>
+                  海外通販の流れを先に確認したいときは、基本ガイドから始められます。
+                </p>
+              </Link>
             </div>
           </div>
         </section>
