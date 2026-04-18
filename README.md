@@ -34,3 +34,4 @@ npm run dev
 ショップ情報の確認ルールは [docs/SHOP_VERIFICATION.md](/Users/reona/projects/directfound/docs/SHOP_VERIFICATION.md) にまとめています。
 
 AI が自律的に改善を進めるときの優先順位と判断基準は [docs/AUTONOMOUS_GROWTH.md](/Users/reona/projects/directfound/docs/AUTONOMOUS_GROWTH.md) にまとめています。
+収益改善のための `GSC` `Skimlinks` 取得基盤は [docs/GROWTH_DATA_PIPELINES.md](/Users/reona/projects/directfound/docs/GROWTH_DATA_PIPELINES.md) にまとめています。

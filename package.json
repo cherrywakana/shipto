@@ -11,7 +11,9 @@
     "sync-thumbnails": "node scripts/sync_thumbnails.js",
     "collect-brands": "node scripts/autonomous_collector.js",
     "verify-shop-policies": "node scripts/verify_shop_policies.js",
-    "normalize-shops": "node scripts/normalize_shops_for_discovery.cjs"
+    "normalize-shops": "node scripts/normalize_shops_for_discovery.cjs",
+    "fetch-gsc": "node scripts/fetch_gsc_search_analytics.js",
+    "fetch-skimlinks": "node scripts/fetch_skimlinks_report.js"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",
