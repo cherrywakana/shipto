@@ -2,10 +2,13 @@ import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import { CORE_GUIDE_LINKS } from '@/lib/shopInsights'
 import { formatJapaneseDate, getLastVerifiedAt } from '@/lib/utils'
 import {
     getOfficialLinks,
+    getShopChecklist,
+    getShopTakeaways,
     getReferenceNotes,
     getShopLead,
 } from '@/lib/shopDetail'
@@ -87,6 +90,8 @@ export default async function ShopDetailPage({
         ).values()
     ).slice(0, 8)
     const similarShops = (similarResponse.data as SimilarShop[] | null) || []
+    const shopTakeaways = getShopTakeaways(shop)
+    const shopChecklist = getShopChecklist(shop)
 
     return (
         <>
@@ -101,6 +106,11 @@ export default async function ShopDetailPage({
                     .shop-summary-grid {
                         display: grid;
                         gap: 1.5rem;
+                    }
+
+                    .shop-guide-grid {
+                        display: grid;
+                        gap: 1rem;
                     }
 
                     .shop-cta-row {
@@ -126,6 +136,10 @@ export default async function ShopDetailPage({
                     @media (min-width: 760px) {
                         .shop-summary-grid {
                             grid-template-columns: repeat(3, minmax(0, 1fr));
+                        }
+
+                        .shop-guide-grid {
+                            grid-template-columns: repeat(2, minmax(0, 1fr));
                         }
                     }
                 `}</style>
@@ -169,12 +183,14 @@ export default async function ShopDetailPage({
                                 overflow: 'hidden',
                                 boxShadow: '0 20px 45px -30px rgba(0, 0, 0, 0.18)',
                             }}>
-                                <div style={{ aspectRatio: '16/10', background: '#f5f5f4' }}>
+                                <div style={{ aspectRatio: '16/10', background: '#f5f5f4', position: 'relative' }}>
                                     {shop.image_url ? (
-                                        <img
+                                        <Image
                                             src={shop.image_url}
                                             alt={shop.name}
-                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                            fill
+                                            sizes="(max-width: 900px) 100vw, 420px"
+                                            style={{ objectFit: 'cover' }}
                                         />
                                     ) : (
                                         <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a8a29e' }}>
@@ -188,6 +204,29 @@ export default async function ShopDetailPage({
                                 <p style={{ fontSize: '1.06rem', lineHeight: 1.85, color: '#44403c', maxWidth: '720px', marginBottom: '1rem' }}>
                                     {lead}
                                 </p>
+                                {shopTakeaways.length > 0 && (
+                                    <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+                                        {shopTakeaways.map((item) => (
+                                            <span
+                                                key={item}
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '0.45rem',
+                                                    borderRadius: '999px',
+                                                    border: '1px solid #e7e5e4',
+                                                    background: '#ffffff',
+                                                    padding: '0.55rem 0.85rem',
+                                                    fontSize: '0.82rem',
+                                                    color: '#44403c',
+                                                    lineHeight: 1.5,
+                                                }}
+                                            >
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
                                 <div className="shop-cta-row" style={{ marginTop: '1.5rem' }}>
                                     <a
                                         href={shop.url}
@@ -221,6 +260,26 @@ export default async function ShopDetailPage({
                                         参考情報を見る
                                     </Link>
                                 </div>
+                                {officialLinks.length > 1 && (
+                                    <div style={{ marginTop: '1rem', display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
+                                        {officialLinks.filter((link) => link.label !== '公式サイト').map((link) => (
+                                            <a
+                                                key={link.href}
+                                                href={link.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{
+                                                    textDecoration: 'none',
+                                                    fontWeight: 600,
+                                                    color: '#57534e',
+                                                    fontSize: '0.9rem',
+                                                }}
+                                            >
+                                                {link.label} ↗
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -228,6 +287,46 @@ export default async function ShopDetailPage({
 
                 <section style={{ padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 6vw, 5rem)' }}>
                     <div style={{ maxWidth: '1040px', margin: '0 auto', display: 'grid', gap: '1.5rem' }}>
+                        <section className="shop-guide-grid">
+                            <div style={{ background: '#ffffff', border: '1px solid #eceae7', borderRadius: '24px', padding: '1.5rem' }}>
+                                <h2 style={{ fontSize: '1.2rem', marginBottom: '0.9rem' }}>このショップが向いている人</h2>
+                                <div style={{ display: 'grid', gap: '0.8rem' }}>
+                                    {shopTakeaways.map((item) => (
+                                        <div key={item} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '0.7rem', alignItems: 'start' }}>
+                                            <span style={{ color: '#166534', fontWeight: 700 }}>✓</span>
+                                            <p style={{ margin: 0, lineHeight: 1.7, color: '#44403c' }}>{item}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div style={{ background: '#ffffff', border: '1px solid #eceae7', borderRadius: '24px', padding: '1.5rem' }}>
+                                <h2 style={{ fontSize: '1.2rem', marginBottom: '0.9rem' }}>公式サイトで先に見ること</h2>
+                                <div style={{ display: 'grid', gap: '0.8rem' }}>
+                                    {shopChecklist.map((item) => (
+                                        <div key={item} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '0.7rem', alignItems: 'start' }}>
+                                            <span style={{ color: '#111827', fontWeight: 700 }}>{'\u2022'}</span>
+                                            <p style={{ margin: 0, lineHeight: 1.7, color: '#44403c' }}>{item}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                                <a
+                                    href={shop.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'inline-block',
+                                        marginTop: '1.1rem',
+                                        textDecoration: 'none',
+                                        fontWeight: 700,
+                                        color: '#111827',
+                                    }}
+                                >
+                                    商品一覧を開く ↗
+                                </a>
+                            </div>
+                        </section>
+
                         <section id="shop-memo" style={{ background: '#ffffff', border: '1px solid #eceae7', borderRadius: '24px', padding: '1.6rem' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'flex-end', flexWrap: 'wrap', marginBottom: '1rem' }}>
                                 <h2 style={{ fontSize: '1.35rem', margin: 0 }}>送料・関税・配送の参考情報</h2>
@@ -308,12 +407,14 @@ export default async function ShopDetailPage({
                                                 background: '#fcfcfb',
                                             }}
                                         >
-                                            <div style={{ aspectRatio: '16/9', background: '#f5f5f4' }}>
+                                            <div style={{ aspectRatio: '16/9', background: '#f5f5f4', position: 'relative' }}>
                                                 {similar.image_url ? (
-                                                    <img
+                                                    <Image
                                                         src={similar.image_url}
                                                         alt={similar.name}
-                                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                                        fill
+                                                        sizes="(max-width: 760px) 100vw, 320px"
+                                                        style={{ objectFit: 'cover' }}
                                                     />
                                                 ) : null}
                                             </div>
