@@ -3,7 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { addExternalLinkAttributes } from '@/lib/utils'
+import { addExternalLinkAttributes, getArticleExcerpt, sanitizeArticleHtml } from '@/lib/utils'
 
 // Catch-all route for legacy URLs and custom paths
 // e.g. /fashionshop/lists/mens
@@ -28,11 +28,7 @@ export async function generateMetadata({
         }
     }
 
-    const plainText = post.content
-        ?.replace(/<[^>]*>/g, '')
-        ?.replace(/\s+/g, ' ')
-        ?.trim()
-        ?.slice(0, 120) + '...'
+    const plainText = getArticleExcerpt(post.content, 120)
 
     return {
         title: `${post.title} | Original Price`,
@@ -124,8 +120,9 @@ export default async function LegacyPathPage({
         </>
     )
 
-    const headings = extractHeadings(post.content || '')
-    const contentWithLinks = addExternalLinkAttributes(post.content || '')
+    const sanitizedContent = sanitizeArticleHtml(post.content || '')
+    const headings = extractHeadings(sanitizedContent)
+    const contentWithLinks = addExternalLinkAttributes(sanitizedContent)
     const contentWithIds = injectHeadingIds(contentWithLinks, headings)
 
     const jsonLd = {

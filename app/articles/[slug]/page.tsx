@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { addExternalLinkAttributes } from '@/lib/utils'
+import { addExternalLinkAttributes, getArticleExcerpt, sanitizeArticleHtml } from '@/lib/utils'
 
 // --- SEO: generateMetadata for per-article title/description/og ---
 export async function generateMetadata({
@@ -27,11 +27,7 @@ export async function generateMetadata({
     }
 
     // Extract first 120 chars of plain text for description
-    const plainText = post.content
-        ?.replace(/<[^>]*>/g, '')
-        ?.replace(/\s+/g, ' ')
-        ?.trim()
-        ?.slice(0, 120) + '...'
+    const plainText = getArticleExcerpt(post.content, 120)
 
     const postUrl = slug.includes('/') && !slug.startsWith('articles/')
         ? `https://original-price.com/${slug}`
@@ -138,8 +134,9 @@ export default async function ArticleDetailPage({
     )
 
     // Extract headings for ToC and inject IDs
-    const headings = extractHeadings(post.content || '')
-    const contentWithLinks = addExternalLinkAttributes(post.content || '')
+    const sanitizedContent = sanitizeArticleHtml(post.content || '')
+    const headings = extractHeadings(sanitizedContent)
+    const contentWithLinks = addExternalLinkAttributes(sanitizedContent)
     const contentWithIds = injectHeadingIds(contentWithLinks, headings)
 
     // --- JSON-LD Structured Data ---

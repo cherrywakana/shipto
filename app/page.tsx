@@ -2,33 +2,13 @@ import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-
-const SUPABASE_URL = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public'
-
-// Shop thumbnails we know exist
-const SHOP_IMAGES = [
-  { slug: 'farfetch',    name: 'FARFETCH' },
-  { slug: 'harrods',    name: 'HARRODS' },
-  { slug: 'cettire',    name: 'CETTIRE' },
-  { slug: 'giglio',     name: 'GIGLIO' },
-  { slug: '24s',        name: '24S' },
-  { slug: 'antonioli',  name: 'ANTONIOLI' },
-]
+import { HOME_CATEGORY_CARDS } from '@/lib/shopCategories'
 
 const MARQUEE_NAMES = [
   'SSENSE', 'FARFETCH', 'HARRODS', 'SELFRIDGES', 'MYTHERESA',
   'MR PORTER', 'NET-A-PORTER', 'CETTIRE', 'GIGLIO', '24S',
   'ANTONIOLI', 'LUISAVIAROMA', 'YOOX', 'REVOLVE', 'NORDSTROM',
   'STOCKX', 'GOAT', 'END.', 'KITH', 'DOVER STREET',
-]
-
-const CATEGORIES = [
-  { label: 'ストリート・スニーカー', sub: '国内未発売も即購入', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
-  { label: 'ラグジュアリー・百貨店', sub: '公式より安く、正規品で', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・百貨店') },
-  { label: 'セレクト・トレンド', sub: '世界のセレクトを一気に', href: '/shops?category=' + encodeURIComponent('セレクト・トレンド') },
-  { label: 'アウトドア', sub: '希少モデルを国内定価以下で', href: '/shops?category=' + encodeURIComponent('アウトドア') },
-  { label: 'コスメ・ビューティー', sub: '正規品を最安値で', href: '/shops?category=' + encodeURIComponent('コスメ・ビューティー') },
-  { label: 'ヴィンテージ・古着', sub: '一点物との偶然の出会い', href: '/shops?category=' + encodeURIComponent('ヴィンテージ・古着') },
 ]
 
 export default async function Home() {
@@ -302,7 +282,7 @@ export default async function Home() {
             </div>
 
             <div className="cat-grid-v2">
-              {CATEGORIES.map((cat, i) => (
+              {HOME_CATEGORY_CARDS.map((cat, i) => (
                 <Link key={cat.label} href={cat.href} className="cat-item-v2">
                   <span className="cat-num">0{i + 1}</span>
                   <span className="cat-name-v2">{cat.label}</span>

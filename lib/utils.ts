@@ -1,3 +1,36 @@
+const BLOCKED_TAGS = ['script', 'style', 'iframe', 'object', 'embed', 'form', 'input', 'button', 'textarea', 'select', 'base', 'meta', 'link']
+
+function stripBlockedTags(html: string): string {
+    let sanitized = html
+
+    for (const tag of BLOCKED_TAGS) {
+        const pairedTagPattern = new RegExp(`<${tag}\\b[^>]*>[\\s\\S]*?<\\/${tag}>`, 'gi')
+        const selfClosingTagPattern = new RegExp(`<${tag}\\b[^>]*\\/?>`, 'gi')
+        sanitized = sanitized.replace(pairedTagPattern, '').replace(selfClosingTagPattern, '')
+    }
+
+    return sanitized
+}
+
+function stripDangerousAttributes(html: string): string {
+    return html
+        .replace(/\s+on[a-z-]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+        .replace(/\s+srcdoc\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+        .replace(/\s+(href|src)\s*=\s*("|\')\s*(?:javascript:|data:text\/html)/gi, ' $1=$2#blocked:')
+        .replace(/\s+style\s*=\s*("|\')[\s\S]*?(expression\s*\(|javascript:|url\s*\(\s*["\']?\s*javascript:)[\s\S]*?\1/gi, '')
+}
+
+/**
+ * Remove obviously dangerous HTML before rendering CMS article content.
+ * This is a lightweight server-side sanitizer for stored article HTML.
+ */
+export function sanitizeArticleHtml(html: string): string {
+    if (!html) return ''
+
+    const withoutBlockedTags = stripBlockedTags(html)
+    return stripDangerousAttributes(withoutBlockedTags)
+}
+
 /**
  * Add target="_blank" and rel="noopener noreferrer" to all external links in an HTML string.
  * External links are those starting with http:// or https:// and NOT pointing to original-price.com.
@@ -6,9 +39,20 @@ export function addExternalLinkAttributes(html: string): string {
     return html.replace(
         /<a\s([^>]*?)href="(https?:\/\/(?!original-price\.com)[^"]+)"([^>]*?)>/gi,
         (match, before, url, after) => {
-            // If target is already set, don't overwrite
-            if (/target=/i.test(before) || /target=/i.test(after)) return match;
-            return `<a ${before}href="${url}"${after} target="_blank" rel="noopener noreferrer">`;
+            if (/target=/i.test(before) || /target=/i.test(after)) return match
+            return `<a ${before}href="${url}"${after} target="_blank" rel="noopener noreferrer">`
         }
-    );
+    )
+}
+
+export function getArticleExcerpt(html: string | null | undefined, maxLength = 120): string | undefined {
+    const plainText = html
+        ?.replace(/<[^>]*>/g, ' ')
+        ?.replace(/\s+/g, ' ')
+        ?.trim()
+
+    if (!plainText) return undefined
+    if (plainText.length <= maxLength) return plainText
+
+    return `${plainText.slice(0, maxLength)}...`
 }

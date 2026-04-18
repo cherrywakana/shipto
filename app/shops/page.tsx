@@ -4,22 +4,19 @@ import { Suspense } from 'react'
 import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { SHOP_CATEGORIES } from '@/lib/shopCategories'
 
 export const revalidate = 60 // 60秒間キャッシュを利用
 
-export default async function ShopsPage(props: any) {
+type ShopsPageProps = {
+    searchParams?: Promise<{
+        category?: string | string[]
+    }>
+}
+
+export default async function ShopsPage(props: ShopsPageProps) {
     const searchParams = await props.searchParams;
     const category = searchParams?.category;
-
-    const categories = [
-        { label: 'すべて', href: '/shops' },
-        { label: 'ラグジュアリー・ハイブランド', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・ハイブランド') },
-        { label: 'ストリート・スニーカー', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
-        { label: 'スポーツ・アウトドア', href: '/shops?category=' + encodeURIComponent('スポーツ・アウトドア') },
-        { label: '自転車・パーツ', href: '/shops?category=' + encodeURIComponent('自転車・パーツ') },
-        { label: '韓国・アジアトレンド', href: '/shops?category=' + encodeURIComponent('韓国・アジアトレンド') },
-        { label: 'コスメ・ビューティー', href: '/shops?category=' + encodeURIComponent('コスメ・ビューティー') },
-    ]
 
     return (
         <>
@@ -93,7 +90,7 @@ export default async function ShopsPage(props: any) {
                     <div style={{
                         display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '1000px', margin: '0 auto'
                     }}>
-                        {categories.map((cat) => {
+                        {SHOP_CATEGORIES.map((cat) => {
                             const isActive = (!category && cat.label === 'すべて') || (category === cat.label);
                             return (
                                 <Link
