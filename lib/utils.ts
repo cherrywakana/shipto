@@ -56,3 +56,25 @@ export function getArticleExcerpt(html: string | null | undefined, maxLength = 1
 
     return `${plainText.slice(0, maxLength)}...`
 }
+
+type TimestampedRecord = {
+    updated_at?: string | null
+    created_at?: string | null
+}
+
+export function getLastVerifiedAt(record: TimestampedRecord | null | undefined): string | undefined {
+    return record?.updated_at || record?.created_at || undefined
+}
+
+export function formatJapaneseDate(dateString: string | null | undefined): string | undefined {
+    if (!dateString) return undefined
+
+    const date = new Date(dateString)
+    if (Number.isNaN(date.getTime())) return undefined
+
+    return new Intl.DateTimeFormat('ja-JP', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+    }).format(date)
+}

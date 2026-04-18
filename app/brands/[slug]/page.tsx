@@ -3,6 +3,32 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { CORE_GUIDE_LINKS, getBrandShopBadges, getBrandShopReason, type ShopInsight } from '@/lib/shopInsights'
+import { formatJapaneseDate, getLastVerifiedAt } from '@/lib/utils'
+
+type BrandRecord = {
+    id: number
+    name: string
+    slug: string
+    created_at?: string | null
+}
+
+type ShopBrandRow = {
+    shop_id: number
+    brand_url?: string | null
+    shops: (ShopInsight & {
+        name: string
+        slug: string
+        url: string
+    }) | null
+}
+
+type BrandShop = ShopInsight & {
+    name: string
+    slug: string
+    url: string
+    brand_url?: string | null
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params
@@ -21,12 +47,11 @@ export default async function BrandDetailPage({
 }) {
     const { slug } = await params
 
-    // 1. ブランド情報の取得
     const { data: brand } = await supabase
         .from('brands')
         .select('*')
         .eq('slug', slug)
-        .single()
+        .single<BrandRecord>()
 
     if (!brand) return (
         <>
@@ -39,7 +64,6 @@ export default async function BrandDetailPage({
         </>
     )
 
-    // 2. そのブランドを取り扱うショップを取得
     const { data: shopBrands } = await supabase
         .from('shop_brands')
         .select(`
@@ -53,32 +77,35 @@ export default async function BrandDetailPage({
         description,
         is_affiliate,
         ships_to_japan,
-        popularity_score
+        popularity_score,
+        updated_at,
+        created_at
       )
     `)
         .eq('brand_id', brand.id)
         .eq('status', 'found')
 
-    const availableShops = (shopBrands?.map((sb: any) => ({
-        ...sb.shops,
-        brand_url: sb.brand_url
-    })) || []).sort((a: any, b: any) => {
-        // 1. Affiliate first
-        if (a.is_affiliate !== b.is_affiliate) return b.is_affiliate ? 1 : -1;
-        // 2. Ships to Japan first
-        if (a.ships_to_japan !== b.ships_to_japan) return (b.ships_to_japan !== false) ? 1 : -1;
-        // 3. Popularity score (desc)
-        if (a.popularity_score !== b.popularity_score) return b.popularity_score - a.popularity_score;
-        // 4. Name (asc)
-        return a.name.localeCompare(b.name);
+    const availableShops: BrandShop[] = ((shopBrands as ShopBrandRow[] | null)?.flatMap((sb) => {
+        if (!sb.shops) return []
+
+        return [{
+            ...sb.shops,
+            brand_url: sb.brand_url,
+        }]
+    }) || []).sort((a, b) => {
+        if (a.is_affiliate !== b.is_affiliate) return b.is_affiliate ? 1 : -1
+        if (a.ships_to_japan !== b.ships_to_japan) return (b.ships_to_japan !== false) ? 1 : -1
+        if (a.popularity_score !== b.popularity_score) return (b.popularity_score || 0) - (a.popularity_score || 0)
+        return a.name.localeCompare(b.name)
     })
+
+    const lastVerifiedAt = getLastVerifiedAt(availableShops[0]) || getLastVerifiedAt(brand)
 
     return (
         <>
             <Header />
             <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', background: '#f8fafc', minHeight: '100vh' }}>
 
-                {/* Header Section */}
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem',
                     background: '#fafaf9',
@@ -94,13 +121,15 @@ export default async function BrandDetailPage({
                         }}>
                             {brand.name}
                         </h1>
-                        <p style={{ fontSize: '1.125rem', color: '#64748b', lineHeight: 1.6, maxWidth: '600px' }}>
-                            {brand.name}（{brand.name}）を日本から買える、おすすめの海外通販サイトを厳選しました。
+                        <p style={{ fontSize: '1.125rem', color: '#64748b', lineHeight: 1.6, maxWidth: '720px' }}>
+                            {brand.name}を日本から買えるショップを、直送可否・人気・比較しやすさをもとに並べています。
+                        </p>
+                        <p style={{ marginTop: '1rem', fontSize: '0.92rem', color: '#64748b' }}>
+                            最終確認 {formatJapaneseDate(lastVerifiedAt) || '未登録'}
                         </p>
                     </div>
                 </section>
 
-                {/* Shop List */}
                 <section style={{ padding: '4rem clamp(1.5rem, 5vw, 4rem)', maxWidth: '1000px', margin: '0 auto' }}>
                     <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '2.5rem' }}>
                         取り扱いショップ一覧（{availableShops.length}件）
@@ -108,35 +137,46 @@ export default async function BrandDetailPage({
 
                     {availableShops.length > 0 ? (
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}>
-                            {availableShops.map((shop: any) => (
-                                <a key={shop.slug} href={shop.brand_url || shop.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                    <div style={{
-                                        background: 'white', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0',
-                                        boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)', transition: 'all 0.3s', height: '100%',
-                                        display: 'flex', flexDirection: 'column'
-                                    }}>
-                                        <div style={{ aspectRatio: '16/9', background: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
-                                            {shop.image_url ? (
-                                                <img src={shop.image_url} alt={shop.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                                            ) : (
-                                                <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8' }}>No Image</div>
-                                            )}
-                                        </div>
-                                        <div style={{ padding: '1.5rem', flex: 1 }}>
-                                            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem' }}>{shop.name}</h3>
-                                            <p style={{
-                                                fontSize: '0.875rem', color: '#64748b', lineHeight: 1.6,
-                                                display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
-                                            }}>
-                                                {shop.description}
-                                            </p>
-                                        </div>
-                                        <div style={{ padding: '1rem 1.5rem', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '0.4rem' }}>
-                                            <span style={{ fontSize: '0.875rem', fontWeight: 600, color: '#111110' }}>ショップへ移動</span>
-                                            <span style={{ fontSize: '0.75rem' }}>↗️</span>
-                                        </div>
+                            {availableShops.map((shop) => (
+                                <div key={shop.slug} style={{
+                                    background: 'white', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0',
+                                    boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)', transition: 'all 0.3s', height: '100%',
+                                    display: 'flex', flexDirection: 'column'
+                                }}>
+                                    <div style={{ aspectRatio: '16/9', background: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
+                                        {shop.image_url ? (
+                                            <img src={shop.image_url} alt={shop.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        ) : (
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8' }}>No Image</div>
+                                        )}
                                     </div>
-                                </a>
+                                    <div style={{ padding: '1.5rem', flex: 1 }}>
+                                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.8rem' }}>
+                                            {getBrandShopBadges(shop).map((badge) => (
+                                                <span key={badge} style={{ fontSize: '0.72rem', fontWeight: 700, color: '#111110', background: '#f3f3f1', padding: '0.28rem 0.6rem', borderRadius: '999px' }}>
+                                                    {badge}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem' }}>{shop.name}</h3>
+                                        <p style={{
+                                            fontSize: '0.875rem', color: '#64748b', lineHeight: 1.6,
+                                            display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
+                                        }}>
+                                            {shop.description}
+                                        </p>
+                                        <p style={{ fontSize: '0.82rem', color: '#475569', lineHeight: 1.6, marginTop: '0.85rem', marginBottom: 0 }}>
+                                            {getBrandShopReason(shop)}
+                                        </p>
+                                    </div>
+                                    <div style={{ padding: '1rem 1.5rem', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
+                                        <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
+                                            <Link href={`/shops/${shop.slug}`} style={{ fontSize: '0.875rem', fontWeight: 600, color: '#111110', textDecoration: 'none' }}>比較情報を見る</Link>
+                                            <a href={shop.brand_url || shop.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.875rem', fontWeight: 600, color: '#64748b', textDecoration: 'none' }}>ショップへ移動 ↗</a>
+                                        </div>
+                                        <span style={{ fontSize: '0.82rem', color: '#64748b' }}>最終確認 {formatJapaneseDate(getLastVerifiedAt(shop)) || '未登録'}</span>
+                                    </div>
+                                </div>
                             ))}
                         </div>
                     ) : (
@@ -144,6 +184,19 @@ export default async function BrandDetailPage({
                             <p style={{ color: '#64748b' }}>現在、このブランドの取り扱いショップは登録されていません。</p>
                         </div>
                     )}
+
+                    <div style={{ marginTop: '3rem', border: '1px solid #e2e8f0', borderRadius: '18px', padding: '1.4rem 1.5rem', background: '#fafaf9' }}>
+                        <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.85rem' }}>
+                            比較の前に読むと安心
+                        </p>
+                        <div style={{ display: 'grid', gap: '0.8rem' }}>
+                            {CORE_GUIDE_LINKS.map((guide) => (
+                                <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none', color: '#0f172a', fontWeight: 600 }}>
+                                    {guide.title} →
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 </section>
 
                 <Footer />

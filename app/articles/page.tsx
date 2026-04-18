@@ -2,13 +2,14 @@ import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import { formatJapaneseDate } from '@/lib/utils'
 
 export const revalidate = 60 // Revalidate cache every 60 seconds
 
 export default async function ArticlesPage() {
     const { data: posts } = await supabase
         .from('posts')
-        .select('id, slug, title, thumbnail_url, category, created_at')
+        .select('id, slug, title, thumbnail_url, category, created_at, updated_at')
         .order('created_at', { ascending: false })
 
     return (
@@ -89,7 +90,7 @@ export default async function ArticlesPage() {
                                                             </span>
                                                         )}
                                                         <span style={{ color: '#64748b' }}>
-                                                            {post.created_at ? new Date(post.created_at).toLocaleDateString('ja-JP') : ''}
+                                                            最終確認 {formatJapaneseDate(post.updated_at || post.created_at) || '未登録'}
                                                         </span>
                                                     </div>
                                                     <h2 style={{

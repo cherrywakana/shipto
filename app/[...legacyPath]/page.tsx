@@ -3,7 +3,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { addExternalLinkAttributes, getArticleExcerpt, sanitizeArticleHtml } from '@/lib/utils'
+import { CORE_GUIDE_LINKS } from '@/lib/shopInsights'
+import { addExternalLinkAttributes, formatJapaneseDate, getArticleExcerpt, getLastVerifiedAt, sanitizeArticleHtml } from '@/lib/utils'
 
 // Catch-all route for legacy URLs and custom paths
 // e.g. /fashionshop/lists/mens
@@ -106,6 +107,13 @@ export default async function LegacyPathPage({
         .eq('slug', slug)
         .single()
 
+    const { data: featuredShops } = await supabase
+        .from('shops')
+        .select('name, slug, category, ships_to_japan, is_affiliate, popularity_score')
+        .order('is_affiliate', { ascending: false })
+        .order('popularity_score', { ascending: false })
+        .limit(3)
+
     if (!post) return (
         <>
             <Header />
@@ -198,6 +206,9 @@ export default async function LegacyPathPage({
                                     border: '1px solid var(--accent-brand-mid)',
                                 }}>{post.category}</span>
                             )}
+                            <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>
+                                最終確認 {formatJapaneseDate(getLastVerifiedAt(post)) || '未登録'}
+                            </span>
                         </div>
 
                         <h1 style={{
@@ -229,6 +240,70 @@ export default async function LegacyPathPage({
                             </nav>
                         )}
                         <div className="article-content" dangerouslySetInnerHTML={{ __html: contentWithIds }} />
+
+                        <div style={{
+                            marginTop: '5rem',
+                            paddingTop: '3rem',
+                            borderTop: '1px solid #e2e8f0',
+                            display: 'grid',
+                            gap: '1.5rem'
+                        }}>
+                            <div style={{ textAlign: 'center' }}>
+                                <p style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem' }}>
+                                    記事を読んだら、次は比較して選ぶ段階へ。
+                                </p>
+                                <p style={{ color: '#64748b', margin: 0, lineHeight: 1.7 }}>
+                                    ショップ一覧・ブランド一覧・初心者ガイドを行き来しながら、自分に合う海外通販先を見つけやすくしています。
+                                </p>
+                            </div>
+
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
+                                {[
+                                    { title: 'ショップ一覧', body: '送料・関税・日本発送の違いを比較', href: '/shops' },
+                                    { title: 'ブランド一覧', body: '欲しいブランドが買える店を探す', href: '/brands' },
+                                    { title: '初心者ガイド', body: 'DDP/DDUや返品の基礎を押さえる', href: '/guide' },
+                                ].map((card) => (
+                                    <Link key={card.title} href={card.href} style={{ textDecoration: 'none', color: 'inherit', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '1.2rem', background: '#fafaf9' }}>
+                                        <div style={{ fontWeight: 700, color: '#0f172a', marginBottom: '0.45rem' }}>{card.title}</div>
+                                        <div style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6 }}>{card.body}</div>
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {featuredShops && featuredShops.length > 0 && (
+                                <div style={{ border: '1px solid #e2e8f0', borderRadius: '18px', padding: '1.25rem 1.35rem', background: '#fff' }}>
+                                    <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.85rem' }}>
+                                        今すぐ比較しやすいショップ
+                                    </p>
+                                    <div style={{ display: 'grid', gap: '0.8rem' }}>
+                                        {featuredShops.map((shop) => (
+                                            <Link key={shop.slug} href={`/shops/${shop.slug}`} style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', textDecoration: 'none', color: 'inherit', paddingBottom: '0.8rem', borderBottom: '1px solid #f0f0ee' }}>
+                                                <div>
+                                                    <div style={{ fontWeight: 700, color: '#0f172a' }}>{shop.name}</div>
+                                                    <div style={{ fontSize: '0.88rem', color: '#64748b' }}>
+                                                        {shop.category} {shop.ships_to_japan === false ? '・直送可否は要確認' : '・日本から比較しやすい候補'}
+                                                    </div>
+                                                </div>
+                                                <span style={{ color: '#111110', fontWeight: 600, whiteSpace: 'nowrap' }}>詳細を見る</span>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            <div style={{ border: '1px solid #e2e8f0', borderRadius: '18px', padding: '1.25rem 1.35rem', background: '#fafaf9' }}>
+                                <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.85rem' }}>
+                                    一緒に読むと安心なガイド
+                                </p>
+                                <div style={{ display: 'grid', gap: '0.8rem' }}>
+                                    {CORE_GUIDE_LINKS.map((guide) => (
+                                        <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none', color: '#0f172a', fontWeight: 600 }}>
+                                            {guide.title} →
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <Footer />

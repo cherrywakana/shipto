@@ -2,6 +2,8 @@ import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import { CORE_GUIDE_LINKS, getShopComparisonItems, getShopFitBullets, getShopWarningBullets } from '@/lib/shopInsights'
+import { formatJapaneseDate, getLastVerifiedAt } from '@/lib/utils'
 
 export default async function ShopDetailPage({
     params,
@@ -15,6 +17,10 @@ export default async function ShopDetailPage({
         .select('*')
         .eq('slug', slug)
         .single()
+
+    const comparisonItems = getShopComparisonItems(shop || {})
+    const fitBullets = getShopFitBullets(shop || {})
+    const warningBullets = getShopWarningBullets(shop || {})
 
     if (!shop) return (
         <>
@@ -130,6 +136,9 @@ export default async function ShopDetailPage({
                                         📍 {shop.country}発祥
                                     </span>
                                 )}
+                                <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>
+                                    最終確認 {formatJapaneseDate(getLastVerifiedAt(shop)) || '未登録'}
+                                </span>
                             </div>
 
                             <h1 style={{
@@ -190,6 +199,34 @@ export default async function ShopDetailPage({
                 <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)' }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
 
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                            {comparisonItems.map((item) => (
+                                <div key={item.label} style={{
+                                    border: '1px solid #e2e8f0',
+                                    borderRadius: '16px',
+                                    padding: '1rem 1.1rem',
+                                    background: item.tone === 'warning' ? '#fffaf0' : '#fafaf9'
+                                }}>
+                                    <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8b8b89', marginBottom: '0.45rem' }}>{item.label}</div>
+                                    <div style={{ color: '#0f172a', lineHeight: 1.55, fontWeight: 600, fontSize: '0.95rem' }}>{item.value}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="info-card">
+                            <div className="info-title">
+                                <span style={{ fontSize: '1.5rem' }}>🎯</span>
+                                このショップが向いている人
+                            </div>
+                            <div className="info-body">
+                                <ul style={{ margin: 0, paddingLeft: '1.1rem' }}>
+                                    {fitBullets.map((bullet) => (
+                                        <li key={bullet} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+
                         <div className="info-card" style={{
                             background: shop.ships_to_japan === false ? '#fffcf0' : 'white',
                             border: shop.ships_to_japan === false ? '1px solid #fde68a' : '1px solid #e2e8f0'
@@ -227,9 +264,40 @@ export default async function ShopDetailPage({
                             </div>
                         </div>
 
+                        <div className="info-card">
+                            <div className="info-title">
+                                <span style={{ fontSize: '1.5rem' }}>⚠️</span>
+                                購入前に気をつけたいこと
+                            </div>
+                            <div className="info-body">
+                                <ul style={{ margin: 0, paddingLeft: '1.1rem' }}>
+                                    {warningBullets.map((bullet) => (
+                                        <li key={bullet} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+
                         <div style={{ padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '1rem', fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6 }}>
                             <strong style={{ color: '#475569', display: 'block', marginBottom: '0.25rem' }}>⚠️ ご注意・免責事項</strong>
                             掲載されている情報は調査時点のものです。配送や関税に関する最新の正確なルールは、ご自身で必ず公式サイトをご確認ください。
+                        </div>
+
+                        <div style={{ border: '1px solid #e2e8f0', borderRadius: '16px', padding: '1.3rem 1.4rem', background: '#fafaf9', marginBottom: '2rem' }}>
+                            <p style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.8rem' }}>
+                                あわせて読むと安心
+                            </p>
+                            <div style={{ display: 'grid', gap: '0.75rem' }}>
+                                {CORE_GUIDE_LINKS.map((guide) => (
+                                    <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none', color: '#0f172a', fontWeight: 600 }}>
+                                        {guide.title} →
+                                    </Link>
+                                ))}
+                            </div>
+                            <div style={{ marginTop: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                                <Link href="/brands" style={{ textDecoration: 'none', color: '#64748b', fontWeight: 600 }}>ブランドから探す</Link>
+                                <Link href="/shops" style={{ textDecoration: 'none', color: '#64748b', fontWeight: 600 }}>ショップ一覧に戻る</Link>
+                            </div>
                         </div>
 
                         <div className="article-cta">

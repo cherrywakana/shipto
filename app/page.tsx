@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { HOME_CATEGORY_CARDS } from '@/lib/shopCategories'
+import { formatJapaneseDate } from '@/lib/utils'
 
 const MARQUEE_NAMES = [
   'SSENSE', 'FARFETCH', 'HARRODS', 'SELFRIDGES', 'MYTHERESA',
@@ -14,7 +15,7 @@ const MARQUEE_NAMES = [
 export default async function Home() {
   const { data: articles } = await supabase
     .from('posts')
-    .select('title, slug, thumbnail_url, category, created_at')
+    .select('title, slug, thumbnail_url, category, created_at, updated_at')
     .not('thumbnail_url', 'is', null)
     .order('created_at', { ascending: false })
     .limit(3)
@@ -219,7 +220,7 @@ export default async function Home() {
                 letterSpacing: '-0.01em',
               }}>
                 日本発送対応の海外通販サイトを厳選。
-                ブランドから探せて、関税や送料の情報もひと目でわかります。
+                送料・関税・配送の違いまで、日本から比較しやすい形でまとめています。
               </p>
 
               <div className="fade-up delay-4" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -234,7 +235,7 @@ export default async function Home() {
               }}>
                 {[
                   { v: '80+', l: '掲載ショップ' },
-                  { v: '30+', l: '注目ブランド' },
+                  { v: '7', l: '比較項目' },
                   { v: '100+', l: 'ガイド記事' },
                 ].map(s => (
                   <div key={s.l}>
@@ -244,6 +245,31 @@ export default async function Home() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section style={{
+          padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 3rem)',
+          borderBottom: '1px solid #e5e5e3',
+          background: '#ffffff',
+        }}>
+          <div style={{
+            maxWidth: '1160px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1rem',
+          }}>
+            {[
+              ['比較しやすい', '送料・関税・配送目安を同じ見方で整理'],
+              ['最終確認日つき', '公開情報の鮮度が追いやすい設計へ改善中'],
+              ['初心者にもやさしい', 'DDP/DDUや返品の不安をガイドで補足'],
+            ].map(([title, body]) => (
+              <div key={title} style={{ border: '1px solid #e5e5e3', borderRadius: '16px', padding: '1.25rem 1.35rem', background: '#fafaf9' }}>
+                <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.7rem' }}>{title}</p>
+                <p style={{ margin: 0, color: '#555553', lineHeight: 1.65, fontSize: '0.92rem' }}>{body}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -332,6 +358,9 @@ export default async function Home() {
                           <span className="article-card-cat">{article.category}</span>
                         )}
                         <h3 className="article-card-title">{article.title}</h3>
+                        <span style={{ fontSize: '0.72rem', color: '#8b8b89' }}>
+                          最終確認 {formatJapaneseDate(article.updated_at || article.created_at) || '未登録'}
+                        </span>
                         <span className="article-card-link">続きを読む →</span>
                       </div>
                     </Link>
