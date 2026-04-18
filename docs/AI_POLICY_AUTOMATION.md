@@ -1,8 +1,9 @@
-# AI Policy Automation
+# Policy Automation
 
 ## 目的
 
-人手レビューなしで、ショップごとの `日本発送` `関税` `送料` の根拠URLと説明文をできるだけ自動で埋める。
+人手レビューなしで、ショップごとの `日本発送` `関税` `送料` の根拠URLと説明文をできるだけ自動で埋める。  
+外部LLM APIは使わず、ローカルのルールベース抽出だけで回す。
 
 ## 実装
 
@@ -18,21 +19,15 @@ npm run verify-shop-policies
 
 ## 必要な環境変数
 
-- `OPENAI_API_KEY`
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-
-任意:
-
-- `OPENAI_POLICY_MODEL`
-  - 既定値: `gpt-4o-mini`
 
 ## 動き
 
 1. `shops` テーブルから対象ショップを取る
 2. 公式トップページと内部リンク候補を収集する
 3. 配送・関税・送料に関係しそうなページ候補を取得する
-4. OpenAI Structured Outputs で JSON 判定する
+4. 取得した本文をローカルのルールで判定する
 5. 次を `shops` に保存する
 
 - `shipping_guide`
@@ -70,8 +65,14 @@ npm run verify-shop-policies -- --limit 30
 npm run verify-shop-policies -- --slug farfetch --dry-run
 ```
 
+## 判定ルール
+
+- 公式ドメイン内のページ候補だけを使う
+- `Japan` `international` `shipping` `duty` `tax` `cost` などのキーワードでスコアリングする
+- 一番強い文を根拠として採用する
+- 日本向け情報が弱い場合は `unknown` のまま残す
+
 ## 注意
 
-- AIは与えられた公式ページ候補だけを根拠に判定する
-- 日本向け情報が明示されていない場合は `unknown` を返すようにしている
+- 完全な意味理解ではなく、ルールベース抽出
 - スキーマ差分で `shipping_url` などの更新に失敗した場合は、説明文だけ保存するフォールバックを入れている

@@ -33,14 +33,14 @@
 3. 要点だけを `*_guide` にまとめる
 4. 更新後は `updated_at` が変わる状態で保存する
 
-## AI運用
+## 自動運用
 
 人手レビューなしで回す場合は、[docs/AI_POLICY_AUTOMATION.md](/Users/reona/projects/directfound/docs/AI_POLICY_AUTOMATION.md) のバッチを使う。
 
-AIの役割:
+自動化の役割:
 
 - 公式ページ候補を読む
-- 日本発送・関税・送料を JSON で構造化する
+- 日本発送・関税・送料をローカルルールで構造化する
 - `*_guide` と `*_url` を保存する
 
 この方式でも、根拠ページが見つからない場合は未確認のまま残す。

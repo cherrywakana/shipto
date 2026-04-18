@@ -8,17 +8,11 @@ const dotenv = require('dotenv');
 
 dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const OPENAI_MODEL = process.env.OPENAI_POLICY_MODEL || 'gpt-4o-mini';
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 if (!SUPABASE_URL || !SUPABASE_KEY) {
     throw new Error('Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY in environment.');
-}
-
-if (!OPENAI_API_KEY) {
-    throw new Error('Missing OPENAI_API_KEY in environment.');
 }
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -28,8 +22,7 @@ const OUTPUT_DIR = path.resolve(__dirname, '../tmp/shop-policy-verifier');
 
 const FIELD_CONFIG = {
     shipping: {
-        label: '日本発送',
-        keywords: ['ship', 'shipping', 'delivery', 'international', 'worldwide', 'country', 'countries', 'returns', 'help/shipping'],
+        keywords: ['ship', 'shipping', 'delivery', 'international', 'worldwide', 'country', 'countries'],
         fallbackPaths: [
             '/shipping',
             '/shipping-policy',
@@ -43,10 +36,10 @@ const FIELD_CONFIG = {
             '/support/shipping',
             '/help/international-shipping',
         ],
+        sentenceKeywords: ['japan', 'international', 'shipping', 'delivery', 'ship', 'country'],
     },
     tax: {
-        label: '関税',
-        keywords: ['custom', 'duty', 'duties', 'tax', 'taxes', 'vat', 'import', 'ddp', 'ddu', 'international-order'],
+        keywords: ['custom', 'duty', 'duties', 'tax', 'taxes', 'vat', 'import', 'ddp', 'ddu'],
         fallbackPaths: [
             '/customs',
             '/duties-and-taxes',
@@ -58,10 +51,10 @@ const FIELD_CONFIG = {
             '/international-ordering',
             '/customer-care/delivery/will-i-have-to-pay-customs-charges-on-my-order/',
         ],
+        sentenceKeywords: ['custom', 'duty', 'duties', 'tax', 'taxes', 'vat', 'ddp', 'ddu', 'import'],
     },
     fee: {
-        label: '送料',
-        keywords: ['shipping-cost', 'shipping-costs', 'delivery-cost', 'delivery-costs', 'postage', 'rate', 'rates', 'cost', 'free-shipping'],
+        keywords: ['shipping-cost', 'shipping-costs', 'delivery-cost', 'delivery-costs', 'postage', 'rate', 'rates', 'cost', 'free-shipping', 'free shipping'],
         fallbackPaths: [
             '/shipping-costs',
             '/delivery-costs',
@@ -72,52 +65,7 @@ const FIELD_CONFIG = {
             '/support/shipping',
             '/customer-care/delivery/delivery-times-costs-for-my-country/',
         ],
-    },
-};
-
-const RESPONSE_SCHEMA = {
-    name: 'shop_policy_verification',
-    strict: true,
-    schema: {
-        type: 'object',
-        additionalProperties: false,
-        properties: {
-            shipping: {
-                type: 'object',
-                additionalProperties: false,
-                properties: {
-                    status: { type: 'string', enum: ['supported', 'not_supported', 'restricted', 'unknown'] },
-                    summary: { type: 'string' },
-                    source_url: { type: 'string' },
-                    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
-                },
-                required: ['status', 'summary', 'source_url', 'confidence'],
-            },
-            tax: {
-                type: 'object',
-                additionalProperties: false,
-                properties: {
-                    status: { type: 'string', enum: ['ddp', 'ddu', 'mixed', 'unknown'] },
-                    summary: { type: 'string' },
-                    source_url: { type: 'string' },
-                    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
-                },
-                required: ['status', 'summary', 'source_url', 'confidence'],
-            },
-            fee: {
-                type: 'object',
-                additionalProperties: false,
-                properties: {
-                    status: { type: 'string', enum: ['fixed', 'variable', 'free_over_threshold', 'unknown'] },
-                    summary: { type: 'string' },
-                    source_url: { type: 'string' },
-                    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
-                },
-                required: ['status', 'summary', 'source_url', 'confidence'],
-            },
-            overall_note: { type: 'string' },
-        },
-        required: ['shipping', 'tax', 'fee', 'overall_note'],
+        sentenceKeywords: ['shipping', 'delivery', 'cost', 'costs', 'rate', 'rates', 'free shipping', 'fee'],
     },
 };
 
@@ -150,6 +98,10 @@ function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function simplifyText(text) {
+    return text.replace(/\s+/g, ' ').trim();
+}
+
 function normalizeUrl(baseUrl, rawHref) {
     if (!rawHref) return null;
     if (rawHref.startsWith('mailto:') || rawHref.startsWith('tel:') || rawHref.startsWith('javascript:')) return null;
@@ -165,8 +117,11 @@ function normalizeUrl(baseUrl, rawHref) {
     }
 }
 
-function simplifyText(text) {
-    return text.replace(/\s+/g, ' ').trim();
+function splitIntoSentences(text) {
+    return text
+        .split(/(?<=[.!?。])\s+/)
+        .map((sentence) => simplifyText(sentence))
+        .filter(Boolean);
 }
 
 function extractPageText(html) {
@@ -175,7 +130,7 @@ function extractPageText(html) {
 
     const title = simplifyText($('title').first().text());
     const headings = $('h1, h2, h3').map((_, el) => simplifyText($(el).text())).get().filter(Boolean).slice(0, 12);
-    const bodyText = simplifyText($('body').text()).slice(0, 8000);
+    const bodyText = simplifyText($('body').text()).slice(0, 12000);
 
     return [title, ...headings, bodyText].filter(Boolean).join('\n');
 }
@@ -199,23 +154,6 @@ async function fetchPage(url) {
     };
 }
 
-function scoreCandidate(url, anchorText, field) {
-    const config = FIELD_CONFIG[field];
-    const haystack = `${url} ${anchorText}`.toLowerCase();
-    let score = 0;
-
-    for (const keyword of config.keywords) {
-        if (haystack.includes(keyword)) score += 2;
-    }
-
-    if (haystack.includes('japan')) score += 1;
-    if (haystack.includes('international')) score += 1;
-    if (haystack.includes('help')) score += 1;
-    if (haystack.includes('policy')) score += 1;
-
-    return score;
-}
-
 function discoverCandidates(baseUrl, homepageHtml) {
     const $ = cheerio.load(homepageHtml);
     const map = new Map();
@@ -226,12 +164,27 @@ function discoverCandidates(baseUrl, homepageHtml) {
         if (!normalized) return;
 
         const text = simplifyText($(el).text());
-        if (!map.has(normalized)) {
-            map.set(normalized, text);
-        }
+        if (!map.has(normalized)) map.set(normalized, text);
     });
 
     return Array.from(map.entries()).map(([url, text]) => ({ url, text }));
+}
+
+function scoreCandidate(url, anchorText, field) {
+    const config = FIELD_CONFIG[field];
+    const haystack = `${url} ${anchorText}`.toLowerCase();
+    let score = 0;
+
+    for (const keyword of config.keywords) {
+        if (haystack.includes(keyword)) score += 2;
+    }
+
+    if (haystack.includes('japan')) score += 2;
+    if (haystack.includes('international')) score += 1;
+    if (haystack.includes('policy')) score += 1;
+    if (haystack.includes('help')) score += 1;
+
+    return score;
 }
 
 function buildHeuristicUrls(baseUrl, field) {
@@ -259,7 +212,11 @@ async function collectDocsForField(baseUrl, homepageLinks, field) {
         try {
             const page = await fetchPage(url);
             if (page.text.length < 120) continue;
-            docs.push({ url: page.finalUrl, text: page.text.slice(0, 6000) });
+            docs.push({
+                url: page.finalUrl,
+                text: page.text,
+                sentences: splitIntoSentences(page.text),
+            });
         } catch {
             // Ignore failed candidate pages and continue.
         }
@@ -269,104 +226,147 @@ async function collectDocsForField(baseUrl, homepageLinks, field) {
     return docs;
 }
 
-async function askOpenAI(shop, docsByField) {
-    const input = [
-        {
-            role: 'system',
-            content: [
-                {
-                    type: 'input_text',
-                    text: [
-                        'You verify ecommerce policy information for a Japanese shopping guide.',
-                        'Use only the provided official-page excerpts.',
-                        'Never infer unsupported facts.',
-                        'If the evidence is weak or the page does not clearly mention Japan, return unknown.',
-                        'Write concise Japanese summaries for end users.',
-                        'source_url must exactly match one of the provided URLs, or be an empty string when unknown.',
-                    ].join(' '),
-                },
-            ],
-        },
-        {
-            role: 'user',
-            content: [
-                {
-                    type: 'input_text',
-                    text: JSON.stringify({
-                        shop: {
-                            name: shop.name,
-                            slug: shop.slug,
-                            url: shop.url,
-                        },
-                        official_docs: docsByField,
-                    }),
-                },
-            ],
-        },
-    ];
+function scoreSentence(sentence, keywords, boosts = []) {
+    const lower = sentence.toLowerCase();
+    let score = 0;
 
-    const response = await axios.post(
-        'https://api.openai.com/v1/responses',
-        {
-            model: OPENAI_MODEL,
-            input,
-            text: {
-                format: {
-                    type: 'json_schema',
-                    ...RESPONSE_SCHEMA,
-                },
-            },
-        },
-        {
-            headers: {
-                Authorization: `Bearer ${OPENAI_API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            timeout: 60000,
-        }
-    );
-
-    const outputText =
-        response.data.output_text ||
-        response.data.output?.flatMap((item) => item.content || []).find((item) => item.type === 'output_text')?.text;
-
-    if (!outputText) {
-        throw new Error('OpenAI response did not include structured output text.');
+    for (const keyword of keywords) {
+        if (lower.includes(keyword)) score += 2;
     }
 
-    return JSON.parse(outputText);
+    for (const boost of boosts) {
+        if (lower.includes(boost)) score += 3;
+    }
+
+    return score;
 }
 
-function mapShippingGuide(result) {
-    if (result.shipping.status === 'supported') return result.shipping.summary;
-    if (result.shipping.status === 'not_supported') return result.shipping.summary;
-    if (result.shipping.status === 'restricted') return result.shipping.summary;
-    return '';
+function selectBestSentence(docs, field, extraBoosts = []) {
+    const keywords = FIELD_CONFIG[field].sentenceKeywords;
+    const candidates = [];
+
+    for (const doc of docs) {
+        for (const sentence of doc.sentences) {
+            const score = scoreSentence(sentence, keywords, extraBoosts);
+            if (score > 0) {
+                candidates.push({ sentence, score, url: doc.url });
+            }
+        }
+    }
+
+    candidates.sort((a, b) => b.score - a.score || a.sentence.length - b.sentence.length);
+    return candidates[0] || null;
 }
 
-function mapTaxGuide(result) {
-    if (result.tax.status === 'unknown') return '';
-    return result.tax.summary;
+function getConfidence(score) {
+    if (score >= 8) return 'high';
+    if (score >= 5) return 'medium';
+    return 'low';
 }
 
-function mapFeeGuide(result) {
-    if (result.fee.status === 'unknown') return '';
-    return result.fee.summary;
+function verifyShipping(docs) {
+    const candidate = selectBestSentence(docs, 'shipping', ['japan', 'international']);
+    if (!candidate) {
+        return { status: 'unknown', summary: '', source_url: '', confidence: 'low' };
+    }
+
+    const lower = candidate.sentence.toLowerCase();
+    let status = 'unknown';
+
+    if (/(not ship|cannot ship|unable to ship|do not ship|excluded from shipping|not available for shipping|does not ship)/.test(lower)) {
+        status = 'not_supported';
+    } else if (/(restriction|restricted|certain brands|some items|some products|except|excludes)/.test(lower)) {
+        status = 'restricted';
+    } else if (/(japan|international|worldwide|ships to|delivery to)/.test(lower)) {
+        status = 'supported';
+    }
+
+    return {
+        status,
+        summary: candidate.sentence,
+        source_url: candidate.url,
+        confidence: getConfidence(candidate.score),
+    };
 }
 
-async function updateShop(shop, result, dryRun) {
-    const payload = {
-        shipping_guide: mapShippingGuide(result),
-        tax_guide: mapTaxGuide(result),
-        fee_guide: mapFeeGuide(result),
+function verifyTax(docs) {
+    const candidate = selectBestSentence(docs, 'tax', ['ddp', 'ddu', 'duty', 'tax']);
+    if (!candidate) {
+        return { status: 'unknown', summary: '', source_url: '', confidence: 'low' };
+    }
+
+    const lower = candidate.sentence.toLowerCase();
+    let status = 'unknown';
+
+    if (/(ddp|duties paid|taxes included|all import fees included|prepaid duties|pre-paid duties|included at checkout)/.test(lower)) {
+        status = 'ddp';
+    } else if (/(ddu|duties unpaid|pay on delivery|upon delivery|not included|separately charged|charged by carrier|import charges may apply)/.test(lower)) {
+        status = 'ddu';
+    } else if (/(ddp).*(ddu)|(ddu).*(ddp)|option/.test(lower)) {
+        status = 'mixed';
+    }
+
+    return {
+        status,
+        summary: candidate.sentence,
+        source_url: candidate.url,
+        confidence: getConfidence(candidate.score),
+    };
+}
+
+function verifyFee(docs) {
+    const candidate = selectBestSentence(docs, 'fee', ['free shipping', 'cost', 'fee', 'rate']);
+    if (!candidate) {
+        return { status: 'unknown', summary: '', source_url: '', confidence: 'low' };
+    }
+
+    const lower = candidate.sentence.toLowerCase();
+    let status = 'unknown';
+
+    if (/(free shipping|free delivery|complimentary shipping).*(over|above|orders over|threshold)/.test(lower)) {
+        status = 'free_over_threshold';
+    } else if (/(flat rate|fixed rate|¥|￥|\$|usd|eur|gbp|jpy|€|£)/.test(lower)) {
+        status = 'fixed';
+    } else if (/(calculated at checkout|based on weight|based on size|varies by|depending on)/.test(lower)) {
+        status = 'variable';
+    }
+
+    return {
+        status,
+        summary: candidate.sentence,
+        source_url: candidate.url,
+        confidence: getConfidence(candidate.score),
+    };
+}
+
+function verifyDocs(docsByField) {
+    return {
+        shipping: verifyShipping(docsByField.shipping),
+        tax: verifyTax(docsByField.tax),
+        fee: verifyFee(docsByField.fee),
+        overall_note: 'Local rule-based extraction from official policy pages.',
+    };
+}
+
+function cleanSummary(text) {
+    return simplifyText(text || '').slice(0, 300);
+}
+
+function mapPayload(result) {
+    return {
+        shipping_guide: cleanSummary(result.shipping.summary) || null,
+        tax_guide: cleanSummary(result.tax.summary) || null,
+        fee_guide: cleanSummary(result.fee.summary) || null,
         shipping_url: result.shipping.source_url || null,
         tax_url: result.tax.source_url || null,
         fee_url: result.fee.source_url || null,
     };
+}
 
-    if (dryRun) {
-        return { payload, error: null };
-    }
+async function updateShop(shop, result, dryRun) {
+    const payload = mapPayload(result);
+
+    if (dryRun) return { payload, error: null };
 
     let update = await supabase.from('shops').update(payload).eq('id', shop.id);
     if (!update.error) return { payload, error: null };
@@ -391,8 +391,14 @@ function writeReport(shop, docsByField, result, payload, error) {
             url: shop.url,
         },
         checked_at: new Date().toISOString(),
-        docs_by_field: docsByField,
-        ai_result: result,
+        extraction_method: 'local_rule_based',
+        docs_by_field: Object.fromEntries(
+            Object.entries(docsByField).map(([key, docs]) => [
+                key,
+                docs.map((doc) => ({ url: doc.url, preview: doc.text.slice(0, 800) })),
+            ])
+        ),
+        result,
         update_payload: payload,
         update_error: error ? error.message || String(error) : null,
     };
@@ -411,9 +417,7 @@ async function loadTargetShops(args) {
         .order('popularity_score', { ascending: false })
         .limit(args.limit);
 
-    if (args.slug) {
-        query = query.eq('slug', args.slug);
-    }
+    if (args.slug) query = query.eq('slug', args.slug);
 
     const { data, error } = await query;
     if (error) throw error;
@@ -432,7 +436,7 @@ async function verifyShop(shop, args) {
         fee: await collectDocsForField(shop.url, homepageLinks, 'fee'),
     };
 
-    const result = await askOpenAI(shop, docsByField);
+    const result = verifyDocs(docsByField);
     const { payload, error } = await updateShop(shop, result, args.dryRun);
 
     writeReport(shop, docsByField, result, payload, error);
