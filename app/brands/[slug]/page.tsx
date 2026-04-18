@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
         title: `${brand?.name || 'ブランド'}が買える海外通販サイト一覧 - Original Price`,
-        description: `${brand?.name || 'ブランド'}を取り扱っている、日本発送対応の海外通販サイトを厳選。送料や関税の情報もまとめています。`,
+        description: `${brand?.name || 'ブランド'}を取り扱う、日本からチェックしやすい海外通販ショップを一覧化。詳細条件は公式サイト確認前提で参考情報をまとめています。`,
     }
 }
 
@@ -122,7 +122,7 @@ export default async function BrandDetailPage({
                             {brand.name}
                         </h1>
                         <p style={{ fontSize: '1.125rem', color: '#64748b', lineHeight: 1.6, maxWidth: '720px' }}>
-                            {brand.name}を日本から買えるショップを、直送可否・人気・比較しやすさをもとに並べています。
+                            {brand.name}を日本から探しやすいショップを一覧化しています。細かい配送条件や料金は各ショップの公式案内でご確認ください。
                         </p>
                         <p style={{ marginTop: '1rem', fontSize: '0.92rem', color: '#64748b' }}>
                             最終確認 {formatJapaneseDate(lastVerifiedAt) || '未登録'}
@@ -186,6 +186,9 @@ export default async function BrandDetailPage({
                     )}
 
                     <div style={{ marginTop: '3rem', border: '1px solid #e2e8f0', borderRadius: '18px', padding: '1.4rem 1.5rem', background: '#fafaf9' }}>
+                        <p style={{ marginTop: 0, marginBottom: '1rem', color: '#64748b', lineHeight: 1.7, fontSize: '0.92rem' }}>
+                            この一覧はショップ探しの参考用です。送料・関税・配送可否は変わることがあるため、購入前に公式サイトの最新情報をご確認ください。
+                        </p>
                         <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.85rem' }}>
                             比較の前に読むと安心
                         </p>

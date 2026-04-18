@@ -219,8 +219,8 @@ export default async function Home() {
                 maxWidth: '40ch',
                 letterSpacing: '-0.01em',
               }}>
-                日本発送対応の海外通販サイトを厳選。
-                送料・関税・配送の違いまで、日本から比較しやすい形でまとめています。
+                日本に送れる海外通販サイトを見つけやすく整理。
+                ざっくりした参考情報を載せつつ、最新条件は公式サイトで確認しやすい形を目指しています。
               </p>
 
               <div className="fade-up delay-4" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -235,7 +235,7 @@ export default async function Home() {
               }}>
                 {[
                   { v: '80+', l: '掲載ショップ' },
-                  { v: '7', l: '比較項目' },
+                  { v: 'Japan', l: '発送可ショップ' },
                   { v: '100+', l: 'ガイド記事' },
                 ].map(s => (
                   <div key={s.l}>
@@ -261,9 +261,9 @@ export default async function Home() {
             gap: '1rem',
           }}>
             {[
-              ['比較しやすい', '送料・関税・配送目安を同じ見方で整理'],
-              ['最終確認日つき', '公開情報の鮮度が追いやすい設計へ改善中'],
-              ['初心者にもやさしい', 'DDP/DDUや返品の不安をガイドで補足'],
+              ['探しやすい', '日本に送れるショップ候補を見つけやすく整理'],
+              ['参考メモつき', '送料や関税はざっくり把握できるよう補足'],
+              ['最新は公式確認', '購入前に公式サイトで条件を確認しやすい導線にする'],
             ].map(([title, body]) => (
               <div key={title} style={{ border: '1px solid #e5e5e3', borderRadius: '16px', padding: '1.25rem 1.35rem', background: '#fafaf9' }}>
                 <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.7rem' }}>{title}</p>
@@ -298,9 +298,9 @@ export default async function Home() {
         }}>
           <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
             <div style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-              <p className="section-label">カテゴリ</p>
-              <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-                <h2 className="section-title">何をお探しですか？</h2>
+                <p className="section-label">カテゴリ</p>
+                <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
+                  <h2 className="section-title">何をお探しですか？</h2>
                 <Link href="/shops" style={{ fontSize: '0.82rem', fontWeight: 600, color: '#6b6b69', textDecoration: 'none', borderBottom: '1px solid #c8c8c6', paddingBottom: '1px', whiteSpace: 'nowrap' }}>
                   すべて見る →
                 </Link>
@@ -316,6 +316,9 @@ export default async function Home() {
                 </Link>
               ))}
             </div>
+            <p style={{ marginTop: '1rem', color: '#8b8b89', fontSize: '0.88rem', lineHeight: 1.7 }}>
+              掲載情報はショップ探しの参考用です。送料・関税・配送条件は変更されるため、購入前に各ショップの公式案内をご確認ください。
+            </p>
           </div>
         </section>
 

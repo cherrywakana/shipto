@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: '運営者情報 - Original Price',
-    description: 'Original Priceの運営方針、掲載基準、アフィリエイトプログラムについて。日本への直送に対応した信頼できる海外通販サイトだけを厳選して紹介しています。',
+    description: 'Original Priceの運営方針、掲載基準、アフィリエイトプログラムについて。日本に送れる海外通販ショップを探しやすく整理し、詳細条件は公式サイト確認を前提に案内しています。',
 }
 
 export default function AboutPage() {
@@ -13,17 +13,22 @@ export default function AboutPage() {
         {
             icon: '🎯',
             title: 'サイトの目的',
-            content: 'Original Priceは、日本から安心して利用できる海外通販サイトの情報を提供するガイドサイトです。海外通販に興味があっても「関税はどうなるの？」「ちゃんと届くの？」といった不安を解消し、世界中のショッピングをもっと身近なものにすることを目指しています。',
+            content: 'Original Priceは、日本に送れる海外通販ショップを見つけやすくするためのガイドサイトです。ショップ探しの入口として使いやすいことを大切にしつつ、細かい配送条件や料金は公式サイトで確認しやすいよう導線を整えることを目指しています。',
         },
         {
             icon: '✅',
             title: '掲載基準',
             items: [
-                '日本への直送（国際発送）に対応していること',
+                '日本への直送に対応している、または日本から注文導線を確認しやすいこと',
                 '実在するショップであり、現在も正常に運営されていること',
-                '一定の信頼性・実績があること（レビュー、運営歴など）',
-                '定期的にURLの生存確認・情報の正確性チェックを実施',
+                '一定の知名度や実績があり、参考先として紹介する価値があること',
+                '掲載する補足情報は参考用とし、最新条件は公式サイト確認を前提に案内すること',
             ],
+        },
+        {
+            icon: '📝',
+            title: '情報の考え方',
+            content: '送料・関税・配送日数などは変わりやすいため、当サイトでは「ショップ探しの参考になる簡単な情報」を掲載しています。購入前の最終判断には、必ず各ショップの公式ページをご確認ください。',
         },
         {
             icon: '🤝',
@@ -117,7 +122,7 @@ export default function AboutPage() {
                     }}>
                         <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.75rem' }}>ショップを探してみませんか？</h3>
                         <p style={{ color: '#94a3b8', marginBottom: '2rem', fontSize: '0.95rem' }}>
-                            日本から利用できる海外通販サイトを厳選して紹介しています。
+                            日本に送れる海外通販ショップを探しやすくまとめています。
                         </p>
                         <Link href="/shops" style={{
                             display: 'inline-block', background: 'white', color: '#0f172a',

@@ -4,7 +4,6 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { CORE_GUIDE_LINKS, getShopComparisonItems, getShopFitBullets, getShopWarningBullets } from '@/lib/shopInsights'
 import { formatJapaneseDate, getLastVerifiedAt } from '@/lib/utils'
-import { getShopVerificationFields, getVerificationToneStyles } from '@/lib/shopVerification'
 
 export default async function ShopDetailPage({
     params,
@@ -22,7 +21,6 @@ export default async function ShopDetailPage({
     const comparisonItems = getShopComparisonItems(shop || {})
     const fitBullets = getShopFitBullets(shop || {})
     const warningBullets = getShopWarningBullets(shop || {})
-    const verificationFields = getShopVerificationFields(shop || {})
 
     if (!shop) return (
         <>
@@ -175,6 +173,9 @@ export default async function ShopDetailPage({
                             }}>
                                 {shop.description}
                             </p>
+                            <p style={{ marginTop: '1rem', color: '#8b8b89', lineHeight: 1.7, fontSize: '0.92rem' }}>
+                                このページの情報はショップ探しの参考用です。送料・関税・配送条件の最新情報は、購入前に公式サイトでご確認ください。
+                            </p>
                         </div>
 
                         {shop.image_url && (
@@ -211,71 +212,23 @@ export default async function ShopDetailPage({
                                 }}>
                                     <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8b8b89', marginBottom: '0.45rem' }}>{item.label}</div>
                                     <div style={{ color: '#0f172a', lineHeight: 1.55, fontWeight: 600, fontSize: '0.95rem' }}>{item.value}</div>
+                                    <div style={{ marginTop: '0.45rem', color: '#8b8b89', fontSize: '0.8rem', lineHeight: 1.5 }}>参考メモ。最新条件は公式サイト確認前提です。</div>
                                 </div>
                             ))}
                         </div>
 
                         <div className="info-card">
                             <div className="info-title">
-                                <span style={{ fontSize: '1.5rem' }}>🔎</span>
-                                確認ステータス
-                            </div>
-                            <div style={{ display: 'grid', gap: '1rem' }}>
-                                {verificationFields.map((field) => {
-                                    const tone = getVerificationToneStyles(field.tone)
-
-                                    return (
-                                        <div key={field.key} style={{
-                                            border: `1px solid ${tone.border}`,
-                                            borderRadius: '16px',
-                                            background: tone.background,
-                                            padding: '1rem 1.1rem',
-                                        }}>
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '0.6rem' }}>
-                                                <div style={{ fontWeight: 700, color: '#0f172a' }}>{field.label}</div>
-                                                <span style={{
-                                                    fontSize: '0.78rem',
-                                                    fontWeight: 700,
-                                                    color: tone.text,
-                                                    background: '#ffffff',
-                                                    border: `1px solid ${tone.border}`,
-                                                    borderRadius: '999px',
-                                                    padding: '0.25rem 0.7rem',
-                                                }}>
-                                                    {field.statusLabel}
-                                                </span>
-                                            </div>
-                                            <p style={{ margin: '0 0 0.55rem', color: '#0f172a', fontWeight: 600, lineHeight: 1.6 }}>{field.summary}</p>
-                                            <p style={{ margin: 0, color: '#475569', lineHeight: 1.7, fontSize: '0.94rem' }}>{field.detail}</p>
-                                            <div style={{ display: 'flex', gap: '0.9rem', flexWrap: 'wrap', marginTop: '0.75rem', fontSize: '0.88rem' }}>
-                                                {field.sourceUrl && (
-                                                    <a href={field.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#0f172a', fontWeight: 600, textDecoration: 'none' }}>
-                                                        {field.sourceLabel} ↗
-                                                    </a>
-                                                )}
-                                                <span style={{ color: '#64748b' }}>
-                                                    最終確認 {field.verifiedAt || '未登録'}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                            <p style={{ marginTop: '1rem', marginBottom: 0, color: '#64748b', fontSize: '0.88rem', lineHeight: 1.7 }}>
-                                根拠URLが登録されている項目だけを「確認済み」としています。根拠URLがないものは本文があっても「要再確認」として扱います。
-                            </p>
-                        </div>
-
-                        <div className="info-card">
-                            <div className="info-title">
                                 <span style={{ fontSize: '1.5rem' }}>🎯</span>
-                                このショップが向いている人
+                                このページでわかること
                             </div>
                             <div className="info-body">
                                 <ul style={{ margin: 0, paddingLeft: '1.1rem' }}>
                                     {fitBullets.map((bullet) => (
                                         <li key={bullet} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
                                     ))}
+                                    <li style={{ marginBottom: '0.5rem' }}>日本から使えそうかをざっくり把握しやすいこと</li>
+                                    <li>購入前にどの公式ページを確認すべきか見つけやすいこと</li>
                                 </ul>
                             </div>
                         </div>
@@ -286,13 +239,13 @@ export default async function ShopDetailPage({
                         }}>
                             <div className="info-title">
                                 <span style={{ fontSize: '1.5rem' }}>✈️</span>
-                                日本へ直送可能か
+                                日本発送の参考メモ
                             </div>
                             <div className="info-body">
                                 {shop.ships_to_japan === false ? (
-                                    <strong style={{ color: '#b45309' }}>直送不可の可能性があります。公式情報を必ずご確認ください。</strong>
+                                    <strong style={{ color: '#b45309' }}>現時点では日本発送に制限がある可能性があります。購入前に公式情報をご確認ください。</strong>
                                 ) : (
-                                    shop.shipping_guide || '現在、情報が登録されていません。公式サイトをご確認ください。'
+                                    shop.shipping_guide || '日本発送に関する参考メモはまだありません。公式サイトをご確認ください。'
                                 )}
                             </div>
                         </div>
@@ -300,20 +253,22 @@ export default async function ShopDetailPage({
                         <div className="info-card">
                             <div className="info-title">
                                 <span style={{ fontSize: '1.5rem' }}>⚠️</span>
-                                購入前に気をつけたいこと
+                                購入前に確認したいこと
                             </div>
                             <div className="info-body">
                                 <ul style={{ margin: 0, paddingLeft: '1.1rem' }}>
                                     {warningBullets.map((bullet) => (
                                         <li key={bullet} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
                                     ))}
+                                    <li style={{ marginBottom: '0.5rem' }}>送料・関税・配送日数は購入時期や配送先で変わることがあります。</li>
+                                    <li>最終判断は公式サイトの配送ポリシーとチェックアウト画面で行ってください。</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div style={{ padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '1rem', fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6 }}>
-                            <strong style={{ color: '#475569', display: 'block', marginBottom: '0.25rem' }}>⚠️ ご注意・免責事項</strong>
-                            掲載されている情報は調査時点のものです。配送や関税に関する最新の正確なルールは、ご自身で必ず公式サイトをご確認ください。
+                            <strong style={{ color: '#475569', display: 'block', marginBottom: '0.25rem' }}>⚠️ このページの位置づけ</strong>
+                            当サイトは「日本に送れるショップを見つけるための入口」として情報を整理しています。掲載内容は参考情報であり、配送や関税などの最新条件は必ず公式サイトをご確認ください。
                         </div>
 
                         <div style={{ border: '1px solid #e2e8f0', borderRadius: '16px', padding: '1.3rem 1.4rem', background: '#fafaf9', marginBottom: '2rem' }}>
@@ -335,10 +290,10 @@ export default async function ShopDetailPage({
 
                         <div className="article-cta">
                             <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1.25rem', color: '#0f172a' }}>
-                                さっそく海外通販を楽しんでみましょう
+                                最新条件は公式サイトで確認しましょう
                             </h3>
                             <a href={shop.url} target="_blank" rel="noopener noreferrer" className="article-cta-btn">
-                                公式サイトへアクセスする →
+                                公式サイトを確認する →
                             </a>
                         </div>
 

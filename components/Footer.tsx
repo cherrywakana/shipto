@@ -31,7 +31,7 @@ export default function Footer() {
                         </span>
                     </Link>
                     <p style={{ color: '#6b6b69', fontSize: '0.9rem', maxWidth: '300px', lineHeight: 1.6 }}>
-                        海外通販の現地価格をチェックする、感度の高いファンのためのガイド。
+                        日本に送れる海外通販ショップを探しやすくまとめたガイド。最新条件は各ショップの公式案内をご確認ください。
                     </p>
                 </div>
                 <div>
