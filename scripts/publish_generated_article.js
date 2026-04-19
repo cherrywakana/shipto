@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
 const { createClient } = require('@supabase/supabase-js');
-const { createDraftFromBrief, fetchPosts, inferCanonicalTargetFromPost } = require('./generate_article_draft');
+const { validateGeneratedArticle, fetchPosts, inferCanonicalTargetFromPost } = require('./generate_article_draft');
 const { createBriefForBrandSlug } = require('./create_article_brief');
 
 dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
@@ -15,6 +15,7 @@ function parseArgs(argv) {
     const args = {
         brief: null,
         brandSlug: null,
+        articleFile: null,
     };
 
     for (let i = 0; i < argv.length; i++) {
@@ -23,10 +24,19 @@ function parseArgs(argv) {
             args.brief = argv[++i];
         } else if (arg === '--brand-slug' && argv[i + 1]) {
             args.brandSlug = argv[++i];
+        } else if (arg === '--article-file' && argv[i + 1]) {
+            args.articleFile = argv[++i];
         }
     }
 
     return args;
+}
+
+function getArticleFilePath(articleFile) {
+    if (!articleFile) {
+        throw new Error('Codex-generated article file is required. Pass --article-file <path>.');
+    }
+    return path.resolve(process.cwd(), articleFile);
 }
 
 function getBriefPath(args) {
@@ -99,6 +109,33 @@ async function syncBrandGuideFlag(draft) {
         .eq('slug', brandSlug);
 }
 
+function buildPublishableArticle(brief, articlePayload) {
+    const article = {
+        ...articlePayload,
+        slug: articlePayload.slug || brief.slug,
+        title: articlePayload.title || brief.title,
+        canonicalTarget: articlePayload.canonicalTarget || brief.canonicalTarget,
+        primaryKeyword: articlePayload.primaryKeyword || brief.primaryKeyword,
+        secondaryKeywords: articlePayload.secondaryKeywords || brief.secondaryKeywords,
+        internalLinks: articlePayload.internalLinks || brief.internalLinks,
+        topShops: articlePayload.topShops || brief.topShops,
+        qualitySummary: articlePayload.qualitySummary || articlePayload.quality_summary || '',
+        html: articlePayload.html || '',
+    };
+
+    const validation = validateGeneratedArticle(brief, article);
+    if (!validation.isValid) {
+        throw new Error(`Article failed quality checks: ${validation.issues.join(' / ')}`);
+    }
+
+    article.generationMeta = {
+        provider: 'codex',
+        validation: validation.stats,
+    };
+
+    return article;
+}
+
 async function main() {
     const args = parseArgs(process.argv.slice(2));
     let brief;
@@ -116,7 +153,9 @@ async function main() {
     }
 
     await assertNoConflictingPublishedPage(brief);
-    const draft = await createDraftFromBrief(brief);
+    const articleFilePath = getArticleFilePath(args.articleFile);
+    const articlePayload = JSON.parse(fs.readFileSync(articleFilePath, 'utf8'));
+    const draft = buildPublishableArticle(brief, articlePayload);
     const result = await publishDraft(draft);
     await syncBrandGuideFlag(draft);
 
@@ -126,6 +165,8 @@ async function main() {
         slug: draft.slug,
         title: draft.title,
         canonicalTarget: draft.canonicalTarget,
+        qualitySummary: draft.qualitySummary,
+        generationMeta: draft.generationMeta,
     }, null, 2));
 }
 

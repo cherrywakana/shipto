@@ -10,12 +10,9 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 const FACTORY_DIR = path.resolve(__dirname, '../tmp/article-factory');
 const DRAFT_DIR = path.join(FACTORY_DIR, 'drafts');
-const OPENAI_API_URL = 'https://api.openai.com/v1/responses';
-const DEFAULT_MODEL = process.env.OPENAI_ARTICLE_MODEL || 'gpt-5.4';
 const MIN_TEXT_LENGTH = 2200;
 const MIN_SECTION_COUNT = 5;
 const MIN_SHOP_LINKS = 3;
-const MAX_GENERATION_ATTEMPTS = 2;
 
 function parseArgs(argv) {
     const args = {
@@ -113,114 +110,55 @@ function normalizeText(value) {
         .trim();
 }
 
-function extractTextFromResponsePayload(payload) {
-    if (payload.output_text) return payload.output_text;
-
-    const output = Array.isArray(payload.output) ? payload.output : [];
-    const textParts = [];
-
-    output.forEach((item) => {
-        if (!Array.isArray(item.content)) return;
-        item.content.forEach((part) => {
-            if (part.type === 'output_text' && part.text) {
-                textParts.push(part.text);
-            }
-        });
-    });
-
-    return textParts.join('\n').trim();
-}
-
-function extractJsonObject(text) {
-    const trimmed = String(text || '').trim();
-    if (!trimmed) {
-        throw new Error('Model returned an empty response.');
-    }
-
-    try {
-        return JSON.parse(trimmed);
-    } catch {
-        const firstBrace = trimmed.indexOf('{');
-        const lastBrace = trimmed.lastIndexOf('}');
-        if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
-            throw new Error('Could not find JSON object in model response.');
-        }
-        return JSON.parse(trimmed.slice(firstBrace, lastBrace + 1));
-    }
-}
-
-function summarizeShop(shop) {
-    return {
+function buildCodexPrompt(brief) {
+    const shopPayload = brief.topShops.map((shop) => ({
         rankHint: shop.rankHint,
         name: shop.name,
-        shopSlug: shop.slug,
-        category: shop.category || null,
-        country: shop.country || null,
+        slug: shop.slug,
+        category: shop.category,
+        country: shop.country,
         shipsToJapan: shop.shipsToJapan,
-        popularityScore: shop.popularityScore || null,
-        brandUrl: shop.brandUrl || null,
-        shopUrl: shop.shopUrl || null,
-        description: shop.description || null,
-    };
-}
-
-function buildPromptPayload(brief) {
-    return {
-        title: brief.title,
-        slug: brief.slug,
-        primaryKeyword: brief.primaryKeyword,
-        secondaryKeywords: brief.secondaryKeywords,
-        searchIntent: brief.searchIntent,
-        monetizationGoal: brief.monetizationGoal,
-        canonicalTarget: brief.canonicalTarget,
-        recommendedSections: brief.recommendedSections,
-        internalLinks: brief.internalLinks,
-        writingGuidelines: brief.writingGuidelines,
-        topShops: brief.topShops.map(summarizeShop),
-    };
-}
-
-function buildWriterPrompt(brief) {
-    const payload = JSON.stringify(buildPromptPayload(brief), null, 2);
+        popularityScore: shop.popularityScore,
+        brandUrl: shop.brandUrl,
+        shopUrl: shop.shopUrl,
+        description: shop.description,
+    }));
 
     return [
-        'あなたは、日本語のアフィリエイト記事を自然に書ける編集者です。',
-        '与えられた情報だけを根拠に、検索意図と送客の両方を満たす高品質な記事を書いてください。',
-        'ブランドやショップに関する未提供の事実は捏造しないでください。わからないことは断定せず、比較の観点や選び方として自然に書いてください。',
-        '文章はテンプレ感を避け、読み手がそのまま比較とクリックに進める流れにしてください。',
-        '出力は JSON 1個だけにしてください。キーは "html" と "quality_summary" のみです。',
-        '"html" は article 本文として使う HTML 文字列です。Markdown は使わず、<h2> <h3> <p> <ul> <li> <table> <thead> <tbody> <tr> <th> <td> <strong> <a> の範囲で組み立ててください。',
-        '"quality_summary" は 80文字以内で、記事の狙いと読後行動を要約してください。',
+        'この記事本文は Codex が日本語で自然に書く。',
+        'DBに入っている情報を根拠にしつつ、説明文はテンプレにせず、検索意図に沿った比較記事にする。',
+        '未提供の事実は断定しない。わからないことは「選び方」「比較ポイント」として自然に処理する。',
+        '出力形式は article 用 HTML。',
+        '',
         '必須要件:',
-        `- 本文テキストは ${MIN_TEXT_LENGTH}文字以上`,
+        `- 本文テキスト ${MIN_TEXT_LENGTH}文字以上`,
         `- <h2> を ${MIN_SECTION_COUNT}個以上`,
-        '- 冒頭2段落で「この記事でわかること」と「どんな人向けか」を自然に説明する',
-        '- 上位ショップを比較する table を1つ入れる',
-        '- 少なくとも上位3ショップには外部リンク付き CTA を入れる',
-        '- 少なくとも1つは内部リンクを入れる',
-        '- 各ショップ紹介では「どんな人に向いているか」「見る前に気をつけたい点」を自然文で触れる',
-        '- まとめでは最初に見るべきショップ群を短く提案する',
+        '- 冒頭2段落で対象読者とこの記事でわかることを伝える',
+        '- 比較表を1つ入れる',
+        `- 少なくとも ${MIN_SHOP_LINKS} ショップに外部リンクCTAを入れる`,
+        '- 少なくとも1つ内部リンクを入れる',
+        '- 各ショップで「向いている人」「注意点」を自然文で触れる',
+        '- まとめで最初に見るべきショップ群を提案する',
+        '',
         '避けること:',
-        '- 箇条書きだらけで終えること',
-        '- どのショップにも同じ説明を繰り返すこと',
-        '- 「最新条件は公式を確認」などの運営目線の注意書きを多用すること',
-        '- 根拠のない最安保証、安全保証、配送保証',
-        '使ってよい情報は以下のみです。',
-        payload,
-    ].join('\n');
-}
-
-function buildRevisionPrompt(brief, firstPass, issues) {
-    return [
-        buildWriterPrompt(brief),
+        '- 同じ言い回しの繰り返し',
+        '- 注意書きだらけの文章',
+        '- DBにない断定情報の追加',
         '',
-        '前回の出力を改善してください。前回HTML:',
-        firstPass.html,
-        '',
-        '修正すべき品質上の問題:',
-        ...issues.map((issue) => `- ${issue}`),
-        '',
-        '同じ JSON 形式で、全面的に改善した完成版だけを返してください。',
+        '記事素材:',
+        JSON.stringify({
+            title: brief.title,
+            slug: brief.slug,
+            primaryKeyword: brief.primaryKeyword,
+            secondaryKeywords: brief.secondaryKeywords,
+            searchIntent: brief.searchIntent,
+            monetizationGoal: brief.monetizationGoal,
+            canonicalTarget: brief.canonicalTarget,
+            recommendedSections: brief.recommendedSections,
+            internalLinks: brief.internalLinks,
+            writingGuidelines: brief.writingGuidelines,
+            topShops: shopPayload,
+        }, null, 2),
     ].join('\n');
 }
 
@@ -234,7 +172,7 @@ function collectOutgoingLinks($) {
 function validateGeneratedArticle(brief, candidate) {
     const issues = [];
     const html = normalizeText(candidate?.html);
-    const qualitySummary = normalizeText(candidate?.quality_summary);
+    const qualitySummary = normalizeText(candidate?.qualitySummary || candidate?.quality_summary);
 
     if (!html) {
         issues.push('html が空です。');
@@ -295,7 +233,7 @@ function validateGeneratedArticle(brief, candidate) {
     }
 
     if (!qualitySummary) {
-        issues.push('quality_summary が空です。');
+        issues.push('qualitySummary が空です。');
     }
 
     return {
@@ -311,59 +249,6 @@ function validateGeneratedArticle(brief, candidate) {
     };
 }
 
-async function callOpenAI(prompt, model = DEFAULT_MODEL) {
-    if (!process.env.OPENAI_API_KEY) {
-        throw new Error('OPENAI_API_KEY is required for LLM article generation.');
-    }
-
-    const response = await fetch(OPENAI_API_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        },
-        body: JSON.stringify({
-            model,
-            input: prompt,
-        }),
-    });
-
-    if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`OpenAI request failed: ${response.status} ${errorText}`);
-    }
-
-    const payload = await response.json();
-    return extractJsonObject(extractTextFromResponsePayload(payload));
-}
-
-async function generateArticleWithQualityGate(brief) {
-    let attempt = 0;
-    let candidate = null;
-    let validation = null;
-
-    while (attempt < MAX_GENERATION_ATTEMPTS) {
-        const prompt = attempt === 0
-            ? buildWriterPrompt(brief)
-            : buildRevisionPrompt(brief, candidate, validation.issues);
-
-        candidate = await callOpenAI(prompt);
-        validation = validateGeneratedArticle(brief, candidate);
-
-        if (validation.isValid) {
-            return {
-                candidate,
-                validation,
-                attempts: attempt + 1,
-            };
-        }
-
-        attempt += 1;
-    }
-
-    throw new Error(`Generated article failed quality checks: ${validation.issues.join(' / ')}`);
-}
-
 async function createDraftFromBrief(brief) {
     const [posts, draftRegistry] = await Promise.all([
         fetchPosts(),
@@ -372,9 +257,8 @@ async function createDraftFromBrief(brief) {
 
     assertUniqueTarget(brief, posts, draftRegistry);
 
-    const generation = await generateArticleWithQualityGate(brief);
-
     return {
+        status: 'awaiting_codex_article',
         generatedAt: new Date().toISOString(),
         canonicalTarget: brief.canonicalTarget,
         slug: brief.slug,
@@ -383,14 +267,17 @@ async function createDraftFromBrief(brief) {
         secondaryKeywords: brief.secondaryKeywords,
         internalLinks: brief.internalLinks,
         topShops: brief.topShops,
-        html: generation.candidate.html,
-        qualitySummary: generation.candidate.quality_summary,
-        generationMeta: {
-            provider: 'openai',
-            model: DEFAULT_MODEL,
-            attempts: generation.attempts,
-            validation: generation.validation.stats,
-        },
+        qualityChecklist: [
+            `${MIN_TEXT_LENGTH}文字以上`,
+            `${MIN_SECTION_COUNT}個以上の<h2>`,
+            '比較表を含める',
+            `${MIN_SHOP_LINKS}ショップ以上の外部リンクCTA`,
+            '内部リンクを入れる',
+            'テンプレ感を避ける',
+        ],
+        codexPrompt: buildCodexPrompt(brief),
+        html: '',
+        qualitySummary: '',
     };
 }
 
@@ -407,7 +294,6 @@ async function main() {
     }
 
     const draft = await createDraftFromBrief(brief);
-
     const outputPath = path.join(DRAFT_DIR, `${brief.slug}.json`);
     fs.writeFileSync(outputPath, `${JSON.stringify(draft, null, 2)}\n`);
 
@@ -417,8 +303,7 @@ async function main() {
         canonicalTarget: brief.canonicalTarget,
         slug: brief.slug,
         title: brief.title,
-        qualitySummary: draft.qualitySummary,
-        generationMeta: draft.generationMeta,
+        status: draft.status,
     }, null, 2));
 }
 
@@ -434,7 +319,7 @@ module.exports = {
     inferCanonicalTargetFromPost,
     collectDraftRegistry,
     assertUniqueTarget,
-    buildWriterPrompt,
+    buildCodexPrompt,
     validateGeneratedArticle,
     createDraftFromBrief,
 };

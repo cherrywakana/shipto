@@ -102,31 +102,31 @@ npm run create-article-brief -- --brand-slug aesop
 - 内部リンク候補
 - 上位ショップ候補
 
-### Step 3. 即公開する
+### Step 3. 公開する
 
-下書きを残さず、そのまま `posts` に公開する場合:
+Codex が本文を書いた後、そのまま `posts` に公開する場合:
 
 ```bash
-npm run publish-generated-article -- --brand-slug nike
+npm run publish-generated-article -- --brand-slug nike --article-file tmp/article-factory/drafts/nike-overseas-shopping-guide.json
 ```
 
 または:
 
 ```bash
-npm run publish-generated-article -- --brief tmp/article-factory/nike-brief.json
+npm run publish-generated-article -- --brief tmp/article-factory/nike-brief.json --article-file tmp/article-factory/drafts/nike-overseas-shopping-guide.json
 ```
 
 このスクリプトは次を行う。
 
 - brief を読む
 - canonical target の重複を確認する
-- OpenAI で本文HTMLを生成する
+- Codex が書いた本文ファイルを読む
 - 品質ゲートを通した本文だけを採用する
 - 同じ slug の記事があれば更新、なければ新規公開する
 
 ### Step 4. draft を残したいときだけ本文を書く
 
-自動生成する場合:
+Codex 執筆用の素材ファイルを作る場合:
 
 ```bash
 npm run generate-article-draft -- --brand-slug nike
@@ -144,13 +144,20 @@ npm run generate-article-draft -- --brief tmp/article-factory/nike-brief.json
 tmp/article-factory/drafts/
 ```
 
-本文では次を守る。
+このファイルには次が入る。
+
+- brief
+- Codex 向け執筆プロンプト
+- 品質チェック項目
+- 公開に必要なメタ情報
+
+Codex が本文を書くときは次を守る。
 
 - 1スクロール以内で「おすすめショップ」と「向いている人」を見せる
 - 各ショップ節の最後に CTA を置く
 - 情報だけで終わらず、比較からクリックにつながる構成にする
 - 送料・関税の説明は補足で、主役はショップ選びに置く
-- DB の情報を材料にしつつ、本文は LLM が自然な日本語で書く
+- DB の情報を材料にしつつ、本文は Codex が自然な日本語で書く
 - テンプレ文の機械的な差し込みではなく、検索意図に沿った流れで構成する
 
 ### Step 5. 補助フロー
@@ -195,11 +202,11 @@ brand:nike:cheap-overseas-shopping
 
 ## 品質担保ルール
 
-- 記事本文は `OPENAI_API_KEY` を使った LLM 生成を前提にする
+- 記事本文は Codex が書く前提にする
 - DB にない事実は書かない
 - 比較表、ショップ別 CTA、内部リンクを必須にする
 - 文字数、見出し数、外部リンク数、内部リンク数を機械チェックする
-- テンプレ感や注意書き過多が出た場合は再生成する
+- テンプレ感や注意書き過多が出た場合は書き直す
 
 ## 量産の優先順位
 
@@ -215,8 +222,10 @@ brand:nike:cheap-overseas-shopping
 1. `npm run build-article-backlog`
 2. 上位候補を 3〜5 本選ぶ
 3. `npm run create-article-brief -- --brand-slug <slug>`
-4. `npm run publish-generated-article -- --brand-slug <slug>`
-5. 内部リンクを追加
+4. `npm run generate-article-draft -- --brand-slug <slug>`
+5. Codex が `tmp/article-factory/drafts/<slug>.json` に本文HTMLを入れる
+6. `npm run publish-generated-article -- --brand-slug <slug> --article-file tmp/article-factory/drafts/<slug>.json`
+7. 内部リンクを追加
 
 ## 補足
 
