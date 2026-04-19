@@ -57,6 +57,7 @@ async function fetchBrandContext(brandSlug) {
             shops:shop_id (
                 name,
                 slug,
+                url,
                 category,
                 country,
                 description,
@@ -131,6 +132,7 @@ function buildBrief(context) {
             popularityScore: shop.popularity_score,
             brandUrl: shop.brand_url,
             shopUrl: shop.url,
+            imageUrl: shop.image_url,
             description: shop.description,
         })),
         writingGuidelines: [
@@ -143,6 +145,20 @@ function buildBrief(context) {
     };
 }
 
+async function createBriefForBrandSlug(brandSlug) {
+    ensureDir(OUTPUT_DIR);
+
+    const context = await fetchBrandContext(brandSlug);
+    const brief = buildBrief(context);
+    const outputPath = path.join(OUTPUT_DIR, `${brandSlug}-brief.json`);
+    fs.writeFileSync(outputPath, `${JSON.stringify(brief, null, 2)}\n`);
+
+    return {
+        brief,
+        outputPath,
+    };
+}
+
 async function main() {
     ensureDir(OUTPUT_DIR);
 
@@ -151,11 +167,7 @@ async function main() {
         throw new Error('Usage: node scripts/create_article_brief.js --brand-slug <slug>');
     }
 
-    const context = await fetchBrandContext(args.brandSlug);
-    const brief = buildBrief(context);
-
-    const outputPath = path.join(OUTPUT_DIR, `${args.brandSlug}-brief.json`);
-    fs.writeFileSync(outputPath, `${JSON.stringify(brief, null, 2)}\n`);
+    const { brief, outputPath } = await createBriefForBrandSlug(args.brandSlug);
 
     console.log(JSON.stringify({
         ok: true,
@@ -166,7 +178,15 @@ async function main() {
     }, null, 2));
 }
 
-main().catch((error) => {
-    console.error(error.message || error);
-    process.exit(1);
-});
+if (require.main === module) {
+    main().catch((error) => {
+        console.error(error.message || error);
+        process.exit(1);
+    });
+}
+
+module.exports = {
+    fetchBrandContext,
+    buildBrief,
+    createBriefForBrandSlug,
+};

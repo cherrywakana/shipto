@@ -102,7 +102,28 @@ npm run create-article-brief -- --brand-slug aesop
 - 内部リンク候補
 - 上位ショップ候補
 
-### Step 3. brief を元に本文を書く
+### Step 3. 即公開する
+
+下書きを残さず、そのまま `posts` に公開する場合:
+
+```bash
+npm run publish-generated-article -- --brand-slug nike
+```
+
+または:
+
+```bash
+npm run publish-generated-article -- --brief tmp/article-factory/nike-brief.json
+```
+
+このスクリプトは次を行う。
+
+- brief を読む
+- canonical target の重複を確認する
+- 本文HTMLを生成する
+- 同じ slug の記事があれば更新、なければ新規公開する
+
+### Step 4. draft を残したいときだけ本文を書く
 
 自動生成する場合:
 
@@ -129,9 +150,7 @@ tmp/article-factory/drafts/
 - 情報だけで終わらず、比較からクリックにつながる構成にする
 - 送料・関税の説明は補足で、主役はショップ選びに置く
 
-### Step 4. publish
-
-既存の `scripts/manage_articles.js` か、既存の publish 系スクリプトに沿って公開する。
+### Step 5. 補助フロー
 
 ## 重複制御
 
@@ -185,9 +204,8 @@ brand:nike:cheap-overseas-shopping
 1. `npm run build-article-backlog`
 2. 上位候補を 3〜5 本選ぶ
 3. `npm run create-article-brief -- --brand-slug <slug>`
-4. `npm run generate-article-draft -- --brand-slug <slug>`
-5. draft を確認して公開
-6. 内部リンクを追加
+4. `npm run publish-generated-article -- --brand-slug <slug>`
+5. 内部リンクを追加
 
 ## 補足
 

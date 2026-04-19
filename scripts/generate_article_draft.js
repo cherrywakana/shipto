@@ -169,6 +169,28 @@ function buildDraftContent(brief) {
     return sections.join('\n');
 }
 
+async function createDraftFromBrief(brief) {
+    const [posts, draftRegistry] = await Promise.all([
+        fetchPosts(),
+        Promise.resolve(collectDraftRegistry()),
+    ]);
+
+    assertUniqueTarget(brief, posts, draftRegistry);
+
+    const html = buildDraftContent(brief);
+    return {
+        generatedAt: new Date().toISOString(),
+        canonicalTarget: brief.canonicalTarget,
+        slug: brief.slug,
+        title: brief.title,
+        primaryKeyword: brief.primaryKeyword,
+        secondaryKeywords: brief.secondaryKeywords,
+        internalLinks: brief.internalLinks,
+        topShops: brief.topShops,
+        html,
+    };
+}
+
 async function main() {
     ensureDir(FACTORY_DIR);
     ensureDir(DRAFT_DIR);
@@ -181,25 +203,7 @@ async function main() {
         throw new Error('Brief is missing canonicalTarget. Rebuild the brief with the latest script.');
     }
 
-    const [posts, draftRegistry] = await Promise.all([
-        fetchPosts(),
-        Promise.resolve(collectDraftRegistry()),
-    ]);
-
-    assertUniqueTarget(brief, posts, draftRegistry);
-
-    const html = buildDraftContent(brief);
-    const draft = {
-        generatedAt: new Date().toISOString(),
-        canonicalTarget: brief.canonicalTarget,
-        slug: brief.slug,
-        title: brief.title,
-        primaryKeyword: brief.primaryKeyword,
-        secondaryKeywords: brief.secondaryKeywords,
-        internalLinks: brief.internalLinks,
-        topShops: brief.topShops,
-        html,
-    };
+    const draft = await createDraftFromBrief(brief);
 
     const outputPath = path.join(DRAFT_DIR, `${brief.slug}.json`);
     fs.writeFileSync(outputPath, `${JSON.stringify(draft, null, 2)}\n`);
@@ -213,7 +217,18 @@ async function main() {
     }, null, 2));
 }
 
-main().catch((error) => {
-    console.error(error.message || error);
-    process.exit(1);
-});
+if (require.main === module) {
+    main().catch((error) => {
+        console.error(error.message || error);
+        process.exit(1);
+    });
+}
+
+module.exports = {
+    fetchPosts,
+    inferCanonicalTargetFromPost,
+    collectDraftRegistry,
+    assertUniqueTarget,
+    buildDraftContent,
+    createDraftFromBrief,
+};
