@@ -121,6 +121,7 @@ npm run publish-generated-article -- --brief tmp/article-factory/nike-brief.json
 - brief を読む
 - canonical target の重複を確認する
 - Codex が書いた本文ファイルを読む
+- 記事専用のアイキャッチ画像を自動生成する
 - 品質ゲートを通した本文だけを採用する
 - 同じ slug の記事があれば更新、なければ新規公開する
 
@@ -150,6 +151,7 @@ tmp/article-factory/drafts/
 - Codex 向け執筆プロンプト
 - 品質チェック項目
 - 公開に必要なメタ情報
+- 記事専用アイキャッチの土台になるタイトル・キーワード・ショップ情報
 
 Codex が本文を書くときは次を守る。
 

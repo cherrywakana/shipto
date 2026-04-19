@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const { createClient } = require('@supabase/supabase-js');
 const { validateGeneratedArticle, fetchPosts, inferCanonicalTargetFromPost } = require('./generate_article_draft');
 const { createBriefForBrandSlug } = require('./create_article_brief');
+const { getGeneratedArticleThumbnailUrl } = require('./generate_article_thumbnail');
 
 dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
@@ -65,12 +66,14 @@ async function publishDraft(draft) {
         .eq('slug', draft.slug)
         .single();
 
+    const generatedThumbnailUrl = draft.thumbnailUrl || draft.thumbnail_url || getGeneratedArticleThumbnailUrl(draft);
+
     const payload = {
         slug: draft.slug,
         title: draft.title,
         content: draft.html,
         category: inferCategoryFromTarget(draft.canonicalTarget),
-        thumbnail_url: existingPost?.thumbnail_url || draft.topShops?.find((shop) => shop.imageUrl)?.imageUrl || null,
+        thumbnail_url: generatedThumbnailUrl || existingPost?.thumbnail_url || draft.topShops?.find((shop) => shop.imageUrl)?.imageUrl || null,
     };
 
     if (existingPost?.created_at) {
@@ -121,6 +124,7 @@ function buildPublishableArticle(brief, articlePayload) {
         topShops: articlePayload.topShops || brief.topShops,
         qualitySummary: articlePayload.qualitySummary || articlePayload.quality_summary || '',
         html: articlePayload.html || '',
+        thumbnailUrl: articlePayload.thumbnailUrl || articlePayload.thumbnail_url || '',
     };
 
     const validation = validateGeneratedArticle(brief, article);
