@@ -100,6 +100,7 @@ function buildBrief(context) {
 
     return {
         type: 'brand-guide',
+        canonicalTarget: `brand:${context.brand.slug}:cheap-overseas-shopping`,
         slug,
         title: `【2026年最新】${context.brand.name}が安い海外通販サイトおすすめ${Math.max(topShops.length, 3)}選`,
         primaryKeyword: keywords[0],

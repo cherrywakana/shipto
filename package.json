@@ -15,7 +15,8 @@
     "fetch-gsc": "node scripts/fetch_gsc_search_analytics.js",
     "fetch-skimlinks": "node scripts/fetch_skimlinks_report.js",
     "build-article-backlog": "node scripts/build_article_backlog.js",
-    "create-article-brief": "node scripts/create_article_brief.js"
+    "create-article-brief": "node scripts/create_article_brief.js",
+    "generate-article-draft": "node scripts/generate_article_draft.js"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",

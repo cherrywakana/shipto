@@ -104,6 +104,24 @@ npm run create-article-brief -- --brand-slug aesop
 
 ### Step 3. brief を元に本文を書く
 
+自動生成する場合:
+
+```bash
+npm run generate-article-draft -- --brand-slug nike
+```
+
+または:
+
+```bash
+npm run generate-article-draft -- --brief tmp/article-factory/nike-brief.json
+```
+
+出力先:
+
+```bash
+tmp/article-factory/drafts/
+```
+
 本文では次を守る。
 
 - 1スクロール以内で「おすすめショップ」と「向いている人」を見せる
@@ -114,6 +132,37 @@ npm run create-article-brief -- --brand-slug aesop
 ### Step 4. publish
 
 既存の `scripts/manage_articles.js` か、既存の publish 系スクリプトに沿って公開する。
+
+## 重複制御
+
+`1キーワードに1ページ` を守る。
+
+ブランドガイドでは、canonical target を次で固定する。
+
+```text
+brand:<brand-slug>:cheap-overseas-shopping
+```
+
+たとえば `nike` の場合:
+
+```text
+brand:nike:cheap-overseas-shopping
+```
+
+`generate-article-draft` は次をチェックする。
+
+- 既存 `posts` に同じ canonical target を持つページがあるか
+- 既存 draft に同じ canonical target を持つページがあるか
+
+別の slug で同じ target を取ろうとした場合は生成を止める。
+
+つまり、次のような重複を防ぐ。
+
+- `Nike 安い 海外通販`
+- `Nike どこで買う`
+- `Nike おすすめショップ`
+
+これらを別ページで乱立させず、1本の強いページにまとめて育てる。
 
 ## SEO ルール
 
@@ -136,8 +185,8 @@ npm run create-article-brief -- --brand-slug aesop
 1. `npm run build-article-backlog`
 2. 上位候補を 3〜5 本選ぶ
 3. `npm run create-article-brief -- --brand-slug <slug>`
-4. brief に沿って執筆
-5. 公開
+4. `npm run generate-article-draft -- --brand-slug <slug>`
+5. draft を確認して公開
 6. 内部リンクを追加
 
 ## 補足
