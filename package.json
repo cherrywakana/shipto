@@ -13,7 +13,9 @@
     "verify-shop-policies": "node scripts/verify_shop_policies.js",
     "normalize-shops": "node scripts/normalize_shops_for_discovery.cjs",
     "fetch-gsc": "node scripts/fetch_gsc_search_analytics.js",
-    "fetch-skimlinks": "node scripts/fetch_skimlinks_report.js"
+    "fetch-skimlinks": "node scripts/fetch_skimlinks_report.js",
+    "build-article-backlog": "node scripts/build_article_backlog.js",
+    "create-article-brief": "node scripts/create_article_brief.js"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",
