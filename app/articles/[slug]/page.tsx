@@ -318,13 +318,28 @@ export default async function ArticleDetailPage({
           .article-content .shop-card h3 {
             margin-top: 0;
           }
+          .article-content .shop-shot {
+            width: 100%;
+            display: block;
+            margin: 0 0 1rem;
+            border-radius: 10px;
+            border: 1px solid #e5e5e3;
+            background: #f8fafc;
+          }
           .article-content .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            padding: 0.85rem 1.2rem;
+            margin-bottom: 1rem;
             background: #111110 !important;
             color: #fafaf9 !important;
             border-radius: 6px !important;
             font-family: var(--font-sans);
             font-weight: 600;
             letter-spacing: -0.01em;
+            text-decoration: none !important;
             transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
           }
           .article-content .cta-button:hover {

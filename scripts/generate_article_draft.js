@@ -13,6 +13,8 @@ const DRAFT_DIR = path.join(FACTORY_DIR, 'drafts');
 const MIN_TEXT_LENGTH = 2200;
 const MIN_SECTION_COUNT = 5;
 const MIN_SHOP_LINKS = 3;
+const QUICK_MIN_TEXT_LENGTH = 900;
+const QUICK_MIN_SECTION_COUNT = 3;
 
 function parseArgs(argv) {
     const args = {
@@ -162,6 +164,23 @@ function buildCodexPrompt(brief) {
     ].join('\n');
 }
 
+function resolveQualityProfile(candidate) {
+    const style = candidate?.articleStyle || candidate?.article_style || 'standard';
+    if (style === 'quick-buy-guide') {
+        return {
+            style,
+            minTextLength: QUICK_MIN_TEXT_LENGTH,
+            minSectionCount: QUICK_MIN_SECTION_COUNT,
+        };
+    }
+
+    return {
+        style: 'standard',
+        minTextLength: MIN_TEXT_LENGTH,
+        minSectionCount: MIN_SECTION_COUNT,
+    };
+}
+
 function collectOutgoingLinks($) {
     return $('a[href]')
         .map((_, element) => $(element).attr('href'))
@@ -173,6 +192,7 @@ function validateGeneratedArticle(brief, candidate) {
     const issues = [];
     const html = normalizeText(candidate?.html);
     const qualitySummary = normalizeText(candidate?.qualitySummary || candidate?.quality_summary);
+    const qualityProfile = resolveQualityProfile(candidate);
 
     if (!html) {
         issues.push('html が空です。');
@@ -196,12 +216,12 @@ function validateGeneratedArticle(brief, candidate) {
         .filter(Boolean)
         .filter((href) => externalLinks.includes(href));
 
-    if (textContent.length < MIN_TEXT_LENGTH) {
-        issues.push(`本文が短すぎます。${MIN_TEXT_LENGTH}文字以上必要です。`);
+    if (textContent.length < qualityProfile.minTextLength) {
+        issues.push(`本文が短すぎます。${qualityProfile.minTextLength}文字以上必要です。`);
     }
 
-    if (headings.length < MIN_SECTION_COUNT) {
-        issues.push(`<h2> が不足しています。${MIN_SECTION_COUNT}個以上必要です。`);
+    if (headings.length < qualityProfile.minSectionCount) {
+        issues.push(`<h2> が不足しています。${qualityProfile.minSectionCount}個以上必要です。`);
     }
 
     if (tableCount < 1) {
@@ -240,6 +260,7 @@ function validateGeneratedArticle(brief, candidate) {
         isValid: issues.length === 0,
         issues,
         stats: {
+            style: qualityProfile.style,
             textLength: textContent.length,
             sectionCount: headings.length,
             tableCount,
