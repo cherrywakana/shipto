@@ -146,6 +146,8 @@ function buildCodexPrompt(brief) {
         '- 同じ言い回しの繰り返し',
         '- 注意書きだらけの文章',
         '- DBにない断定情報の追加',
+        '- 「この記事では」「〜ようにしています」「〜向けに絞っています」など記事の作りを説明するメタ文章',
+        '- 読者に見せる必要のない運営目線の案内文',
         '',
         '記事素材:',
         JSON.stringify({
@@ -250,6 +252,10 @@ function validateGeneratedArticle(brief, candidate) {
 
     if (/最新条件は公式|公式サイトで確認してください|自己責任/i.test(textContent)) {
         issues.push('注意書きが運営都合に寄りすぎています。');
+    }
+
+    if (/この記事では|ようにしています|向けに絞って|読者向けに|そのままボタンから|気になるショップがあれば/i.test(textContent)) {
+        issues.push('記事の作りを説明するメタ文章が含まれています。');
     }
 
     if (!qualitySummary) {
