@@ -93,6 +93,14 @@ function injectHeadingIds(html: string, headings: { id: string; text: string; le
     })
 }
 
+function extractLinkedSlugs(html: string, entity: 'shops' | 'brands'): string[] {
+    const matches = Array.from(html.matchAll(new RegExp(`href="/${entity}/([^"#?]+)"`, 'g')))
+        .map((match) => match[1])
+        .filter(Boolean)
+
+    return matches.filter((slug, index) => matches.indexOf(slug) === index)
+}
+
 export default async function LegacyPathPage({
     params,
 }: {
@@ -106,13 +114,6 @@ export default async function LegacyPathPage({
         .select('*')
         .eq('slug', slug)
         .single()
-
-    const { data: featuredShops } = await supabase
-        .from('shops')
-        .select('name, slug, category, ships_to_japan, is_affiliate, popularity_score')
-        .order('is_affiliate', { ascending: false })
-        .order('popularity_score', { ascending: false })
-        .limit(3)
 
     if (!post) return (
         <>
@@ -129,9 +130,40 @@ export default async function LegacyPathPage({
     )
 
     const sanitizedContent = sanitizeArticleHtml(post.content || '')
+    const linkedShopSlugs = extractLinkedSlugs(sanitizedContent, 'shops')
+    const linkedBrandSlugs = extractLinkedSlugs(sanitizedContent, 'brands')
     const headings = extractHeadings(sanitizedContent)
     const contentWithLinks = addExternalLinkAttributes(sanitizedContent)
     const contentWithIds = injectHeadingIds(contentWithLinks, headings)
+
+    const [{ data: linkedShops }, { data: linkedBrands }, { data: featuredShops }] = await Promise.all([
+        linkedShopSlugs.length > 0
+            ? supabase
+                .from('shops')
+                .select('name, slug, category, ships_to_japan, is_affiliate, popularity_score')
+                .in('slug', linkedShopSlugs.slice(0, 6))
+            : Promise.resolve({ data: [] }),
+        linkedBrandSlugs.length > 0
+            ? supabase
+                .from('brands')
+                .select('name, slug')
+                .in('slug', linkedBrandSlugs.slice(0, 2))
+            : Promise.resolve({ data: [] }),
+        supabase
+            .from('shops')
+            .select('name, slug, category, ships_to_japan, is_affiliate, popularity_score')
+            .order('is_affiliate', { ascending: false })
+            .order('popularity_score', { ascending: false })
+            .limit(3),
+    ])
+
+    const orderedLinkedShops = linkedShopSlugs
+        .map((shopSlug) => linkedShops?.find((shop) => shop.slug === shopSlug))
+        .filter(Boolean)
+
+    const primaryBrand = linkedBrandSlugs
+        .map((brandSlug) => linkedBrands?.find((brand) => brand.slug === brandSlug))
+        .find(Boolean)
 
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -273,13 +305,35 @@ export default async function LegacyPathPage({
                                 ))}
                             </div>
 
-                            {featuredShops && featuredShops.length > 0 && (
+                            {primaryBrand && (
+                                <Link
+                                    href={`/brands/${primaryBrand.slug}`}
+                                    style={{
+                                        textDecoration: 'none',
+                                        color: 'inherit',
+                                        border: '1px solid #e2e8f0',
+                                        borderRadius: '18px',
+                                        padding: '1.25rem 1.35rem',
+                                        background: 'linear-gradient(135deg, #fff 0%, #fafaf9 100%)',
+                                        display: 'grid',
+                                        gap: '0.45rem',
+                                    }}
+                                >
+                                    <span style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)' }}>
+                                        関連ブランド
+                                    </span>
+                                    <span style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a' }}>{primaryBrand.name}の掲載ショップをもっと見る</span>
+                                    <span style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.7 }}>この記事で見たショップ以外も含めて、ブランド単位で比較しやすい導線です。</span>
+                                </Link>
+                            )}
+
+                            {(orderedLinkedShops.length > 0 ? orderedLinkedShops : featuredShops || []).length > 0 && (
                                 <div style={{ border: '1px solid #e2e8f0', borderRadius: '18px', padding: '1.25rem 1.35rem', background: '#fff' }}>
                                     <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.85rem' }}>
-                                        今すぐ比較しやすいショップ
+                                        {orderedLinkedShops.length > 0 ? 'この記事で比較したショップ' : '今すぐ比較しやすいショップ'}
                                     </p>
                                     <div style={{ display: 'grid', gap: '0.8rem' }}>
-                                        {featuredShops.map((shop) => (
+                                        {(orderedLinkedShops.length > 0 ? orderedLinkedShops : featuredShops || []).map((shop) => (
                                             <Link key={shop.slug} href={`/shops/${shop.slug}`} style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', textDecoration: 'none', color: 'inherit', paddingBottom: '0.8rem', borderBottom: '1px solid #f0f0ee' }}>
                                                 <div>
                                                     <div style={{ fontWeight: 700, color: '#0f172a' }}>{shop.name}</div>
