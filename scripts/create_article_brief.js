@@ -98,6 +98,11 @@ function buildBrief(context) {
     const primaryCategory = topShops[0]?.category || '海外通販';
     const keywords = keywordSet(context.brand.name, primaryCategory);
     const slug = `${context.brand.slug}-overseas-shopping-guide`;
+    const primaryShopDetailLinks = topShops.slice(0, 4).map((shop) => ({
+        name: shop.name,
+        slug: shop.slug,
+        href: `/shops/${shop.slug}`,
+    }));
 
     return {
         type: 'brand-guide',
@@ -122,6 +127,12 @@ function buildBrief(context) {
             '/articles/overseas-shopping-beginners-guide',
             '/articles/overseas-shopping-customs-tax',
         ],
+        primaryBrandLink: {
+            name: context.brand.name,
+            slug: context.brand.slug,
+            href: `/brands/${context.brand.slug}`,
+        },
+        primaryShopDetailLinks,
         topShops: topShops.map((shop, index) => ({
             rankHint: index + 1,
             name: shop.name,
@@ -139,6 +150,8 @@ function buildBrief(context) {
             '見出し直後に、どの読者に向いている記事かを明示する。',
             'ショップごとに「向いている人」「注意点」「直送可否」を短く書く。',
             '公式サイトCTAは各ショップ節の終わりに入れる。',
+            '上位ショップの詳細ページへの内部リンクを自然文の中で2〜4件入れる。',
+            'ブランドページへの内部リンクを1件入れ、ショップ比較のハブにする。',
             '比較表や要点リストを使って、スクロールせず価値が伝わるようにする。',
             '情報系に寄りすぎず、最終的にショップ遷移したくなる構成にする。',
         ],

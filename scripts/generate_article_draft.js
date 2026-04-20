@@ -15,6 +15,8 @@ const MIN_SECTION_COUNT = 5;
 const MIN_SHOP_LINKS = 3;
 const QUICK_MIN_TEXT_LENGTH = 900;
 const QUICK_MIN_SECTION_COUNT = 3;
+const MIN_STANDARD_SHOP_DETAIL_LINKS = 3;
+const MIN_QUICK_SHOP_DETAIL_LINKS = 2;
 
 function parseArgs(argv) {
     const args = {
@@ -140,6 +142,8 @@ function buildCodexPrompt(brief) {
         '- 比較表のショップ名は各ショップへの外部リンクにする',
         `- 少なくとも ${MIN_SHOP_LINKS} ショップに外部リンクCTAを入れる`,
         '- 少なくとも1つ内部リンクを入れる',
+        `- /shops/... の内部リンクを少なくとも ${MIN_STANDARD_SHOP_DETAIL_LINKS} 件入れる`,
+        '- /brands/... の内部リンクを少なくとも1件入れる',
         '- 各ショップで「向いている人」「注意点」を自然文で触れる',
         '- まとめで最初に見るべきショップ群を提案する',
         '',
@@ -161,6 +165,8 @@ function buildCodexPrompt(brief) {
             canonicalTarget: brief.canonicalTarget,
             recommendedSections: brief.recommendedSections,
             internalLinks: brief.internalLinks,
+            primaryBrandLink: brief.primaryBrandLink,
+            primaryShopDetailLinks: brief.primaryShopDetailLinks,
             writingGuidelines: brief.writingGuidelines,
             topShops: shopPayload,
         }, null, 2),
@@ -174,6 +180,7 @@ function resolveQualityProfile(candidate) {
             style,
             minTextLength: QUICK_MIN_TEXT_LENGTH,
             minSectionCount: QUICK_MIN_SECTION_COUNT,
+            minShopDetailLinks: MIN_QUICK_SHOP_DETAIL_LINKS,
         };
     }
 
@@ -181,6 +188,7 @@ function resolveQualityProfile(candidate) {
         style: 'standard',
         minTextLength: MIN_TEXT_LENGTH,
         minSectionCount: MIN_SECTION_COUNT,
+        minShopDetailLinks: MIN_STANDARD_SHOP_DETAIL_LINKS,
     };
 }
 
@@ -209,6 +217,8 @@ function validateGeneratedArticle(brief, candidate) {
     const outgoingLinks = collectOutgoingLinks($);
     const externalLinks = outgoingLinks.filter((href) => /^https?:\/\//.test(href));
     const internalLinks = outgoingLinks.filter((href) => href.startsWith('/'));
+    const internalShopLinks = internalLinks.filter((href) => href.startsWith('/shops/'));
+    const internalBrandLinks = internalLinks.filter((href) => href.startsWith('/brands/'));
     const paragraphs = $('p')
         .map((_, element) => normalizeText($(element).text()))
         .get()
@@ -237,6 +247,14 @@ function validateGeneratedArticle(brief, candidate) {
 
     if (internalLinks.length < 1) {
         issues.push('内部リンクがありません。');
+    }
+
+    if (internalShopLinks.length < qualityProfile.minShopDetailLinks) {
+        issues.push(`ショップ詳細への内部リンクが不足しています。少なくとも${qualityProfile.minShopDetailLinks}件必要です。`);
+    }
+
+    if (internalBrandLinks.length < 1) {
+        issues.push('ブランドページへの内部リンクがありません。');
     }
 
     if (paragraphs.length < 8) {
@@ -273,6 +291,8 @@ function validateGeneratedArticle(brief, candidate) {
             tableCount,
             externalLinkCount: externalLinks.length,
             internalLinkCount: internalLinks.length,
+            internalShopLinkCount: internalShopLinks.length,
+            internalBrandLinkCount: internalBrandLinks.length,
         },
     };
 }
@@ -300,7 +320,8 @@ async function createDraftFromBrief(brief) {
             `${MIN_SECTION_COUNT}個以上の<h2>`,
             '比較表を含める',
             `${MIN_SHOP_LINKS}ショップ以上の外部リンクCTA`,
-            '内部リンクを入れる',
+            `${MIN_STANDARD_SHOP_DETAIL_LINKS}件以上のショップ詳細内部リンク`,
+            'ブランドページへの内部リンクを入れる',
             'テンプレ感を避ける',
         ],
         codexPrompt: buildCodexPrompt(brief),
