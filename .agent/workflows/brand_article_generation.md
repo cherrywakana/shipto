@@ -1,107 +1,67 @@
 ---
-description: ブランド別SEO記事の自動生成とSupabase(DB)への直接登録手順
+description: ブランド別SEO記事の自動生成・執筆・投稿ワークフロー（高品質アイキャッチ・ショップ画像対応）
 ---
 
-# ブランド別SEO記事の生成・投稿ワークフロー (Ver 3.2 - DB厳格運用)
+# ブランド別SEO記事の自動生成フロー (Ver 5.1 - AI EyeCatch & Shop UI)
 
-このワークフローは、DBに登録された情報を基に高品質なブランド別ガイド記事を生成・投稿するための手順書です。**「DBにない情報は書かない」「ブラウザ調査に頼らない」**ことを徹底します。
-
-> [!IMPORTANT]
-> **ターゲット読者**: 「海外通販でそのブランドが買えることは知っているが、具体的にどのショップが安全で、かつ提携リンク（お得）があるか」を探しているユーザー。
+このワークフローは、高品質な本文執筆に加え、AIによるフォトリアルなアイキャッチ画像の生成、および各ショップの信頼性を高めるUIスクリーンショットの埋め込みを統合した手順書です。
 
 ---
 
-## Step 0: DB情報の精査（ブラウザ調査禁止）
-記事の構成を決める前に、DBから「本当に紹介可能なショップ」のみを抽出する。**新規のショップをブラウザで探して記事に追加することは厳禁。**
-
-1. DBから対象ブランドの取り扱いショップを抽出する（Step 1のスクリプトを使用）。
-2. 紹介ショップの条件:
-   - `shops` テーブルに登録されていること。
-   - `shop_brands` テーブルで `status` が `active`（または `found`）であること。
-   - `image_url` が設定されていること（画像がないショップは原則避ける）。
-3. 掲載数: DBにある有力ショップを **5〜8件** 選定。
-
----
-
-## Step 1: DBデータ抽出スクリプト
-AIの推測を排除し、DBの値を唯一の正解とする。
-
+## Step 1: バックログの確認
+// turbo
 ```bash
-export $(cat .env.local | xargs) && node -e '
-const { createClient } = require("@supabase/supabase-js");
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-async function getShops() {
-    // ブランド情報の取得
-    const { data: brand } = await supabase.from("brands").select("id, name").eq("slug", "[BRAND_SLUG]").single();
-    if (!brand) return;
+npm run build-article-backlog
+```
+- `tmp/article-factory/backlog.json` からターゲットブランドを選定。
 
-    // ショップ詳細と取り扱いURL（外部リンク）を取得
-    const { data: shops } = await supabase
-        .from("shop_brands")
-        .select(`
-            brand_url, 
-            shops(name, slug, popularity_score, is_affiliate, image_url)
-        `)
-        .eq("brand_id", brand.id)
-        .neq("status", "not_found");
-    
-    console.log(JSON.stringify(shops.sort((a, b) => b.shops.popularity_score - a.shops.popularity_score), null, 2));
-}
-getShops();'
+---
+
+## Step 2: 構成案（Brief）と素材（Draft）の生成
+// turbo
+```bash
+npm run create-article-brief -- --brand-slug [BRAND_SLUG]
+npm run generate-article-draft -- --brand-slug [BRAND_SLUG]
 ```
 
-- **カテゴリ**: 投稿時のカテゴリは必ず **「ブランド」** とする。
+---
+
+## Step 3: AIエージェントによる本文執筆
+`tmp/article-factory/drafts/[slug].json` の `codexPrompt` を読み、HTMLを生成して `html` フィールドに書き込む。
+
+### 執筆ルール (UI/UX強化):
+- **形式**: 必ずHTML形式（`<h2>`, `<p>`, `<table>`, `<a>` 等）で構成する。
+- **ショップ画像の埋め込み**: 各ショップの解説文の直下（CTAボタンの上）に、以下の形式でショップのスクリーンショット画像を挿入する。
+  - **形式**: `<img src="https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/[shop-slug].webp" alt="[Shop Name] 公式サイト" width="800" height="450" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; border: 1px solid #eee; margin-bottom: 12px;" />`
+  - **Slugの確認**: DBまたは `brief.topShops` から正確な `slug` を取得すること。
+- **内部リンク**: サイト内の関連記事（`/articles/[slug]`）へのリンクを少なくとも1つ含める（相対パス形式）。
+- **禁止事項**: 「この記事では〜」といったメタ文章、DBにない情報の断定。
 
 ---
 
-## Step 2: SEO設計
-1. **スラッグ**: `[brand]-overseas-shopping-guide`
-2. **タイトル**: 30〜40文字。「ブランド名」と「海外通販」を含める。
+## Step 4: フォトリアルなアイキャッチの生成 (AI)
+`generate_image` ツールを使用して、ブランドの世界観を表現したメイン画像を高品質に作成します。
+
+1. **生成**: `[Brand Name] high-end photorealistic lifestyle photography, cinematic lighting, 16:9` などのプロンプトを使用。
+2. **変換 (Python)**:
+```bash
+python3 -c "from PIL import Image; Image.open('public/images/articles/[slug].png').save('public/images/articles/[slug].webp', 'WEBP', quality=85)"
+```
+3. **アップロード**: `article-thumbnails` バケットへアップロード。
 
 ---
 
-## Step 3: 記事コンテンツの執筆ルール
-目標文字数: **5,000文字以上**。
-
-### 3-1. 記事構成
-1. 導入（3〜5行）: タイトルを本文冒頭で繰り返さない。
-2. ショップ個別紹介（5〜8件）
-3. ★ ショップ比較テーブル（一覧表）
-4. 個人輸入の実践ガイド（関税・サイズ・偽物対策）
-5. まとめ
-
-### 3-2. ショップ個別紹介 (厳格フォーマット)
-- `<h3>` で見出し（「1. ショップ名」）
-- **画像**: DBの `image_url` を使用。`<a>` タグで **ショップへの外部リンク（`brand_url`）** を貼る。
-- **リンク**: 記事内の全てのショップリンク（画像、テキスト、ボタン）は **ショップ公式サイトへの外部リンク（`brand_url`）** とする。
-  - 内部リンク（`/shops/[slug]`）は使用しない。
-- **紹介文**: 3〜5行。DBの情報を基に記述。
-- **CTA**: 中央寄せボタン。リンク先は **`brand_url`**。
-
-### 3-3. 投稿形式
-- **形式**: **必ずHTML形式**（`<p>`, `<h2>`, `<table>`等）で構成する。
+## Step 5: 投稿とバリデーション
+// turbo
+```bash
+npm run publish-generated-article -- --brand-slug [BRAND_SLUG] --article-file tmp/article-factory/drafts/[slug].json
+```
+- 投稿スクリプトにより品質チェックが行われる。エラーが出た場合は本文を修正して再実行。
 
 ---
 
-## Step 4: 投稿
-1. **アイキャッチ**: 16:9のプレミアムな画像を生成。
-2. **投稿**: `manage_articles.js` を使用。
-   - `category`: "ブランド"
-
----
-
-## Step 5: Googleインデックス申請（高速化）
-記事公開直後にGoogleにインデックスを促す通知を送ります。
-
-1. **スクリプトの実行**:
-   ```bash
-   node scripts/google_indexing.js https://original-price.com/articles/[brand]-overseas-shopping-guide
-   ```
-   *初回実行時は `google-indexing-service-account.json` の設定が必要です。*
-
----
-
-## Step 6: 公開後の監査
-1. **外部リンク確認**: 画像やボタンをクリックして、DBに登録された `brand_url` へ正しく飛ぶか確認。
-2. **RSSフィード確認**: `https://original-price.com/feed.xml` に新着記事が反映されているか確認（Google発見を助けます）。
-3. **不備の発見**: 外部リンクが `null` だったり、画像が崩れている場合は、記事を修正するのではなく、まず **DBの情報を修正（manage_shop.mdに従う）** してから記事を再生成する。
+## Step 6: インデックス申請
+// turbo
+```bash
+node scripts/google_indexing.js https://original-price.com/articles/[slug]
+```

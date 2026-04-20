@@ -40,10 +40,10 @@ export default function RootLayout({
           src="https://s.skimresources.com/js/156009X1622316.skimlinks.js" 
           strategy="lazyOnload"
         />
+        {GA_ID && (
+          <GoogleAnalytics gaId={GA_ID} />
+        )}
       </body>
-      {GA_ID && (
-        <GoogleAnalytics gaId={GA_ID} />
-      )}
     </html>
   )
 }
