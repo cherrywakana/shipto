@@ -327,13 +327,13 @@ export default async function LegacyPathPage({
                                 </Link>
                             )}
 
-                            {(orderedLinkedShops.length > 0 ? orderedLinkedShops : featuredShops || []).length > 0 && (
+                             {(orderedLinkedShops.length > 0 ? orderedLinkedShops : (featuredShops || [])).length > 0 && (
                                 <div style={{ border: '1px solid #e2e8f0', borderRadius: '18px', padding: '1.25rem 1.35rem', background: '#fff' }}>
                                     <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.85rem' }}>
                                         {orderedLinkedShops.length > 0 ? 'この記事で比較したショップ' : '今すぐ比較しやすいショップ'}
                                     </p>
                                     <div style={{ display: 'grid', gap: '0.8rem' }}>
-                                        {(orderedLinkedShops.length > 0 ? orderedLinkedShops : featuredShops || []).map((shop) => (
+                                        {(orderedLinkedShops.length > 0 ? (orderedLinkedShops as any[]) : (featuredShops || [])).filter(Boolean).map((shop: any) => shop && (
                                             <Link key={shop.slug} href={`/shops/${shop.slug}`} style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', textDecoration: 'none', color: 'inherit', paddingBottom: '0.8rem', borderBottom: '1px solid #f0f0ee' }}>
                                                 <div>
                                                     <div style={{ fontWeight: 700, color: '#0f172a' }}>{shop.name}</div>
