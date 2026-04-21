@@ -7,7 +7,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { SHOP_CATEGORIES } from '@/lib/shopCategories'
 
-// SEO: 検索キーワード「海外通販サイト一覧」をターゲットにしたメタデータ
 export const metadata: Metadata = {
     title: '海外通販サイト一覧 | 日本から安心・安く買える人気ショップ140選【完全版】',
     description: '日本発送に対応した世界中の有力海外通販サイトを一覧でまとめて紹介。ファッション、自転車、コスメ、アウトドア等、カテゴリー別に送料や関税の扱いを専門家が徹底調査。日本語ガイド付きで初めての個人輸入も安心です。',
@@ -17,12 +16,11 @@ export const metadata: Metadata = {
     }
 }
 
-export const revalidate = 60 // 60秒間キャッシュを利用
+export const revalidate = 60 
 
 type ShopsPageProps = {
     searchParams?: Promise<{
         category?: string | string[]
-        q?: string | string[]
     }>
 }
 
@@ -30,56 +28,51 @@ function getSingleParam(value: string | string[] | undefined) {
     return Array.isArray(value) ? value[0] : value
 }
 
-function buildShopHref(categoryLabel: string, q: string | undefined) {
+function buildShopHref(categoryLabel: string) {
     const params = new URLSearchParams()
     if (categoryLabel !== 'すべて') {
         params.set('category', categoryLabel)
     }
-    if (q) {
-        params.set('q', q)
-    }
-    const queryString = params.toString()
-    return queryString ? `/shops?${queryString}` : '/shops'
+    return params.toString() ? `/shops?${params.toString()}` : '/shops'
 }
 
 export default async function ShopsPage(props: ShopsPageProps) {
     const searchParams = await props.searchParams;
     const category = getSingleParam(searchParams?.category);
-    const q = getSingleParam(searchParams?.q)?.trim();
 
     return (
         <>
             <Header />
             <main style={{ fontFamily: 'var(--font-sans)', minHeight: '100vh', background: 'var(--bg)' }}>
                 <style>{`
-          .search-form-inline {
-            display: grid;
-            grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.8fr) auto;
-            gap: 0.75rem;
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
+          .cat-tab {
+            padding: 0.6rem 2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+            letter-spacing: -0.01em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
           }
-          .search-input,
-          .search-select {
-            width: 100%;
-            min-height: 52px;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            background: #ffffff;
-            color: #111110;
-            font-size: 0.95rem;
-            padding: 0 1rem;
-          }
-          .search-submit {
-            min-height: 52px;
-            border: none;
-            border-radius: 14px;
+          .cat-tab.active {
             background: #111110;
             color: #fafaf9;
-            padding: 0 1.2rem;
-            font-size: 0.92rem;
-            font-weight: 700;
-            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(17, 17, 16, 0.2);
+          }
+          .cat-tab.inactive {
+            background: #ffffff;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+          }
+          .cat-tab.inactive:hover {
+            border-color: #111110;
+            background: #ffffff;
+            color: #111110;
+            transform: translateY(-2px);
           }
           .shop-card {
             background: white;
@@ -98,38 +91,6 @@ export default async function ShopsPage(props: ShopsPageProps) {
             border-color: #111110;
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
-          }
-          .cat-tab {
-            padding: 0.6rem 1.6rem;
-            border-radius: 9999px;
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            white-space: nowrap;
-            letter-spacing: -0.01em;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .cat-tab.active {
-            background: #111110;
-            color: #fafaf9;
-            box-shadow: 0 4px 12px rgba(17, 17, 16, 0.15);
-          }
-          .cat-tab.inactive {
-            background: var(--accent-brand-soft);
-            color: var(--text-secondary);
-          }
-          .cat-tab.inactive:hover {
-            background: var(--accent-brand-mid);
-            color: #111110;
-            transform: translateY(-2px) scale(1.02);
-          }
-          @media (max-width: 820px) {
-            .search-form-inline {
-              grid-template-columns: 1fr;
-            }
           }
         `}</style>
 
@@ -150,31 +111,12 @@ export default async function ShopsPage(props: ShopsPageProps) {
                             color: 'var(--text-muted)',
                             fontFamily: 'var(--font-serif)',
                             fontStyle: 'italic',
-                            marginBottom: '3.5rem',
+                            marginBottom: '4rem',
                             letterSpacing: '0.02em'
                         }}>
                             140+ premium merchants curated for your high-end shopping experience.
                         </p>
                     </div>
-
-                    <form action="/shops" className="search-form-inline">
-                        <input
-                            type="text"
-                            name="q"
-                            defaultValue={q || ''}
-                            className="search-input"
-                            placeholder="ショップ・国名・キーワードで検索"
-                        />
-                        <select name="category" defaultValue={category || ''} className="search-select">
-                            <option value="">すべて</option>
-                            {SHOP_CATEGORIES.filter((cat) => cat.label !== 'すべて').map((cat) => (
-                                <option key={cat.label} value={cat.label}>
-                                    {cat.label}
-                                </option>
-                            ))}
-                        </select>
-                        <button type="submit" className="search-submit">検索する</button>
-                    </form>
 
                     <div style={{
                         display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '1000px', margin: '0 auto'
@@ -184,7 +126,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
                             return (
                                 <Link
                                     key={cat.label}
-                                    href={buildShopHref(cat.label, q)}
+                                    href={buildShopHref(cat.label)}
                                     className={`cat-tab ${isActive ? 'active' : 'inactive'}`}
                                 >
                                     {cat.label}
@@ -197,10 +139,12 @@ export default async function ShopsPage(props: ShopsPageProps) {
                 <section style={{ padding: '0 clamp(1.5rem, 5vw, 4rem) 8rem', maxWidth: '1280px', margin: '0 auto' }}>
                     <Suspense fallback={
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))', gap: '2rem' }}>
-                            {[1, 2, 3].map(i => (i))}
+                            {[1, 2, 3].map(i => (
+                                <div key={i} style={{ height: '400px', background: '#ffffff', border: '1px solid var(--border)', borderRadius: '20px' }} />
+                            ))}
                         </div>
                     }>
-                        <ShopList category={category} q={q} />
+                        <ShopList category={category} />
                     </Suspense>
 
                     <article style={{
@@ -216,7 +160,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
                             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>
                                 日本から安心して買える海外通販サイトの総覧
                             </h2>
-                            <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '3rem' }}>
+                            <p style={{ fontSize: '1.rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '3rem' }}>
                                 本ページは、日本への直送（Direct International Shipping）に対応した、世界の有力通販サイトを網羅した完全な一覧です。
                                 当サイトの専門スタッフが、各ショップの<b>リアルな送料・関税計算方法（DDP/DDU）・配送スピード</b>を、実際に日本から注文して実機検証しています。
                                 初めての個人輸入でも、各ショップの個別詳細ガイドを確認することで、為替や通関の不安を解消し、安心・確実な「現地価格」での買い物を楽しむことができます。
@@ -251,10 +195,10 @@ export default async function ShopsPage(props: ShopsPageProps) {
     )
 }
 
-async function ShopList({ category, q }: { category: string | undefined, q: string | undefined }) {
+async function ShopList({ category }: { category: string | undefined }) {
     let query = supabase
         .from('shops')
-        .select('id, name, slug, url, country, category, image_url, description, is_affiliate, ships_to_japan, popularity_score, tax_guide, fee_guide')
+        .select('id, name, slug, url, country, category, image_url, description, is_affiliate, ships_to_japan, popularity_score')
         .order('is_affiliate', { ascending: false })
         .order('ships_to_japan', { ascending: false })
         .order('popularity_score', { ascending: false })
@@ -262,11 +206,6 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
 
     if (category) {
         query = query.eq('category', category)
-    }
-
-    if (q) {
-        // 検索範囲を大幅に拡張：名前、説明、カテゴリに加え、国名、税ガイド、送料ガイドも対象
-        query = query.or(`name.ilike.%${q}%,description.ilike.%${q}%,category.ilike.%${q}%,country.ilike.%${q}%,tax_guide.ilike.%${q}%,fee_guide.ilike.%${q}%`)
     }
 
     const { data: shops, error } = await query
