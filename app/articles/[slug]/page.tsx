@@ -95,8 +95,10 @@ export default async function ArticleDetailPage({
         <>
             <Header />
             <main style={{ padding: '10rem 2rem', textAlign: 'center', background: 'var(--bg)', minHeight: '100vh' }}>
-                <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>記事が見つかりませんでした。</p>
-                <Link href="/articles" style={{ fontWeight: 700, color: '#111110' }}>← 記事一覧に戻る</Link>
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '2.5rem', fontSize: '1.2rem' }}>記事が見つかりませんでした。</p>
+                    <Link href="/articles" style={{ fontWeight: 700, color: '#111110', textDecoration: 'none' }}>← 記事一覧に戻る</Link>
+                </div>
             </main>
         </>
     )
@@ -127,19 +129,13 @@ export default async function ArticleDetailPage({
           .article-header { padding: clamp(7rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem) 4rem; background: var(--bg); border-bottom: 1px solid var(--border); }
           .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-bottom: 2rem; }
           .back-link:hover { color: #111110; }
-          
-          /* Visual Content */
           .hero-img-wrap { width: 100%; aspectRatio: 16/9; border-radius: 24px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); margin-top: 2rem; }
-          
-          /* Table of Contents */
           .toc-box { background: #fafaf9; border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 3rem 0; }
           .toc-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-soft); padding-bottom: 0.75rem; }
           .toc-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
           .toc-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.15s; }
           .toc-links a:hover { color: #111110; }
           .toc-h3 { padding-left: 1.5rem; opacity: 0.8; font-size: 0.88rem !important; }
-          
-          /* Article Body Styles */
           .post-body { color: #111110; line-height: 1.9; font-size: 1.05rem; }
           .post-body h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 850; letter-spacing: -0.03em; margin: 4.5rem 0 1.5rem; border-bottom: 2px solid #111110; padding-bottom: 0.75rem; line-height: 1.2; scroll-margin-top: 80px; }
           .post-body h3 { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1rem; line-height: 1.3; scroll-margin-top: 80px; }
@@ -147,21 +143,15 @@ export default async function ArticleDetailPage({
           .post-body strong { font-weight: 800; color: #000; box-shadow: inset 0 -6px 0 rgba(0,0,0,0.04); }
           .post-body a { color: #111110; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; transition: opacity 0.2s; }
           .post-body a:hover { opacity: 0.6; }
-          
-          /* Lists */
           .post-body ul, .post-body ol { margin-bottom: 2rem; padding-left: 1.4rem; }
           .post-body li { margin-bottom: 0.8rem; padding-left: 0.4rem; }
           .post-body ul { list-style: none; }
           .post-body ul li::before { content: "•"; color: #a1a19f; font-weight: bold; display: inline-block; width: 1.2em; margin-left: -1.2em; }
-          
-          /* Tables */
           .post-body table { width: 100%; margin: 3rem 0; border-collapse: collapse; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: block; overflow-x: auto; }
           .post-body th { background: #111110; color: white; text-align: left; padding: 1rem 1.25rem; font-weight: 700; white-space: nowrap; }
           .post-body td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-soft); vertical-align: middle; }
           .post-body tr:nth-child(even) { background: #fafaf9; }
           .post-body tr:hover { background: #f1f1ef; }
-          
-          /* Footnotes or CTA areas */
           .next-action { margin-top: 6rem; padding: 4rem; background: #fafaf9; border-radius: 32px; border: 1px solid var(--border); }
         `}</style>
                 
@@ -203,11 +193,11 @@ export default async function ArticleDetailPage({
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
                                 <Link href="/shops" style={{ background: 'white', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
                                     <p style={{ fontWeight: 850, fontSize: '1.1rem', marginBottom: '0.5rem' }}>SHOP DIRECTORY →</p>
-                                    <p style={{ fontSize: '0.88rem', color: var(--text-secondary) }}>140以上の優良ショップから、あなたのための1軒を探す。</p>
+                                    <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>140以上の優良ショップから、あなたのための1軒を探す。</p>
                                 </Link>
                                 <Link href="/search" style={{ background: 'white', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border)', textDecoration: 'none', color: 'inherit' }}>
                                     <p style={{ fontWeight: 850, fontSize: '1.1rem', marginBottom: '0.5rem' }}>GLOBAL SEARCH →</p>
-                                    <p style={{ fontSize: '0.88rem', color: var(--text-secondary) }}>キーワード、国名、カテゴリで、サイト内を縦断検索。</p>
+                                    <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>キーワード、国名、カテゴリで、サイト内を縦断検索。</p>
                                 </Link>
                             </div>
                         </div>
