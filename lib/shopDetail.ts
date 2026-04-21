@@ -103,10 +103,7 @@ function getFeeFallback(shop: ShopDetailRecord): string {
 }
 
 export function getShopLead(shop: ShopDetailRecord): string {
-    if (shop.description) return shop.description
-
-    const country = shop.country ? `${shop.country}発の` : ''
-    return `${country}${getCategoryLabel(shop)}ショップとして掲載しています。日本から探しやすい候補をまとめた参考ページです。`
+    return shop.description || ''
 }
 
 export function getShopTakeaways(shop: ShopDetailRecord): string[] {
