@@ -238,15 +238,15 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
             gap: '2rem',
         }}>
             {shops.map((shop) => (
-                <div key={shop.id} className="shop-card">
-                    {/* カード全体を覆う隠しリンク（解説ページへ） */}
-                    {shop.slug && (
-                        <Link 
-                            href={`/shops/${shop.slug}`} 
-                            style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}
-                            aria-label={`${shop.name}の解説ガイドを見る`}
-                        />
-                    )}
+                <div key={shop.id} className="shop-card" style={{ position: 'relative' }}>
+                    {/* カード全体を覆う外部リンク（公式サイトへ） */}
+                    <a 
+                        href={shop.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}
+                        aria-label={`${shop.name}の公式サイトへ移動`}
+                    />
 
                     <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
                         {shop.ships_to_japan === false && (
@@ -298,10 +298,7 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
                         </p>
 
                         <div style={{ display: 'flex', gap: '0.75rem', marginTop: 'auto', position: 'relative', zIndex: 2 }}>
-                            <a
-                                href={shop.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <div
                                 style={{
                                     flex: 1,
                                     textAlign: 'center',
@@ -312,30 +309,36 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
                                     fontSize: '0.875rem',
                                     fontWeight: 600,
                                     textDecoration: 'none',
-                                    transition: 'all 0.2s'
-                                }}
-                            >
-                                公式サイト ↗
-                            </a>
-                            <div
-                                style={{
-                                    flex: 1,
-                                    textAlign: 'center',
-                                    background: 'white',
-                                    color: '#111110',
-                                    padding: '0.85rem',
-                                    borderRadius: '12px',
-                                    fontSize: '0.875rem',
-                                    fontWeight: 600,
-                                    textDecoration: 'none',
-                                    border: '1px solid var(--border)',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }}
                             >
-                                解説ガイド →
+                                公式サイト ↗
                             </div>
+                            {shop.slug && (
+                                <Link
+                                    href={`/shops/${shop.slug}`}
+                                    style={{
+                                        flex: 1,
+                                        textAlign: 'center',
+                                        background: 'white',
+                                        color: '#111110',
+                                        padding: '0.85rem',
+                                        borderRadius: '12px',
+                                        fontSize: '0.875rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        border: '1px solid var(--border)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        transition: 'all 0.2s'
+                                    }}
+                                >
+                                    解説ガイド →
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>
