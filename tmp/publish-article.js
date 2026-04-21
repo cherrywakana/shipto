@@ -167,7 +167,6 @@ const content = `
 ハイセンスなギアを身に着けたモデル写真が豊富で、サイズ選びの参考に最適。
 
 *   **強み**: Nike ACG や Patagonia のファッション性の高いカラー。
-*   **直送**: 非常に高速な国際配送（FedEx/DHL等）に対応。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.endclothing.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">END. 公式サイト ↗</a>
@@ -181,7 +180,7 @@ const content = `
 ![FARFETCH スクリーンショット](${farfetchImg})
 
 **世界中の実店舗を繋ぐ、世界最大のラグジュアリープラットフォーム**
-世界中のアウトドアショップの在庫が見えるため、他で枯渇しているサイズが見つかることがあります。
+ハイエンド・アウトドアを一気に比較するならここ。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.farfetch.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">FARFETCH 公式サイト ↗</a>
@@ -191,15 +190,62 @@ const content = `
 
 ---
 
+## 5. 個人輸入を成功させるための「3つの絶対ルール」
+
+ショップを選んだら、次は失敗しないための実務です。以下の3点を抑えるだけで、トラブルの9割は回避できます。
+
+### ① 「16,666円の壁」と関税の計算
+日本の法律では、課税価格（商品代金×0.6）が1万円以下、つまり**「支払総額が約16,666円以下」**であれば、関税および消費税が免除されます。
+
+*   **注意**: ただし、登山靴やトレッキングシューズなどの**革製フットウェア**は「関税割当制度」の対象となり、たとえ数千円の商品でも高額な関税がかかる場合があります。シューズを買う際は、関税込み（DDP）のSSENSEを選ぶのが最も安全です。
+
+### ② DDU（到着時払い）と DDP（込み払い）の使い分け
+*   **DDP (Delivered Duty Paid)**: SSENSEなどが採用。購入時に全て支払うため、玄関先での支払いがなく最もスムーズ。
+*   **DDU (Delivered Duty Unpaid)**: Backcountryなどが採用。到着時に配送業者へ現金で支払います。課税価格の計算（×0.6）により、稀に予想より安くなる「関税ガチャ」の楽しみがありますが、数百円の手数料も加算されます。
+
+### ③ 海外通販の「黄金セールカレンダー」
+安く買うなら、以下のタイミングを狙い撃ちしてください。
+*   **5月後半 (Memorial Day)**: 米国系サイトで春夏のセール開始。
+*   **9月上旬 (Labor Day)**: 米国系サイトで秋・キャンプ用品のセール。
+*   **11月後半 (Black Friday)**: **一年で最大の安値。** ほぼ全てのショップが参加します。
+*   **12月〜1月 (Winter Sale)**: 欧州系サイト（LD Mountain Centre等）でアウターウェアが投げ売りされます。
+
+---
+
+## 6. 万が一のトラブル対応：英語コピペ用テンプレート
+
+「頼んだ色と違う」「まだ届かない」そんな時に慌てる必要はありません。以下の文章をメールやチャットに貼り付けてください。
+
+### 配送遅延を問い合わせる
+> "Hi, I'm checking the status of my order #[注文番号]. It hasn't arrived yet. Could you provide a tracking update?"
+> （注文番号#[注文番号]の状況を確認したいです。まだ届いていません。追跡情報を教えてもらえますか？）
+
+### 破損や間違いがあった場合
+> "I received order #[注文番号], but it's the wrong item/damaged. Could you tell me how to return or exchange it?"
+> （商品を受け取りましたが、違うものが入っている/破損しています。返品か交換の方法を教えてください。）
+
+---
+
+## 7. 偽サイトの罠を回避するために：Original Priceの審美眼
+
+インターネット上には、憧れのブランドを「90% OFF」などで謳う偽サイト（スキャンプ）が溢れています。
+
+当サイト **Original Price** が掲載しているショップは、以下の厳しい基準をクリアした店舗のみに厳選しています。
+1.  **ブランドの正規販売代理店契約**があること。
+2.  **国際発送のインフラと実績**が十分に認められること。
+3.  **万が一の際の補償・サポート体制**が整っていること。
+
+---
+
 ## 結論：ブランドと「直送の可否」で使い分けるのが正解
 
 アウトドアギアの海外通販は、「安いだけ」ではありません。
 
-1.  <strong>「直送できない」</strong>最新・セール品を本気で狙うなら <strong>Backcountry / REI + 転送サービス</strong>。
+1.  <strong>「直送できない」</strong>ブランド全般を本気で狙うなら <strong>Backcountry / REI + 転送サービス</strong>。
 2.  <strong>「面倒なく、英国老舗から直送」</strong>で手に入れたいなら <strong>LD Mountain Centre</strong>。
-3.  <strong>「ファッション性と確実な直送」</strong>を求めるなら <strong>SSENSE / END.</strong>。
+3.  <strong>「ファッション性と確実な直送」</strong>を追求するなら <strong>SSENSE / END.</strong>。
 
-これらの特性を理解した上で使い分ければ、国内の品薄や高値から解放され、一生モノのギアを最高の条件で手に入れることができます。冒険の準備を始めましょう。
+これらの特性を理解した上で使い分ければ、国内の品薄や高値から解放され、一生モノのギアを最高の条件で手に入れることができます。さあ、世界中からあなたのための相棒を探しに出かけましょう。
 `;
 
 async function publishArticle() {
@@ -220,7 +266,7 @@ async function publishArticle() {
     console.error('Error publishing:', error);
     process.exit(1);
   } else {
-    console.log('Successfully published OUTDOOR GUIDE Ver 2.2 - FIXED MARKDOWN RENDERING!');
+    console.log('Successfully published OUTDOOR GUIDE Ver 3.0 - MASSIVE PRACTICAL CONTENT ADDED!');
     process.exit(0);
   }
 }
