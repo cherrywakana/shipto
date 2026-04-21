@@ -5,149 +5,205 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
-const title = '【2026年最新】海外通販サイトのアウトドアおすすめ6選！アークテリクスやパタゴニアが驚きの現地価格で買える優良店を厳選';
+const title = '【2026年最新】海外通販サイトのアウトドアおすすめ8選！アークテリクスやパタゴニアを賢く買うための「直送制限」攻略ガイド';
 const slug = 'overseas-outdoor-shops-guide';
 const category = 'アウトドア';
 
 // 画像パス
-const heroImg = '/outdoor_guide_main_hero_v2_1776764001023.png'; // ヒーロー画像のみVibe重視でAI生成を維持
+const heroImg = '/outdoor_guide_main_hero_v2_1776764001023.png';
 const backcountryImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/backcountry.webp?t=1773492252144';
+const reiImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/rei.webp?t=1773492280054';
 const wildboundsImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/wildbounds.webp?t=1773492292056';
 const hmgImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/hyperlite-mountain-gear.webp?t=1773492268543';
-const ellisImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/ellis-brigham.webp?t=1773492260863';
 const trekkinnImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/trekkinn.webp?t=1773492286787';
 const varusteImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/varuste.webp?t=1773492289553';
+const ssenseImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/ssense.webp';
+const endImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/end-clothing.webp?t=1772403770389';
+const farfetchImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/farfetch.webp';
 
 const content = `
-## 海外通販で本物のアウトドアギアを「現地価格」で手に入れる時代
+## 海外通販で本物のアウトドアギアを「現地価格」で手に入れる、本当のコツ
 
-登山、キャンプ、そして本格的なバックカントリー。アウトドア愛好家にとって、**アークテリクス（ARC'TERYX）**や**パタゴニア（Patagonia）**などのトップブランドのギアは、もはや単なる装備ではなく「一生の相棒」です。
+アウトドア愛好家にとって、**アークテリクス（ARC\'TERYX）**や**パタゴニア（Patagonia）**は憧れの存在です。しかし、国内価格の高騰や完売続きで、「海外から直接買いたい」と考えるのは極めて合理的。
 
-しかし、近年続く物価高騰と円安の影響により、国内の直営店価格は上昇の一途をたどっています。「憧れのギアがあるが、日本では高すぎて手が出ない」「国内では完売してどこにも在庫がない」——。そんな悩みを解決するのが、海外の有力ショップから直接取り寄せる「個人輸入」です。
-
-本記事では、日本からの利用実績が豊富かつ、世界中のハイカーから絶大な信頼を寄せられている**「本気で選ぶべき海外通販サイト」**を6つに厳選。関税の仕組みから送料、そして最も安く買うためのコツまで、3500文字を超える圧倒的なボリュームで徹底解説します。
+本記事では、単なる安さの紹介に留まらず、日本のアウトドアファンが海外通販で直面する最大の壁**「ブランドによる日本発送制限」**をどう乗り越えるか、という視点で厳選した8つのショップを徹底解説します。
 
 ---
 
-## 2026年版：主要アウトドア海外通販サイト比較表
+## 1. 知っておくべき「直送制限（Shipping Restrictions）」の法則
 
-| ショップ名 | 得意なブランド | 関税方式 | 日本発送 | 特徴 |
-| :--- | :--- | :--- | :--- | :--- |
-| **Backcountry** | 総合（ARC, Patagonia等） | DDU（到着時） | ✈️ 直送OK | 世界最大級の在庫量 |
-| **Wildbounds** | 英国系レアギア・EDC | DDU（到着時） | ✈️ 直送OK | センスが光るセレクト |
-| **HMG** | ULバックパック | DDU（到着時） | ✈️ 直送OK | ULギアの最高峰 |
-| **Ellis Brigham** | 英国老舗・テクニカル | DDU（到着時） | ✈️ 直送OK | 圧倒的な信頼感 |
-| **Varuste.net** | 北欧ブランド | DDU（到着時） | ✈️ 直送OK | 現地VAT免除で格安 |
-| **Trekkinn** | 圧倒的な安さ・小物 | DDU（到着時） | ✈️ 直送OK | 日本郵便利用で安心 |
+まず最初に、最も重要な事実をお伝えします。
+
+**Backcountry（バックカントリー）**や**REI（アールイーアイ）**といった米国の巨大ショップは、アークテリクスやパタゴニアなどの特定ブランドを、メーカーとの契約により**「原則として日本へ直接送ることができません」**。
+
+商品ページを見て「Ships to USA only」と書かれている場合、カートに入れても決済段階で弾かれるか、日本を選べなくなります。これを知らずに探すと時間の無駄になってしまいます。
+
+### 直送制限を突破する3つの戦略
+1.  **欧州のショップを利用する**: 同ブランドでも、欧州発のショップ（Varuste等）は制限が緩い場合があります。
+2.  **ファッション系モールを利用する**: SSENSE等のファッションモールは、通常の「アウトドア卸」とは異なる契約形態のため、日本へ直送可能なケースが多々あります。
+3.  **転送サービス（OPAS等）を活用する**: 米国の住所を経由して日本へ送る手法です。米国国内のセール価格を100%享受できる最大のメリットがあります。
 
 ---
 
-## 1. Backcountry（バックカントリー）：世界最大級のアウトドア・デパートメント
+## 2. 米国が誇る「本格アウトドアの聖地」3選
 
-### Backcountry (バックカントリー)
+直送制限はありますが、その在庫規模とセール価格の爆発力は、米国系ショップが群を抜いています。
+
+### Backcountry（バックカントリー）
 ![Backcountry スクリーンショット](${backcountryImg})
 
-**「ここに無ければ、世界中どこにもない」**。そう言わしめるほどの圧倒的な在庫量を誇るのが、米国ユタ州を拠点とする[Backcountry.com](https://www.backcountry.com)です。
+**世界最大級の在庫を誇る、アウトドア愛好家の「最後の砦」**
+もしアークテリクスの完売カラーを米国住所（転送）で手に入れたいなら、ここがベストです。
 
-#### 圧倒的なブランドリストと在庫の深さ
-Backcountryの最大の強みは、その取り扱いブランドの幅広さです。アークテリクス、パタゴニア、ノースフェイス、ブラックダイヤモンド、スポルティバ……など、1,000を超えるトップブランドの最新モデルが、全サイズ・全カラーで揃う勢いです。
-特に「国内では即完売してしまう人気カラー」や、限定モデルの在庫が豊富に残っていることが多く、最後の砦として利用するユーザーも少なくありません。
+*   **強み**: 他に類を見ない1,000以上のブランドとカラー展開。
+*   **注意**: Patagonia, Arc'teryx 等の人気ブランドは日本直送不可。
+*   **攻略法**: 転送サービスを使って「米国国内セール品」を狙うのが玄人の嗜み。
 
-#### 日本への発送と関税のポイント
-Backcountryは日本への直送に対応していますが、一部のブランドについてはメーカー側の規制により直送できない場合があります。ただし、アウトドアウェア、キャンプギア、シューズに関しては、多くが直送可能です。
-関税については、到着時に運送会社（UPSやFedEx等）に支払う「DDU」形式が一般的です。決済金額から「米国現地の消費税」が差し引かれるため、表示価格以上に安く買えるのが魅力です。
-
-<div style="margin: 2.5rem 0; text-align: center;">
-  <a href="https://www.backcountry.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15); transition: transform 0.2s;">Backcountry 公式サイトへ ↗</a>
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.backcountry.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Backcountry 公式サイト ↗</a>
 </div>
 
-*   **ショップ詳細：[Backcountry（バックカントリー）のガイド](/shops/backcountry)**
+*   ショップ詳細：[Backcountry（バックカントリー）のガイド](/shops/backcountry)
 
 ---
 
-## 2. Wildbounds（ワイルドバウンズ）：感性を揺さぶる「次世代」のセレクト
+### REI（アールイーアイ）
+![REI スクリーンショット](${reiImg})
 
-### Wildbounds (ワイルドバウンズ)
-![Wildbounds スクリーンショット](${wildboundsImg})
+**米国最大の消費者協同組合。圧倒的な信頼と独自ブランドのコスパ**
+米国で最も信頼されるアウトドアショップといえばREIです。
 
-一般的な量販店に飽きた玄人ハイカーが辿り着くのが、イギリス発の[Wildbounds](https://wildbounds.com/)です。「Quality, Sustainability, and Adventure」をテーマに、世界中から選び抜かれたブティックブランド（新進気鋭の小規模ブランド）を多数扱っています。
+*   **強み**: 自社ブランド「REI Co-op」のギアが非常に安価で高性能。
+*   **信頼性**: 返品ポリシーが極めて寛大（※海外発送時は制限あり）。
+*   **直送**: 多くのギアは直送可能だが、やはり人気プレミアムブランドには制限がある。
 
-#### 他のショップでは見つからない「一点モノ」の出会い
-Wildboundsが扱うギアは、どれも機能性だけでなく「美しさ」を兼ね備えています。北欧のハンドメイドナイフ、ガレージブランドのバックパック、一生モノのチタン製キャンプ用品など、日本のセレクトショップでもなかなかお目にかかれないアイテムが並びます。
-
-<div style="margin: 2.5rem 0; text-align: center;">
-  <a href="https://wildbounds.com/" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Wildbounds 公式サイトへ ↗</a>
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.rei.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">REI 公式サイト ↗</a>
 </div>
 
-*   **ショップ詳細：[Wildbounds (ワイルドバウンズ)のガイド](/shops/wildbounds)**
+*   ショップ詳細：[REI（アールイーアイ）のガイド](/shops/rei)
 
 ---
 
-## 3. Hyperlite Mountain Gear（HMG）：ULハイカーの頂点に君臨する
-
-### Hyperlite Mountain Gear (ハイパーライト・マウンテン・ギア)
+### Hyperlite Mountain Gear (HMG)
 ![HMG スクリーンショット](${hmgImg})
 
-軽量化を追求するハイカーたちのアイコンとも言える白いバックパック。その生みの親である[Hyperlite Mountain Gear](https://www.hyperlitemountaingear.com/)の直販サイトです。米国メイン州の自社工場で職人が一つひとつ作り上げる、妥協なきULギアを「本国価格」で手に入れられます。
+**UL（ウルトラライト）ハイカーの頂点に君臨する白いギア**
+「山と道」などのULギア愛好家なら、避けては通れない白いダイニーマ製のバックパックでお馴染み。
 
-<div style="margin: 2.5rem 0; text-align: center;">
-  <a href="https://www.hyperlitemountaingear.com/" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">HMG 公式サイトへ ↗</a>
+*   **強み**: 本国直送のため、日本での品薄状態を気にせず最新モデルを入手可能。
+*   **直送**: 日本への発送に非常に積極的。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.hyperlitemountaingear.com/" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">HMG 公式サイト ↗</a>
 </div>
 
-*   **ショップ詳細：[Hyperlite Mountain Gear (ハイパーライト・マウンテン・ギア)のガイド](/shops/hyperlite-mountain-gear)**
+*   ショップ詳細：[Hyperlite Mountain Gear (ハイパーライト・マウンテン・ギア)のガイド](/shops/hyperlite-mountain-gear)
 
 ---
 
-## 4. Ellis Brigham（エリス・ブリガム）：イギリスが誇るテクニカルショップの老舗
+## 3. 直送制限を突破する「欧州・実質重視」ショップ
 
-### Ellis Brigham (エリス・ブリガム)
-![Ellis Brigham スクリーンショット](${ellisImg})
+「転送は面倒。だけどパタゴニアが欲しい」という方は欧州に目を向けましょう。
 
-イギリス国内に多数の実店舗を構える[Ellis Brigham](https://www.ellis-brigham.com/)は、山岳ガイドやプロの冒険家も利用するガチのテクニカルショップです。派手さはありませんが、その信頼性と取り扱いアイテムの「質」の高さは折り紙付きです。
-
-<div style="margin: 2.5rem 0; text-align: center;">
-  <a href="https://www.ellis-brigham.com/" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Ellis Brigham 公式サイトへ ↗</a>
-</div>
-
-*   **ショップ詳細：[Ellis Brigham (エリス・ブリガム)のガイド](/shops/ellis-brigham)**
-
----
-
-## 5. Varuste.net（バルステ・ネット）：北欧ブランドを「現地価格」で。
-
-### Varuste.net (バルステ・ネット)
+### Varuste.net（バルステ・ネット）
 ![Varuste スクリーンショット](${varusteImg})
 
-フィンランドのアウトドアハイカーたちの聖地[Varuste.net](https://varuste.net/en/)です。Fjallraven、Hilleberg、Suunto等のブランドを本国の圧倒的な安さで手に入れることができます。北欧ブランド特有の「冷涼な空気感」が伝わる本場サイトです。
+**フィンランドからの刺客。北欧ブランドが驚異の現地価格**
+北欧を代表するブランド（Fjallraven, Hilleberg 等）を探すなら世界最安水準です。
 
-<div style="margin: 2.5rem 0; text-align: center;">
-  <a href="https://varuste.net/en/" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Varuste.net 公式サイトへ ↗</a>
+*   **直送**: 日本への直送制限が米国ほど厳しくなく、多くが免税価格（VAT抜き）で届く。
+*   **信頼**: フィンランドの実店舗がベースのため、プロフェッショナルな対応。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://varuste.net/en/" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Varuste.net 公式サイト ↗</a>
 </div>
 
-*   **ショップ詳細：[Varuste.net (バルステ・ネット)のガイド](/shops/varuste)**
+*   ショップ詳細：[Varuste.net (バルステ・ネット)のガイド](/shops/varuste)
 
 ---
 
-## 6. Trekkinn（トレッキン）：世界中のギアがここに集約される
-
-### Trekkinn (トレッキン)
+### Trekkinn（トレッキン）
 ![Trekkinn スクリーンショット](${trekkinnImg})
 
-どんなニッチな小物であっても見つかる、世界最大級のスポーツモール「Tradeinn」グループの[Trekkinn](https://www.tradeinn.com/trekkinn/en)です。圧倒的な在庫数と、日本郵便が選べる安心感が最大の特徴です。
+**世界最大級のスポーツモール。圧倒的な安さと日本郵便での利便性**
+あらゆる消耗品からギアまで、常に「世界最安値」を競うショップ。
 
-<div style="margin: 2.5rem 0; text-align: center;">
-  <a href="https://www.tradeinn.com/trekkinn/en" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Trekkinn 公式サイトへ ↗</a>
+*   **直送**: 制限は多少あるが、商品数が多いため、他で見つからないパーツなども直送可能。
+*   **送料**: 日本郵便が選べるため、不在がちな人でも受け取りやすい。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.tradeinn.com/trekkinn/en" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Trekkinn 公式サイト ↗</a>
 </div>
 
-*   **ショップ詳細：[Trekkinn (トレッキン)のガイド](/shops/trekkinn)**
+*   ショップ詳細：[Trekkinn (トレッキン)のガイド](/shops/trekkinn)
 
 ---
 
-## 最後に：世界へ冒険の準備を始めよう
+## 4. ファッション×アウトドア：ゴープコア（Gorpcore）の聖地
 
-海外通販は、一歩踏み出すまでは勇気がいりますが、一度その安さと選択肢の多さを知ってしまうと、世界が劇的に広がります。当サイト「Original Price」では、掲載ショップを厳密に審査しており、すべて本物の正規品が届くことを保証します。
+今やアウトドアギアは、街着としても最高級の評価を得ています。ファッションモール経由なら、アークテリクスの希少ライン「Veillance」なども日本へ直送可能です。
 
-まずは気になるショップの専門ガイドを読み込み、憧れのギアを相棒にして、次の山に向かう準備を始めましょう。
+### SSENSE（エッセンス）
+![SSENSE スクリーンショット](${ssenseImg})
+
+**カナダ発のラグジュアリーモール。アークテリクスの品揃えは世界屈指**
+アウトドアショップでは日本へ送れないアークテリクスを、最もスマートに直送できるのがSSENSEです。
+
+*   **強み**: Arc'teryx, Salomon, The North Face などのハイエンドライン。
+*   **直送**: 日本直送は完全に公式対応。価格に関税が含まれている（DDP）ため、到着時の追加支払いがなくストレスフリー。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.ssense.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">SSENSE 公式サイト ↗</a>
+</div>
+
+*   ショップ詳細：[SSENSE（エッセンス）のガイド](/shops/ssense)
+
+---
+
+### END.（エンド）
+![END. スクリーンショット](${endImg})
+
+**イギリス発。ストリートとアウトドアが融合した独自のセレクト**
+Patagonia や Arc'teryx のアフィリエイト限定品や、コラボモデルを探すならここ。
+
+*   **強み**: 写真が美しく、ギアを身に着けた時のサイズ感が分かりやすい。
+*   **直送**: 世界中へエクスプレス配送。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.endclothing.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">END. 公式サイト ↗</a>
+</div>
+
+*   ショップ詳細：[END.（エンド）のガイド](/shops/end)
+
+---
+
+### FARFETCH（ファーフェッチ）
+![FARFETCH スクリーンショット](${farfetchImg})
+
+**世界中のセレクトショップを繋ぐプラットフォーム**
+世界中のアウトドアショップの在庫が見えるため、他で枯渇しているサイズが見つかることがあります。
+
+*   **直送**: 発送場所によるが、日本へは極めてスムーズに届く。
+*   **ブランド**: Arc\'teryx, Salomon, Hoka などの人気ブランドを網羅。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.farfetch.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">FARFETCH 公式サイト ↗</a>
+</div>
+
+*   ショップ詳細：[FARFETCH（ファーフェッチ）のガイド](/shops/farfetch)
+
+---
+
+## 結論：ブランドと「直送の可否」で使い分けるのが正解
+
+アウトドアギアの海外通販は、「安いだけ」ではありません。
+
+1.  **「直送できない」**ブランドの最新・セール品を本気で狙うなら **Backcountry / REI + 転送サービス**。
+2.  **「面倒なく、直送で安く」**手に入れたいなら **Varuste.net / Trekkinn**。
+3.  **「ファッション性と確実な直送」**を求めるなら **SSENSE / END.**。
+
+これらの特性を理解した上で使い分ければ、国内の品薄や高値から解放され、一生モノのギアを最高の条件で手に入れることができます。冒険の準備を始めましょう。
 `;
 
 async function publishArticle() {
@@ -168,7 +224,7 @@ async function publishArticle() {
     console.error('Error publishing:', error);
     process.exit(1);
   } else {
-    console.log('Successfully published PREMIUM article with AUTHENTIC screenshots!');
+    console.log('Successfully published THE ULTIMATE OUTDOOR GUIDE Ver 2.0!');
     process.exit(0);
   }
 }
