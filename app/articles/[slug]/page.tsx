@@ -4,10 +4,10 @@ import Footer from '@/components/Footer'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { marked } from 'marked'
 import { CORE_GUIDE_LINKS } from '@/lib/shopInsights'
 import { addExternalLinkAttributes, formatJapaneseDate, getArticleExcerpt, getLastVerifiedAt, sanitizeArticleHtml } from '@/lib/utils'
 
-// --- SEO: generateMetadata for per-article title/description/og ---
 export async function generateMetadata({
     params,
 }: {
@@ -27,7 +27,6 @@ export async function generateMetadata({
         }
     }
 
-    // Extract first 120 chars of plain text for description
     const plainText = getArticleExcerpt(post.content, 120)
 
     const postUrl = slug.includes('/') && !slug.startsWith('articles/')
@@ -63,7 +62,6 @@ export async function generateMetadata({
     }
 }
 
-// --- Helper: Extract headings from HTML for Table of Contents ---
 function extractHeadings(html: string): { id: string; text: string; level: number }[] {
     const headings: { id: string; text: string; level: number }[] = []
     const regex = /<h([2-3])[^>]*>(.*?)<\/h\1>/gi
@@ -85,7 +83,6 @@ function extractHeadings(html: string): { id: string; text: string; level: numbe
     return headings
 }
 
-// --- Helper: Inject IDs into headings in HTML ---
 function injectHeadingIds(html: string, headings: { id: string; text: string; level: number }[]): string {
     let headingIndex = 0
     return html.replace(/<h([2-3])([^>]*)>(.*?)<\/h\1>/gi, (fullMatch, level, attrs, content) => {
@@ -118,10 +115,6 @@ export default async function ArticleDetailPage({
         redirect(`/${slug}`);
     }
 
-    const postUrl = isLegacyPath
-        ? `https://original-price.com/${slug}`
-        : `https://original-price.com/articles/${slug}`
-
     const { data: post } = await supabase
         .from('posts')
         .select('*')
@@ -131,9 +124,9 @@ export default async function ArticleDetailPage({
     if (!post) return (
         <>
             <Header />
-            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem)', minHeight: '100vh', background: '#f8fafc' }}>
+            <main style={{ fontFamily: 'var(--font-sans)', padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem)', minHeight: '100vh', background: 'var(--bg)' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    <p style={{ color: '#94a3b8', marginBottom: '1.5rem', textAlign: 'center', fontSize: '1.2rem' }}>記事が見つかりません。</p>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', textAlign: 'center', fontSize: '1.2rem' }}>記事が見つかりません。</p>
                     <div style={{ textAlign: 'center' }}>
                         <Link href="/articles" style={{ color: '#111110', textDecoration: 'none', fontWeight: 600 }}>← 記事一覧に戻る</Link>
                     </div>
@@ -142,8 +135,9 @@ export default async function ArticleDetailPage({
         </>
     )
 
-    // Extract headings for ToC and inject IDs
-    const sanitizedContent = sanitizeArticleHtml(post.content || '')
+    // Parse Markdown to HTML and process
+    const rawHtml = marked.parse(post.content || '') as string
+    const sanitizedContent = sanitizeArticleHtml(rawHtml)
     const linkedShopSlugs = extractLinkedSlugs(sanitizedContent, 'shops')
     const linkedBrandSlugs = extractLinkedSlugs(sanitizedContent, 'brands')
     const headings = extractHeadings(sanitizedContent)
@@ -155,7 +149,7 @@ export default async function ArticleDetailPage({
             ? supabase
                 .from('shops')
                 .select('name, slug, category, ships_to_japan, is_affiliate, popularity_score')
-                .in('slug', linkedShopSlugs.slice(0, 6))
+                .in('slug', linkedShopSlugs.slice(0, 10))
             : Promise.resolve({ data: [] }),
         linkedBrandSlugs.length > 0
             ? supabase
@@ -179,7 +173,6 @@ export default async function ArticleDetailPage({
         .map((brandSlug) => linkedBrands?.find((brand) => brand.slug === brandSlug))
         .find(Boolean)
 
-    // --- JSON-LD Structured Data ---
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -200,352 +193,92 @@ export default async function ArticleDetailPage({
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': postUrl,
+            '@id': `https://original-price.com/articles/${slug}`,
         },
     }
 
     return (
         <>
             <Header />
-            {/* JSON-LD */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', background: 'white' }}>
+            <main style={{ fontFamily: 'var(--font-sans)', background: 'white' }}>
                 <style>{`
           .back-link { color: #6b6b69; text-decoration: none; font-weight: 500; font-size: 0.82rem; transition: color 0.2s; display: inline-flex; align-items: center; gap: 0.35rem; }
           .back-link:hover { color: #111110; }
-          
-          /* Table of Contents */
-          .toc-container {
-            background: #fafaf9;
-            border: 1px solid #e5e5e3;
-            border-radius: 10px;
-            padding: 1.5rem 1.75rem;
-            margin-bottom: 2.5rem;
-          }
-          .toc-title {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: #a1a19f;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-          }
-          .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-          }
-          .toc-list li {
-            margin-bottom: 0.45rem;
-          }
-          .toc-list li a {
-            color: #555553;
-            text-decoration: none;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            transition: color 0.15s;
-          }
+          .toc-container { background: #fafaf9; border: 1px solid #e5e5e3; border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 2.5rem; }
+          .toc-title { font-size: 0.7rem; font-weight: 700; color: #a1a19f; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+          .toc-list { list-style: none; padding: 0; margin: 0; }
+          .toc-list li { margin-bottom: 0.45rem; }
+          .toc-list li a { color: #555553; text-decoration: none; font-size: 0.9rem; line-height: 1.6; transition: color 0.15s; }
           .toc-list li a:hover { color: #111110; }
           .toc-list li.toc-h3 { padding-left: 1.25rem; }
           .toc-list li.toc-h3 a { font-size: 0.82rem; color: #a1a19f; }
-          
-          /* Article content */
-          .article-content {
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: #333332;
-            font-family: var(--font-sans);
-          }
-
-          .article-content h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(1.5rem, 3.5vw, 2rem);
-            font-weight: 700;
-            color: #111110;
-            margin-top: 3.5rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid #e5e5e3;
-            line-height: 1.3;
-            letter-spacing: -0.02em;
-            scroll-margin-top: 5rem;
-          }
-
-          .article-content h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #111110;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            letter-spacing: -0.02em;
-            scroll-margin-top: 5rem;
-          }
-
-          .article-content p {
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.005em;
-          }
-
-          .article-content ul, .article-content ol {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-          }
-
-          .article-content li {
-            margin-bottom: 0.5rem;
-          }
-
-          .article-content a {
-            color: #111110;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            text-decoration-color: rgba(17,17,16,0.3);
-            transition: text-decoration-color 0.15s;
-          }
-
-          .article-content a:hover {
-            text-decoration-color: rgba(17,17,16,0.9);
-          }
-          
-          .article-content strong {
-            font-weight: 700;
-            color: #111110;
-          }
-
-          .article-content table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-          }
-          .article-content th {
-            background: #f3f3f1;
-            padding: 0.75rem 1rem;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 1px solid #e5e5e3;
-            color: #555553;
-            font-size: 0.82rem;
-            letter-spacing: 0.03em;
-          }
-          .article-content td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #f0f0ee;
-            color: #333332;
-          }
-          .article-content tr:last-child td { border-bottom: none; }
-
-          /* Shop card styles for BV-style articles */
-          .article-content .shop-card {
-            border: 1px solid #e5e5e3;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            background: #ffffff;
-          }
-          .article-content .shop-card h3 {
-            margin-top: 0;
-          }
-          .article-content .shop-shot {
-            width: 100%;
-            display: block;
-            margin: 0 0 1rem;
-            border-radius: 10px;
-            border: 1px solid #e5e5e3;
-            background: #f8fafc;
-          }
-          .article-content .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.45rem;
-            padding: 0.85rem 1.2rem;
-            margin-bottom: 1rem;
-            background: #111110 !important;
-            color: #fafaf9 !important;
-            border-radius: 6px !important;
-            font-family: var(--font-sans);
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            text-decoration: none !important;
-            transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-          }
-          .article-content .cta-button:hover {
-            background: #2a2a28 !important;
-            transform: translateY(-2px) !important;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15) !important;
-          }
+          .article-content { font-size: 1.05rem; line-height: 1.85; color: #333332; }
+          .article-content h2 { font-family: var(--font-serif); font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 700; color: #111110; margin-top: 3.5rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e5e5e3; line-height: 1.3; scroll-margin-top: 5rem; }
+          .article-content h3 { font-size: 1.2rem; font-weight: 800; color: #111110; margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.4; scroll-margin-top: 5rem; }
+          .article-content p { margin-bottom: 1.5rem; }
+          .article-content ul, .article-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+          .article-content li { margin-bottom: 0.5rem; }
+          .article-content a { color: #111110; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(17,17,16,0.2); transition: text-decoration-color 0.15s; }
+          .article-content a:hover { text-decoration-color: rgba(17,17,16,0.8); }
+          .article-content strong { font-weight: 800; color: #111110; }
+          .article-content table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-bottom: 2rem; border: 1px solid #e5e5e3; }
+          .article-content th { background: #f3f3f1; padding: 0.85rem; text-align: left; font-weight: 700; border-bottom: 1px solid #e5e5e3; color: #111110; }
+          .article-content td { padding: 0.85rem; border-bottom: 1px solid #f0f0ee; color: #333332; }
         `}</style>
 
-                {/* Article Header (Hero) */}
-                <section style={{
-                    padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 4rem)',
-                    background: '#f8fafc',
-                    borderBottom: '1px solid #e2e8f0'
-                }}>
+                <section style={{ padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem', background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        <Link href="/articles" className="back-link" style={{ display: 'inline-block', marginBottom: '2rem' }}>← 記事一覧に戻る</Link>
-
+                        <Link href="/articles" className="back-link" style={{ marginBottom: '2rem' }}>← 記事一覧に戻る</Link>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
                             {post.category && (
-                                <span style={{
-                                    fontSize: '0.72rem', fontWeight: 700, color: 'var(--accent-brand)',
-                                    background: 'var(--accent-brand-soft)', padding: '0.35rem 1.2rem',
-                                    borderRadius: '100px', letterSpacing: '0.06em', textTransform: 'uppercase',
-                                    border: '1px solid var(--accent-brand-mid)',
-                                }}>{post.category}</span>
+                                <span style={{ fontSize: '0.7rem', fontWeight: 800, color: 'white', background: '#111110', padding: '0.3rem 1rem', borderRadius: '4px', letterSpacing: '0.05em' }}>{post.category}</span>
                             )}
-                            <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>
-                                {post.created_at ? `🗓️ ${new Date(post.created_at).toLocaleDateString('ja-JP')}` : ''}
-                            </span>
-                            <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>
-                                最終確認 {formatJapaneseDate(getLastVerifiedAt(post)) || '未登録'}
-                            </span>
+                            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{new Date(post.created_at).toLocaleDateString('ja-JP')} 公開</span>
                         </div>
-
-                        <h1 style={{
-                            fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800,
-                            letterSpacing: '-0.02em', color: '#0f172a', lineHeight: 1.3,
-                            marginBottom: '2rem'
-                        }}>{post.title}</h1>
-
+                        <h1 style={{ fontSize: 'clamp(2rem, 5.5vw, 3.4rem)', fontWeight: 850, letterSpacing: '-0.03em', color: '#111110', lineHeight: 1.2, marginBottom: '2.5rem' }}>{post.title}</h1>
                         {post.thumbnail_url && (
-                            <div style={{
-                                width: '100%',
-                                aspectRatio: '16/9',
-                                borderRadius: '16px',
-                                overflow: 'hidden',
-                                boxShadow: '0 10px 25px -5px rgba(0,0,0,0.05)',
-                                backgroundColor: '#e2e8f0'
-                            }}>
-                                <img
-                                    src={post.thumbnail_url}
-                                    alt={post.title}
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                />
+                            <div style={{ width: '100%', aspectRatio: '16/9', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.1)', border: '1px solid var(--border)' }}>
+                                <img src={post.thumbnail_url} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </div>
                         )}
                     </div>
                 </section>
 
-                {/* Article Content */}
-                <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)' }}>
-                    <div style={{ maxWidth: '720px', margin: '0 auto' }}>
-
-                        {/* Table of Contents */}
+                <section style={{ padding: '5rem clamp(1.5rem, 5vw, 4rem)' }}>
+                    <div style={{ maxWidth: '760px', margin: '0 auto' }}>
                         {headings.length > 0 && (
-                            <nav className="toc-container" aria-label="目次">
-                                <p className="toc-title">📑 目次</p>
+                            <nav className="toc-container">
+                                <p className="toc-title">Index</p>
                                 <ul className="toc-list">
                                     {headings.map((h, i) => (
                                         <li key={i} className={h.level === 3 ? 'toc-h3' : ''}>
-                                            <a href={`#${h.id}`}>{h.level === 3 ? '└ ' : ''}{h.text}</a>
+                                            <a href={`#${h.id}`}>{h.text}</a>
                                         </li>
                                     ))}
                                 </ul>
                             </nav>
                         )}
+                        <div className="article-content" dangerouslySetInnerHTML={{ __html: contentWithIds }} />
 
-                        {/* Rendering HTML content */}
-                        <div
-                            className="article-content"
-                            dangerouslySetInnerHTML={{ __html: contentWithIds }}
-                        />
-
-                        {/* Article Footer Area */}
-                        <div style={{
-                            marginTop: '5rem',
-                            paddingTop: '3rem',
-                            borderTop: '1px solid #e2e8f0',
-                            display: 'grid',
-                            gap: '1.5rem'
-                        }}>
-                            <div style={{ textAlign: 'center' }}>
-                                <p style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem' }}>
-                                    記事を読んだら、次は比較して選ぶ段階へ。
-                                </p>
-                                <p style={{ color: '#64748b', margin: 0, lineHeight: 1.7 }}>
-                                    ショップ一覧・ブランド一覧・初心者ガイドを行き来しながら、自分に合う海外通販先を見つけやすくしています。
-                                </p>
-                            </div>
-
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
-                                {[
-                                    { title: 'ショップ一覧', body: '送料・関税・日本発送の違いを比較', href: '/shops' },
-                                    { title: 'ブランド一覧', body: '欲しいブランドが買える店を探す', href: '/brands' },
-                                    { title: '初心者ガイド', body: 'DDP/DDUや返品の基礎を押さえる', href: '/guide' },
-                                ].map((card) => (
-                                    <Link key={card.title} href={card.href} style={{ textDecoration: 'none', color: 'inherit', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '1.2rem', background: '#fafaf9' }}>
-                                        <div style={{ fontWeight: 700, color: '#0f172a', marginBottom: '0.45rem' }}>{card.title}</div>
-                                        <div style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6 }}>{card.body}</div>
-                                    </Link>
-                                ))}
-                            </div>
-
-                            {primaryBrand && (
-                                <Link
-                                    href={`/brands/${primaryBrand.slug}`}
-                                    style={{
-                                        textDecoration: 'none',
-                                        color: 'inherit',
-                                        border: '1px solid #e2e8f0',
-                                        borderRadius: '18px',
-                                        padding: '1.25rem 1.35rem',
-                                        background: 'linear-gradient(135deg, #fff 0%, #fafaf9 100%)',
-                                        display: 'grid',
-                                        gap: '0.45rem',
-                                    }}
-                                >
-                                    <span style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)' }}>
-                                        関連ブランド
-                                    </span>
-                                    <span style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a' }}>{primaryBrand.name}の掲載ショップをもっと見る</span>
-                                    <span style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.7 }}>この記事で見たショップ以外も含めて、ブランド単位で比較しやすい導線です。</span>
+                        <div style={{ marginTop: '6rem', padding: '3rem', background: 'var(--bg)', borderRadius: '24px', border: '1px solid var(--border)' }}>
+                            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', marginBottom: '1.5rem' }}>Next Steps</h2>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
+                                <Link href="/shops" style={{ textDecoration: 'none', background: 'white', padding: '1.5rem', borderRadius: '16px', border: '1px solid var(--border)' }}>
+                                    <p style={{ fontWeight: 800, color: '#111110', marginBottom: '0.5rem' }}>ショップ一覧 →</p>
+                                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>海外通販140サイトを比較</p>
                                 </Link>
-                            )}
-
-                            {(orderedLinkedShops.length > 0 ? (orderedLinkedShops as any[]) : (featuredShops || [])).length > 0 && (
-                                <div style={{ border: '1px solid #e2e8f0', borderRadius: '18px', padding: '1.25rem 1.35rem', background: '#fff' }}>
-                                    <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.85rem' }}>
-                                        {orderedLinkedShops.length > 0 ? 'この記事で比較したショップ' : '今すぐ比較しやすいショップ'}
-                                    </p>
-                                    <div style={{ display: 'grid', gap: '0.8rem' }}>
-                                        {(orderedLinkedShops.length > 0 ? (orderedLinkedShops as any[]) : (featuredShops || [])).filter(Boolean).map((shop: any) => shop && (
-                                            <Link key={shop.slug} href={`/shops/${shop.slug}`} style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', textDecoration: 'none', color: 'inherit', paddingBottom: '0.8rem', borderBottom: '1px solid #f0f0ee' }}>
-                                                <div>
-                                                    <div style={{ fontWeight: 700, color: '#0f172a' }}>{shop.name}</div>
-                                                    <div style={{ fontSize: '0.88rem', color: '#64748b' }}>
-                                                        {shop.category} {shop.ships_to_japan === false ? '・直送可否は要確認' : '・日本から比較しやすい候補'}
-                                                    </div>
-                                                </div>
-                                                <span style={{ color: '#111110', fontWeight: 600, whiteSpace: 'nowrap' }}>詳細を見る</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-
-                            <div style={{ border: '1px solid #e2e8f0', borderRadius: '18px', padding: '1.25rem 1.35rem', background: '#fafaf9' }}>
-                                <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: '0.85rem' }}>
-                                    一緒に読むと安心なガイド
-                                </p>
-                                <div style={{ display: 'grid', gap: '0.8rem' }}>
-                                    {CORE_GUIDE_LINKS.map((guide) => (
-                                        <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none', color: '#0f172a', fontWeight: 600 }}>
-                                            {guide.title} →
-                                        </Link>
-                                    ))}
-                                </div>
+                                <Link href="/guide" style={{ textDecoration: 'none', background: 'white', padding: '1.5rem', borderRadius: '16px', border: '1px solid var(--border)' }}>
+                                    <p style={{ fontWeight: 800, color: '#111110', marginBottom: '0.5rem' }}>初心者ガイド →</p>
+                                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>関税・配送の基本を学ぶ</p>
+                                </Link>
                             </div>
                         </div>
-
                     </div>
                 </section>
-
                 <Footer />
             </main>
         </>
