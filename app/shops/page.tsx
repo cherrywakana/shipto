@@ -163,7 +163,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
                             name="q"
                             defaultValue={q || ''}
                             className="search-input"
-                            placeholder="ショップ名・カテゴリで検索"
+                            placeholder="ショップ・国名・キーワードで検索"
                         />
                         <select name="category" defaultValue={category || ''} className="search-select">
                             <option value="">すべて</option>
@@ -197,15 +197,12 @@ export default async function ShopsPage(props: ShopsPageProps) {
                 <section style={{ padding: '0 clamp(1.5rem, 5vw, 4rem) 8rem', maxWidth: '1280px', margin: '0 auto' }}>
                     <Suspense fallback={
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))', gap: '2rem' }}>
-                            {[1, 2, 3].map(i => (
-                                <div key={i} style={{ height: '400px', background: '#f1f5f9', borderRadius: '20px', animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }} />
-                            ))}
+                            {[1, 2, 3].map(i => (i))}
                         </div>
                     }>
                         <ShopList category={category} q={q} />
                     </Suspense>
 
-                    {/* SEO Footer Content Section (案件の「ボトム・ヘビー」アプローチ) */}
                     <article style={{
                         marginTop: '10rem',
                         padding: '5rem clamp(2rem, 5vw, 6rem)',
@@ -257,7 +254,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
 async function ShopList({ category, q }: { category: string | undefined, q: string | undefined }) {
     let query = supabase
         .from('shops')
-        .select('id, name, slug, url, country, category, image_url, description, is_affiliate, ships_to_japan, popularity_score')
+        .select('id, name, slug, url, country, category, image_url, description, is_affiliate, ships_to_japan, popularity_score, tax_guide, fee_guide')
         .order('is_affiliate', { ascending: false })
         .order('ships_to_japan', { ascending: false })
         .order('popularity_score', { ascending: false })
@@ -268,7 +265,8 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
     }
 
     if (q) {
-        query = query.or(`name.ilike.%${q}%,description.ilike.%${q}%,category.ilike.%${q}%`)
+        // 検索範囲を大幅に拡張：名前、説明、カテゴリに加え、国名、税ガイド、送料ガイドも対象
+        query = query.or(`name.ilike.%${q}%,description.ilike.%${q}%,category.ilike.%${q}%,country.ilike.%${q}%,tax_guide.ilike.%${q}%,fee_guide.ilike.%${q}%`)
     }
 
     const { data: shops, error } = await query
