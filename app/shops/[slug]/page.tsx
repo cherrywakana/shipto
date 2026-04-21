@@ -321,26 +321,33 @@ export default async function ShopDetailPage({
 
                 {/* Footer Guide Links */}
                 <section style={{ padding: '6rem 0', borderTop: '1px solid var(--border-soft)' }}>
-                    <div className="container">
-                        <div style={{ maxWidth: '600px' }}>
-                            <p className="section-label">Shopping Guides</p>
-                            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', marginBottom: '2rem' }}>
-                                初めての個人輸入でも安心なガイド
-                            </h2>
-                            <div style={{ display: 'grid', gap: '1rem' }}>
-                                {CORE_GUIDE_LINKS.map(link => (
-                                    <Link key={link.href} href={link.href} style={{ 
-                                        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                                        padding: '1.25rem', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)',
-                                        fontWeight: 600, background: 'white', transition: 'all 0.2s'
-                                    }}
-                                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--text-primary)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
-                                    >
-                                        {link.title} <span>→</span>
-                                    </Link>
-                                ))}
-                            </div>
+                    <div className="container" style={{ maxWidth: '600px' }}>
+                        <p className="section-label">Shopping Guides</p>
+                        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', marginBottom: '2rem' }}>
+                            初めての個人輸入でも安心なガイド
+                        </h2>
+                        <style>{`
+                            .footer-guide-link {
+                                display: flex;
+                                justifyContent: space-between;
+                                align-items: center;
+                                padding: 1.25rem;
+                                border: 1px solid var(--border);
+                                border-radius: var(--radius-md);
+                                font-weight: 600;
+                                background: white;
+                                transition: all 0.2s;
+                            }
+                            .footer-guide-link:hover {
+                                border-color: var(--text-primary);
+                            }
+                        `}</style>
+                        <div style={{ display: 'grid', gap: '1rem' }}>
+                            {CORE_GUIDE_LINKS.map(link => (
+                                <Link key={link.href} href={link.href} className="footer-guide-link">
+                                    {link.title} <span>→</span>
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 </section>
