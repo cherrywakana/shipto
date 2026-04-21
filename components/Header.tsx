@@ -30,7 +30,7 @@ export default function Header() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      backgroundColor: scrolled ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0)',
+      backgroundColor: scrolled ? 'rgba(250,250,249,0.92)' : 'rgba(250,250,249,0)',
       backdropFilter: scrolled ? 'blur(16px) saturate(180%)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
       transition: 'background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease',
@@ -50,8 +50,8 @@ export default function Header() {
         }}>Original Price</span>
       </Link>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        {/* Search Icon (Always Visible) */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+        {/* Search Icon */}
         <Link href="/search" aria-label="検索" style={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           width: '40px', height: '40px', borderRadius: '50%',
@@ -74,18 +74,6 @@ export default function Header() {
               transition: 'color 0.15s, background 0.15s',
             }}>{link.label}</Link>
           ))}
-          <Link href="/articles" className="header-cta" style={{
-            marginLeft: '0.5rem',
-            fontSize: '0.8rem', fontWeight: 700,
-            color: '#fafaf9',
-            background: '#111110',
-            padding: '0.45rem 1.1rem',
-            borderRadius: '10px',
-            textDecoration: 'none',
-            fontFamily: 'var(--font-sans)',
-            letterSpacing: '-0.01em',
-            transition: 'background 0.2s, transform 0.2s, box-shadow 0.2s',
-          }}>記事を読む</Link>
         </nav>
 
         {/* Hamburger */}
@@ -114,7 +102,6 @@ export default function Header() {
           borderBottom: '1px solid var(--border)',
           padding: '1.5rem clamp(1.25rem, 5vw, 3rem)',
           display: 'flex', flexDirection: 'column', gap: '0.25rem',
-          boxShadow: '0 4px 30px rgba(0,0,0,0.05)'
         }}>
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} style={{
@@ -123,12 +110,6 @@ export default function Header() {
               borderBottom: '1px solid var(--border-soft)',
             }}>{link.label}</Link>
           ))}
-          <Link href="/articles" onClick={() => setMenuOpen(false)} style={{
-            marginTop: '1rem',
-            fontSize: '0.9rem', fontWeight: 700, color: '#fafaf9',
-            background: '#111110',
-            padding: '1rem 1.5rem', borderRadius: '12px', textAlign: 'center', textDecoration: 'none',
-          }}>記事を読む</Link>
         </div>
       )}
 
@@ -138,8 +119,7 @@ export default function Header() {
           .mobile-toggle { display: flex !important; }
         }
         .nav-link:hover { color: #111110 !important; background: rgba(0,0,0,0.04) !important; }
-        .search-trigger:hover { background: rgba(0,0,0,0.04) !important; color: #000 !important; }
-        .header-cta:hover { background: #2a2a28 !important; transform: translateY(-1px) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important; }
+        .search-trigger:hover { background: rgba(0,0,0,0.04) !important; }
       `}</style>
     </header>
   )
