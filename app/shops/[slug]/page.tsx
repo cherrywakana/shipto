@@ -104,13 +104,13 @@ export default async function ShopDetailPage({
                     }
                     .shop-header {
                         display: grid;
-                        gap: 3rem;
+                        gap: 2.5rem;
                         grid-template-columns: 1fr;
                     }
                     @media (min-width: 1024px) {
                         .shop-header {
-                            grid-template-columns: 1.2fr 0.8fr;
-                            align-items: center;
+                            grid-template-columns: 1fr 1fr;
+                            align-items: flex-start;
                         }
                     }
                     .visual-card {
@@ -165,6 +165,7 @@ export default async function ShopDetailPage({
                 <section className="hero-section">
                     <div className="container">
                         <div className="shop-header">
+                            {/* 1. Name & Meta */}
                             <div className="fade-up">
                                 <Link href="/shops" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '2.5rem', fontWeight: 500 }}>
                                     ← ショップ一覧
@@ -187,19 +188,10 @@ export default async function ShopDetailPage({
                                 }}>
                                     {shop.name}
                                 </h1>
-
-                                <p style={{ fontSize: '1.15rem', lineHeight: 1.7, color: 'var(--text-secondary)', maxWidth: '600px', marginBottom: '2.5rem' }}>
-                                    {lead}
-                                </p>
-
-                                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                                    <a href={shop.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>
-                                        公式サイトで探す →
-                                    </a>
-                                </div>
                             </div>
 
-                            <div className="fade-up delay-2">
+                            {/* 2. Visual Card (Comes next on mobile) */}
+                            <div className="fade-up delay-1">
                                 <div className="visual-card">
                                     <div style={{ aspectRatio: '16/10', position: 'relative', background: 'var(--accent-brand-soft)' }}>
                                         {shop.image_url ? (
@@ -216,6 +208,27 @@ export default async function ShopDetailPage({
                                             </div>
                                         )}
                                     </div>
+                                </div>
+                            </div>
+
+                            {/* 3. Lead & CTA (Bottom area) */}
+                            <div className="fade-up delay-2" style={{ gridColumn: '1 / -1', maxWidth: '800px', marginTop: '1rem' }}>
+                                {lead && (
+                                    <p style={{ fontSize: '1.15rem', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '2.5rem' }}>
+                                        {lead}
+                                    </p>
+                                )}
+
+                                <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                                    <a href={shop.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.8rem' }}>
+                                        公式サイトで探す →
+                                    </a>
+                                    
+                                    {officialLinks.filter(l => l.label !== '公式サイト').map(link => (
+                                        <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-secondary)', borderBottom: '1px solid var(--border)' }}>
+                                            {link.label}
+                                        </a>
+                                    ))}
                                 </div>
                             </div>
                         </div>
