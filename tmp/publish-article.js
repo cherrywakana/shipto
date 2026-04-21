@@ -37,9 +37,9 @@ const content = `
 商品ページを見て「Ships to USA only」と書かれている場合、カートに入れても決済段階で弾かれるか、日本を選べなくなります。これを知らずに探すと時間の無駄になってしまいます。
 
 ### 直送制限を突破する3つの戦略
-1.  **欧州の信頼できるショップを利用する**: 英国の LD Mountain Centre 等は、歴史的に直送制限が緩く、日本へ直送可能なケースが多々あります。
-2.  **ファッション系モールを利用する**: SSENSE 等のファッションモールは、通常の「アウトドア卸」とは異なる契約形態のため、パタゴニアなども直送できることがあります。
-3.  **転送サービス（OPAS等）を活用する**: 米国の住所を経由して日本へ送る手法です。米国国内のセール価格を100%享受できる最大のメリットがあります。
+1.  <strong>欧州の信頼できるショップを利用する</strong>: 英国の LD Mountain Centre 等は、歴史的に直送制限が緩く、日本へ直送可能なケースが多々あります。
+2.  <strong>ファッション系モールを利用する</strong>: SSENSE 等のファッションモールは、通常の「アウトドア卸」とは異なる契約形態のため、パタゴニアなども直送できることがあります。
+3.  <strong>転送サービス（OPAS等）を活用する</strong>: 米国の住所を経由して日本へ送る手法です。米国国内のセール価格を100%享受できる最大のメリットがあります。
 
 ---
 
@@ -50,12 +50,12 @@ const content = `
 ### Backcountry（バックカントリー）
 ![Backcountry スクリーンショット](${backcountryImg})
 
-**世界最大級の在庫を誇る、アウトドア愛好家の「最後の砦」**
+<strong>世界最大級の在庫を誇る、アウトドア愛好家の「最後の砦」</strong>
 もしアークテリクスの完売カラーを米国住所（転送）で手に入れたいなら、ここがベストです。
 
-*   **強み**: 他に類を見ない1,000以上のブランドとカラー展開。
-*   **注意**: Patagonia, Arc'teryx 等の人気ブランドは日本直送不可。
-*   **攻略法**: 転送サービスを使って「米国国内セール品」を狙うのが玄人の嗜み。
+*   <strong>強み</strong>: 他に類を見ない1,000以上のブランドとカラー展開。
+*   <strong>注意</strong>: Patagonia, Arc'teryx 等の人気ブランドは日本直送不可。
+*   <strong>攻略法</strong>: 転送サービスを使って「米国国内セール品」を狙うのが玄人の嗜み。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.backcountry.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Backcountry 公式サイト ↗</a>
@@ -68,12 +68,12 @@ const content = `
 ### REI（アールイーアイ）
 ![REI スクリーンショット](${reiImg})
 
-**米国最大の消費者協同組合。圧倒的な信頼と独自ブランドのコスパ**
+<strong>米国最大の消費者協同組合。圧倒的な信頼と独自ブランドのコスパ</strong>
 米国で最も信頼されるアウトドアショップといえばREIです。
 
-*   **強み**: 自社ブランド「REI Co-op」のギアが非常に安価で高性能。
-*   **信頼性**: 100年以上の歴史を誇る会員制組織が運営。
-*   **直送**: 多くの自社区分ギアは直送可能。
+*   <strong>強み</strong>: 自社ブランド「REI Co-op」のギアが非常に安価で高性能。
+*   <strong>信頼性</strong>: 100年以上の歴史を誇る会員制組織が運営。
+*   <strong>直送</strong>: 多くの自社区分ギアは直送可能。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.rei.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">REI 公式サイト ↗</a>
@@ -86,11 +86,11 @@ const content = `
 ### Hyperlite Mountain Gear (HMG)
 ![HMG スクリーンショット](${hmgImg})
 
-**UL（ウルトラライト）ハイカーの頂点に君臨する白いギア**
+<strong>UL（ウルトラライト）ハイカーの頂点に君臨する白いギア</strong>
 米国メイン州の自社工場から、究極に削ぎ落とされた軽量ギアを直送。
 
-*   **強み**: 日本での品薄状態を気にせず最新の「Dyneema」製ギアを入手可能。
-*   **直送**: 日本への発送に非常に積極的で送料も明確。
+*   <strong>強み</strong>: 日本での品薄状態を気にせず最新の「Dyneema」製ギアを入手可能。
+*   <strong>直送</strong>: 日本への発送に非常に積極的で送料も明確。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.hyperlitemountaingear.com/" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">HMG 公式サイト ↗</a>
@@ -107,12 +107,12 @@ const content = `
 ### LD Mountain Centre（LDマウンテンセンター）
 ![LD Mountain Centre スクリーンショット](${ldImg})
 
-**1966年創業。英国屈指の老舗が提供する「本物」のラインナップ**
+<strong>1966年創業。英国屈指の老舗が提供する「本物」のラインナップ</strong>
 実はBerghaus（バーグハウス）の創設者によって設立された、歴史あるショップです。
 
-*   **強み**: Arc\'teryx, Patagonia, The North Face 等、日本人が狙うブランドを網羅。
-*   **直送**: 日本への直送実績が非常に豊富で、プロ意識の高い梱包・配送で知られています。
-*   **信頼**: 小規模ながらも専門知識が豊富で、相談もしやすい（英語）。
+*   <strong>強み</strong>: Arc\'teryx, Patagonia, The North Face 等、日本人が狙うブランドを網羅。
+*   <strong>直送</strong>: 日本への直送実績が非常に豊富で、プロ意識の高い梱包・配送で知られています。
+*   <strong>信頼</strong>: 小規模ながらも専門知識が豊富で、相談もしやすい（英語）。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.ldmountaincentre.com/" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">LD Mountain Centre 公式サイト ↗</a>
@@ -125,11 +125,11 @@ const content = `
 ### Trekkinn（トレッキン）
 ![Trekkinn スクリーンショット](${trekkinnImg})
 
-**世界最大級のスポーツモール。圧倒的な安さと日本郵便での利便性**
+<strong>世界最大級のスポーツモール。圧倒的な安さと日本郵便での利便性</strong>
 とにかく「消耗品や小物を安く、トラブルなく」手に入れたい初心者の味方。
 
-*   **直送**: スペイン拠点。制限は一部あるが、膨大な在庫により代替品も見つけやすい。
-*   **送料**: 日本郵便が選べるため、受け取りが楽。
+*   <strong>直送</strong>: スペイン拠点。制限は一部あるが、膨大な在庫により代替品も見つけやすい。
+*   <strong>送料</strong>: 日本郵便が選べるため、受け取りが楽。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.tradeinn.com/trekkinn/en" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Trekkinn 公式サイト ↗</a>
@@ -146,11 +146,11 @@ const content = `
 ### SSENSE（エッセンス）
 ![SSENSE スクリーンショット](${ssenseImg})
 
-**カナダ発のラグジュアリーモール。アークテリクスの品揃えは世界屈指**
+<strong>カナダ発のラグジュアリーモール。アークテリクスの品揃えは世界屈指</strong>
 アウトドアショップでは日本へ送れないアークテリクスなどが公式直送可能です。
 
-*   **強み**: Arc\'teryx Veillance などの希少ハイエンドライン。
-*   **価格**: 関税込み表示（DDP）のため、追加費用なしの安心感。
+*   <strong>強み</strong>: Arc\'teryx Veillance などの希少ハイエンドライン。
+*   <strong>価格</strong>: 関税込み表示（DDP）のため、追加費用なしの安心感。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.ssense.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">SSENSE 公式サイト ↗</a>
@@ -163,10 +163,10 @@ const content = `
 ### END.（エンド）
 ![END. スクリーンショット](${endImg})
 
-**イギリス発。ストリートとアウトドアが融合した独自のセレクト**
+<strong>イギリス発。ストリートとアウトドアが融合した独自のセレクト</strong>
 ハイセンスなギアを身に着けたモデル写真が豊富で、サイズ選びの参考に最適。
 
-*   **強み**: Nike ACG や Patagonia のファッション性の高いカラー。
+*   <strong>強み</strong>: Nike ACG や Patagonia のファッション性の高いカラー。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.endclothing.com" target="_blank" rel="noopener" style="display: inline-block; background: #111110; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">END. 公式サイト ↗</a>
@@ -179,7 +179,7 @@ const content = `
 ### FARFETCH（ファーフェッチ）
 ![FARFETCH スクリーンショット](${farfetchImg})
 
-**世界中の実店舗を繋ぐ、世界最大のラグジュアリープラットフォーム**
+<strong>世界中の実店舗を繋ぐ、世界最大のラグジュアリープラットフォーム</strong>
 ハイエンド・アウトドアを一気に比較するならここ。
 
 <div style="margin: 2rem 0; text-align: center;">
@@ -195,20 +195,20 @@ const content = `
 ショップを選んだら、次は失敗しないための実務です。以下の3点を抑えるだけで、トラブルの9割は回避できます。
 
 ### ① 「16,666円の壁」と関税の計算
-日本の法律では、課税価格（商品代金×0.6）が1万円以下、つまり**「支払総額が約16,666円以下」**であれば、関税および消費税が免除されます。
+日本の法律では、課税価格（商品代金×0.6）が1万円以下、つまり<strong>「支払総額が約16,666円以下」</strong>であれば、関税および消費税が免除されます。
 
-*   **注意**: ただし、登山靴やトレッキングシューズなどの**革製フットウェア**は「関税割当制度」の対象となり、たとえ数千円の商品でも高額な関税がかかる場合があります。シューズを買う際は、関税込み（DDP）のSSENSEを選ぶのが最も安全です。
+*   <strong>注意</strong>: ただし、登山靴やトレッキングシューズなどの<strong>革製フットウェア</strong>は「関税割当制度」の対象となり、たとえ数千円の商品でも高額な関税がかかる場合があります。シューズを買う際は、関税込み（DDP）のSSENSEを選ぶのが最も安全です。
 
 ### ② DDU（到着時払い）と DDP（込み払い）の使い分け
-*   **DDP (Delivered Duty Paid)**: SSENSEなどが採用。購入時に全て支払うため、玄関先での支払いがなく最もスムーズ。
-*   **DDU (Delivered Duty Unpaid)**: Backcountryなどが採用。到着時に配送業者へ現金で支払います。課税価格の計算（×0.6）により、稀に予想より安くなる「関税ガチャ」の楽しみがありますが、数百円の手数料も加算されます。
+*   <strong>DDP (Delivered Duty Paid)</strong>: SSENSEなどが採用。購入時に全て支払うため、玄関先での支払いがなく最もスムーズ。
+*   <strong>DDU (Delivered Duty Unpaid)</strong>: Backcountryなどが採用。到着時に配送業者へ現金で支払います。課税価格の計算（×0.6）により、稀に予想より安くなる「関税ガチャ」の楽しみがありますが、数百円の手数料も加算されます。
 
 ### ③ 海外通販の「黄金セールカレンダー」
 安く買うなら、以下のタイミングを狙い撃ちしてください。
-*   **5月後半 (Memorial Day)**: 米国系サイトで春夏のセール開始。
-*   **9月上旬 (Labor Day)**: 米国系サイトで秋・キャンプ用品のセール。
-*   **11月後半 (Black Friday)**: **一年で最大の安値。** ほぼ全てのショップが参加します。
-*   **12月〜1月 (Winter Sale)**: 欧州系サイト（LD Mountain Centre等）でアウターウェアが投げ売りされます。
+*   <strong>5月後半 (Memorial Day)</strong>: 米国系サイトで春夏のセール開始。
+*   <strong>9月上旬 (Labor Day)</strong>: 米国系サイトで秋・キャンプ用品のセール。
+*   <strong>11月後半 (Black Friday)</strong>: <strong>一年で最大の安値。</strong> ほぼ全てのショップが参加します。
+*   <strong>12月〜1月 (Winter Sale)</strong>: 欧州系サイト（LD Mountain Centre等）でアウターウェアが投げ売りされます。
 
 ---
 
@@ -230,10 +230,10 @@ const content = `
 
 インターネット上には、憧れのブランドを「90% OFF」などで謳う偽サイト（スキャンプ）が溢れています。
 
-当サイト **Original Price** が掲載しているショップは、以下の厳しい基準をクリアした店舗のみに厳選しています。
-1.  **ブランドの正規販売代理店契約**があること。
-2.  **国際発送のインフラと実績**が十分に認められること。
-3.  **万が一の際の補償・サポート体制**が整っていること。
+当サイト <strong>Original Price</strong> が掲載しているショップは、以下の厳しい基準をクリアした店舗のみに厳選しています。
+1.  <strong>ブランドの正規販売代理店契約</strong>があること。
+2.  <strong>国際発送のインフラと実績</strong>が十分に認められること。
+3.  <strong>万が一の際の補償・サポート体制</strong>が整っていること。
 
 ---
 
@@ -266,7 +266,7 @@ async function publishArticle() {
     console.error('Error publishing:', error);
     process.exit(1);
   } else {
-    console.log('Successfully published OUTDOOR GUIDE Ver 3.0 - MASSIVE PRACTICAL CONTENT ADDED!');
+    console.log('Successfully published OUTDOOR GUIDE Ver 3.1 - HTML STRONG REPLACEMENT COMPLETE!');
     process.exit(0);
   }
 }
