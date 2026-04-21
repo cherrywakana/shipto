@@ -42,7 +42,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
     return (
         <>
             <Header />
-            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', minHeight: '100vh', background: '#f8fafc' }}>
+            <main style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', minHeight: '100vh', background: 'var(--bg)' }}>
                 <style>{`
           .search-form-inline {
             display: grid;
@@ -55,7 +55,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
           .search-select {
             width: 100%;
             min-height: 52px;
-            border: 1px solid #d6d3d1;
+            border: 1px solid var(--border);
             border-radius: 14px;
             background: #ffffff;
             color: #111110;
@@ -75,7 +75,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
           }
           .shop-card {
             background: white;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border);
             border-radius: 20px;
             overflow: hidden;
             text-decoration: none;
@@ -83,13 +83,13 @@ export default async function ShopsPage(props: ShopsPageProps) {
             display: flex;
             flex-direction: column;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            position: relative;
             height: 100%;
           }
           .shop-card:hover {
             border-color: #111110;
             transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.15);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
           }
           .cat-tab {
             padding: 0.6rem 1.6rem;
@@ -110,11 +110,11 @@ export default async function ShopsPage(props: ShopsPageProps) {
             box-shadow: 0 4px 12px rgba(17, 17, 16, 0.15);
           }
           .cat-tab.inactive {
-            background: #f1f1ef;
-            color: #6b6b69;
+            background: var(--accent-brand-soft);
+            color: var(--text-secondary);
           }
           .cat-tab.inactive:hover {
-            background: #e5e5e0;
+            background: var(--accent-brand-mid);
             color: #111110;
             transform: translateY(-2px) scale(1.02);
           }
@@ -131,9 +131,8 @@ export default async function ShopsPage(props: ShopsPageProps) {
 
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem',
-                    background: '#fafaf9',
+                    background: 'transparent',
                     textAlign: 'center',
-                    borderBottom: '1px solid #e2e8f0',
                 }}>
                     <h1 style={{
                         fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 850,
@@ -240,13 +239,22 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
         }}>
             {shops.map((shop) => (
                 <div key={shop.id} className="shop-card">
+                    {/* カード全体を覆う隠しリンク（解説ページへ） */}
+                    {shop.slug && (
+                        <Link 
+                            href={`/shops/${shop.slug}`} 
+                            style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}
+                            aria-label={`${shop.name}の解説ガイドを見る`}
+                        />
+                    )}
+
                     <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
                         {shop.ships_to_japan === false && (
                             <div style={{
                                 position: 'absolute', top: '10px', right: '10px',
                                 background: 'rgba(239, 68, 68, 0.9)', color: 'white',
                                 padding: '0.2rem 0.6rem', borderRadius: '6px',
-                                fontSize: '0.7rem', fontWeight: 700, zIndex: 1,
+                                fontSize: '0.7rem', fontWeight: 700, zIndex: 2,
                                 backdropFilter: 'blur(4px)',
                             }}>直送不可</div>
                         )}
@@ -263,8 +271,8 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
                         )}
                     </div>
 
-                    <div style={{ padding: '1.5rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
+                    <div style={{ padding: '2rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap', position: 'relative', zIndex: 2 }}>
                             <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#111110', background: 'rgba(17,17,16,0.06)', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
                                 {shop.category}
                             </span>
@@ -284,12 +292,12 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
                             </span>
                         </div>
 
-                        <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{shop.name}</h3>
-                        <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.6, marginBottom: '1.5rem', flexGrow: 1 }}>
+                        <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#111110', marginBottom: '1rem', position: 'relative', zIndex: 2, letterSpacing: '-0.02em', lineHeight: 1.2 }}>{shop.name}</h3>
+                        <p style={{ fontSize: '0.9rem', color: '#5a5a58', lineHeight: 1.6, marginBottom: '2rem', flexGrow: 1, position: 'relative', zIndex: 2 }}>
                             {shop.description}
                         </p>
 
-                        <div style={{ display: 'flex', gap: '0.75rem' }}>
+                        <div style={{ display: 'flex', gap: '0.75rem', marginTop: 'auto', position: 'relative', zIndex: 2 }}>
                             <a
                                 href={shop.url}
                                 target="_blank"
@@ -297,36 +305,37 @@ async function ShopList({ category, q }: { category: string | undefined, q: stri
                                 style={{
                                     flex: 1,
                                     textAlign: 'center',
-                                    background: '#0f172a',
+                                    background: '#111110',
                                     color: 'white',
-                                    padding: '0.75rem',
+                                    padding: '0.85rem',
                                     borderRadius: '12px',
                                     fontSize: '0.875rem',
                                     fontWeight: 600,
-                                    textDecoration: 'none'
+                                    textDecoration: 'none',
+                                    transition: 'all 0.2s'
                                 }}
                             >
-                                公式サイト
+                                公式サイト ↗
                             </a>
-                            {shop.slug && (
-                                <Link
-                                    href={`/shops/${shop.slug}`}
-                                    style={{
-                                        flex: 1,
-                                        textAlign: 'center',
-                                        background: 'white',
-                                        color: '#0f172a',
-                                        padding: '0.75rem',
-                                        borderRadius: '12px',
-                                        fontSize: '0.875rem',
-                                        fontWeight: 600,
-                                        textDecoration: 'none',
-                                        border: '1px solid #e2e8f0'
-                                    }}
-                                >
-                                    解説ガイド
-                                </Link>
-                            )}
+                            <div
+                                style={{
+                                    flex: 1,
+                                    textAlign: 'center',
+                                    background: 'white',
+                                    color: '#111110',
+                                    padding: '0.85rem',
+                                    borderRadius: '12px',
+                                    fontSize: '0.875rem',
+                                    fontWeight: 600,
+                                    textDecoration: 'none',
+                                    border: '1px solid var(--border)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}
+                            >
+                                解説ガイド →
+                            </div>
                         </div>
                     </div>
                 </div>
