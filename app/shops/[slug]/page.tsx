@@ -329,7 +329,7 @@ export default async function ShopDetailPage({
                         <style>{`
                             .footer-guide-link {
                                 display: flex;
-                                justifyContent: space-between;
+                                justify-content: space-between;
                                 align-items: center;
                                 padding: 1.25rem;
                                 border: 1px solid var(--border);
