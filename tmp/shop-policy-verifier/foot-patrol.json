@@ -1,0 +1,88 @@
+{
+  "shop": {
+    "id": "60025964-4cf9-47db-9cfc-679791fa8f21",
+    "slug": "foot-patrol",
+    "name": "Foot Patrol (フットパトロール)",
+    "url": "https://www.footpatrol.com/"
+  },
+  "checked_at": "2026-04-18T04:43:31.662Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.footpatrol.com/collections/footwear-collection-jordan-air-ship",
+        "preview": "Jordan Air Ship Shoes – Footpatrol\nJordan Air Ship\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes"
+      },
+      {
+        "url": "https://www.footpatrol.com/pages/delivery-collection",
+        "preview": "Delivery & collection – Footpatrol\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketball Low "
+      },
+      {
+        "url": "https://www.footpatrol.com/pages/how-can-we-help",
+        "preview": "How can we help? – Footpatrol\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketball Low Profi"
+      },
+      {
+        "url": "https://www.footpatrol.com/pages/privacy-policy",
+        "preview": "Privacy Policy – Footpatrol\nPrivacy Policy\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketb"
+      },
+      {
+        "url": "https://www.footpatrol.com/pages/cookie-policy",
+        "preview": "Cookie Policy – Footpatrol\nCookie Policy\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketbal"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.footpatrol.com/pages/how-can-we-help",
+        "preview": "How can we help? – Footpatrol\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketball Low Profi"
+      },
+      {
+        "url": "https://www.footpatrol.com/pages/privacy-policy",
+        "preview": "Privacy Policy – Footpatrol\nPrivacy Policy\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketb"
+      },
+      {
+        "url": "https://www.footpatrol.com/pages/cookie-policy",
+        "preview": "Cookie Policy – Footpatrol\nCookie Policy\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketbal"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.footpatrol.com/pages/how-can-we-help",
+        "preview": "How can we help? – Footpatrol\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketball Low Profi"
+      },
+      {
+        "url": "https://www.footpatrol.com/pages/privacy-policy",
+        "preview": "Privacy Policy – Footpatrol\nPrivacy Policy\nSkip to content Country/Region United Kingdom (GBP £) United Kingdom (GBP £) Search Search Reset Log in Bag Menu New In Back New In Category All New In New In Footwear New In Men's Footwear New In Women's Footwear New In Performance New In Clothing New In Accessories Launches All Launches Launches App Trending Seasonal Footwear GORE-TEX Black Footwear White Footwear Blue Footwear Brown Footwear Bestsellers FP Exclusives Brands adidas ASICS HOKA Jordan New Balance Nike PUMA Salomon UGG AIR MAX JORDAN AIR 1 ADIDAS X BEAMS Footwear Back Footwear Footwear All Footwear Men's Footwear Women's Footwear Children's Footwear Sale Footwear Performance Footwear All Performance Road Running Race Day Running Trail Running Walking Category Trainers Shoes Basketb"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "International shipping times depend on the products and destination (estimated at checkout).",
+      "source_url": "https://www.footpatrol.com/pages/delivery-collection",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "If you have a faulty/damaged item, please contact customer service to see how we can help you.",
+      "source_url": "https://www.footpatrol.com/pages/how-can-we-help",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "fixed",
+      "summary": "No printer needed!You'll need the order number from your confirmation email.For a refund on purchases made in the UK via the Footpatrol website or 'Footpatrol' app, you can send any unwanted items back to us within 28 days for FREE via EVRi or at a £2 cost via Royal Mail.",
+      "source_url": "https://www.footpatrol.com/pages/how-can-we-help",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "International shipping times depend on the products and destination (estimated at checkout).",
+    "tax_guide": "If you have a faulty/damaged item, please contact customer service to see how we can help you.",
+    "fee_guide": "No printer needed!You'll need the order number from your confirmation email.For a refund on purchases made in the UK via the Footpatrol website or 'Footpatrol' app, you can send any unwanted items back to us within 28 days for FREE via EVRi or at a £2 cost via Royal Mail.",
+    "shipping_url": "https://www.footpatrol.com/pages/delivery-collection",
+    "tax_url": "https://www.footpatrol.com/pages/how-can-we-help",
+    "fee_url": "https://www.footpatrol.com/pages/how-can-we-help"
+  },
+  "update_error": null
+}

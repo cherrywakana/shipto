@@ -1,0 +1,96 @@
+{
+  "shop": {
+    "id": "83fb6f33-dd2b-40f9-997f-c9ea137033f6",
+    "slug": "bike-discount",
+    "name": "Bike-Discount",
+    "url": "https://www.bike-discount.de/en"
+  },
+  "checked_at": "2026-04-18T04:36:25.264Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.bike-discount.de/en/bike-discount/shipping",
+        "preview": "Shipping\nInformation\nShipping Costs - Terms of Delivery\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbaidschan Bahamas Bahrain Bangladesh Barbados Benin Bermuda Bhutan Bolivia Bosnia And Herzegovina Botswana Brazil Bulgaria Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Chad Chile Colombia Congo Costa Rica Cote D'ivoire Croatia Cyprus Czech Republic Djibouti Dominican Republic Ecuador El Salvador Estonia Faroe Islands Federated States Of Micronesia Finland Finland - Aland Islands Gabon Gambia Georgia Ghana Gibraltar Greece Greenland Guam"
+      },
+      {
+        "url": "https://www.bike-discount.de/en/widgets/cms/018c438fc92b7b17bfc800040516158a",
+        "preview": "Information\nPrivacy Policy\n1. Access data and hosting\n1.1 Hosting\n1.2 Content Delivery Network\n2. Data processing for the purposes of processing the contract, establishing contact\n2.1 Data processing for the purposes of performing the contract\n2.2 Customer account\n2.3 Establishing contact\n3. Data processing for the purposes of shipment\nData transmission to a shipping provider for the purpose of shipment notification\nData Transfer to Shipping Service Providers for International Shipments\nInformation Terms and Conditions Contact Privacy Policy FAQ Whistleblower System Imprint Accessibility statement Our Team Best Price Guarantee About us Shipping Payment Methods Jobs Privacy Policy Data controller is: H & S Bike Discount GmbH Konrad-Zuse-Str. 20 53501 Grafschaft E-Mail: info@bike-discount.de"
+      },
+      {
+        "url": "https://www.bike-discount.de/en/privacy-policy",
+        "preview": "Privacy Policy\nInformation\nPrivacy Policy\n1. Access data and hosting\n1.1 Hosting\n1.2 Content Delivery Network\n2. Data processing for the purposes of processing the contract, establishing contact\n2.1 Data processing for the purposes of performing the contract\n2.2 Customer account\n2.3 Establishing contact\n3. Data processing for the purposes of shipment\nData transmission to a shipping provider for the purpose of shipment notification\nData Transfer to Shipping Service Providers for International Shipments\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbai"
+      },
+      {
+        "url": "https://www.bike-discount.de/en/help-service",
+        "preview": "Help & Service | H&S Bike Discount GmbH\nInformation\nHelp & Service\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbaidschan Bahamas Bahrain Bangladesh Barbados Benin Bermuda Bhutan Bolivia Bosnia And Herzegovina Botswana Brazil Bulgaria Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Chad Chile Colombia Congo Costa Rica Cote D'ivoire Croatia Cyprus Czech Republic Djibouti Dominican Republic Ecuador El Salvador Estonia Faroe Islands Federated States Of Micronesia Finland Finland - Aland Islands Gabon Gambia Georgia Ghana Gibraltar Greece Gre"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.bike-discount.de/en/widgets/cms/018c438fc92b7b17bfc800040516158a",
+        "preview": "Information\nPrivacy Policy\n1. Access data and hosting\n1.1 Hosting\n1.2 Content Delivery Network\n2. Data processing for the purposes of processing the contract, establishing contact\n2.1 Data processing for the purposes of performing the contract\n2.2 Customer account\n2.3 Establishing contact\n3. Data processing for the purposes of shipment\nData transmission to a shipping provider for the purpose of shipment notification\nData Transfer to Shipping Service Providers for International Shipments\nInformation Terms and Conditions Contact Privacy Policy FAQ Whistleblower System Imprint Accessibility statement Our Team Best Price Guarantee About us Shipping Payment Methods Jobs Privacy Policy Data controller is: H & S Bike Discount GmbH Konrad-Zuse-Str. 20 53501 Grafschaft E-Mail: info@bike-discount.de"
+      },
+      {
+        "url": "https://www.bike-discount.de/en/privacy-policy",
+        "preview": "Privacy Policy\nInformation\nPrivacy Policy\n1. Access data and hosting\n1.1 Hosting\n1.2 Content Delivery Network\n2. Data processing for the purposes of processing the contract, establishing contact\n2.1 Data processing for the purposes of performing the contract\n2.2 Customer account\n2.3 Establishing contact\n3. Data processing for the purposes of shipment\nData transmission to a shipping provider for the purpose of shipment notification\nData Transfer to Shipping Service Providers for International Shipments\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbai"
+      },
+      {
+        "url": "https://www.bike-discount.de/en/help-service",
+        "preview": "Help & Service | H&S Bike Discount GmbH\nInformation\nHelp & Service\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbaidschan Bahamas Bahrain Bangladesh Barbados Benin Bermuda Bhutan Bolivia Bosnia And Herzegovina Botswana Brazil Bulgaria Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Chad Chile Colombia Congo Costa Rica Cote D'ivoire Croatia Cyprus Czech Republic Djibouti Dominican Republic Ecuador El Salvador Estonia Faroe Islands Federated States Of Micronesia Finland Finland - Aland Islands Gabon Gambia Georgia Ghana Gibraltar Greece Gre"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.bike-discount.de/en/bike/electronics/lights/battery-operated",
+        "preview": "Lights Battery operated Online Shop | Bike-Discount\nBattery operated\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbaidschan Bahamas Bahrain Bangladesh Barbados Benin Bermuda Bhutan Bolivia Bosnia And Herzegovina Botswana Brazil Bulgaria Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Chad Chile Colombia Congo Costa Rica Cote D'ivoire Croatia Cyprus Czech Republic Djibouti Dominican Republic Ecuador El Salvador Estonia Faroe Islands Federated States Of Micronesia Finland Finland - Aland Islands Gabon Gambia Georgia Ghana Gibraltar Greece G"
+      },
+      {
+        "url": "https://www.bike-discount.de/en/bike/electronics/lights/dynamo-operated",
+        "preview": "Lights Dynamo operated Online Shop | Bike-Discount\nDynamo operated\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbaidschan Bahamas Bahrain Bangladesh Barbados Benin Bermuda Bhutan Bolivia Bosnia And Herzegovina Botswana Brazil Bulgaria Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Chad Chile Colombia Congo Costa Rica Cote D'ivoire Croatia Cyprus Czech Republic Djibouti Dominican Republic Ecuador El Salvador Estonia Faroe Islands Federated States Of Micronesia Finland Finland - Aland Islands Gabon Gambia Georgia Ghana Gibraltar Greece Gre"
+      },
+      {
+        "url": "https://www.bike-discount.de/en/shimano-steps-bt-en806-630wh-battery-integrated",
+        "preview": "Shimano STEPS BT-EN806 630Wh Battery integrated Shimano System | Bike-Discount\nShimano STEPS BT-EN806 630Wh Battery integrated\nBest Price Request Best Price Request\nProduct information \"STEPS BT-EN806 630Wh Battery integrated\"\nFeatures - Shimano Steps BT-EN806 630Wh integrated Battery for Down Tube\nProduct features\nColor\nWeight\nScope of delivery\nTechnologies\nShimano Steps MTB\nShimano STEPS BT-EN806 630Wh Battery integrated\nFeatures - Shimano Steps BT-EN806 630Wh integrated Battery for Down Tube\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbaidschan "
+      },
+      {
+        "url": "https://www.bike-discount.de/en/widgets/cms/018c438fc92b7b17bfc800040516158a",
+        "preview": "Information\nPrivacy Policy\n1. Access data and hosting\n1.1 Hosting\n1.2 Content Delivery Network\n2. Data processing for the purposes of processing the contract, establishing contact\n2.1 Data processing for the purposes of performing the contract\n2.2 Customer account\n2.3 Establishing contact\n3. Data processing for the purposes of shipment\nData transmission to a shipping provider for the purpose of shipment notification\nData Transfer to Shipping Service Providers for International Shipments\nInformation Terms and Conditions Contact Privacy Policy FAQ Whistleblower System Imprint Accessibility statement Our Team Best Price Guarantee About us Shipping Payment Methods Jobs Privacy Policy Data controller is: H & S Bike Discount GmbH Konrad-Zuse-Str. 20 53501 Grafschaft E-Mail: info@bike-discount.de"
+      },
+      {
+        "url": "https://www.bike-discount.de/en/privacy-policy",
+        "preview": "Privacy Policy\nInformation\nPrivacy Policy\n1. Access data and hosting\n1.1 Hosting\n1.2 Content Delivery Network\n2. Data processing for the purposes of processing the contract, establishing contact\n2.1 Data processing for the purposes of performing the contract\n2.2 Customer account\n2.3 Establishing contact\n3. Data processing for the purposes of shipment\nData transmission to a shipping provider for the purpose of shipment notification\nData Transfer to Shipping Service Providers for International Shipments\nSkip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbai"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Data processing for the purposes of shipment Data transmission to a shipping provider for the purpose of shipment notification Data Transfer to Shipping Service Providers for International Shipments Skip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbaidschan Bahamas Bahrain Bangladesh Barbados Benin Bermuda Bhutan Bolivia Bosnia And Herzegovina Botswana Brazil Bulgaria Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Chad Chile Colombia Congo Costa Rica Cote D'ivoire Croatia Cyprus Czech Republic Djibouti Dominican Republic Ecuador El Salvador Estonia Faroe Islands Federated States Of Micronesia Finland Finland - Aland Islands Gabon Gambia Georgia Ghana Gibraltar Greece Greenland Guam Guyana Honduras Hong Kong Hungary Iceland India Indonesia Ireland Italy Italy (Sardegna) Italy (Sicilia) Japan Kenya Kiribati Korea, Republic Of Kyrgyzstan Latvia Lesotho Liechtenstein Lithuania Luxembourg Macao Madagascar Malawi Malaysia Mali Malta Marshall Islands Mauretanien Mauritius Mexico Moldova, Republic Of Monaco Mongolia Montenegro Montserrat Morocco Mozambique Namibia Népal Netherlands New Zealand Nigeria Norfolk Island North Macedonia Northern Mariana Islands Norway Oman Pakistan Palau Panama Paraguay Peru Philippines Poland Portugal Portugal (Açores) Portugal (Madeira) Qatar Romania Rwanda Saint Lucia San Marino Saudi Arabia Senegal Serbia Singapore Slovakia Slovenia Solomon Islands Somalia South Africa Spain Spain (Ceuta) Spain (Illes Baleares) Spain (Islas Canarias) Spain (Melilla) St.",
+      "source_url": "https://www.bike-discount.de/en/privacy-policy",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "6 (1) (a) GDPR, your personal data (first and last name, address, email, telephone number, date of birth, IP address, sex) and the necessary transaction data (purchased item, invoice amount, due dates, total amount, invoice number, taxes, currency, order date and time) will be transferred to our partner TARGOBANK AG, Kasernenstr.",
+      "source_url": "https://www.bike-discount.de/en/widgets/cms/018c438fc92b7b17bfc800040516158a",
+      "confidence": "medium"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "Shimano STEPS BT-EN806 630Wh Battery integrated Shimano System | Bike-Discount Shimano STEPS BT-EN806 630Wh Battery integrated Best Price Request Best Price Request Product information \"STEPS BT-EN806 630Wh Battery integrated\" Features - Shimano Steps BT-EN806 630Wh integrated Battery for Down Tube Product features Color Weight Scope of delivery Technologies Shimano Steps MTB Shimano STEPS BT-EN806 630Wh Battery integrated Features - Shimano Steps BT-EN806 630Wh integrated Battery for Down Tube Skip to main content Skip to search Skip to main navigation Language: English Deutsch English Français Español Italiano Shipping country Deutschland Deutschland Austria Belgium Denmark France Sweden Switzerland Albania Algeria Andorra Angola Antigua And Barbuda Armenia Aruba Australia Aserbaidschan Bahamas Bahrain Bangladesh Barbados Benin Bermuda Bhutan Bolivia Bosnia And Herzegovina Botswana Brazil Bulgaria Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Chad Chile Colombia Congo Costa Rica Cote D'ivoire Croatia Cyprus Czech Republic Djibouti Dominican Republic Ecuador El Salvador Estonia Faroe Islands Federated States Of Micronesia Finland Finland - Aland Islands Gabon Gambia Georgia Ghana Gibraltar Greece Greenland Guam Guyana Honduras Hong Kong Hungary Iceland India Indonesia Ireland Italy Italy (Sardegna) Italy (Sicilia) Japan Kenya Kiribati Korea, Republic Of Kyrgyzstan Latvia Lesotho Liechtenstein Lithuania Luxembourg Macao Madagascar Malawi Malaysia Mali Malta Marshall Islands Mauretanien Mauritius Mexico Moldova, Republic Of Monaco Mongolia Montenegro Montserrat Morocco Mozambique Namibia Népal Netherlands New Zealand Nigeria Norfolk Island North Macedonia Northern Mariana Islands Norway Oman Pakistan Palau Panama Paraguay Peru Philippines Poland Portugal Portugal (Açores) Portugal (Madeira) Qatar Romania Rwanda Saint Lucia San Marino Saudi Arabia Senegal Serbia Singapore Slovakia Slovenia Solomon Islands Somalia South Africa Spain Spain (Ceuta) Spain (Illes Baleares) Spain (Islas Canarias) Spain (Melilla) St.",
+      "source_url": "https://www.bike-discount.de/en/shimano-steps-bt-en806-630wh-battery-integrated",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Data processing for the purposes of shipment Data transmission to a shipping provider for the purpose of shipment notification Data Transfer to Shipping Service Providers for International Shipments Skip to main content Skip to search Skip to main navigation Language: English Deutsch English Françai",
+    "tax_guide": "6 (1) (a) GDPR, your personal data (first and last name, address, email, telephone number, date of birth, IP address, sex) and the necessary transaction data (purchased item, invoice amount, due dates, total amount, invoice number, taxes, currency, order date and time) will be transferred to our par",
+    "fee_guide": "Shimano STEPS BT-EN806 630Wh Battery integrated Shimano System | Bike-Discount Shimano STEPS BT-EN806 630Wh Battery integrated Best Price Request Best Price Request Product information \"STEPS BT-EN806 630Wh Battery integrated\" Features - Shimano Steps BT-EN806 630Wh integrated Battery for Down Tube ",
+    "shipping_url": "https://www.bike-discount.de/en/privacy-policy",
+    "tax_url": "https://www.bike-discount.de/en/widgets/cms/018c438fc92b7b17bfc800040516158a",
+    "fee_url": "https://www.bike-discount.de/en/shimano-steps-bt-en806-630wh-battery-integrated"
+  },
+  "update_error": null
+}

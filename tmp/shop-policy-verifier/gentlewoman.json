@@ -1,0 +1,68 @@
+{
+  "shop": {
+    "id": "73c1413b-60ee-4d1e-b185-99a1534e827c",
+    "slug": "gentlewoman",
+    "name": "GENTLEWOMAN（ジェントルウーマン）",
+    "url": "https://www.gentlewomanonline.com/"
+  },
+  "checked_at": "2026-04-18T04:30:56.508Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.gentlewomanonline.com/delivery/",
+        "preview": "GENTLEWOMAN\nDELIVERY\nWhere can I receive my order ?\nHow long will my order take to arrive ?\nHow much do I pay for delivery service ?\nCan I track my order?\nINTERNATIONAL SHIPPING\nHow long will my order take to arrive ?\nHow much do I pay for delivery service ?\nCan I track my order?\nEXCHANGES & RETURNS\nETERNAL EXPRESS NEW PORCELAIN PETALS GENTLEWOMAN CLUB COLLECTIONSPORCELAIN PETALSARCHIVAL RESURRECTEDBETTY BOOP | GENTLEWOMAN : WILD WEST LOVESUNDAE KIDS | GENTLEWOMANDAILY FORMBASIC LAYERS | PERFUME COLLECTIONGW BELLE BAGCHAUXHIEN | GENTLEWOMAN : BEADWORK ARCHIVECHOMPOO ARAYA | GENTLEWOMAN : CHERRY CONFIDANTES🍒DENIM ALTEREDGW DAILY SHOULDER BAGNAGITA SLAVINA | GENTLEWOMAN : SHORELINE STILLNESSDOT & DRIFTDOWNTOWN ARCCLIP IT, CROWNED!SECRET TWINKLESUN-DRENCHED WHIMSYGENTLE PACELEAGUE VIBE CLUBM"
+      },
+      {
+        "url": "https://www.gentlewomanonline.com/privacy-policy/",
+        "preview": "GENTLEWOMAN\nPRIVACY POLICY\nETERNAL EXPRESS NEW PORCELAIN PETALS GENTLEWOMAN CLUB COLLECTIONSPORCELAIN PETALSARCHIVAL RESURRECTEDBETTY BOOP | GENTLEWOMAN : WILD WEST LOVESUNDAE KIDS | GENTLEWOMANDAILY FORMBASIC LAYERS | PERFUME COLLECTIONGW BELLE BAGCHAUXHIEN | GENTLEWOMAN : BEADWORK ARCHIVECHOMPOO ARAYA | GENTLEWOMAN : CHERRY CONFIDANTES🍒DENIM ALTEREDGW DAILY SHOULDER BAGNAGITA SLAVINA | GENTLEWOMAN : SHORELINE STILLNESSDOT & DRIFTDOWNTOWN ARCCLIP IT, CROWNED!SECRET TWINKLESUN-DRENCHED WHIMSYGENTLE PACELEAGUE VIBE CLUBMONCHHICHI | GENTLEWOMAN : MEME ME GENTLYCLUB MONACORESORT DUTYSWEET SERENADECREW SOCIETYSECRET SEMANTICSGUN ATP | GENTLEWOMAN : THE ANOMALIESTANDT | GENTLEWOMAN : HOTEL TANDTCHOPLUEM | GENTLEWOMAN UNIVERSE : CHOPLUEM ERACOOL GIRL MONOLOGUEHARRY POTTER | GENTLEWOMANOFFICE SP"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.gentlewomanonline.com/privacy-policy/",
+        "preview": "GENTLEWOMAN\nPRIVACY POLICY\nETERNAL EXPRESS NEW PORCELAIN PETALS GENTLEWOMAN CLUB COLLECTIONSPORCELAIN PETALSARCHIVAL RESURRECTEDBETTY BOOP | GENTLEWOMAN : WILD WEST LOVESUNDAE KIDS | GENTLEWOMANDAILY FORMBASIC LAYERS | PERFUME COLLECTIONGW BELLE BAGCHAUXHIEN | GENTLEWOMAN : BEADWORK ARCHIVECHOMPOO ARAYA | GENTLEWOMAN : CHERRY CONFIDANTES🍒DENIM ALTEREDGW DAILY SHOULDER BAGNAGITA SLAVINA | GENTLEWOMAN : SHORELINE STILLNESSDOT & DRIFTDOWNTOWN ARCCLIP IT, CROWNED!SECRET TWINKLESUN-DRENCHED WHIMSYGENTLE PACELEAGUE VIBE CLUBMONCHHICHI | GENTLEWOMAN : MEME ME GENTLYCLUB MONACORESORT DUTYSWEET SERENADECREW SOCIETYSECRET SEMANTICSGUN ATP | GENTLEWOMAN : THE ANOMALIESTANDT | GENTLEWOMAN : HOTEL TANDTCHOPLUEM | GENTLEWOMAN UNIVERSE : CHOPLUEM ERACOOL GIRL MONOLOGUEHARRY POTTER | GENTLEWOMANOFFICE SP"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.gentlewomanonline.com/privacy-policy/",
+        "preview": "GENTLEWOMAN\nPRIVACY POLICY\nETERNAL EXPRESS NEW PORCELAIN PETALS GENTLEWOMAN CLUB COLLECTIONSPORCELAIN PETALSARCHIVAL RESURRECTEDBETTY BOOP | GENTLEWOMAN : WILD WEST LOVESUNDAE KIDS | GENTLEWOMANDAILY FORMBASIC LAYERS | PERFUME COLLECTIONGW BELLE BAGCHAUXHIEN | GENTLEWOMAN : BEADWORK ARCHIVECHOMPOO ARAYA | GENTLEWOMAN : CHERRY CONFIDANTES🍒DENIM ALTEREDGW DAILY SHOULDER BAGNAGITA SLAVINA | GENTLEWOMAN : SHORELINE STILLNESSDOT & DRIFTDOWNTOWN ARCCLIP IT, CROWNED!SECRET TWINKLESUN-DRENCHED WHIMSYGENTLE PACELEAGUE VIBE CLUBMONCHHICHI | GENTLEWOMAN : MEME ME GENTLYCLUB MONACORESORT DUTYSWEET SERENADECREW SOCIETYSECRET SEMANTICSGUN ATP | GENTLEWOMAN : THE ANOMALIESTANDT | GENTLEWOMAN : HOTEL TANDTCHOPLUEM | GENTLEWOMAN UNIVERSE : CHOPLUEM ERACOOL GIRL MONOLOGUEHARRY POTTER | GENTLEWOMANOFFICE SP"
+      },
+      {
+        "url": "https://www.gentlewomanonline.com/delivery/",
+        "preview": "GENTLEWOMAN\nDELIVERY\nWhere can I receive my order ?\nHow long will my order take to arrive ?\nHow much do I pay for delivery service ?\nCan I track my order?\nINTERNATIONAL SHIPPING\nHow long will my order take to arrive ?\nHow much do I pay for delivery service ?\nCan I track my order?\nEXCHANGES & RETURNS\nETERNAL EXPRESS NEW PORCELAIN PETALS GENTLEWOMAN CLUB COLLECTIONSPORCELAIN PETALSARCHIVAL RESURRECTEDBETTY BOOP | GENTLEWOMAN : WILD WEST LOVESUNDAE KIDS | GENTLEWOMANDAILY FORMBASIC LAYERS | PERFUME COLLECTIONGW BELLE BAGCHAUXHIEN | GENTLEWOMAN : BEADWORK ARCHIVECHOMPOO ARAYA | GENTLEWOMAN : CHERRY CONFIDANTES🍒DENIM ALTEREDGW DAILY SHOULDER BAGNAGITA SLAVINA | GENTLEWOMAN : SHORELINE STILLNESSDOT & DRIFTDOWNTOWN ARCCLIP IT, CROWNED!SECRET TWINKLESUN-DRENCHED WHIMSYGENTLE PACELEAGUE VIBE CLUBM"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "INTERNATIONAL SHIPPING How long will my order take to arrive ?",
+      "source_url": "https://www.gentlewomanonline.com/delivery/",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "This may include, but is not limited to, performing duties associated with the preparation of accounting documents and taxes in connection with any services provided by the Company to you; (3) For the purpose of building and improving business relationships, including enhancing the service that the Company provides for your benefit, which the Company may collect and/or use your personal data for the purpose of control, assurance of service, management analysis and resolution of business-related issues, including, but not limited to, employee training and future service improvement planning; (4) For the purpose of protecting and defending the Company's legal rights in the event that you and the Company have a dispute; and (5) Subject to an explicit consent granted to the Company such as marketing and newsletter communications, the Company may process the Personal Data for the purposes as defined in the consent.",
+      "source_url": "https://www.gentlewomanonline.com/privacy-policy/",
+      "confidence": "high"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "(If the desired item is out of stock, it must be exchanged for an alternative item.)Return Shipping Costs: The company will cover shipping costs for returns only if the product is defective.",
+      "source_url": "https://www.gentlewomanonline.com/delivery/",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "INTERNATIONAL SHIPPING How long will my order take to arrive ?",
+    "tax_guide": "This may include, but is not limited to, performing duties associated with the preparation of accounting documents and taxes in connection with any services provided by the Company to you; (3) For the purpose of building and improving business relationships, including enhancing the service that the ",
+    "fee_guide": "(If the desired item is out of stock, it must be exchanged for an alternative item.)Return Shipping Costs: The company will cover shipping costs for returns only if the product is defective.",
+    "shipping_url": "https://www.gentlewomanonline.com/delivery/",
+    "tax_url": "https://www.gentlewomanonline.com/privacy-policy/",
+    "fee_url": "https://www.gentlewomanonline.com/delivery/"
+  },
+  "update_error": null
+}

@@ -1,0 +1,84 @@
+{
+  "shop": {
+    "id": "bbcc0c60-b90b-4c78-a1de-3cf23e6f9090",
+    "slug": "klekt",
+    "name": "Klekt (クレクト)",
+    "url": "https://www.klekt.com/"
+  },
+  "checked_at": "2026-04-18T05:03:23.205Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://klekt.com/help",
+        "preview": "Help & Support - KLEKT\nHelp & Support\nGet Help\nFrequently Asked Questions\nContact Us\nPolicies & Guidelines\nBuyer Policy\nSeller Policy\nTerms of Service\nPrivacy Policy\nStill need help?\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDHomeHelp & SupportHelp & SupportFind the information you need to make the most of KLEKTGet HelpFrequently Asked QuestionsFind quick answers to common questions about KLEKTContact UsGet in touch with our support teamPolicies & GuidelinesBuyer PolicyLearn about buyer protection and policiesSeller PolicyGuidelines and requirements for sellersTerms of ServiceRead our terms and conditionsPrivacy PolicyHow we protect and handle your dataStill need help?Our support team is here to assist you with any questions or concerns.Contact Support"
+      },
+      {
+        "url": "https://klekt.com/privacy-policy",
+        "preview": "Privacy Policy - KLEKT\nPrivacy Policy\nPrivacy Policy Details\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDBackPrivacy PolicyPrivacy PolicyPrivacy Policy DetailsPrivacyThis Website collects some Personal Data from its Users. The protection of your privacy is very important to us. We do not rent or sell your data for marketing purposes.Users may be subject to different protection standards and broader standards may therefore apply to some. In order to learn more about the protection criteria, Users can refer to the applicability section.Owner and Data ControllerAuthenticated By LtdSuite 312 Atlas House Caxton CloseWiganLancashire WN3 6XUOwner contact email: support@klekt.comTypes of data collectedAmong the types of Personal Data that this Website and App collec"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://klekt.com/help",
+        "preview": "Help & Support - KLEKT\nHelp & Support\nGet Help\nFrequently Asked Questions\nContact Us\nPolicies & Guidelines\nBuyer Policy\nSeller Policy\nTerms of Service\nPrivacy Policy\nStill need help?\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDHomeHelp & SupportHelp & SupportFind the information you need to make the most of KLEKTGet HelpFrequently Asked QuestionsFind quick answers to common questions about KLEKTContact UsGet in touch with our support teamPolicies & GuidelinesBuyer PolicyLearn about buyer protection and policiesSeller PolicyGuidelines and requirements for sellersTerms of ServiceRead our terms and conditionsPrivacy PolicyHow we protect and handle your dataStill need help?Our support team is here to assist you with any questions or concerns.Contact Support"
+      },
+      {
+        "url": "https://klekt.com/privacy-policy",
+        "preview": "Privacy Policy - KLEKT\nPrivacy Policy\nPrivacy Policy Details\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDBackPrivacy PolicyPrivacy PolicyPrivacy Policy DetailsPrivacyThis Website collects some Personal Data from its Users. The protection of your privacy is very important to us. We do not rent or sell your data for marketing purposes.Users may be subject to different protection standards and broader standards may therefore apply to some. In order to learn more about the protection criteria, Users can refer to the applicability section.Owner and Data ControllerAuthenticated By LtdSuite 312 Atlas House Caxton CloseWiganLancashire WN3 6XUOwner contact email: support@klekt.comTypes of data collectedAmong the types of Personal Data that this Website and App collec"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://klekt.com/catalog/Air-Jordan?strategy=trending",
+        "preview": "Buy Air Jordan Sneakers | Authentic & Verified | KLEKT\nAir Jordan\nCategories\nPromotional Collections\nAir Jordan\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDHomeTrendingAir JordanAll ProductsTrendingSaleGift CardsDropsUpcomingUsedAir JordanCategoriesAll CategoriesSneakersStreetwearAccessoriesPromotional CollectionsAir JordanNikeAsicsNike SBAdidasNew BalanceYeezySupremeAir JordanActive filters:TrendingAir Jordan"
+      },
+      {
+        "url": "https://klekt.com/catalog/Nike?strategy=trending",
+        "preview": "Buy Nike Sneakers | Authentic & Verified | KLEKT\nNike\nCategories\nPromotional Collections\nNike\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDHomeTrendingNikeAll ProductsTrendingSaleGift CardsDropsUpcomingUsedNikeCategoriesAll CategoriesSneakersStreetwearAccessoriesPromotional CollectionsAir JordanNikeAsicsNike SBAdidasNew BalanceYeezySupremeNikeActive filters:TrendingNike"
+      },
+      {
+        "url": "https://klekt.com/catalog/Asics?strategy=trending",
+        "preview": "Buy Asics Sneakers | Authentic & Verified | KLEKT\nAsics\nCategories\nPromotional Collections\nAsics\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDHomeTrendingAsicsAll ProductsTrendingSaleGift CardsDropsUpcomingUsedAsicsCategoriesAll CategoriesSneakersStreetwearAccessoriesPromotional CollectionsAir JordanNikeAsicsNike SBAdidasNew BalanceYeezySupremeAsicsActive filters:TrendingAsics"
+      },
+      {
+        "url": "https://klekt.com/catalog/Nike-SB?strategy=trending",
+        "preview": "Buy Nike SB Sneakers | Authentic & Verified | KLEKT\nNike SB\nCategories\nPromotional Collections\nNike SB\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDHomeTrendingNike SBAll ProductsTrendingSaleGift CardsDropsUpcomingUsedNike SBCategoriesAll CategoriesSneakersStreetwearAccessoriesPromotional CollectionsAir JordanNikeAsicsNike SBAdidasNew BalanceYeezySupremeNike SBActive filters:TrendingNike SB"
+      },
+      {
+        "url": "https://klekt.com/catalog/Adidas?strategy=trending",
+        "preview": "Buy Adidas Sneakers | Authentic & Verified | KLEKT\nAdidas\nCategories\nPromotional Collections\nAdidas\nBlogHelp & SupportSell on KLEKTBRANDSSNEAKERSSTREETWEARACCESSORIESKLEKT USEDHomeTrendingAdidasAll ProductsTrendingSaleGift CardsDropsUpcomingUsedAdidasCategoriesAll CategoriesSneakersStreetwearAccessoriesPromotional CollectionsAir JordanNikeAsicsNike SBAdidasNew BalanceYeezySupremeAdidasActive filters:TrendingAdidas"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "To find out more about the place of processing of such transferred Data, Users can check the section containing details about the processing of Personal Data.If broader protection standards are applicable, Users are also entitled to learn about the legal basis of Data transfers to a country outside the European Union or to any international organisation governed by public international law or set up by two or more countries, such as the UN, and about the security measures taken by the Owner to safeguard their Data.If any such transfer takes place, Users can find out more by checking the relevant sections of this document or inquire with the Owner using the information provided in the contact section.Retention TimePersonal Data shall be processed and stored for as long as required by the purpose they have been collected for.",
+      "source_url": "https://klekt.com/privacy-policy",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "The protection of your privacy is very important to us.",
+      "source_url": "https://klekt.com/privacy-policy",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "To find out more about the place of processing of such transferred Data, Users can check the section containing details about the processing of Personal Data.If broader protection standards are applicable, Users are also entitled to learn about the legal basis of Data transfers to a country outside ",
+    "tax_guide": "The protection of your privacy is very important to us.",
+    "fee_guide": null,
+    "shipping_url": "https://klekt.com/privacy-policy",
+    "tax_url": "https://klekt.com/privacy-policy",
+    "fee_url": null
+  },
+  "update_error": null
+}

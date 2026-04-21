@@ -1,0 +1,80 @@
+{
+  "shop": {
+    "id": "57524598-000f-430c-98e8-9c8f97f9c071",
+    "slug": "mytheresa",
+    "name": "MYTHERESA（マイテレサ）",
+    "url": "https://www.mytheresa.com/jp/en/women"
+  },
+  "checked_at": "2026-04-18T04:26:21.506Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.mytheresa.com/jp/en/customer-care/shipping",
+        "preview": "Shipping Information | Mytheresa\nShipping\nSupport climate action\nShipping methods\nShipping costs and delivery times\nMore delivery countries\nTrack your status\nMytheresa's eco packaging\nMytheresa's signature yellow packaging\nMytheresa's envelope and thank-you card\nInvoice and returns & exchange form\nProtection paper\nMytheresa sticker\nFree shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleCustomer ServiceHelpContact UsSize GuideOrderGift Card & Store CreditP"
+      },
+      {
+        "url": "https://www.mytheresa.com/jp/en/privacy-policy",
+        "preview": "Privacy Policy - Privacy & Terms | Mytheresa\nPrivacy Policy\n1 BASIC INFORMATION ON DATA HANDLING\n2 GENERAL DATA COLLECTION WHEN VISITING OUR WEBSITE\n3 REGISTRATION\n4 CONTACT\n5 NEWSLETTER\n6 YOUR ORDER IN OUR ONLINE SHOP\n7 OUR PAYMENT SERVICE PROVIDERS\n8 COOKIES AND SIMILAR TECHNOLOGIES\n9 PRIMARY PROVIDER COOKIES – ESSENTIAL COOKIES\n10 THIRD-PARTY COOKIES – MARKETING COOKIES\n11 SPECIAL TOOLS – ANALYTICAL COOKIES\nFree shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacatio"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.mytheresa.com/jp/en/customer-care",
+        "preview": "Customer Care & Contact Information | Mytheresa\nWe are here to help\nFree shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleCustomer ServiceHelpContact UsSize GuideOrderGift Card & Store CreditPaymentShippingReturns & ExchangesAfter Sale ServiceFAQWe are here to helpAs a luxury retailer, providing you with a perfect shopping experience is incredibly important to us. It is our very personal approach to customer service that distinguishes us from other onlin"
+      },
+      {
+        "url": "https://www.mytheresa.com/jp/en/customer-care/contact",
+        "preview": "Contact Us - Customer Service & Support | Mytheresa\nContact Us\nFree shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleCustomer ServiceHelpContact UsSize GuideOrderGift Card & Store CreditPaymentShippingReturns & ExchangesAfter Sale ServiceFAQContact UsHow can we help? Our native-speaking Customer Care team is available 24/7 to support you. We are delighted to help you with sizing and styling advice, or to answer any questions about your order.First name *"
+      },
+      {
+        "url": "https://www.mytheresa.com/jp/en/customer-care/gift-card",
+        "preview": "Gift Card Information | Mytheresa\nGift Card & Store Credit\nHow do I use the Mytheresa gift card or store credit?\nFree shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleCustomer ServiceHelpContact UsSize GuideOrderGift Card & Store CreditPaymentShippingReturns & ExchangesAfter Sale ServiceFAQGift Card & Store CreditOne card, countless possibilities – The Mytheresa gift cardGift cards can be sent via email or by post in our exclusive gift box. When selectin"
+      },
+      {
+        "url": "https://www.mytheresa.com/jp/en/customer-care/payment",
+        "preview": "Payment Information | Mytheresa\nPayment\nCurrencies\nPayment by credit or debit card\nPayments by Visa or Mastercard\nPayment by American Express\nPayment by PayPal\nPayment by gift card, store credit, or promotion code\nFree shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleCustomer ServiceHelpContact UsSize GuideOrderGift Card & Store CreditPaymentShippingReturns & ExchangesAfter Sale ServiceFAQPaymentCurrenciesPayments, as well as refunds for shipments to Jap"
+      },
+      {
+        "url": "https://www.mytheresa.com/jp/en/customer-care/shipping",
+        "preview": "Shipping Information | Mytheresa\nShipping\nSupport climate action\nShipping methods\nShipping costs and delivery times\nMore delivery countries\nTrack your status\nMytheresa's eco packaging\nMytheresa's signature yellow packaging\nMytheresa's envelope and thank-you card\nInvoice and returns & exchange form\nProtection paper\nMytheresa sticker\nFree shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleCustomer ServiceHelpContact UsSize GuideOrderGift Card & Store CreditP"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.mytheresa.com/jp/en/privacy-policy",
+        "preview": "Privacy Policy - Privacy & Terms | Mytheresa\nPrivacy Policy\n1 BASIC INFORMATION ON DATA HANDLING\n2 GENERAL DATA COLLECTION WHEN VISITING OUR WEBSITE\n3 REGISTRATION\n4 CONTACT\n5 NEWSLETTER\n6 YOUR ORDER IN OUR ONLINE SHOP\n7 OUR PAYMENT SERVICE PROVIDERS\n8 COOKIES AND SIMILAR TECHNOLOGIES\n9 PRIMARY PROVIDER COOKIES – ESSENTIAL COOKIES\n10 THIRD-PARTY COOKIES – MARKETING COOKIES\n11 SPECIAL TOOLS – ANALYTICAL COOKIES\nFree shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacatio"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Shipping Information | Mytheresa Shipping Support climate action Shipping methods Shipping costs and delivery times More delivery countries Track your status Mytheresa's eco packaging Mytheresa's signature yellow packaging Mytheresa's envelope and thank-you card Invoice and returns & exchange form Protection paper Mytheresa sticker Free shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleCustomer ServiceHelpContact UsSize GuideOrderGift Card & Store CreditPaymentShippingReturns & ExchangesAfter Sale ServiceFAQShippingSupport climate actionMytheresa has calculated its carbon footprint, i.e., the greenhouse gas (CO2e) emissions related to our company.",
+      "source_url": "https://www.mytheresa.com/jp/en/customer-care/shipping",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "ddu",
+      "summary": "You can check the status of your shipment one to two hours after receiving the email by using the link provided.Shipped with DHL: Check status of parcel PACKAGINGMytheresa's eco packagingThe eco packaging is made from at least 84% recycled materials and is about two times lighter than our yellow boxes, reducing consumption, waste, and the carbon footprint of each order.CompositionDisposal recommendationsCorrugated cardboard (PAP 20)- Reduce the volume of the box for disposal- Please follow your local municipal guidelines on how paper waste is collectedMytheresa's signature yellow packagingThe signature yellow packaging is FSC Mix certified (made with materials from FSC-certified forests and recycled materials).CompositionDisposal recommendationsGreyboard (PAP 21)- Please remove the detachable ribbon and follow the black ribbon disposal recommendationsYellow paper (PAP 22)- Reduce the volume of the box for disposalTencel ribbon (TEX 62)- Please follow your local municipal guidelines on how paper waste is collectedMytheresa's envelope and thank-you card The envelope and thank-you card are FSC Mix certified (made with materials from FSC-certified forests and recycled materials).CompositionDisposal recommendationsPaper (PAP 22)- Please follow your local municipal guidelines on how paper waste is collectedInvoice and returns & exchange formBoth documents are either FSC Mix or 70% PEFC certified (made with materials from FSC-certified forests and recycled materials or with materials from PEFC-certified forests).CompositionDisposal recommendationsPaper (PAP 22)- Please follow your local municipal guidelines on how paper waste is collectedProtection paperCompositionDisposal recommendationsTissue paper (PAP 22)- Please follow your local municipal guidelines on how paper waste is collectedMytheresa sticker CompositionDisposal recommendationsPaper (PAP 22)- Please follow your local municipal guidelines on how paper waste is collectedMytheresa tagCompositionDisposal recommendationsPaper with a plastic lamination (PAP 22) or paper (PAP 22)- Please follow your local municipal guidelines on how paper waste is collectedBlack ribbon CompositionDisposal recommendationsTencel (TEX 62)- Please follow your local municipal guidelines on how textile waste is collectedTape CompositionDisposal recommendationsPolypropylen (PP 5)- Please follow your local municipal guidelines on how plastic waste is collectedStaple threadCompositionDisposal recommendationsNylon (PA 6.6)- Please follow your local municipal guidelines on how plastic waste is collectedDuties & TaxesCustoms duties and taxes for JapanFor deliveries to Japan, the Japanese sales tax (VAT) as well as customs duties and handling fees are included in the price of the item.If you have any questions, please contact our Customer Care team at: customercare@mytheresa.com.EMAIL UScustomercare@mytheresa.comDue to a high amount of requests, we might take a few days to get back to you.",
+      "source_url": "https://www.mytheresa.com/jp/en/customer-care/shipping",
+      "confidence": "high"
+    },
+    "fee": {
+      "status": "free_over_threshold",
+      "summary": "Privacy Policy - Privacy & Terms | Mytheresa Privacy Policy 1 BASIC INFORMATION ON DATA HANDLING 2 GENERAL DATA COLLECTION WHEN VISITING OUR WEBSITE 3 REGISTRATION 4 CONTACT 5 NEWSLETTER 6 YOUR ORDER IN OUR ONLINE SHOP 7 OUR PAYMENT SERVICE PROVIDERS 8 COOKIES AND SIMILAR TECHNOLOGIES 9 PRIMARY PROVIDER COOKIES – ESSENTIAL COOKIES 10 THIRD-PARTY COOKIES – MARKETING COOKIES 11 SPECIAL TOOLS – ANALYTICAL COOKIES Free shipping on orders over ¥90000WomenMenKidsLIFEWomen's HomepageNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSaleDiscover our app hereMy WishlistSign InJapan|EnglishYour current delivery country is Japan and your order will be billed in JPY ¥.Customer ServiceAbout usWomenMenKidsLIFEJapan|EnglishNew ArrivalsDesignersClothingShoesBagsAccessoriesJewelryVacation ShopSalePrivacy PolicyData processing controllerController and service provider responsible:mytheresa.com GmbHprivacy@mytheresa.comEinsteinring 985609 Aschheim/Munich.The protection of your personal data is very important to us.",
+      "source_url": "https://www.mytheresa.com/jp/en/privacy-policy",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Shipping Information | Mytheresa Shipping Support climate action Shipping methods Shipping costs and delivery times More delivery countries Track your status Mytheresa's eco packaging Mytheresa's signature yellow packaging Mytheresa's envelope and thank-you card Invoice and returns & exchange form P",
+    "tax_guide": "You can check the status of your shipment one to two hours after receiving the email by using the link provided.Shipped with DHL: Check status of parcel PACKAGINGMytheresa's eco packagingThe eco packaging is made from at least 84% recycled materials and is about two times lighter than our yellow box",
+    "fee_guide": "Privacy Policy - Privacy & Terms | Mytheresa Privacy Policy 1 BASIC INFORMATION ON DATA HANDLING 2 GENERAL DATA COLLECTION WHEN VISITING OUR WEBSITE 3 REGISTRATION 4 CONTACT 5 NEWSLETTER 6 YOUR ORDER IN OUR ONLINE SHOP 7 OUR PAYMENT SERVICE PROVIDERS 8 COOKIES AND SIMILAR TECHNOLOGIES 9 PRIMARY PROV",
+    "shipping_url": "https://www.mytheresa.com/jp/en/customer-care/shipping",
+    "tax_url": "https://www.mytheresa.com/jp/en/customer-care/shipping",
+    "fee_url": "https://www.mytheresa.com/jp/en/privacy-policy"
+  },
+  "update_error": null
+}

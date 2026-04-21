@@ -1,0 +1,321 @@
+{
+  "source": "skimlinks",
+  "mode": "csv",
+  "fetchedAt": "2026-04-18T15:16:32.185Z",
+  "request": {
+    "startDate": "2026-03-21",
+    "endDate": "2026-04-17",
+    "report": "merchant",
+    "timezone": "Asia/Tokyo"
+  },
+  "inputPath": "/Users/reona/Downloads/Publisher merchant report (JA).csv",
+  "totals": {
+    "rows": 100,
+    "clicks": 0,
+    "sales": 0,
+    "revenue": 0
+  },
+  "rows": [
+    {
+      "Skimlinks パブリッシャーレポート": "ドメイン original-price.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "期間 2023-03-20 から 2026-04-18"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "通貨 JPY"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "レポートの実行日 2026-04-18"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "注意：CSVのダウンロードは、最大40"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "広告主別"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Hyperlite Mountain Gear"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "End Clothing ROW"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Ellis Brigham"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "SEVENSTORE"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "FARFETCH"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "JD Sports ROW"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Sneakersnstuff"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "StockX Holdings LLC"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "www.ldmountaincentre.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Outdoorplay (US)"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Wildbounds"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Giglio"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Jenson USA"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "REVOLVE"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Moosejaw"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Fitstore24 - Premium Fitness Company - Online-Shop für Radsport und Fitness"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Bodega"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Chain Reaction Cycles"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Saks Fifth Avenue OFF 5TH"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "stadium_goods_us"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Footasylum"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Merlin Cycles"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Mr Porter"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "CampSaver.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Standout.co.uk"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "SSENSE"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Yoox"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "AliExpress by Alibaba.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Tweeks Cycles"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Marks and Spencer"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "HBX"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "The Clymb"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Prime Video"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "ASOS"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Gossamer Gear"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Mountain Hardwear"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Hipstore"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Sneakersnstuff"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "www.brother2brother.co.uk"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "G-Star.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Selfridges"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "The Hut UK"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "ribblecycles.co.uk"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "The North Face UK"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "FORWARD by elyse walker"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Circle Fashion"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "The North Face"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Footpatrol"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "JD Sports UK"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "GO Outdoors"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Coggles"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Slam Jam"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Allike"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Foot District"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Footshop - COM"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "24S"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Probikekit JP"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Shopbop"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Cettire"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "J.Crew"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "What Goes Around Comes Around"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Yesstyle"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "End Clothing UK"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Everlane"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Steep and Cheap"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Zappos.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "MATCHESFASHION.COM"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "PacSun"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "MCLABELS"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "MountainSteals.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Evans Cycles"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Flannels"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Condor Cycles"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Wolf Tooth Components"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Klekt"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Backcountry.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "THE OUTNET.COM"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Saks Fifth Avenue"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Aphrodite"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Fat Buddha Store"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Beyond Retro"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "KicksCrew"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Rebag"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Harvey Nichols"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Campmor"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "State Bicycle CO."
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Vestiaire Collective"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Outdoorplay"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Sigma Sports"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Triads"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "TradeInn"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "LN-CC"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "Bloomingdale's"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "evo"
+    }
+  ],
+  "raw": null
+}

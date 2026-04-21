@@ -7,17 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "register-shop": "node scripts/register_new_shop.js",
     "sync-affiliates": "node scripts/sync_affiliates.js",
     "sync-thumbnails": "node scripts/sync_thumbnails.js",
     "collect-brands": "node scripts/autonomous_collector.js",
     "verify-shop-policies": "node scripts/verify_shop_policies.js",
-    "normalize-shops": "node scripts/normalize_shops_for_discovery.cjs",
-    "fetch-gsc": "node scripts/fetch_gsc_search_analytics.js",
-    "fetch-skimlinks": "node scripts/fetch_skimlinks_report.js",
+    "verify-links": "node scripts/verify_links.js",
     "build-article-backlog": "node scripts/build_article_backlog.js",
     "create-article-brief": "node scripts/create_article_brief.js",
     "generate-article-draft": "node scripts/generate_article_draft.js",
-    "publish-generated-article": "node scripts/publish_generated_article.js"
+    "publish-generated-article": "node scripts/publish_generated_article.js",
+    "submit-indexing": "node scripts/google_indexing.js"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",

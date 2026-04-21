@@ -1,0 +1,72 @@
+{
+  "shop": {
+    "id": "8edc3af4-fe67-4c0c-b9f2-10e1c60e4e20",
+    "slug": "goat",
+    "name": "GOAT（ゴート）",
+    "url": "https://www.goat.com"
+  },
+  "checked_at": "2026-04-18T04:29:09.509Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.goat.com/help/shipping",
+        "preview": "Buy shipping: New & Pre-Owned | GOAT\nShipping\nHomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315,299 ListingsCat"
+      },
+      {
+        "url": "https://www.goat.com/pages/shipping",
+        "preview": "Buy shipping: New & Pre-Owned | GOAT\nShipping\nHomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315,299 ListingsCat"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.goat.com/help/customs",
+        "preview": "Buy customs: New & Pre-Owned | GOAT\nCustoms\nHomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315,299 ListingsCateg"
+      },
+      {
+        "url": "https://www.goat.com/pages/duties-and-taxes",
+        "preview": "Buy duties and taxes: New & Pre-Owned | GOAT\nDuties And Taxes\nHomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.goat.com/help/shipping-costs",
+        "preview": "Buy shipping costs: New & Pre-Owned | GOAT\nShipping Costs\nHomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315,299"
+      },
+      {
+        "url": "https://www.goat.com/pages/shipping-rates",
+        "preview": "Buy shipping rates: New & Pre-Owned | GOAT\nShipping Rates\nHomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315,299"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "Buy shipping: New & Pre-Owned | GOAT Shipping HomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315,299 ListingsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartTimelineTimeline: Sneaker ReleasesUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'AccountLog InCreate AccountLocation PreferencesEditorialShipping",
+      "source_url": "https://www.goat.com/help/shipping",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "Buy duties and taxes: New & Pre-Owned | GOAT Duties And Taxes HomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315,299 ListingsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartTimelineTimeline: Sneaker ReleasesUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'AccountLog InCreate AccountLocation PreferencesEditorialDuties And Taxes",
+      "source_url": "https://www.goat.com/pages/duties-and-taxes",
+      "confidence": "high"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "Buy shipping costs: New & Pre-Owned | GOAT Shipping Costs HomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartEditorialTimelineUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'SearchYour shopping region isClose (X)ShopShop 315,299 ListingsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupremeFear of God EssentialsNew BalanceGucciSaint LaurentPop MartTimelineTimeline: Sneaker ReleasesUpcoming ReleasesKobe 5 'Lower Merion Aces'Kobe 11 'Mamba Out'AJ 4 'Toro Bravo'AJ 5 'White Metallic'AJ 6 'Cap and Gown'AJ 12 'Bloodline'AJ 3 'Brazil'AJ1 Low 'Banned'New ReleasesJordan 11 'Gamma Blue'Jordan 5 'Wolf Grey'Jordan 6 'Reverse Infrared'AJ1 'Varsity Red'Jordan 4 'Lakers'Jumpman Jack TR 'Green Spark'Air Max DOAF 'The Woods' Air Jordan 1 'Alaska'AccountLog InCreate AccountLocation PreferencesEditorialShipping Costs",
+      "source_url": "https://www.goat.com/help/shipping-costs",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Buy shipping: New & Pre-Owned | GOAT Shipping HomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNikeadidasSupr",
+    "tax_guide": "Buy duties and taxes: New & Pre-Owned | GOAT Duties And Taxes HomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir Jord",
+    "fee_guide": "Buy shipping costs: New & Pre-Owned | GOAT Shipping Costs HomeShop 315,299 ItemsCategoriesSneakersApparelT-shirtsHoodiesOuterwearBagsJewelryCollectiblesGift CardsCollectionsJust DroppedNew InMost WantedGOAT SelectsIconic ArchivalWomen's SneakersGrade School SneakersInstantFeatured BrandsAir JordanNi",
+    "shipping_url": "https://www.goat.com/help/shipping",
+    "tax_url": "https://www.goat.com/pages/duties-and-taxes",
+    "fee_url": "https://www.goat.com/help/shipping-costs"
+  },
+  "update_error": null
+}

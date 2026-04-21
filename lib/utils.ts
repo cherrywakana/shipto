@@ -36,10 +36,18 @@ export function sanitizeArticleHtml(html: string): string {
  * External links are those starting with http:// or https:// and NOT pointing to original-price.com.
  */
 export function addExternalLinkAttributes(html: string): string {
+    // Correctly handle both single and double quotes for href, and target non-local links
     return html.replace(
-        /<a\s([^>]*?)href="(https?:\/\/(?!original-price\.com)[^"]+)"([^>]*?)>/gi,
+        /<a\s([^>]*?)href=['"](https?:\/\/(?!original-price\.com)[^'"]+)['"]([^>]*?)>/gi,
         (match, before, url, after) => {
-            if (/target=/i.test(before) || /target=/i.test(after)) return match
+            // If it already has a target, we leave it, but ensure rel exists for safety
+            if (/target=['"]?_blank['"]?/i.test(before) || /target=['"]?_blank['"]?/i.test(after)) {
+                if (!/rel=/i.test(before) && !/rel=/i.test(after)) {
+                    return `<a ${before}href="${url}"${after} rel="noopener noreferrer">`
+                }
+                return match
+            }
+            // Add attributes. We use double quotes for the injected attributes.
             return `<a ${before}href="${url}"${after} target="_blank" rel="noopener noreferrer">`
         }
     )

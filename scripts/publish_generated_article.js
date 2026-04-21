@@ -2,10 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
+const cheerio = require('cheerio');
 const { createClient } = require('@supabase/supabase-js');
 const { validateGeneratedArticle, fetchPosts, inferCanonicalTargetFromPost } = require('./generate_article_draft');
 const { createBriefForBrandSlug } = require('./create_article_brief');
-const { getGeneratedArticleThumbnailUrl } = require('./generate_article_thumbnail');
 
 dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
@@ -51,12 +51,51 @@ function inferCategoryFromTarget(canonicalTarget) {
     return 'ガイド';
 }
 
-async function assertNoConflictingPublishedPage(brief) {
-    const posts = await fetchPosts();
-    const conflict = posts.find((post) => inferCanonicalTargetFromPost(post) === brief.canonicalTarget && post.slug !== brief.slug);
-    if (conflict) {
-        throw new Error(`Published page already owns canonical target: ${conflict.slug}`);
+async function uploadImage(slug, localPath, fileNamePrefix = '') {
+    if (!fs.existsSync(localPath)) {
+        console.warn(`  ⚠️ Image file not found at: ${localPath}`);
+        return null;
     }
+
+    const fileContent = fs.readFileSync(localPath);
+    const ext = path.extname(localPath).toLowerCase() || '.webp';
+    const baseName = path.basename(localPath, ext);
+    const finalFileName = `${slug}-${fileNamePrefix}${baseName}${ext}`;
+    const contentType = ext === '.webp' ? 'image/webp' : (ext === '.png' ? 'image/png' : 'image/jpeg');
+
+    console.log(`  🚀 Uploading image to storage: ${finalFileName}...`);
+    const { error } = await supabase.storage
+        .from('article-thumbnails') // We can use the same bucket for all images
+        .upload(finalFileName, fileContent, {
+            contentType,
+            upsert: true
+        });
+
+    if (error) {
+        throw new Error(`Failed to upload image: ${error.message}`);
+    }
+
+    const timestamp = Date.now();
+    return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/article-thumbnails/${finalFileName}?t=${timestamp}`;
+}
+
+async function processInternalImages(slug, html) {
+    const $ = cheerio.load(html, { decodeEntities: false });
+    const imgTags = $('img').toArray();
+    let updated = false;
+
+    for (const img of imgTags) {
+        const src = $(img).attr('src');
+        if (src && (src.startsWith('/') || src.includes('Users'))) {
+            const uploadedUrl = await uploadImage(slug, src, 'content-');
+            if (uploadedUrl) {
+                $(img).attr('src', uploadedUrl);
+                updated = true;
+            }
+        }
+    }
+
+    return updated ? $.html('body').replace(/^<body>|<\/body>$/g, '') : html;
 }
 
 async function publishDraft(draft) {
@@ -66,14 +105,20 @@ async function publishDraft(draft) {
         .eq('slug', draft.slug)
         .single();
 
-    const generatedThumbnailUrl = draft.thumbnailUrl || draft.thumbnail_url || getGeneratedArticleThumbnailUrl(draft);
+    let finalThumbnailUrl = draft.thumbnailUrl || draft.thumbnail_url;
+    if (finalThumbnailUrl && (finalThumbnailUrl.startsWith('/') || finalThumbnailUrl.includes('Users'))) {
+        finalThumbnailUrl = await uploadImage(draft.slug, finalThumbnailUrl, 'thumb-');
+    }
+
+    console.log('  🔍 Scanning for internal images to upload...');
+    const finalHtml = await processInternalImages(draft.slug, draft.html);
 
     const payload = {
         slug: draft.slug,
         title: draft.title,
-        content: draft.html,
+        content: finalHtml,
         category: inferCategoryFromTarget(draft.canonicalTarget),
-        thumbnail_url: generatedThumbnailUrl || existingPost?.thumbnail_url || draft.topShops?.find((shop) => shop.imageUrl)?.imageUrl || null,
+        thumbnail_url: finalThumbnailUrl || existingPost?.thumbnail_url || null,
     };
 
     if (existingPost?.created_at) {
@@ -156,7 +201,6 @@ async function main() {
         throw new Error('Brief is missing canonicalTarget. Rebuild the brief with the latest script.');
     }
 
-    await assertNoConflictingPublishedPage(brief);
     const articleFilePath = getArticleFilePath(args.articleFile);
     const articlePayload = JSON.parse(fs.readFileSync(articleFilePath, 'utf8'));
     const draft = buildPublishableArticle(brief, articlePayload);

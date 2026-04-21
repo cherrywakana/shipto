@@ -1,0 +1,91 @@
+{
+  "type": "brand-guide",
+  "canonicalTarget": "brand:comme-des-garcons:cheap-overseas-shopping",
+  "slug": "comme-des-garcons-overseas-shopping-guide",
+  "title": "【2026年最新】Comme des Garconsが安い海外通販サイトおすすめ4選",
+  "primaryKeyword": "Comme des Garcons 安い 海外通販",
+  "secondaryKeywords": [
+    "Comme des Garcons おすすめショップ",
+    "Comme des Garcons どこで買う"
+  ],
+  "searchIntent": "ブランド商品を安く安全に買える海外通販サイトを探したい",
+  "monetizationGoal": "ブランド詳細から高意図でショップへ送客する",
+  "recommendedSections": [
+    "Comme des Garconsが安い海外通販サイトおすすめ4選",
+    "Comme des Garconsを海外通販で買うメリット",
+    "Comme des Garconsを買う前に確認したいポイント",
+    "Comme des Garconsのおすすめショップ比較表",
+    "Comme des Garconsに強いショップの選び方",
+    "まとめ: Comme des Garconsを買うならどこが有力か"
+  ],
+  "internalLinks": [
+    "/brands/comme-des-garcons",
+    "/shops/selfridges",
+    "/shops/aliexpress",
+    "/shops/goodhood",
+    "/shops/asphaltgold",
+    "/articles/overseas-shopping-beginners-guide",
+    "/articles/overseas-shopping-customs-tax"
+  ],
+  "topShops": [
+    {
+      "rankHint": 1,
+      "name": "SELFRIDGES（セルフリッジズ）",
+      "slug": "selfridges",
+      "category": "コスメ・ビューティー",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 94,
+      "brandUrl": "https://www.selfridges.com/JP/en/cat/comme-des-garcons/",
+      "shopUrl": "https://www.selfridges.com",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/selfridges.webp",
+      "description": "Selfridges（セルフリッジズ）は、ロンドンで圧倒的な人気と実績を誇る高級百貨店の一つです。最新のハイファッションから高級コスメ、独占販売の限定品まで、実店舗の熱気をそのままオンラインで体験することができます。"
+    },
+    {
+      "rankHint": 2,
+      "name": "AliExpress（アリエクスプレス）",
+      "slug": "aliexpress",
+      "category": "韓国・アジアトレンド",
+      "country": "中国",
+      "shipsToJapan": true,
+      "popularityScore": 90,
+      "brandUrl": "https://www.aliexpress.com/w/wholesale-comme-des-garcons.html",
+      "shopUrl": "https://best.aliexpress.com/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/aliexpress.webp?t=1773536090134",
+      "description": "アリババグループが運営する世界最大級の越境ECサイト。ファッションから電子機器まで膨大な出品があり、個人輸入の定番サイトです。"
+    },
+    {
+      "rankHint": 3,
+      "name": "Goodhood（グッドフッド）",
+      "slug": "goodhood",
+      "category": "ストリート・スニーカー",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 55,
+      "brandUrl": "https://goodhoodstore.com/collections/comme-des-garcons",
+      "shopUrl": "https://goodhoodstore.com/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/goodhood.webp?t=1773492266591",
+      "description": "ロンドン発のライフスタイル・セレクトショップ。スニーカーから雑貨まで厳選されたアイテム。"
+    },
+    {
+      "rankHint": 4,
+      "name": "Asphaltgold (アスファルトゴールド)",
+      "slug": "asphaltgold",
+      "category": "ストリート・スニーカー",
+      "country": "Germany",
+      "shipsToJapan": true,
+      "popularityScore": 50,
+      "brandUrl": "https://www.asphaltgold.com/en/collections/comme-des-garcons",
+      "shopUrl": "https://www.asphaltgold.com/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/asphaltgold.webp?t=1773492251645",
+      "description": "ドイツの洗練されたスニーカーショップ。スニーカーだけでなく、独自のセンスで選ばれたモダンなストリートウェアのセレクトにも定評がある。"
+    }
+  ],
+  "writingGuidelines": [
+    "見出し直後に、どの読者に向いている記事かを明示する。",
+    "ショップごとに「向いている人」「注意点」「直送可否」を短く書く。",
+    "公式サイトCTAは各ショップ節の終わりに入れる。",
+    "比較表や要点リストを使って、スクロールせず価値が伝わるようにする。",
+    "情報系に寄りすぎず、最終的にショップ遷移したくなる構成にする。"
+  ]
+}

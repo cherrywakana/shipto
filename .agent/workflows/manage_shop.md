@@ -1,75 +1,52 @@
 ---
-description: [ショップの新規登録・情報更新の統合手順]
+description: [ショップの新規登録・情報更新の自動化手順]
 ---
-# ショップ管理プログラム（登録・更新・アフィリエイト）
+# ショップ管理プログラム（登録・更新・調査）
 
-この手順書は、ショップの新規登録から、配送情報の調査、アフィリエイト同期、自律サイクルへの組み込みまでを網羅したワークフローです。
+この手順書は、ショップの新規登録から、AIによる配送情報の自動調査、アフィリエイト同期までを網羅した自動化ワークフローです。
 
-## Step 1: 事前調査と生存確認
-新しいショップを追加、または既存情報を更新する際の最初のステップです。
-
-1. **実在・生存確認（必須）**
-   - 対象のURLをブラウザで実際に開き、ショップが現在も存在し、正常にアクセス・購入可能か **100%** 確認します。
-2. **重複チェック（最優先）**
-   - Supabaseの `shops` テーブルを `slug`, `url`, `name` で検索し、既に登録されていないか確認します。
-   - 登録済みの場合は、既存レコードの「更新（UPDATE）」として進めます。
-3. **アフィリエイト（Skimlinks）提携の確認**
-   - `docs/assets/skimlinks_merchants.csv` を参照し、ドメインが一致するか確認します。
-   - 含まれていれば `is_affiliate: true`、なければ `false` と判定します。
-4. **基本情報の整理**
-   - **名称**: ショップ名（日本語/英語）。
-   - **Slug（重要）**: **公式サイトのドメイン名（.com などを除いた部分）**をベースに作成します。
-   - **その他**: 公式サイトURL、発送元国、カテゴリ（ストリート、ラグジュアリー等）、概要（description）をまとめます。
-
-## Step 2: 日本向け配送・関税・送料の公式調査
-公式サイトのヘルプページ等を自律的に調査し、正確な日本語解説を作成します。
-
-1. **日本発送ガイド（shipping_guide）**
-   - 日本への直送可否、配送業者（DHL, FedEx等）、配送期間。
-2. **関税ガイド（tax_guide）**
-   - **DDP（関税込み）**: 支払い総額に含まれ、受け取り時の追加支払いなし。
-   - **DDU（関税後払い）**: 受け取り時に日本の関税・消費税・通関手数料がかかる。
-3. **送料ガイド（fee_guide）**
-   - 日本向けの送料体系（固定料金、重量制、無料配送条件など）。
-4. **公式URL（shipping_url, tax_url, fee_url）**
-   - 調査の根拠となったヘルプページURLを記録します。
-
-## Step 3: データベースへの反映
-Step 1-2 で用意した全テキスト情報を Supabase の `shops` テーブルに保存します。
-
-## Step 4: 自律サイクル（Collector）への組み込み（URLパターンの記録）
-各ショップの「ブランド一覧ページ」や「検索結果ページ」のURL構造を記録することで、ブランドの取り扱い状況を自動的に巡回・収集できるようになります。
-
-### 1. URLパターンの特定
-ブラウザで実際にそのショップのブランドページ（例: NIKE, Adidasなど）を表示し、URLがどのようなルールで生成されているかを確認します。
-- 固定部分: `https://www.example.com/brands/`
-- ブランド名部分: `nike`, `adidas-originals` など（ブランドスラッグ）
-
-### 2. `SHOP_RULES` への追記
-`scripts/autonomous_collector.js` の最初の方にある `SHOP_RULES` オブジェクトに、特定したパターンを関数として追加します。
-
-```javascript
-// 例：新しいショップ "MyShop" を追加する場合
-'my-shop': (slug) => `https://www.myshop.com/designers/${slug}`,
-```
-
-## メンテナンス: アフィリエイト一括同期
-提携リスト（CSV）が更新された際は、以下のコマンドで全ショップのステータスを同期できます。
+## Step 1: 自動調査とショップ登録
+新しく紹介したいショップを見つけたら、まず自動登録スクリプトを実行します。
 
 // turbo
 ```bash
-npm run sync-affiliates
+node scripts/register_new_shop.js --url [SHOP_HOME_URL] --name [SHOP_NAME] --category [CATEGORY]
 ```
+- **処理内容**:
+  1. ドメインから `slug` を自動生成。
+  2. `verify_shop_policies.js` のロジックを使用して、日本発送ガイド、関税ガイド、送料ガイドを公式サイトから自動スクレイピング。
+  3. `docs/assets/skimlinks_merchants.csv` と照合し、アフィリエイト提携状況を判定。
+  4. すべての情報を `shops` テーブルに INSERT/UPSERT。
 
-## メンテナンス: ショップ画像（サムネイル）の同期
-`scripts/assets/shops/` にショップのスラッグ名をファイル名（.webp または .png）とした画像を配置し、以下のコマンドを実行することで Supabase Storage へのアップロードと DB の `image_url` 更新が自動で行われます。
+## Step 2: ショップ画像（サムネイル）の準備
+ショップのロゴやスクショを `/Users/reona/projects/directfound/scripts/assets/shops/[slug].webp` に配置します。
 
 // turbo
 ```bash
 npm run sync-thumbnails
 ```
+- これにより、Supabase StorageへのアップロードとDBの `image_url` 更新が自動で行われます。
+
+## Step 3: 自動巡回（Collector）へのURLパターン登録
+新ショップが扱っているブランドを自動検知するため、URLルールを追加します。
+
+1. `scripts/autonomous_collector.js` の `SHOP_RULES` オブジェクトに1行追加。
+   ```javascript
+   'shop-slug': (slug) => `https://www.example.com/brands/${slug}`,
+   ```
+2. 以下のコマンドで巡回を実行し、取り扱いブランドを確定させます。
+   ```bash
+   node scripts/autonomous_collector.js
+   ```
+
+## Step 4: 記事生成への反映
+ショップの登録が完了すると、`create_article_brief.js` や `generate_article_draft.js` のランキング候補に自動的に抽出されるようになります。
 
 ---
 
+## メンテナンスコマンド
+- **アフィリエイト一括同期**: `npm run sync-affiliates`
+- **全ショップポリシー再調査**: `node scripts/verify_shop_policies.js --limit 100`
+
 > [!IMPORTANT]
-> **情報の正確性**：配送や関税の情報は時期により変動するため、自律調査時は必ず「最新の公式ドキュメント」をソースとしてください。
+> **自動調査の限界**: AIによるスクレイピングが失敗した、あるいは確信度が低い（Confidence: low）場合は、DBの `shipping_guide` 等を直接編集して修正してください。

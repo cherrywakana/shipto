@@ -1,0 +1,59 @@
+{
+  "shop": {
+    "id": "9b316745-1e3a-46cf-b25a-7093545e671c",
+    "slug": "bike-components",
+    "name": "Bike-Components",
+    "url": "https://www.bike-components.de/en/"
+  },
+  "checked_at": "2026-04-18T04:38:46.024Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.bike-components.de/en/service/shipping/",
+        "preview": "Shipping costs & delivery times – all info | bike-components\nShipping\nShipping costs for other delivery countries\nShipment\nDeliveries outside the EU\nSpecial regulation for Switzerland\nNote for deliveries to the United Kingdom (UK)\nExport from Germany with subsequent VAT refund\nNotice: Shipping to the USA\nOur top brands\nAnything your bike needs, we’ll make it happen\n100 Day Return Policy\nMore information\nSkip to main navigation Skip to category navigation Skip to content Skip to brands and newsletter Skip to footer bike-components.de Homepage Cancel english EN Deutsch DE español ES français FR Service About us Our team Company Aachen Community bc Events Jobs Blog more Special Offers Components Everything in \"Components\" Brakes Everything in \"Brakes\" Adapters Bleed Kits Brake Fluids Brake Ho"
+      }
+    ],
+    "tax": [],
+    "fee": [
+      {
+        "url": "https://www.bike-components.de/en/components/cockpit/integrated-cockpits/",
+        "preview": "Integrated Bike Cockpits for Aero & Design | bike-components\nIntegrated Cockpits\nFilters\nSorted by\nApplication\nHighlights\nPrice\nitems\nHIGHLIGHTS FROM THE CATEGORY Integrated Cockpits\nOur Suggestions\nTips and Tricks\nRoad Handlebars: Your Personal Cockpit\nLet us help you\nSkip to main navigation Skip to category navigation Skip to content Skip to brands and newsletter Skip to footer bike-components.de Homepage Cancel english EN Deutsch DE español ES français FR Service About us Our team Company Aachen Community bc Events Jobs Blog more Special Offers Components Everything in \"Components\" Brakes Everything in \"Brakes\" Adapters Bleed Kits Brake Fluids Brake Hoses Brake Levers Brake Rotors Cable Housings Cables Disc Brake Pads Disc Brakes Rim Brake Pads Rim Brakes Small Parts Cockpit Everything "
+      },
+      {
+        "url": "https://www.bike-components.de/en/accessories/gps-bike-computers/smartwatches-heart-rate-monitors/",
+        "preview": "Smartwatches & Heart Rate Monitors for Training | bike-components\nSmartwatches & Heart Rate Monitors\nFilters\nSorted by\nApplication\nHighlights\nColour\nPrice\nitems\nHIGHLIGHTS FROM THE CATEGORY Smartwatches & Heart Rate Monitors\nOur Suggestions\nTips and Tricks\nLet us help you\nSkip to main navigation Skip to category navigation Skip to content Skip to brands and newsletter Skip to footer bike-components.de Homepage Cancel english EN Deutsch DE español ES français FR Service About us Our team Company Aachen Community bc Events Jobs Blog more Special Offers Components Everything in \"Components\" Brakes Everything in \"Brakes\" Adapters Bleed Kits Brake Fluids Brake Hoses Brake Levers Brake Rotors Cable Housings Cables Disc Brake Pads Disc Brakes Rim Brake Pads Rim Brakes Small Parts Cockpit Everythi"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Country Standard Bulky Goods1 Haulage2 Germany 4.99€ 9.99€ 49.99€ Japan 54.99€ 54.99€ - Netherlands 6.99€ 9.99€ 89.99€ United Kingdom³ 21.99€ 21.99€ - Italy 6.99€ 9.99€ 89.99€ Shipping costs for other delivery countries Country Standard Bulky Goods1 Haulage2 Belgium 7.99€ 9.99€ 89.99€ Portugal 11.99€ 11.99€ 89.99€ Finland 11.99€ 29.99€ 89.99€ Sweden 11.99€ 29.99€ 89.99€ Singapore 54.99€ - - Denmark 9.99€ 19.99€ 89.99€ USA Delivery is not possible at this time.",
+      "source_url": "https://www.bike-components.de/en/service/shipping/",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "MwSt plus shipping cost to the delivery destination: Japan.",
+      "source_url": "https://www.bike-components.de/en/components/cockpit/integrated-cockpits/",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Country Standard Bulky Goods1 Haulage2 Germany 4.99€ 9.99€ 49.99€ Japan 54.99€ 54.99€ - Netherlands 6.99€ 9.99€ 89.99€ United Kingdom³ 21.99€ 21.99€ - Italy 6.99€ 9.99€ 89.99€ Shipping costs for other delivery countries Country Standard Bulky Goods1 Haulage2 Belgium 7.99€ 9.99€ 89.99€ Portugal 11.99",
+    "tax_guide": null,
+    "fee_guide": "MwSt plus shipping cost to the delivery destination: Japan.",
+    "shipping_url": "https://www.bike-components.de/en/service/shipping/",
+    "tax_url": null,
+    "fee_url": "https://www.bike-components.de/en/components/cockpit/integrated-cockpits/"
+  },
+  "update_error": null
+}

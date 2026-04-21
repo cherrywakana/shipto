@@ -1,0 +1,60 @@
+{
+  "shop": {
+    "id": "c433fc38-ae2d-4beb-b756-909768f0330d",
+    "slug": "hedy",
+    "name": "Hedy (エディ)",
+    "url": "https://www.hedy.jp/"
+  },
+  "checked_at": "2026-04-18T05:02:31.062Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.hedy.jp/p/about/privacy-policy",
+        "preview": "個人情報取り扱いについて\nヴィンテージショップ Hedy | 個人情報取り扱いについて\n個人情報保護方針\nはじめに\n個人情報の取扱いの適用範囲\n個人情報の利用目的\n個人情報の安全管理について\n個人情報の預託について\n個人情報の第三者への開示\nクッキーに関して\nその他インターネット上のプライバシーに関する確認事項\n個人情報の取扱いの変更及び通知\n個人情報の管理者及び開示・訂正・削除\nClick here to visit Hedy global site 多言語サイト {@ member.last_name @} {@ member.first_name @} 様 {@ member.active_points @}pt {@ member.stage_name @} SEARCH KEYWORD BRAND 指定なし BALENCIAGA BOTTEGA VENETA BURBERRY Cartier CELINE CENTUM CHANEL Chloe DIOR FENDI Ferragamo GIVENCHY GUCCI Hedy Original HERMES JIL SANDER LOUIS VUITTON LOEWE MARNI Maison Margiela miu miu OMEGA PRADA StellaMcCartney TIFFANY & CO. VALENTINO YSL CATEGORY BAG WATCH WALLET SHOES APPAREL ACCESSORIES COLOR BLACK BROWN BEIGE WHITE GRAY RED YELLOW GREEN BLUE NAVY DENIM GOLD SILVER MULTI OTHER PRICE ￥ 〜 ￥ SORT BY 新着順 価格が安い順 価格が高い順 STORE STOC"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.hedy.jp/p/about/privacy-policy",
+        "preview": "個人情報取り扱いについて\nヴィンテージショップ Hedy | 個人情報取り扱いについて\n個人情報保護方針\nはじめに\n個人情報の取扱いの適用範囲\n個人情報の利用目的\n個人情報の安全管理について\n個人情報の預託について\n個人情報の第三者への開示\nクッキーに関して\nその他インターネット上のプライバシーに関する確認事項\n個人情報の取扱いの変更及び通知\n個人情報の管理者及び開示・訂正・削除\nClick here to visit Hedy global site 多言語サイト {@ member.last_name @} {@ member.first_name @} 様 {@ member.active_points @}pt {@ member.stage_name @} SEARCH KEYWORD BRAND 指定なし BALENCIAGA BOTTEGA VENETA BURBERRY Cartier CELINE CENTUM CHANEL Chloe DIOR FENDI Ferragamo GIVENCHY GUCCI Hedy Original HERMES JIL SANDER LOUIS VUITTON LOEWE MARNI Maison Margiela miu miu OMEGA PRADA StellaMcCartney TIFFANY & CO. VALENTINO YSL CATEGORY BAG WATCH WALLET SHOES APPAREL ACCESSORIES COLOR BLACK BROWN BEIGE WHITE GRAY RED YELLOW GREEN BLUE NAVY DENIM GOLD SILVER MULTI OTHER PRICE ￥ 〜 ￥ SORT BY 新着順 価格が安い順 価格が高い順 STORE STOC"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.hedy.jp/p/about/privacy-policy",
+        "preview": "個人情報取り扱いについて\nヴィンテージショップ Hedy | 個人情報取り扱いについて\n個人情報保護方針\nはじめに\n個人情報の取扱いの適用範囲\n個人情報の利用目的\n個人情報の安全管理について\n個人情報の預託について\n個人情報の第三者への開示\nクッキーに関して\nその他インターネット上のプライバシーに関する確認事項\n個人情報の取扱いの変更及び通知\n個人情報の管理者及び開示・訂正・削除\nClick here to visit Hedy global site 多言語サイト {@ member.last_name @} {@ member.first_name @} 様 {@ member.active_points @}pt {@ member.stage_name @} SEARCH KEYWORD BRAND 指定なし BALENCIAGA BOTTEGA VENETA BURBERRY Cartier CELINE CENTUM CHANEL Chloe DIOR FENDI Ferragamo GIVENCHY GUCCI Hedy Original HERMES JIL SANDER LOUIS VUITTON LOEWE MARNI Maison Margiela miu miu OMEGA PRADA StellaMcCartney TIFFANY & CO. VALENTINO YSL CATEGORY BAG WATCH WALLET SHOES APPAREL ACCESSORIES COLOR BLACK BROWN BEIGE WHITE GRAY RED YELLOW GREEN BLUE NAVY DENIM GOLD SILVER MULTI OTHER PRICE ￥ 〜 ￥ SORT BY 新着順 価格が安い順 価格が高い順 STORE STOC"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": null,
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": null,
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

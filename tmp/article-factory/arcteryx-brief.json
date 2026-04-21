@@ -1,0 +1,105 @@
+{
+  "type": "brand-guide",
+  "canonicalTarget": "brand:arcteryx:cheap-overseas-shopping",
+  "slug": "arcteryx-overseas-shopping-guide",
+  "title": "【2026年最新】Arc'teryxが安い海外通販サイトおすすめ5選",
+  "primaryKeyword": "Arc'teryx 安い 海外通販",
+  "secondaryKeywords": [
+    "Arc'teryx どこで買う",
+    "Arc'teryx 本物 買える"
+  ],
+  "searchIntent": "ブランド商品を安く安全に買える海外通販サイトを探したい",
+  "monetizationGoal": "ブランド詳細から高意図でショップへ送客する",
+  "recommendedSections": [
+    "Arc'teryxが安い海外通販サイトおすすめ5選",
+    "Arc'teryxを海外通販で買うメリット",
+    "Arc'teryxを買う前に確認したいポイント",
+    "Arc'teryxのおすすめショップ比較表",
+    "Arc'teryxに強いショップの選び方",
+    "まとめ: Arc'teryxを買うならどこが有力か"
+  ],
+  "internalLinks": [
+    "/brands/arcteryx",
+    "/shops/ssense",
+    "/shops/farfetch",
+    "/shops/jd-sports",
+    "/shops/kith",
+    "/shops/urban-industry",
+    "/articles/overseas-shopping-beginners-guide",
+    "/articles/overseas-shopping-customs-tax"
+  ],
+  "topShops": [
+    {
+      "rankHint": 1,
+      "name": "SSENSE（エッセンス）",
+      "slug": "ssense",
+      "category": "ラグジュアリー・ハイブランド",
+      "country": "カナダ",
+      "shipsToJapan": true,
+      "popularityScore": 100,
+      "brandUrl": "https://www.ssense.com/ja-jp/men/designers/arcteryx",
+      "shopUrl": "https://www.ssense.com/ja-jp/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/ssense.webp",
+      "description": "SSENSE（エッセンス）はカナダ・モントリオールを拠点とする、世界で最も影響力のあるラグジュアリー・ストリート・アバンギャルドファッションのプラットフォームです。ハイエンドなデザイナーブランドから新進気鋭のインディーブランドまで、圧倒的でエッジの効いた品ぞろえが強みです。"
+    },
+    {
+      "rankHint": 2,
+      "name": "FARFETCH（ファーフェッチ）",
+      "slug": "farfetch",
+      "category": "ラグジュアリー・ハイブランド",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 98,
+      "brandUrl": "https://www.farfetch.com/jp/shopping/men/arcteryx/items.aspx",
+      "shopUrl": "https://www.farfetch.com/jp/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/farfetch.webp",
+      "description": "FARFETCH（ファーフェッチ）は、世界中の名門ブティックやブランドと直接提携しているイギリス発の巨大なラグジュアリー・オンラインマーケットプレイスです。日本語完全対応のサイトとサポート体制があり、希少なラグジュアリーアイテムを安心して購入できるのが強みです。"
+    },
+    {
+      "rankHint": 3,
+      "name": "JD Sports (JDスポーツ)",
+      "slug": "jd-sports",
+      "category": "ストリート・スニーカー",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 60,
+      "brandUrl": "https://www.jdsports.co.uk/brand/arcteryx/",
+      "shopUrl": "https://www.jdsports.co.uk/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/jd-sports.webp?t=1773492269117",
+      "description": "イギリス最大級のスポーツファッション小売店で、NikeやAdidasの限定モデル（JD Exclusive）やアパレルを豊富に取り扱っています。"
+    },
+    {
+      "rankHint": 4,
+      "name": "Kith (キス)",
+      "slug": "kith",
+      "category": "ストリート・スニーカー",
+      "country": "アメリカ",
+      "shipsToJapan": true,
+      "popularityScore": 70,
+      "brandUrl": "https://kith.com/search?q=arcteryx",
+      "shopUrl": "https://kith.com/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/kith.webp?t=1773492271053",
+      "description": "ニューヨーク発、ストリートシーンを牽引するプレミアムセレクトショップ兼ブランド。圧倒的な影響力を持ち、限定アイテムは即完売必至です。"
+    },
+    {
+      "rankHint": 5,
+      "name": "Urban Industry (アーバン・インダストリー)",
+      "slug": "urban-industry",
+      "category": "ストリート・スニーカー",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 35,
+      "brandUrl": "https://www.urbanindustry.co.uk/collections/arcteryx",
+      "shopUrl": "https://www.urbanindustry.co.uk/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/urban-industry.webp?t=1773492288973",
+      "description": "ストリートファッションとアウトドア、するとサステナビリティを融合させたユニークなセレクトが特徴のイギリスの人気店です。"
+    }
+  ],
+  "writingGuidelines": [
+    "見出し直後に、どの読者に向いている記事かを明示する。",
+    "ショップごとに「向いている人」「注意点」「直送可否」を短く書く。",
+    "公式サイトCTAは各ショップ節の終わりに入れる。",
+    "比較表や要点リストを使って、スクロールせず価値が伝わるようにする。",
+    "情報系に寄りすぎず、最終的にショップ遷移したくなる構成にする。"
+  ]
+}

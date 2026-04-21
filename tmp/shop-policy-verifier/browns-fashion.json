@@ -1,0 +1,84 @@
+{
+  "shop": {
+    "id": "552d701b-e468-44fd-a2d5-0ad7e3a911ff",
+    "slug": "browns-fashion",
+    "name": "Browns Fashion（ブラウンズファッション）",
+    "url": "https://brownsfashion.com"
+  },
+  "checked_at": "2026-04-18T05:01:02.197Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://brownsfashion.com/pages/delivery",
+        "preview": "Delivery – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nDelivery\nDelivery\nDelivery Time\nTrack Your Order\nEco Packaging\nSplit Orders\nDuties & Taxes\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total ¥0 JPY Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our latest arrivals. Shop Womenswear | Shop Menswear Women New In New In Today New In Clothing New In Bags New In Shoes New In Trainers New In Accessories Designers All Designers Alaïa Bottega Veneta Chloé D"
+      },
+      {
+        "url": "https://brownsfashion.com/collections/man-jewellery-fine-jewellery?country=GB",
+        "preview": "Men's Fine Jewellery – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nCollection: Men's fine jewellery\n164 products\nsterling silver Thorn Addiction malachite ring\nsterling silver Thorn Addiction malachite ring\n9kt yellow gold Mini Damier diamond and onyx signet ring\n9kt yellow gold Mini Damier diamond and onyx signet ring\n18kt yellow gold beaded bracelet\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total £0 Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our"
+      },
+      {
+        "url": "https://brownsfashion.com/pages/customer-service",
+        "preview": "Help Centre – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nBrowns Help Centre\nAbout Browns\nCustomer Care\nServices\nGood things come to those who subscribe.\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total ¥0 JPY Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our latest arrivals. Shop Womenswear | Shop Menswear Women New In New In Today New In Clothing New In Bags New In Shoes New In Trainers New In Accessories Designers All Designers Alaïa Bottega Veneta"
+      },
+      {
+        "url": "https://brownsfashion.com/pages/privacy-cookies-policy",
+        "preview": "Privacy & Cookies Policy – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nPrivacy & Cookies Policy\nPrivacy & Cookies Policy\nYour Cookie Preferences\nAddendum for California Residents\nBrowns Brook Street: Marketing Collection Form Privacy Notice\nAbout Browns\nCustomer Care\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total ¥0 JPY Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our latest arrivals. Shop Womenswear | Shop Menswear Women New In New In Today New In"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://brownsfashion.com/pages/customer-service",
+        "preview": "Help Centre – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nBrowns Help Centre\nAbout Browns\nCustomer Care\nServices\nGood things come to those who subscribe.\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total ¥0 JPY Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our latest arrivals. Shop Womenswear | Shop Menswear Women New In New In Today New In Clothing New In Bags New In Shoes New In Trainers New In Accessories Designers All Designers Alaïa Bottega Veneta"
+      },
+      {
+        "url": "https://brownsfashion.com/pages/vat-free-shopping",
+        "preview": "VAT-Free Shopping – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nEnjoy VAT‑Free Shopping\nWhat is VAT-Free Shopping?\nHow It Works\nVirtual Personal Shopping\nWho Can Shop VAT‑Free?\nThe Small Print\nFAQs\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total ¥0 JPY Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our latest arrivals. Shop Womenswear | Shop Menswear Women New In New In Today New In Clothing New In Bags New In Shoes New In Trainers New In Accessories "
+      },
+      {
+        "url": "https://brownsfashion.com/pages/privacy-cookies-policy",
+        "preview": "Privacy & Cookies Policy – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nPrivacy & Cookies Policy\nPrivacy & Cookies Policy\nYour Cookie Preferences\nAddendum for California Residents\nBrowns Brook Street: Marketing Collection Form Privacy Notice\nAbout Browns\nCustomer Care\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total ¥0 JPY Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our latest arrivals. Shop Womenswear | Shop Menswear Women New In New In Today New In"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://brownsfashion.com/pages/customer-service",
+        "preview": "Help Centre – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nBrowns Help Centre\nAbout Browns\nCustomer Care\nServices\nGood things come to those who subscribe.\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total ¥0 JPY Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our latest arrivals. Shop Womenswear | Shop Menswear Women New In New In Today New In Clothing New In Bags New In Shoes New In Trainers New In Accessories Designers All Designers Alaïa Bottega Veneta"
+      },
+      {
+        "url": "https://brownsfashion.com/pages/privacy-cookies-policy",
+        "preview": "Privacy & Cookies Policy – Browns | Designer Fashion & Homeware for Women and Men\nYour shopping bag.\nYour shopping bag\nEstimated total\nCountry/region\nCountry/region\nPrivacy & Cookies Policy\nPrivacy & Cookies Policy\nYour Cookie Preferences\nAddendum for California Residents\nBrowns Brook Street: Marketing Collection Form Privacy Notice\nAbout Browns\nCustomer Care\nSkip to content Your shopping bag. Your shopping bag is currently empty. Discover our products by clicking the button below. Continue shopping Sign in to your account or Register. Your shopping bag Loading... Estimated total ¥0 JPY Taxes included. Discounts and shipping calculated at checkout. Checkout securely View Shopping Bag This just in: explore our latest arrivals. Shop Womenswear | Shop Menswear Women New In New In Today New In"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Vincent & Grenadines USD $ Suriname USD $ Sweden SEK kr Switzerland CHF CHF Taiwan TWD $ Tanzania USD $ Thailand USD $ Timor-Leste USD $ Togo USD $ Tonga USD $ Trinidad & Tobago USD $ Tunisia USD $ Turkmenistan USD $ Turks & Caicos Islands USD $ Tuvalu USD $ Uganda USD $ United Arab Emirates AED د.إ United Kingdom GBP £ United States USD $ Uruguay USD $ Uzbekistan USD $ Vanuatu USD $ Vatican City EUR € Venezuela USD $ Vietnam USD $ Wallis & Futuna USD $ Zambia USD $ Zimbabwe USD $ Log in Facebook Pinterest Instagram TikTok YouTube Country/region Japan | ¥ Search Albania USD $ Algeria USD $ Andorra EUR € Angola USD $ Anguilla USD $ Antigua & Barbuda USD $ Argentina USD $ Armenia USD $ Aruba USD $ Australia AUD $ Austria EUR € Azerbaijan USD $ Bahamas USD $ Bahrain USD $ Bangladesh USD $ Barbados USD $ Belgium EUR € Belize USD $ Benin USD $ Bermuda USD $ Bhutan USD $ Bolivia USD $ Bosnia & Herzegovina EUR € Botswana USD $ Brazil BRL R$ British Virgin Islands USD $ Brunei USD $ Bulgaria EUR € Burkina Faso USD $ Burundi USD $ Cambodia USD $ Cameroon USD $ Canada CAD $ Cape Verde USD $ Cayman Islands USD $ Chad USD $ Chile CLP $ China CNY ¥ Colombia COP $ Comoros USD $ Congo - Brazzaville USD $ Cook Islands USD $ Costa Rica USD $ Côte d’Ivoire USD $ Croatia EUR € Curaçao USD $ Cyprus EUR € Czechia EUR € Denmark DKK kr.",
+      "source_url": "https://brownsfashion.com/pages/delivery",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "ddp",
+      "summary": "Estimated total ¥0 JPY Taxes included.",
+      "source_url": "https://brownsfashion.com/pages/customer-service",
+      "confidence": "medium"
+    },
+    "fee": {
+      "status": "fixed",
+      "summary": "Vincent & Grenadines USD $ Suriname USD $ Sweden SEK kr Switzerland CHF CHF Taiwan TWD $ Tanzania USD $ Thailand USD $ Timor-Leste USD $ Togo USD $ Tonga USD $ Trinidad & Tobago USD $ Tunisia USD $ Turkmenistan USD $ Turks & Caicos Islands USD $ Tuvalu USD $ Uganda USD $ United Arab Emirates AED د.إ United Kingdom GBP £ United States USD $ Uruguay USD $ Uzbekistan USD $ Vanuatu USD $ Vatican City EUR € Venezuela USD $ Vietnam USD $ Wallis & Futuna USD $ Zambia USD $ Zimbabwe USD $ Log in Facebook Pinterest Instagram TikTok YouTube Country/region Japan | ¥ Search Albania USD $ Algeria USD $ Andorra EUR € Angola USD $ Anguilla USD $ Antigua & Barbuda USD $ Argentina USD $ Armenia USD $ Aruba USD $ Australia AUD $ Austria EUR € Azerbaijan USD $ Bahamas USD $ Bahrain USD $ Bangladesh USD $ Barbados USD $ Belgium EUR € Belize USD $ Benin USD $ Bermuda USD $ Bhutan USD $ Bolivia USD $ Bosnia & Herzegovina EUR € Botswana USD $ Brazil BRL R$ British Virgin Islands USD $ Brunei USD $ Bulgaria EUR € Burkina Faso USD $ Burundi USD $ Cambodia USD $ Cameroon USD $ Canada CAD $ Cape Verde USD $ Cayman Islands USD $ Chad USD $ Chile CLP $ China CNY ¥ Colombia COP $ Comoros USD $ Congo - Brazzaville USD $ Cook Islands USD $ Costa Rica USD $ Côte d’Ivoire USD $ Croatia EUR € Curaçao USD $ Cyprus EUR € Czechia EUR € Denmark DKK kr.",
+      "source_url": "https://brownsfashion.com/pages/customer-service",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Vincent & Grenadines USD $ Suriname USD $ Sweden SEK kr Switzerland CHF CHF Taiwan TWD $ Tanzania USD $ Thailand USD $ Timor-Leste USD $ Togo USD $ Tonga USD $ Trinidad & Tobago USD $ Tunisia USD $ Turkmenistan USD $ Turks & Caicos Islands USD $ Tuvalu USD $ Uganda USD $ United Arab Emirates AED د.إ",
+    "tax_guide": "Estimated total ¥0 JPY Taxes included.",
+    "fee_guide": "Vincent & Grenadines USD $ Suriname USD $ Sweden SEK kr Switzerland CHF CHF Taiwan TWD $ Tanzania USD $ Thailand USD $ Timor-Leste USD $ Togo USD $ Tonga USD $ Trinidad & Tobago USD $ Tunisia USD $ Turkmenistan USD $ Turks & Caicos Islands USD $ Tuvalu USD $ Uganda USD $ United Arab Emirates AED د.إ",
+    "shipping_url": "https://brownsfashion.com/pages/delivery",
+    "tax_url": "https://brownsfashion.com/pages/customer-service",
+    "fee_url": "https://brownsfashion.com/pages/customer-service"
+  },
+  "update_error": null
+}

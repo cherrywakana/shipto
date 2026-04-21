@@ -1,0 +1,55 @@
+{
+  "shop": {
+    "id": "1cc1f204-3a09-4c8b-bf82-4c4ae44c258b",
+    "slug": "covernat",
+    "name": "COVERNAT（カバーナット）",
+    "url": "https://covernat.jp/"
+  },
+  "checked_at": "2026-04-18T04:30:29.201Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://covernat.jp/pages/privacy-policy",
+        "preview": "プライバシーポリシー – Covernat\nプライバシーポリシー\nコンテンツへスキップ WELCOME OFFER 1,000 POINTLINE 5% COUPON 26 SpringBEST UNISEX UNISEX Outer Outer Light Outer Zip-up Hoodie Jackets Cardigan Coats Down / Puffers Tops Tops T-shirts Shirts Knits Sweats & Hoodies Bottom Bottom Denim Pants Sweatpants Shorts ACC ACC Headwear Bags Shoes Etc WOMAN WOMAN Outer Outer Light Outer Zip-up Hoodie Jackets Cardigan Coats Down / Puffers Tops Tops T-shirts Shirts Knits Sweats & Hoodies Dress Bottom Bottom Denim Pants Sweatpants Shorts Acc Acc Headwear Bags Shoes Etc BEAUTY LOOKBOOK LOOKBOOK The Light of Summer2026 SPRING with SOOBIN2026 SPRING with CHOI YOON JI2026 SPRING WOMAN LOOKBOOK2026 SPRING LOOKBOOK2026 BACKPACK LOOKBOOK2025 FW with SOOBIN2025 WINTER with CHOI YOON JI2025 WINTER WOMAN LOOKBOOK LOGIN 0 26 Spring BEST UNISEX"
+      }
+    ],
+    "tax": [],
+    "fee": [
+      {
+        "url": "https://covernat.jp/pages/privacy-policy",
+        "preview": "プライバシーポリシー – Covernat\nプライバシーポリシー\nコンテンツへスキップ WELCOME OFFER 1,000 POINTLINE 5% COUPON 26 SpringBEST UNISEX UNISEX Outer Outer Light Outer Zip-up Hoodie Jackets Cardigan Coats Down / Puffers Tops Tops T-shirts Shirts Knits Sweats & Hoodies Bottom Bottom Denim Pants Sweatpants Shorts ACC ACC Headwear Bags Shoes Etc WOMAN WOMAN Outer Outer Light Outer Zip-up Hoodie Jackets Cardigan Coats Down / Puffers Tops Tops T-shirts Shirts Knits Sweats & Hoodies Dress Bottom Bottom Denim Pants Sweatpants Shorts Acc Acc Headwear Bags Shoes Etc BEAUTY LOOKBOOK LOOKBOOK The Light of Summer2026 SPRING with SOOBIN2026 SPRING with CHOI YOON JI2026 SPRING WOMAN LOOKBOOK2026 SPRING LOOKBOOK2026 BACKPACK LOOKBOOK2025 FW with SOOBIN2025 WINTER with CHOI YOON JI2025 WINTER WOMAN LOOKBOOK LOGIN 0 26 Spring BEST UNISEX"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "個人情報の預託について ～（運送業者、印刷会社、回収委託会社等） 個人情報の第三者への開示 ～（1）〜（3）※略 Cookieに関して ～Cookie説明文（略） その他インターネット上のプライバシーに関する確認事項 ～（1）（2）※略 個人情報の取扱いの変更及び通知 ～内容変更時の通知文 個人情報の管理者及び開示・訂正・削除 ～お問い合わせはカスタマーサポートまで 個人情報保護方針に関するお問い合せ先 株式会社MXN JAPAN東京都品川区西五反田８丁目１−３ ABOUT BRAND TOPICS POLICIES & GUIDELINES ご利用ガイド プライバシーポリシー 特定商取引法に基づく表記 利用規約 HELP & FAQ よくある質問 CONTACT お問い合わせ © 2026 Covernat, All rights reserved.",
+      "source_url": "https://covernat.jp/pages/privacy-policy",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "個人情報の預託について ～（運送業者、印刷会社、回収委託会社等） 個人情報の第三者への開示 ～（1）〜（3）※略 Cookieに関して ～Cookie説明文（略） その他インターネット上のプライバシーに関する確認事項 ～（1）（2）※略 個人情報の取扱いの変更及び通知 ～内容変更時の通知文 個人情報の管理者及び開示・訂正・削除 ～お問い合わせはカスタマーサポートまで 個人情報保護方針に関するお問い合せ先 株式会社MXN JAPAN東京都品川区西五反田８丁目１−３ ABOUT BRAND TOPICS POLICIES & GUIDELINES ご利用ガイド プライバシーポリシー 特定商取引法に",
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": "https://covernat.jp/pages/privacy-policy",
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

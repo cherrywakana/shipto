@@ -1,0 +1,50 @@
+{
+  "shop": {
+    "id": "99eb03e7-6569-4d01-bcd4-993b79e99179",
+    "slug": "olive-young",
+    "name": "Olive Young Global (オリーブヤング グローバル)",
+    "url": "https://global.oliveyoung.com/"
+  },
+  "checked_at": "2026-04-18T05:06:35.233Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://global.oliveyoung.com/display/page/membership",
+        "preview": "OLIVE YOUNG Global | Korea's No. 1 Health & Beauty Store\nOLIVE YOUNG\n最近検索したキーワード\n人気検索キーワード\n国/地域\n通貨の設定\n言語\nOY MEMBERS\nOY MEMBERSのための特典\n方式\n新規OY MEMBERSのための特別な特典\n等級別差別特典\nよくある質問\nlead banner OLIVE YOUNG 検索 ログイン/会員登録 注文確認 お気に入り 0 すべてのカテゴリ スキンケア メイクアップ バス&ボディ ヘアケア・スタイリング シートマスク・フェイスパック UVケア K-Pop メイクアップグッズ アクセサリー ヘルスケア メンズコスメ サプリメント フード・ドリンク スペシャルバリューセット トレンドキーワード ヴィーガン クリーンビューティー OY MAGAZINE🎥 ROUND LAB スーパーブランドウィーク— 7日間限定！ ラウンドラボ ランキング 新商品 セール ブランド スキンケア スキンケア製品 全体 スキンケア フェイシャルケア クレンジング ギフトセット アクネケア 肌タイプ 複合性＆通常 ドライタイプ オイリータイプ デリケートタイプ 肌の悩み ニキビ ブライトニング クスミ モイスチャライジング スーディング 微細ホコリ除去 目立つ毛穴 ウェルエイジング 主成分 ヒアルロン酸 パンテノール ツボ草エキス（シカケア） セラミド ナイアシンアミド コラーゲン Centellian24 2-STEP PDRNデュオ💜 メイクアップ メイクアップ製品 全体 メイクアップ フェイスメイクアップ アイメイクアップ リップメイクアップ 爪 フェイスメイクアップ BBクリーム&CCクリーム ファンデーション メイクアップクッション プライマー フェイスパウダー コンシ"
+      }
+    ],
+    "tax": [],
+    "fee": []
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "facebook instagram line 支払方法 PayPal VISA MASTER CARD AMERICAN EXPRESS Diners Club International DISCOVER JCB UNION PAY APPLE PAY ALIPAY 配送方法 DHL LX Pantos Fedex UPS お気に入り お気に入り カート 閉じる 最近検索した商品 最近検索した商品は最大30日まで保持されます。",
+      "source_url": "https://global.oliveyoung.com/display/page/membership",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "facebook instagram line 支払方法 PayPal VISA MASTER CARD AMERICAN EXPRESS Diners Club International DISCOVER JCB UNION PAY APPLE PAY ALIPAY 配送方法 DHL LX Pantos Fedex UPS お気に入り お気に入り カート 閉じる 最近検索した商品 最近検索した商品は最大30日まで保持されます。",
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": "https://global.oliveyoung.com/display/page/membership",
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

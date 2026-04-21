@@ -1,0 +1,60 @@
+{
+  "shop": {
+    "id": "233b7c7b-e4d7-414a-ab11-dd09aa92807c",
+    "slug": "highsnobiety",
+    "name": "Highsnobiety Shop (ハイスノバイエティ ショップ)",
+    "url": "https://www.highsnobiety.com/shop/"
+  },
+  "checked_at": "2026-04-18T04:59:22.339Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/",
+        "preview": "Best Japanese Clothing Brands to Know in 2026 | Highsnobiety\nBest Japanese Clothing Brands to Know in 2026 | Highsnobiety\nJoin Highsnobiety\nThe Japanese Clothing Brands Every Highsnobiety Reader Should Know & Where to Buy Them\nDiscover and shop the best Japanese clothing brands of 2026.\nDownload our free iOS and Android App\nWeb Accessibility Statement\nDisclaimer\nContact Us\nWant to stay in the loop?We've got you coveredDownload the Highsnobiety App nowmenuHighsnobietyLatestShoppingStyleSneakersCultureBeautySPRING ‘26 ISSUELatestShoppingDrop CalendarStyleSneakersCultureBeautyMagazinesGet our AppNewslettersAccountSearchDouble Tap to ZoomStyleBest Japanese Clothing Brands to Know in 2026 | HighsnobietyJoin HighsnobietyCreate an account to share your reaction and engage with the community.E-Mai"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/",
+        "preview": "Best Japanese Clothing Brands to Know in 2026 | Highsnobiety\nBest Japanese Clothing Brands to Know in 2026 | Highsnobiety\nJoin Highsnobiety\nThe Japanese Clothing Brands Every Highsnobiety Reader Should Know & Where to Buy Them\nDiscover and shop the best Japanese clothing brands of 2026.\nDownload our free iOS and Android App\nWeb Accessibility Statement\nDisclaimer\nContact Us\nWant to stay in the loop?We've got you coveredDownload the Highsnobiety App nowmenuHighsnobietyLatestShoppingStyleSneakersCultureBeautySPRING ‘26 ISSUELatestShoppingDrop CalendarStyleSneakersCultureBeautyMagazinesGet our AppNewslettersAccountSearchDouble Tap to ZoomStyleBest Japanese Clothing Brands to Know in 2026 | HighsnobietyJoin HighsnobietyCreate an account to share your reaction and engage with the community.E-Mai"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/",
+        "preview": "Best Japanese Clothing Brands to Know in 2026 | Highsnobiety\nBest Japanese Clothing Brands to Know in 2026 | Highsnobiety\nJoin Highsnobiety\nThe Japanese Clothing Brands Every Highsnobiety Reader Should Know & Where to Buy Them\nDiscover and shop the best Japanese clothing brands of 2026.\nDownload our free iOS and Android App\nWeb Accessibility Statement\nDisclaimer\nContact Us\nWant to stay in the loop?We've got you coveredDownload the Highsnobiety App nowmenuHighsnobietyLatestShoppingStyleSneakersCultureBeautySPRING ‘26 ISSUELatestShoppingDrop CalendarStyleSneakersCultureBeautyMagazinesGet our AppNewslettersAccountSearchDouble Tap to ZoomStyleBest Japanese Clothing Brands to Know in 2026 | HighsnobietyJoin HighsnobietyCreate an account to share your reaction and engage with the community.E-Mai"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "In Japan, WTAPS is as notorious as Supreme for long lines on release days and rapid sell-out product.Their Jungle Stock cargo pants and M-65 jackets sit alongside Supreme’s box logo hoodies and BAPE camouflage in streetwear royalty and are essential to any wardrobe — if you somehow manage to get hold of them.Shop WTAPSWant to stay in the loop?We've got you coveredDownload the Highsnobiety App nowA Bathing Ape (BAPE)Highsnobiety / Zach Apo-TsangHaving been in amongst Tokyo's fashion scene in the '80s and '90s — working as an editor and stylist at Popeye magazine and opening a store with Jun Takahashi of Undercover — Nigo founded A Bathing Ape (also known as BAPE) together with friend and collaborator SK8THING in 1993.It quickly gained traction in the underground scene in Harajuku, Tokyo before being propelled to international acclaim in the late ’90s to early ’00s thanks in large part to co-signs from The Notorious B.I.G., Pharrell (who became good friends with NIGO and work on several projects together), and Kanye West.",
+      "source_url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "With a focus on technical fabrics and elevated silhouettes, the label gorgeously blends outdoor performance with street-ready aesthetics.",
+      "source_url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "Meanwhile, under the ownership of Hong Kong fashion and investment conglomerate I.T., BAPE has continued to release its signature high-end streetwear and is regarded as one of the OGs in the space.",
+      "source_url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "In Japan, WTAPS is as notorious as Supreme for long lines on release days and rapid sell-out product.Their Jungle Stock cargo pants and M-65 jackets sit alongside Supreme’s box logo hoodies and BAPE camouflage in streetwear royalty and are essential to any wardrobe — if you somehow manage to get hol",
+    "tax_guide": "With a focus on technical fabrics and elevated silhouettes, the label gorgeously blends outdoor performance with street-ready aesthetics.",
+    "fee_guide": "Meanwhile, under the ownership of Hong Kong fashion and investment conglomerate I.T., BAPE has continued to release its signature high-end streetwear and is regarded as one of the OGs in the space.",
+    "shipping_url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/",
+    "tax_url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/",
+    "fee_url": "https://www.highsnobiety.com/p/best-japanese-clothing-brands/"
+  },
+  "update_error": null
+}

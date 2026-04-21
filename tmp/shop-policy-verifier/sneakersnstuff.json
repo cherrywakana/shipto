@@ -1,0 +1,72 @@
+{
+  "shop": {
+    "id": "effddd99-fd6b-458b-95e4-68677496067c",
+    "slug": "sneakersnstuff",
+    "name": "Sneakersnstuff（スニーカーズエンスタッフ / SNS）",
+    "url": "https://www.sneakersnstuff.com"
+  },
+  "checked_at": "2026-04-18T04:43:09.646Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.sneakersnstuff.com/pages/faq?hcUrl=%2Fen-US%23article-1210309",
+        "preview": "SNS FAQ | Sneakersnstuff (SNS) | SNS - SNEAKERSNSTUFF\nSNS FAQ\nSNS Newsletter\nService\nAbout SNS\nConnect\nCart\nSearch\nNew Arrivals\nSelect country\nIn the right location?\nSkip to main content SNS - SNEAKERSNSTUFF Menu New arrivals Upcoming Releases Sneakers Sneakers View all Sneakers Shop by style Air Jordan 4 Nike Air Max 95 Nike Air Force 1 Converse Chucks PUMA Speedcat New Balance 991 New Balance 992 Salomon XT-6 adidas Handball Spezial adidas Gazelle Performance Basketball Retro Basketball Performance Runners Retro Runners ALL SNEAKERS -> Brands In Focus Nike Sneakers Jordan Sneakers adidas Sneakers Converse New Balance ASICS SportStyle PUMA Salomon SNS Collabs ALL BRANDS -> Shop by preferred Unisex Sneakers Men's Sneakers Women's Sneakers Kids Sneakers Clothing Clothing View all Clothing C"
+      },
+      {
+        "url": "https://www.sneakersnstuff.com/policies/privacy-policy",
+        "preview": "Privacy policy | SNS - SNEAKERSNSTUFF\nPrivacy policy\nChanges to This Privacy Policy\nHow We Collect and Use Your Personal Information\nWhat Personal Information We Collect\nInformation We Collect Directly from You\nInformation We Collect about Your Usage\nInformation We Obtain from Third Parties\nHow We Use Your Personal Information\nCookies\nHow We Disclose Personal Information\nThird Party Websites and Links\nChildren's Data\nSkip to main content SNS - SNEAKERSNSTUFF Menu New arrivals Upcoming Releases Sneakers Sneakers View all Sneakers Shop by style Air Jordan 4 Nike Air Max 95 Nike Air Force 1 Converse Chucks PUMA Speedcat New Balance 991 New Balance 992 Salomon XT-6 adidas Handball Spezial adidas Gazelle Performance Basketball Retro Basketball Performance Runners Retro Runners ALL SNEAKERS -> B"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.sneakersnstuff.com/collections/purple-mountain-observatory",
+        "preview": "Purple Mountain Observatory | SNS - SNEAKERSNSTUFF\nPurple Mountain Observatory\n7 Products\nB.U.G Jacket (Bioluminescence . Utility . Garment)\nStinger Jacket\nAtlas Pant\nDeluge Pant\nPmo Orbital Hoody\nShort Sleeve Field Shirt\nLost My Backpack Short Sleeve Tee\nSort & Filter\nSNS Newsletter\nService\nSkip to main content SNS - SNEAKERSNSTUFF Menu New arrivals Upcoming Releases Sneakers Sneakers View all Sneakers Shop by style Air Jordan 4 Nike Air Max 95 Nike Air Force 1 Converse Chucks PUMA Speedcat New Balance 991 New Balance 992 Salomon XT-6 adidas Handball Spezial adidas Gazelle Performance Basketball Retro Basketball Performance Runners Retro Runners ALL SNEAKERS -> Brands In Focus Nike Sneakers Jordan Sneakers adidas Sneakers Converse New Balance ASICS SportStyle PUMA Salomon SNS Collabs ALL "
+      },
+      {
+        "url": "https://www.sneakersnstuff.com/policies/privacy-policy",
+        "preview": "Privacy policy | SNS - SNEAKERSNSTUFF\nPrivacy policy\nChanges to This Privacy Policy\nHow We Collect and Use Your Personal Information\nWhat Personal Information We Collect\nInformation We Collect Directly from You\nInformation We Collect about Your Usage\nInformation We Obtain from Third Parties\nHow We Use Your Personal Information\nCookies\nHow We Disclose Personal Information\nThird Party Websites and Links\nChildren's Data\nSkip to main content SNS - SNEAKERSNSTUFF Menu New arrivals Upcoming Releases Sneakers Sneakers View all Sneakers Shop by style Air Jordan 4 Nike Air Max 95 Nike Air Force 1 Converse Chucks PUMA Speedcat New Balance 991 New Balance 992 Salomon XT-6 adidas Handball Spezial adidas Gazelle Performance Basketball Retro Basketball Performance Runners Retro Runners ALL SNEAKERS -> B"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.sneakersnstuff.com/collections/connie-costas",
+        "preview": "Connie Costas | SNS - SNEAKERSNSTUFF\nConnie Costas\n7 Products\nPsycho Tee\nIdeas For Life Tee\nIdeas for Life Cap\nHate Cap\nNeverlast Cap\nPsycho Tee\nBomb Dylan Tee\nSort & Filter\nSNS Newsletter\nService\nSkip to main content SNS - SNEAKERSNSTUFF Menu New arrivals Upcoming Releases Sneakers Sneakers View all Sneakers Shop by style Air Jordan 4 Nike Air Max 95 Nike Air Force 1 Converse Chucks PUMA Speedcat New Balance 991 New Balance 992 Salomon XT-6 adidas Handball Spezial adidas Gazelle Performance Basketball Retro Basketball Performance Runners Retro Runners ALL SNEAKERS -> Brands In Focus Nike Sneakers Jordan Sneakers adidas Sneakers Converse New Balance ASICS SportStyle PUMA Salomon SNS Collabs ALL BRANDS -> Shop by preferred Unisex Sneakers Men's Sneakers Women's Sneakers Kids Sneakers Clothi"
+      },
+      {
+        "url": "https://www.sneakersnstuff.com/policies/privacy-policy",
+        "preview": "Privacy policy | SNS - SNEAKERSNSTUFF\nPrivacy policy\nChanges to This Privacy Policy\nHow We Collect and Use Your Personal Information\nWhat Personal Information We Collect\nInformation We Collect Directly from You\nInformation We Collect about Your Usage\nInformation We Obtain from Third Parties\nHow We Use Your Personal Information\nCookies\nHow We Disclose Personal Information\nThird Party Websites and Links\nChildren's Data\nSkip to main content SNS - SNEAKERSNSTUFF Menu New arrivals Upcoming Releases Sneakers Sneakers View all Sneakers Shop by style Air Jordan 4 Nike Air Max 95 Nike Air Force 1 Converse Chucks PUMA Speedcat New Balance 991 New Balance 992 Salomon XT-6 adidas Handball Spezial adidas Gazelle Performance Basketball Retro Basketball Performance Runners Retro Runners ALL SNEAKERS -> B"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Email Sign up Service Shipping and delivery Payment options FAQ/Support Contact us Returns About SNS About us Stores Careers Editorials Accessibility statement Connect Instagram TikTok X (formerly Twitter) © Copyright SNS - SNEAKERSNSTUFF 2026 Germany (EUR) Privacy policy Terms and conditions Cart Close Search Search New Arrivals SALOMON XT-4 OG The North Face Verto Alpine Gore-Tex Casentino Reebok Premier Road Ultra Reebok Wmns F/S Lo Vans OTW Half Cab SP Boot x OAMC Close Select country Country Australia (EUR) Austria (EUR) Belgium (EUR) Bulgaria (EUR) Canada (EUR) China (EUR) Croatia (EUR) Cyprus (EUR) Czechia (EUR) Denmark (EUR) Estonia (EUR) Finland (EUR) France (EUR) Germany (EUR) Greece (EUR) Hong Kong SAR (EUR) Hungary (EUR) Ireland (EUR) Israel (EUR) Italy (EUR) Japan (EUR) Latvia (EUR) Lithuania (EUR) Luxembourg (EUR) Malaysia (EUR) Malta (EUR) Netherlands (EUR) New Zealand (EUR) Norway (EUR) Philippines (EUR) Poland (EUR) Portugal (EUR) Qatar (EUR) Romania (EUR) Saudi Arabia (EUR) Singapore (EUR) Slovakia (EUR) Slovenia (EUR) South Korea (EUR) Spain (EUR) Sweden (SEK) Switzerland (EUR) Taiwan (EUR) United Arab Emirates (EUR) United Kingdom (GBP) United States (USD) Confirm Close In the right location?",
+      "source_url": "https://www.sneakersnstuff.com/pages/faq?hcUrl=%2Fen-US%23article-1210309",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "More Less Sort & Filter 7 Products Purple Mountain Observatory B.U.G Jacket (Bioluminescence .",
+      "source_url": "https://www.sneakersnstuff.com/collections/purple-mountain-observatory",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "fixed",
+      "summary": "Email Sign up Service Shipping and delivery Payment options FAQ/Support Contact us Returns About SNS About us Stores Careers Editorials Accessibility statement Connect Instagram TikTok X (formerly Twitter) © Copyright SNS - SNEAKERSNSTUFF 2026 Germany (EUR) Privacy policy Terms and conditions Cart Close Search Search New Arrivals SALOMON XT-4 OG The North Face Verto Alpine Gore-Tex Casentino Reebok Premier Road Ultra Reebok Wmns F/S Lo Vans OTW Half Cab SP Boot x OAMC Close Select country Country Australia (EUR) Austria (EUR) Belgium (EUR) Bulgaria (EUR) Canada (EUR) China (EUR) Croatia (EUR) Cyprus (EUR) Czechia (EUR) Denmark (EUR) Estonia (EUR) Finland (EUR) France (EUR) Germany (EUR) Greece (EUR) Hong Kong SAR (EUR) Hungary (EUR) Ireland (EUR) Israel (EUR) Italy (EUR) Japan (EUR) Latvia (EUR) Lithuania (EUR) Luxembourg (EUR) Malaysia (EUR) Malta (EUR) Netherlands (EUR) New Zealand (EUR) Norway (EUR) Philippines (EUR) Poland (EUR) Portugal (EUR) Qatar (EUR) Romania (EUR) Saudi Arabia (EUR) Singapore (EUR) Slovakia (EUR) Slovenia (EUR) South Korea (EUR) Spain (EUR) Sweden (SEK) Switzerland (EUR) Taiwan (EUR) United Arab Emirates (EUR) United Kingdom (GBP) United States (USD) Confirm Close In the right location?",
+      "source_url": "https://www.sneakersnstuff.com/collections/connie-costas",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Email Sign up Service Shipping and delivery Payment options FAQ/Support Contact us Returns About SNS About us Stores Careers Editorials Accessibility statement Connect Instagram TikTok X (formerly Twitter) © Copyright SNS - SNEAKERSNSTUFF 2026 Germany (EUR) Privacy policy Terms and conditions Cart C",
+    "tax_guide": "More Less Sort & Filter 7 Products Purple Mountain Observatory B.U.G Jacket (Bioluminescence .",
+    "fee_guide": "Email Sign up Service Shipping and delivery Payment options FAQ/Support Contact us Returns About SNS About us Stores Careers Editorials Accessibility statement Connect Instagram TikTok X (formerly Twitter) © Copyright SNS - SNEAKERSNSTUFF 2026 Germany (EUR) Privacy policy Terms and conditions Cart C",
+    "shipping_url": "https://www.sneakersnstuff.com/pages/faq?hcUrl=%2Fen-US%23article-1210309",
+    "tax_url": "https://www.sneakersnstuff.com/collections/purple-mountain-observatory",
+    "fee_url": "https://www.sneakersnstuff.com/collections/connie-costas"
+  },
+  "update_error": null
+}

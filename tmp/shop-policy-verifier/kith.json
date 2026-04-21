@@ -1,0 +1,92 @@
+{
+  "shop": {
+    "id": "44d964fa-de68-4ce7-beb1-a27642936ea7",
+    "slug": "kith",
+    "name": "Kith (キス)",
+    "url": "https://kith.com/"
+  },
+  "checked_at": "2026-04-18T04:41:16.333Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://kith.com/pages/cookie-policy",
+        "preview": "Cookie Policy – Kith\nRecommended For You\nShop the Look\nCookie Policy\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Life"
+      },
+      {
+        "url": "https://kith.com/pages/privacy-policy",
+        "preview": "Privacy Statement – Kith\nRecommended For You\nShop the Look\nPrivacy Statement\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Ca"
+      },
+      {
+        "url": "https://kith.com/pages/international-orders",
+        "preview": "International Orders – Kith\nRecommended For You\nShop the Look\nInternational Orders\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessor"
+      },
+      {
+        "url": "https://kith.com/collections/new-arrivals",
+        "preview": "New Arrivals | Kith\nRecommended For You\nFilter & Sort\nShop the Look\nNew Arrivals\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessorie"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://kith.com/account/login?return_url=%2Faccount",
+        "preview": "Account – Kith\nRecommended For You\nShop the Look\nReset Password\nLogin\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lif"
+      },
+      {
+        "url": "https://kith.com/pages/cookie-policy",
+        "preview": "Cookie Policy – Kith\nRecommended For You\nShop the Look\nCookie Policy\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Life"
+      },
+      {
+        "url": "https://kith.com/pages/privacy-policy",
+        "preview": "Privacy Statement – Kith\nRecommended For You\nShop the Look\nPrivacy Statement\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Ca"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://kith.com/pages/cookie-policy",
+        "preview": "Cookie Policy – Kith\nRecommended For You\nShop the Look\nCookie Policy\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Life"
+      },
+      {
+        "url": "https://kith.com/pages/privacy-policy",
+        "preview": "Privacy Statement – Kith\nRecommended For You\nShop the Look\nPrivacy Statement\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Ca"
+      },
+      {
+        "url": "https://kith.com/pages/international-orders",
+        "preview": "International Orders – Kith\nRecommended For You\nShop the Look\nInternational Orders\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessor"
+      },
+      {
+        "url": "https://kith.com/collections/new-arrivals",
+        "preview": "New Arrivals | Kith\nRecommended For You\nFilter & Sort\nShop the Look\nNew Arrivals\nJoin Our List\nLearn\nKith\nPolicies\nFollow Us\nSkip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessorie"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "International Orders – Kith Recommended For You Shop the Look International Orders Join Our List Learn Kith Policies Follow Us Skip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Women Spring 2026: Designed by Lisa Explore Kids & Baby Collections Caret Kith Kids Caret Kith Baby Caret Kith Kids Palette Caret Footwear Brands Caret Kith Kids Pre-Summer 2026 Ronnie's Kith Ivy Treats Sadelle's at Kith PlantShed Caret Kith Shop All Grid Kith Kith Ivy New Arrivals Footwear Apparel Accessories Brands Kith Women Kith Ivy for Wilson Women Kith Women Palette | Core Active New Arrivals Footwear Apparel Accessories Brands Collections Kith Kids Kith Baby Kith Kids Palette Brands Kith Monday Program Kith Origins Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Pre-Summer 2026 Kith Baby Pre-Summer 2026 Kith Kids Spring 2026 Kith for the New York Knicks 2026 Playoffs Kith Kids Spring Active 2026 Kith Baby Spring Active 2026 Kith 101 Spring 2026 Kith Women Spring Active 2026 Kith for Bob Ross Kith for On Spring 2026 Kith Women for On Spring 2026 Kith for NBA All-Star 2026 Kith Winter 2025 Kith Women Winter 2025 Kith Kids Winter 2025 Kith Women Autograph Intimates Kith for Team USA & Olympics Heritage 2026 Kith Women Palette I Core Active Kith for Nike Kith for the New York Knicks 2025 Kith 101 for ssstein Winter 2025 Kith Kids Pre-Summer 2026 Kith Kids Spring Active 2026 Kith 101 Spring 2026 Kith Women Spring Active 2026 Shop Footwear Caret Shop Mens Caret Shop Womens Caret Shop Kids Caret For the Family Kith Gifts Kith Home Kith Footwear Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Spring 2026 Shop All Collections Caret Footwear Caret Denim Caret Suede Monogram Program Leisurewear Tees Tailoring Caret Outerwear Caret Knitwear Caret Tops Caret Bottoms Caret Accessories Caret Lifestyle Caret Underwear Kith 101 Spring 2026 Kith Spring Classics 2026 &Kin Spring 2026 Kith Spring 2026 Accessories SHOP ALL Kith Ivy Kith Ivy for Wilson Kith Ivy for Wilson Accessories Kith Ivy for Wilson Footwear Kith Ivy Kith Spring 2026 Shop All Kith Monday Program Kith Spring 2026 Kith 101 Spring 2026 Kith for Bob Ross Kith for On Spring 2026 Kith Winter 2025 Kith Ivy Footwear Apparel Accessories Lifestyle Kith 101 Spring 2026 Kith for On Spring 2026 Kith for the New York Knicks 2026 Playoffs Kith for NBA All-Star 2026 Shop All Kith Footwear Sneakers Boots Loafers Derbies Sandals Socks Drawings Sale Featured Footwear Shop All Outerwear Caret Tops Caret Bottoms Caret Undergarments Swim Kith for Calvin Klein Shop All Headwear Caret Eyewear Bags Socks Jewelry Wallets & Cardholders Belts Kith Accessories All Brands C.P.",
+      "source_url": "https://kith.com/pages/international-orders",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "Cookie Policy – Kith Recommended For You Shop the Look Cookie Policy Join Our List Learn Kith Policies Follow Us Skip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids Hospitality Kith Caret Shop All Caret Brands Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Kids Pre-Summer 2026 Explore Mens Kith Caret Kith Ivy Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Spring 2026 Explore Womens Kith Women Caret Kith Ivy for Wilson Women Caret Kith Women Palette | Core Active Caret New Arrivals Caret Footwear Caret Apparel Caret Accessories Caret Lifestyle Brands Caret Kith Women Spring 2026: Designed by Lisa Explore Kids & Baby Collections Caret Kith Kids Caret Kith Baby Caret Kith Kids Palette Caret Footwear Brands Caret Kith Kids Pre-Summer 2026 Ronnie's Kith Ivy Treats Sadelle's at Kith PlantShed Caret Kith Shop All Grid Kith Kith Ivy New Arrivals Footwear Apparel Accessories Brands Kith Women Kith Ivy for Wilson Women Kith Women Palette | Core Active New Arrivals Footwear Apparel Accessories Brands Collections Kith Kids Kith Baby Kith Kids Palette Brands Kith Monday Program Kith Origins Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Pre-Summer 2026 Kith Baby Pre-Summer 2026 Kith Kids Spring 2026 Kith for the New York Knicks 2026 Playoffs Kith Kids Spring Active 2026 Kith Baby Spring Active 2026 Kith 101 Spring 2026 Kith Women Spring Active 2026 Kith for Bob Ross Kith for On Spring 2026 Kith Women for On Spring 2026 Kith for NBA All-Star 2026 Kith Winter 2025 Kith Women Winter 2025 Kith Kids Winter 2025 Kith Women Autograph Intimates Kith for Team USA & Olympics Heritage 2026 Kith Women Palette I Core Active Kith for Nike Kith for the New York Knicks 2025 Kith 101 for ssstein Winter 2025 Kith Kids Pre-Summer 2026 Kith Kids Spring Active 2026 Kith 101 Spring 2026 Kith Women Spring Active 2026 Shop Footwear Caret Shop Mens Caret Shop Womens Caret Shop Kids Caret For the Family Kith Gifts Kith Home Kith Footwear Kith Spring 2026 Kith Women Spring 2026: Designed by Lisa Kith Kids Spring 2026 Kith Origins Kith Women Origins Kith Spring 2026 Shop All Collections Caret Footwear Caret Denim Caret Suede Monogram Program Leisurewear Tees Tailoring Caret Outerwear Caret Knitwear Caret Tops Caret Bottoms Caret Accessories Caret Lifestyle Caret Underwear Kith 101 Spring 2026 Kith Spring Classics 2026 &Kin Spring 2026 Kith Spring 2026 Accessories SHOP ALL Kith Ivy Kith Ivy for Wilson Kith Ivy for Wilson Accessories Kith Ivy for Wilson Footwear Kith Ivy Kith Spring 2026 Shop All Kith Monday Program Kith Spring 2026 Kith 101 Spring 2026 Kith for Bob Ross Kith for On Spring 2026 Kith Winter 2025 Kith Ivy Footwear Apparel Accessories Lifestyle Kith 101 Spring 2026 Kith for On Spring 2026 Kith for the New York Knicks 2026 Playoffs Kith for NBA All-Star 2026 Shop All Kith Footwear Sneakers Boots Loafers Derbies Sandals Socks Drawings Sale Featured Footwear Shop All Outerwear Caret Tops Caret Bottoms Caret Undergarments Swim Kith for Calvin Klein Shop All Headwear Caret Eyewear Bags Socks Jewelry Wallets & Cardholders Belts Kith Accessories All Brands C.P.",
+      "source_url": "https://kith.com/pages/cookie-policy",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "International Orders – Kith Recommended For You Shop the Look International Orders Join Our List Learn Kith Policies Follow Us Skip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens",
+    "tax_guide": "Cookie Policy – Kith Recommended For You Shop the Look Cookie Policy Join Our List Learn Kith Policies Follow Us Skip to content Menu Bars New Mens Womens Kids Hospitality Kith Logo Hospitality Avatar Magnifying Glass Bag 0 Kith Logo Close Submit search Magnifying Glass Search New Mens Womens Kids H",
+    "fee_guide": null,
+    "shipping_url": "https://kith.com/pages/international-orders",
+    "tax_url": "https://kith.com/pages/cookie-policy",
+    "fee_url": null
+  },
+  "update_error": null
+}

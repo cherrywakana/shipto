@@ -1,0 +1,50 @@
+{
+  "shop": {
+    "id": "b015d7b9-8772-4db3-a834-6be9cd03ba97",
+    "slug": "shein",
+    "name": "SHEIN（シーイン）",
+    "url": "https://jp.shein.com/"
+  },
+  "checked_at": "2026-04-18T04:21:43.179Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [],
+    "tax": [
+      {
+        "url": "https://jp.shein.com/risk/challenge?captcha_type=909&redirection=https%3A%2F%2Fjp.shein.com%2Frecommend%2FCustomization-sc-1001781205.html%3FentranceType%3Dsbc%26adp%3D434451393&risk-id=E4800500944417477504",
+        "preview": "Women's & Men's Clothing, Shop Online Fashion | SHEIN\n0 {{wishNum}} 0 Categories Just for You New In Sale Women Clothing Beachwear Jewelry & Accessories Home & Living Men Clothing Beauty & Health Kids Shoes Bags & Luggage Underwear & Sleepwear Baby & Maternity Curve Home Textiles Cell Phones & Accessories Electronics Pet Supplies Office & School Supplies Sports & Outdoors Tools & Home Improvement Toys & Games Appliances Automotive"
+      }
+    ],
+    "fee": []
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": null,
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": null,
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

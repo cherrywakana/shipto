@@ -1,0 +1,261 @@
+{
+  "source": "skimlinks",
+  "mode": "csv",
+  "fetchedAt": "2026-04-18T15:16:32.185Z",
+  "request": {
+    "startDate": "2026-03-21",
+    "endDate": "2026-04-17",
+    "report": "page",
+    "timezone": "Asia/Tokyo"
+  },
+  "inputPath": "/Users/reona/Downloads/Publisher page report (JA).csv",
+  "totals": {
+    "rows": 80,
+    "clicks": 0,
+    "sales": 0,
+    "revenue": 0
+  },
+  "rows": [
+    {
+      "Skimlinks パブリッシャーレポート": "ドメイン original-price.com"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "期間 2023-03-20 から 2026-04-18"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "通貨 JPY"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "レポートの実行日 2026-04-18"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "注意：CSVのダウンロードは、最大40"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "ページ"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/hyperlite-mountain-gear/manual"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/arcteryx/bestshop-6"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/newbalance/shoplist-2"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorshop/list/ulbackpack"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/nike/nikelist"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorshop/list/bestshops"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/thenorthface/bestshop-7"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionshop/sneakers/list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/bicycle/bicycle-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/converse/converse-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/diesel/bestbudget"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/rab/bestshop"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionshop/lists/mens"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorshop/ellis-brigham/ellis-shopreview"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/adidas/adidas-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/msr/budgetshop-msr"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/gstar/bestshop-9"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/patagonia/shoplist"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "low-activity"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/articles/arcteryx-overseas-shopping-guide"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/articles/asos-guide"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/articles/jil-sander-overseas-shopping-guide"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/articles/new-balance-overseas-shopping-guide"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/articles/nike-overseas-shopping-guide"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/articles/patagonia-overseas-shopping-guide"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/articles/stussy-overseas-shopping-guide"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/bicycle/wheel"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/brands/adidas"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/balenciaga/balenciaga-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/balmain/balmain-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/bottega-veneta/bottegaveneta-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/burberry/burberry-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/canada-goose/canadagoose-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/celine/celine-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/chanel/chanel-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/chloe/chloe-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/dior/dior-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/dsquared2/dsquared2-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/duvetica/duvetica-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/fendi/fendi-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/gucci/gucci-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/hermes/hermes-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/jil-sander/jilsander-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/loewe/loewe-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/louis-vuitton/louisvuitton-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/maison-margiela/maison-margiela-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/max-mara/maxmara-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/moncler/moncler-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/msgm/msgm-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/off-white/offwhite-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/prada/prada-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/saint-laurent/saintlaurent-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/salvatore-ferragamo/ferragamo-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/stone-island/stoneisland-top"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionbrand/tods/tods-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionshop/dressinn/shopreview"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionshop/lists/all"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/fashionshop/saksfifthavenue/saksoff5th-shopreview"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoor"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoor-list"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/arcteryx/bestshop-6?t"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/bigagnes/shopreview-4"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/haglofs/bestshop-8"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/lasportiva/shopreview-6"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/millet/bestshop-3"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/mountainequipment/bestshop-4"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/mountainhardwear/mh-shoplists"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/osprey/bestshop-2"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorbrand/thermarest/bestshop-5"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorshop/ldmountaincentre/shopreview-2"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorshop/list/free-ship"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/outdoorshop/trekkinn/shopreview-8"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/overseasshop/manual-address"
+    },
+    {
+      "Skimlinks パブリッシャーレポート": "original-price.com/shops/ssense"
+    }
+  ],
+  "raw": null
+}

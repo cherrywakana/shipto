@@ -1,0 +1,20 @@
+{
+  "source": "skimlinks",
+  "mode": "csv",
+  "fetchedAt": "2026-04-18T15:17:05.188Z",
+  "request": {
+    "startDate": "2026-03-21",
+    "endDate": "2026-04-17",
+    "report": "merchant",
+    "timezone": "Asia/Tokyo"
+  },
+  "inputPath": "/Users/reona/Downloads/Publisher merchant report (JA).csv",
+  "totals": {
+    "rows": 0,
+    "clicks": 0,
+    "sales": 0,
+    "revenue": 0
+  },
+  "rows": [],
+  "raw": null
+}

@@ -1,0 +1,72 @@
+{
+  "shop": {
+    "id": "85ddee58-2589-4290-b920-5847853d2f1c",
+    "slug": "flight-club",
+    "name": "Flight Club (フライトクラブ)",
+    "url": "https://www.flightclub.com/"
+  },
+  "checked_at": "2026-04-18T04:48:09.606Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.flightclub.com/shipping",
+        "preview": "Shipping & Returns | Flight Club\nSHIPPING & RETURNS\nDELIVERY\nRISK OF LOSS\nCANCELLATIONS\nRETURNS\nClearCloseSneakersFC ApparelFC FridaysStoresFavoritesAccountMy AccountMy OrdersSupportSign UpMenuPopularCategoriesAir JordanNikeYeezyAdidasOff-WhiteMore BrandsNew ReleasesPrice DropsMenWomenKidsApparelAir JordanYeezyNikeAdidasOff-WhiteNew BalanceMore BrandsNew ReleasesPrice DropsGrailsMenWomenKidsApparelShopAir JordanAll Air JordanAir Jordan 1Air Jordan 2Air Jordan 3Air Jordan 4Air Jordan 5Air Jordan 6Air Jordan 7Air Jordan 8Air Jordan 9Air Jordan 10Air Jordan 11Air Jordan 12Air Jordan 13Air Jordan 14Air Jordan New ReleasesYeezyAll YeezyYeezy Boost 350Yeezy Boost 380Yeezy Boost 500Yeezy Boost 700Yeezy Boost 750Adidas YeezyNike YeezyYeezy Foam RunnerYeezy SlidesNikeAll NikeOff-WhiteDunkAir MaxAir"
+      },
+      {
+        "url": "https://www.flightclub.com/privacy",
+        "preview": "Flight Club Privacy Policy | Flight Club\nPRIVACY POLICY\nTABLE OF CONTENTS\nI. OUR COLLECTION AND USE OF PERSONAL INFORMATION\nII. DISCLOSURE OF PERSONAL INFORMATION\nIII. CONTROL OVER YOUR INFORMATION\nIV. DATA RETENTION\nV. CHILDREN’S PERSONAL INFORMATION\nVI. LINKS TO THIRD-PARTY WEBSITES OR SERVICES\nVII. UPDATES TO THIS PRIVACY POLICY\nVIII. CONTACT US\nIX. REGION-SPECIFIC DISCLOSURES\nADDITIONAL U.S. STATE PRIVACY DISCLOSURES\nClearCloseSneakersFC ApparelFC FridaysStoresFavoritesAccountMy AccountMy OrdersSupportSign UpMenuPopularCategoriesAir JordanNikeYeezyAdidasOff-WhiteMore BrandsNew ReleasesPrice DropsMenWomenKidsApparelAir JordanYeezyNikeAdidasOff-WhiteNew BalanceMore BrandsNew ReleasesPrice DropsGrailsMenWomenKidsApparelShopAir JordanAll Air JordanAir Jordan 1Air Jordan 2Air Jordan 3Air Jo"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.flightclub.com/customer/account/login",
+        "preview": "Customer Login | Flight Club\nLog in\nClearCloseSneakersFC ApparelFC FridaysStoresFavoritesAccountMy AccountMy OrdersSupportSign UpMenuPopularCategoriesAir JordanNikeYeezyAdidasOff-WhiteMore BrandsNew ReleasesPrice DropsMenWomenKidsApparelAir JordanYeezyNikeAdidasOff-WhiteNew BalanceMore BrandsNew ReleasesPrice DropsGrailsMenWomenKidsApparelShopAir JordanAll Air JordanAir Jordan 1Air Jordan 2Air Jordan 3Air Jordan 4Air Jordan 5Air Jordan 6Air Jordan 7Air Jordan 8Air Jordan 9Air Jordan 10Air Jordan 11Air Jordan 12Air Jordan 13Air Jordan 14Air Jordan New ReleasesYeezyAll YeezyYeezy Boost 350Yeezy Boost 380Yeezy Boost 500Yeezy Boost 700Yeezy Boost 750Adidas YeezyNike YeezyYeezy Foam RunnerYeezy SlidesNikeAll NikeOff-WhiteDunkAir MaxAir Force 1BlazerFoampositeVapormaxKobeLeBronNike New ReleasesA"
+      },
+      {
+        "url": "https://www.flightclub.com/privacy",
+        "preview": "Flight Club Privacy Policy | Flight Club\nPRIVACY POLICY\nTABLE OF CONTENTS\nI. OUR COLLECTION AND USE OF PERSONAL INFORMATION\nII. DISCLOSURE OF PERSONAL INFORMATION\nIII. CONTROL OVER YOUR INFORMATION\nIV. DATA RETENTION\nV. CHILDREN’S PERSONAL INFORMATION\nVI. LINKS TO THIRD-PARTY WEBSITES OR SERVICES\nVII. UPDATES TO THIS PRIVACY POLICY\nVIII. CONTACT US\nIX. REGION-SPECIFIC DISCLOSURES\nADDITIONAL U.S. STATE PRIVACY DISCLOSURES\nClearCloseSneakersFC ApparelFC FridaysStoresFavoritesAccountMy AccountMy OrdersSupportSign UpMenuPopularCategoriesAir JordanNikeYeezyAdidasOff-WhiteMore BrandsNew ReleasesPrice DropsMenWomenKidsApparelAir JordanYeezyNikeAdidasOff-WhiteNew BalanceMore BrandsNew ReleasesPrice DropsGrailsMenWomenKidsApparelShopAir JordanAll Air JordanAir Jordan 1Air Jordan 2Air Jordan 3Air Jo"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.flightclub.com/privacy",
+        "preview": "Flight Club Privacy Policy | Flight Club\nPRIVACY POLICY\nTABLE OF CONTENTS\nI. OUR COLLECTION AND USE OF PERSONAL INFORMATION\nII. DISCLOSURE OF PERSONAL INFORMATION\nIII. CONTROL OVER YOUR INFORMATION\nIV. DATA RETENTION\nV. CHILDREN’S PERSONAL INFORMATION\nVI. LINKS TO THIRD-PARTY WEBSITES OR SERVICES\nVII. UPDATES TO THIS PRIVACY POLICY\nVIII. CONTACT US\nIX. REGION-SPECIFIC DISCLOSURES\nADDITIONAL U.S. STATE PRIVACY DISCLOSURES\nClearCloseSneakersFC ApparelFC FridaysStoresFavoritesAccountMy AccountMy OrdersSupportSign UpMenuPopularCategoriesAir JordanNikeYeezyAdidasOff-WhiteMore BrandsNew ReleasesPrice DropsMenWomenKidsApparelAir JordanYeezyNikeAdidasOff-WhiteNew BalanceMore BrandsNew ReleasesPrice DropsGrailsMenWomenKidsApparelShopAir JordanAll Air JordanAir Jordan 1Air Jordan 2Air Jordan 3Air Jo"
+      },
+      {
+        "url": "https://www.flightclub.com/shipping",
+        "preview": "Shipping & Returns | Flight Club\nSHIPPING & RETURNS\nDELIVERY\nRISK OF LOSS\nCANCELLATIONS\nRETURNS\nClearCloseSneakersFC ApparelFC FridaysStoresFavoritesAccountMy AccountMy OrdersSupportSign UpMenuPopularCategoriesAir JordanNikeYeezyAdidasOff-WhiteMore BrandsNew ReleasesPrice DropsMenWomenKidsApparelAir JordanYeezyNikeAdidasOff-WhiteNew BalanceMore BrandsNew ReleasesPrice DropsGrailsMenWomenKidsApparelShopAir JordanAll Air JordanAir Jordan 1Air Jordan 2Air Jordan 3Air Jordan 4Air Jordan 5Air Jordan 6Air Jordan 7Air Jordan 8Air Jordan 9Air Jordan 10Air Jordan 11Air Jordan 12Air Jordan 13Air Jordan 14Air Jordan New ReleasesYeezyAll YeezyYeezy Boost 350Yeezy Boost 380Yeezy Boost 500Yeezy Boost 700Yeezy Boost 750Adidas YeezyNike YeezyYeezy Foam RunnerYeezy SlidesNikeAll NikeOff-WhiteDunkAir MaxAir"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Estimated delivery times do not apply to international orders, which vary by country.",
+      "source_url": "https://www.flightclub.com/shipping",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "Identity and Compliance Information, including name, birthdate, address, phone number, email address, bank account information, government ID number, VAT ID number or other tax ID number, and copies of government ID or tax documents, along with a selfie image.",
+      "source_url": "https://www.flightclub.com/privacy",
+      "confidence": "medium"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "These items will incur the standard cost of shipping.",
+      "source_url": "https://www.flightclub.com/shipping",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Estimated delivery times do not apply to international orders, which vary by country.",
+    "tax_guide": "Identity and Compliance Information, including name, birthdate, address, phone number, email address, bank account information, government ID number, VAT ID number or other tax ID number, and copies of government ID or tax documents, along with a selfie image.",
+    "fee_guide": "These items will incur the standard cost of shipping.",
+    "shipping_url": "https://www.flightclub.com/shipping",
+    "tax_url": "https://www.flightclub.com/privacy",
+    "fee_url": "https://www.flightclub.com/shipping"
+  },
+  "update_error": null
+}

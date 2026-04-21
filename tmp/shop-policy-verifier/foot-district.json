@@ -1,0 +1,59 @@
+{
+  "shop": {
+    "id": "c59518a5-956e-4c70-8101-e0ccddc68edb",
+    "slug": "foot-district",
+    "name": "Foot District（フットディストリクト）",
+    "url": "https://footdistrict.com/"
+  },
+  "checked_at": "2026-04-18T05:02:25.210Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [],
+    "tax": [
+      {
+        "url": "https://footdistrict.com/collections/ultimas-tallas?sort_by=best-selling&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384014057850&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015499642&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015565178&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015729018",
+        "preview": "Últimas Tallas\nÚltimas Tallas\nÚltimas tallas: una segunda oportunidad\nCómo aprovechar la sección de últimas tallas\nÚltimas tallas en FOOTDISTRICT\nBuy in Search shipping options for Continue Change country/region and language Change country/region Albania Alemania Andorra Angola Arabia Saudí Argelia Argentina Armenia Aruba Australia Austria Azerbaiyán Baréin Bélgica Bosnia y Herzegovina Botsuana Brasil Brunéi Bulgaria Cabo Verde Camboya Canadá Catar Chequia Chile China Chipre Colombia Corea del Sur Costa Rica Croacia Curazao Dinamarca Ecuador Emiratos Árabes Unidos Eslovaquia Eslovenia España Estados Unidos Estonia Esuatini Finlandia Francia Gabón Georgia Ghana Gibraltar Grecia Guadalupe Guatemala Guayana Francesa Guernesey Hungría India Indonesia Irlanda Isla de Man Isla de la Ascensión Is"
+      },
+      {
+        "url": "https://footdistrict.com/collections/ultimas-tallas?sort_by=best-selling&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384013992314&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015925626&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384014156154&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384014221690&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384014188922&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384014483834&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384014549370&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015696250&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384014811514&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015008122&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015073658&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015106426&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015270266&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015368570&filter.p.m.custom.tipo_producto=gid%3A%2F%2Fshopify%2FMetaobject%2F384015434106",
+        "preview": "Últimas Tallas\nÚltimas Tallas\nÚltimas tallas: una segunda oportunidad\nCómo aprovechar la sección de últimas tallas\nÚltimas tallas en FOOTDISTRICT\nBuy in Search shipping options for Continue Change country/region and language Change country/region Albania Alemania Andorra Angola Arabia Saudí Argelia Argentina Armenia Aruba Australia Austria Azerbaiyán Baréin Bélgica Bosnia y Herzegovina Botsuana Brasil Brunéi Bulgaria Cabo Verde Camboya Canadá Catar Chequia Chile China Chipre Colombia Corea del Sur Costa Rica Croacia Curazao Dinamarca Ecuador Emiratos Árabes Unidos Eslovaquia Eslovenia España Estados Unidos Estonia Esuatini Finlandia Francia Gabón Georgia Ghana Gibraltar Grecia Guadalupe Guatemala Guayana Francesa Guernesey Hungría India Indonesia Irlanda Isla de Man Isla de la Ascensión Is"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://footdistrict.com/collections/lacoste",
+        "preview": "Lacoste\nLacoste\nRené Lacoste\nEl cocodrilo Lacoste\nLacoste, marca transgeneracional\nLacoste en FOOTDISTRICT\nBuy in Search shipping options for Continue Change country/region and language Change country/region Albania Alemania Andorra Angola Arabia Saudí Argelia Argentina Armenia Aruba Australia Austria Azerbaiyán Baréin Bélgica Bosnia y Herzegovina Botsuana Brasil Brunéi Bulgaria Cabo Verde Camboya Canadá Catar Chequia Chile China Chipre Colombia Corea del Sur Costa Rica Croacia Curazao Dinamarca Ecuador Emiratos Árabes Unidos Eslovaquia Eslovenia España Estados Unidos Estonia Esuatini Finlandia Francia Gabón Georgia Ghana Gibraltar Grecia Guadalupe Guatemala Guayana Francesa Guernesey Hungría India Indonesia Irlanda Isla de Man Isla de la Ascensión Islandia Islas menores alejadas de EE. UU"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "Lacoste Lacoste René Lacoste El cocodrilo Lacoste Lacoste, marca transgeneracional Lacoste en FOOTDISTRICT Buy in Search shipping options for Continue Change country/region and language Change country/region Albania Alemania Andorra Angola Arabia Saudí Argelia Argentina Armenia Aruba Australia Austria Azerbaiyán Baréin Bélgica Bosnia y Herzegovina Botsuana Brasil Brunéi Bulgaria Cabo Verde Camboya Canadá Catar Chequia Chile China Chipre Colombia Corea del Sur Costa Rica Croacia Curazao Dinamarca Ecuador Emiratos Árabes Unidos Eslovaquia Eslovenia España Estados Unidos Estonia Esuatini Finlandia Francia Gabón Georgia Ghana Gibraltar Grecia Guadalupe Guatemala Guayana Francesa Guernesey Hungría India Indonesia Irlanda Isla de Man Isla de la Ascensión Islandia Islas menores alejadas de EE.",
+      "source_url": "https://footdistrict.com/collections/lacoste",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": null,
+    "tax_guide": null,
+    "fee_guide": "Lacoste Lacoste René Lacoste El cocodrilo Lacoste Lacoste, marca transgeneracional Lacoste en FOOTDISTRICT Buy in Search shipping options for Continue Change country/region and language Change country/region Albania Alemania Andorra Angola Arabia Saudí Argelia Argentina Armenia Aruba Australia Austr",
+    "shipping_url": null,
+    "tax_url": null,
+    "fee_url": "https://footdistrict.com/collections/lacoste"
+  },
+  "update_error": null
+}

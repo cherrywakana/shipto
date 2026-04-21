@@ -1,0 +1,108 @@
+{
+  "shop": {
+    "id": "b7667e8c-9200-43d8-bde6-93776e017d0c",
+    "slug": "zaful",
+    "name": "ZAFUL（ザフル）",
+    "url": "https://www.zaful.com/"
+  },
+  "checked_at": "2026-04-18T04:32:25.440Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.zaful.com/shipping-info/",
+        "preview": "ZAFUL: Shipping Info\nShipping Info\nPROCESSING\nShipping\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Island Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua And Barbuda Argentina Armenia Aruba Ascension Australia Austria Azerbaijan Azores Bahamas Bahrain Balearic Islands Bangladesh Barbados Belarus Belgium Belize Benin Bermuda Bhutan Bolivia Bonaire Bosnia And Herzegovina Botswana Bouvet Island Brazil British Indian Ocean Territory Brunei Bu"
+      },
+      {
+        "url": "https://www.zaful.com/men-s-japanese-letter-plum-blossoms-pattern-kangaroo-pocket-pullover-hoodie-and-rose-print-slogan-drawstring-thermal-fleece-lined-jogger-pants-set-puid_5134645.html?kuid=1302995",
+        "preview": "Men's Japanese Letter Plum Blossoms Pattern Kangaroo Pocket Pullover Hoodie And Rose Print Slogan Drawstring Thermal Fleece Lined Jogger Pants Set In LIGHT COFFEE | ZAFUL 2026\nMen's Japanese Letter Plum Blossoms Pattern Kangaroo Pocket Pullover Hoodie And Rose Print Slogan Drawstring Thermal Fleece Lined Jogger Pants Set - Light Coffee\nColor\nSize\nShipping Info\nProduct Description\nCUSTOMERS ALSO VIEWED\nrelated searches\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Is"
+      },
+      {
+        "url": "https://www.zaful.com/men-s-chinese-characters-dragon-japanese-letter-number-graphic-pattern-fuzzy-fleece-lined-kangaroo-pocket-design-pullover-hoodie-and-drawstring-jogger-sweatpants-set-puid_5138502.html?kuid=1307995",
+        "preview": "Men's Chinese Characters Dragon Japanese Letter Number Graphic Pattern Fuzzy Fleece-lined Kangaroo Pocket Design Pullover Hoodie And Drawstring Jogger Sweatpants Set In DEEP GREEN | ZAFUL 2026\nMen's Chinese Characters Dragon Japanese Letter Number Graphic Pattern Fuzzy Fleece-lined Kangaroo Pocket Design Pullover Hoodie And Drawstring Jogger Sweatpants Set - Deep Green\nColor\nSize\nShipping Info\nProduct Description\nCUSTOMERS ALSO VIEWED\nrelated searches\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South"
+      },
+      {
+        "url": "https://www.zaful.com/privacy-policy/",
+        "preview": "ZAFUL: Privacy Policy\nPrivacy Policy\nWhat information do we collect?\nWhat do we use your information for?\nLegal Basis for the Processing of Personal Information\nYour rights\nHow do we protect your information?\nDo we use cookies?\nDo we disclose any information to outside parties?\nHow long do we retain your information?\nThird party links\nTerms and Conditions\nChanges to our Privacy Policy\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Island Albania Algeria American Samo"
+      },
+      {
+        "url": "https://www.zaful.com/m-article.htm?id=119",
+        "preview": "ZAFUL: Cookies Policy\nCookies Policy\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Island Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua And Barbuda Argentina Armenia Aruba Ascension Australia Austria Azerbaijan Azores Bahamas Bahrain Balearic Islands Bangladesh Barbados Belarus Belgium Belize Benin Bermuda Bhutan Bolivia Bonaire Bosnia And Herzegovina Botswana Bouvet Island Brazil British Indian Ocean Territory Brunei Bulgaria Burkina Bur"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.zaful.com/promotion/customer-faves-collection.html",
+        "preview": "Customer Faves Collection | ZAFUL\n请设置导航标题\n请设置导航标题\n请设置导航标题\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Island Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua And Barbuda Argentina Armenia Aruba Ascension Australia Austria Azerbaijan Azores Bahamas Bahrain Balearic Islands Bangladesh Barbados Belarus Belgium Belize Benin Bermuda Bhutan Bolivia Bonaire Bosnia And Herzegovina Botswana Bouvet Island Brazil British Indian Ocean Territory Brunei"
+      },
+      {
+        "url": "https://www.zaful.com/men-s-japanese-letter-plum-blossoms-pattern-kangaroo-pocket-pullover-hoodie-and-rose-print-slogan-drawstring-thermal-fleece-lined-jogger-pants-set-puid_5134645.html?kuid=1302995",
+        "preview": "Men's Japanese Letter Plum Blossoms Pattern Kangaroo Pocket Pullover Hoodie And Rose Print Slogan Drawstring Thermal Fleece Lined Jogger Pants Set In LIGHT COFFEE | ZAFUL 2026\nMen's Japanese Letter Plum Blossoms Pattern Kangaroo Pocket Pullover Hoodie And Rose Print Slogan Drawstring Thermal Fleece Lined Jogger Pants Set - Light Coffee\nColor\nSize\nShipping Info\nProduct Description\nCUSTOMERS ALSO VIEWED\nrelated searches\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Is"
+      },
+      {
+        "url": "https://www.zaful.com/men-s-chinese-characters-dragon-japanese-letter-number-graphic-pattern-fuzzy-fleece-lined-kangaroo-pocket-design-pullover-hoodie-and-drawstring-jogger-sweatpants-set-puid_5138502.html?kuid=1307995",
+        "preview": "Men's Chinese Characters Dragon Japanese Letter Number Graphic Pattern Fuzzy Fleece-lined Kangaroo Pocket Design Pullover Hoodie And Drawstring Jogger Sweatpants Set In DEEP GREEN | ZAFUL 2026\nMen's Chinese Characters Dragon Japanese Letter Number Graphic Pattern Fuzzy Fleece-lined Kangaroo Pocket Design Pullover Hoodie And Drawstring Jogger Sweatpants Set - Deep Green\nColor\nSize\nShipping Info\nProduct Description\nCUSTOMERS ALSO VIEWED\nrelated searches\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South"
+      },
+      {
+        "url": "https://www.zaful.com/privacy-policy/",
+        "preview": "ZAFUL: Privacy Policy\nPrivacy Policy\nWhat information do we collect?\nWhat do we use your information for?\nLegal Basis for the Processing of Personal Information\nYour rights\nHow do we protect your information?\nDo we use cookies?\nDo we disclose any information to outside parties?\nHow long do we retain your information?\nThird party links\nTerms and Conditions\nChanges to our Privacy Policy\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Island Albania Algeria American Samo"
+      },
+      {
+        "url": "https://www.zaful.com/m-article.htm?id=119",
+        "preview": "ZAFUL: Cookies Policy\nCookies Policy\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Island Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua And Barbuda Argentina Armenia Aruba Ascension Australia Austria Azerbaijan Azores Bahamas Bahrain Balearic Islands Bangladesh Barbados Belarus Belgium Belize Benin Bermuda Bhutan Bolivia Bonaire Bosnia And Herzegovina Botswana Bouvet Island Brazil British Indian Ocean Territory Brunei Bulgaria Burkina Bur"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.zaful.com/mix-match-separates-e_397/?odr=hot",
+        "preview": "Bikini Separates\nHoneycomb Textured O-ring Bikini Top - Deep Blue S\nTextured Lace Up Tankini Top - Light Coffee S\nZAFUL Sparkly Metallic Criss Cross Star Shaped Bikini Top - Coffee S\nHoneycomb Textured Bikini Bottom - Deep Blue S\nTextured Cinched Bikini Top - Light Coffee M\nZAFUL Cheeky Shiny Bikini Bottom - Light Pink M\nRibbed High Cut Bikini Bottom - Light Green S\nRibbed Cut Out Criss Cross Bikini Top - Light Green M\nZAFUL Textured Cross Back U Neck Crop Bikini Top - Light Coffee M\nRibbed Tie Side Bikini Bottom - Concord M\nRibbed Monowire Bikini Top - Concord L\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany Fr"
+      },
+      {
+        "url": "https://www.zaful.com/mix-match-separates-e_397/?odr=new-arrivals",
+        "preview": "Bikini Separates\nPolka Dots High Waisted Beach Swim Bottom Boyshorts - Deep Blue XL\nBowknot Decor Beach Swim Bottom Boyshorts - Coffee L\nGingham Floral Bowknot Decor Boyshort Style Swim Shorts - Orange L\nGingham Floral Printed Bowknot Decor Boy Short Bikini Bottom - Red S\nSheer Mesh See-through Floral Printed Beach Cover Up Tank Top - Beige L\nGingham Bow Decor Beach Swim Bottom Boyshorts - Red L\nFloral Terry Cloth Toweling Jacquard Textured Beach Swim Boyshorts - Light Pink S\nZAFUL Tanga Textured Thong Bikini Bottom - Black L\nHoneycomb Textured Bikini Bottom - Multi-a L\nTwo Tone O-ring Bikini Top - Multi-a L\nZAFUL Wave Textured Plunge Tank Bikini Top - Green S\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Yo"
+      },
+      {
+        "url": "https://www.zaful.com/mix-match-separates-e_397/",
+        "preview": "Bikini Separates\nHoneycomb Textured O-ring Bikini Top - Deep Blue S\nTextured Lace Up Tankini Top - Light Coffee S\nZAFUL Sparkly Metallic Criss Cross Star Shaped Bikini Top - Coffee S\nRibbed High Cut Bikini Bottom - Light Green S\nRibbed Tie Side Bikini Bottom - Light Blue S\nHoneycomb Textured Bikini Bottom - Deep Blue S\nRibbed Monowire Bikini Top - Light Blue S\nRuffles Metallic Bikini Top - Black L\nZAFUL Wave Textured Plunge Tank Bikini Top - White L\nZAFUL Honeycomb Textured Tie Side Bikini Bottom - Orange S\nTie Metallic Adjustable Bikini Bottom - Light Purple M\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany Fran"
+      },
+      {
+        "url": "https://www.zaful.com/men-s-japanese-letter-plum-blossoms-pattern-kangaroo-pocket-pullover-hoodie-and-rose-print-slogan-drawstring-thermal-fleece-lined-jogger-pants-set-puid_5134645.html?kuid=1302995",
+        "preview": "Men's Japanese Letter Plum Blossoms Pattern Kangaroo Pocket Pullover Hoodie And Rose Print Slogan Drawstring Thermal Fleece Lined Jogger Pants Set In LIGHT COFFEE | ZAFUL 2026\nMen's Japanese Letter Plum Blossoms Pattern Kangaroo Pocket Pullover Hoodie And Rose Print Slogan Drawstring Thermal Fleece Lined Jogger Pants Set - Light Coffee\nColor\nSize\nShipping Info\nProduct Description\nCUSTOMERS ALSO VIEWED\nrelated searches\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South Africa India Afghanistan Aland Is"
+      },
+      {
+        "url": "https://www.zaful.com/men-s-chinese-characters-dragon-japanese-letter-number-graphic-pattern-fuzzy-fleece-lined-kangaroo-pocket-design-pullover-hoodie-and-drawstring-jogger-sweatpants-set-puid_5138502.html?kuid=1307995",
+        "preview": "Men's Chinese Characters Dragon Japanese Letter Number Graphic Pattern Fuzzy Fleece-lined Kangaroo Pocket Design Pullover Hoodie And Drawstring Jogger Sweatpants Set In DEEP GREEN | ZAFUL 2026\nMen's Chinese Characters Dragon Japanese Letter Number Graphic Pattern Fuzzy Fleece-lined Kangaroo Pocket Design Pullover Hoodie And Drawstring Jogger Sweatpants Set - Deep Green\nColor\nSize\nShipping Info\nProduct Description\nCUSTOMERS ALSO VIEWED\nrelated searches\nAPP EXCLUSIVE: Lower prices! + 20% off your first app order Download now > 14 Days Return Warranty For New Friends:Extra 15% OFF Your First Order Location International Site United States Canada United Kingdom Australia Germany France Italy Spain Mexico Brazil New Zealand Israel Switzerland Belgium Russian Federation Austria Philippines South"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Please refer to the table below for various shipping times to international destinations, choose your shipping country or shipping region from the drop-down menu below: Please choose shipping country/region Shipping Method Order Amount Cost Shipping time Total time= processing time + shipping time (Bussiness days) Click here For more info and international shipping Product Description Type: 2 PCS Set,Hoodie&Pants Set Style: Casual Occasions: Daily Top Length: Regular Sleeves Length: Long Sleeves Bottom Length: Long Pants Waist Type: Mid Closure Type: Drawstring Pattern Type: Floral,Letter,Rose Print Decoration: Adjustable Waist,Pocket Material: Cotton,Polyester Material Stretch: No Stretch Season: Fall,Winter Weight: 0.8850kg Package: 1 x Hoodie 1 x Pants CUSTOMERS ALSO VIEWED customer reviews(12)4.8Small 0.00%True to size 100.00%Large 0.00% Photos (0) share your thougths and get Z points reward.",
+      "source_url": "https://www.zaful.com/men-s-japanese-letter-plum-blossoms-pattern-kangaroo-pocket-pullover-hoodie-and-rose-print-slogan-drawstring-thermal-fleece-lined-jogger-pants-set-puid_5134645.html?kuid=1302995",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "Customer Faves Collection | ZAFUL 请设置导航标题 请设置导航标题 请设置导航标题 APP EXCLUSIVE: Lower prices!",
+      "source_url": "https://www.zaful.com/promotion/customer-faves-collection.html",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "Bikini Separates Honeycomb Textured O-ring Bikini Top - Deep Blue S Textured Lace Up Tankini Top - Light Coffee S ZAFUL Sparkly Metallic Criss Cross Star Shaped Bikini Top - Coffee S Ribbed High Cut Bikini Bottom - Light Green S Ribbed Tie Side Bikini Bottom - Light Blue S Honeycomb Textured Bikini Bottom - Deep Blue S Ribbed Monowire Bikini Top - Light Blue S Ruffles Metallic Bikini Top - Black L ZAFUL Wave Textured Plunge Tank Bikini Top - White L ZAFUL Honeycomb Textured Tie Side Bikini Bottom - Orange S Tie Metallic Adjustable Bikini Bottom - Light Purple M APP EXCLUSIVE: Lower prices!",
+      "source_url": "https://www.zaful.com/mix-match-separates-e_397/",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Please refer to the table below for various shipping times to international destinations, choose your shipping country or shipping region from the drop-down menu below: Please choose shipping country/region Shipping Method Order Amount Cost Shipping time Total time= processing time + shipping time (",
+    "tax_guide": "Customer Faves Collection | ZAFUL 请设置导航标题 请设置导航标题 请设置导航标题 APP EXCLUSIVE: Lower prices!",
+    "fee_guide": "Bikini Separates Honeycomb Textured O-ring Bikini Top - Deep Blue S Textured Lace Up Tankini Top - Light Coffee S ZAFUL Sparkly Metallic Criss Cross Star Shaped Bikini Top - Coffee S Ribbed High Cut Bikini Bottom - Light Green S Ribbed Tie Side Bikini Bottom - Light Blue S Honeycomb Textured Bikini ",
+    "shipping_url": "https://www.zaful.com/men-s-japanese-letter-plum-blossoms-pattern-kangaroo-pocket-pullover-hoodie-and-rose-print-slogan-drawstring-thermal-fleece-lined-jogger-pants-set-puid_5134645.html?kuid=1302995",
+    "tax_url": "https://www.zaful.com/promotion/customer-faves-collection.html",
+    "fee_url": "https://www.zaful.com/mix-match-separates-e_397/"
+  },
+  "update_error": null
+}

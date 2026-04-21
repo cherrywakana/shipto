@@ -1,0 +1,92 @@
+{
+  "shop": {
+    "id": "071da446-9fa1-4408-a29b-bdf4a681794c",
+    "slug": "bikeroom",
+    "name": "Bikeroom（バイクルーム）",
+    "url": "https://www.bike-room.com/"
+  },
+  "checked_at": "2026-04-18T04:34:45.321Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://bike-room.com/collections/xc",
+        "preview": "Mountain Bikes for Cross-Country (XC) riding | Bikeroom\nXC\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCervéloColnagoLapierreRidleyLimited Editions MTB MTB View all Condition NewPre-Owned Discipline XC / Cross CountryAll Mountain / EnduroTrail Product"
+      },
+      {
+        "url": "https://bike-room.com/pages/how-we-ship",
+        "preview": "How we ship – Bikeroom\nPremium Protection: From Our Door to Yours\nHow we ship your bike\nExpert Protection for Your Investment\nProfessional Packaging, Perfect Arrival\nTrusted Delivery Partner\nMade for you\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCer"
+      },
+      {
+        "url": "https://bike-room.com/pages/help",
+        "preview": "Help – Bikeroom\nHelp Hub\nGeneral FAQs\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCervéloColnagoLapierreRidleyLimited Editions MTB MTB View all Condition NewPre-Owned Discipline XC / Cross CountryAll Mountain / EnduroTrail Product Type Complete BikesF"
+      },
+      {
+        "url": "https://bike-room.com/pages/help-buying",
+        "preview": "Help Buying – Bikeroom\nBuying\nProducts\nPayment\nShipping\nNeed further assistance?\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCervéloColnagoLapierreRidleyLimited Editions MTB MTB View all Condition NewPre-Owned Discipline XC / Cross CountryAll Mountain"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://bike-room.com/pages/help",
+        "preview": "Help – Bikeroom\nHelp Hub\nGeneral FAQs\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCervéloColnagoLapierreRidleyLimited Editions MTB MTB View all Condition NewPre-Owned Discipline XC / Cross CountryAll Mountain / EnduroTrail Product Type Complete BikesF"
+      },
+      {
+        "url": "https://bike-room.com/pages/help-buying",
+        "preview": "Help Buying – Bikeroom\nBuying\nProducts\nPayment\nShipping\nNeed further assistance?\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCervéloColnagoLapierreRidleyLimited Editions MTB MTB View all Condition NewPre-Owned Discipline XC / Cross CountryAll Mountain"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://bike-room.com/pages/uae-team-emirates-2025",
+        "preview": "UAE Team Emirates 2025 | Bikeroom\n95 Victories. 20 Winners. One Signature: Colnago.\nUAE Team Emirates 2025 Official Bikes\nColnago Y1Rs: The Grand Tour Master\nColnago V5Rs: The Classic Conqueror\nThe Bikeroom Quality Seal\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Fea"
+      },
+      {
+        "url": "https://bike-room.com/collections/colnago-uae-team-emirates-2024",
+        "preview": "Colnago UAE Team Emirates - Bikeroom\nColnago UAE Team Emirates 2024\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCervéloColnagoLapierreRidleyLimited Editions MTB MTB View all Condition NewPre-Owned Discipline XC / Cross CountryAll Mountain / EnduroTrai"
+      },
+      {
+        "url": "https://bike-room.com/products/colnago-v5rs-2025-mohammad-almutaiwei-size-510-team-uae-shimano-dura-ace-di2-2x12sp-bk3805",
+        "preview": "Colnago V5Rs 2025 Mohammad Almutaiwei size 510 2025 UAE Team Emirates – Bikeroom\nBike Specifications\nServices\nHow we ship your bike\nBike Road Preowned Colnago\nColnago V5Rs 2025 Mohammad Almutaiwei size 510 2025 UAE Team Emirates Shimano Dura-Ace Di2 2x12sp Sold and certified by Bikeroom\nBikeroom Rider Protection\nFrequently Asked Questions\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All T"
+      },
+      {
+        "url": "https://bike-room.com/pages/help",
+        "preview": "Help – Bikeroom\nHelp Hub\nGeneral FAQs\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCervéloColnagoLapierreRidleyLimited Editions MTB MTB View all Condition NewPre-Owned Discipline XC / Cross CountryAll Mountain / EnduroTrail Product Type Complete BikesF"
+      },
+      {
+        "url": "https://bike-room.com/pages/help-buying",
+        "preview": "Help Buying – Bikeroom\nBuying\nProducts\nPayment\nShipping\nNeed further assistance?\nJoin the club\nSkip to content About us Services Bike finder Size guide Magazine Help Team Bikes Team Bikes View all 2025 Cervélo - Team Visma Lease a Bike Lapierre - Team Picnic PostNL 2025Ridley - Uno-X Mobility 2025Cervélo - Team Visma | Lease a Bike BMC - Tudor Pro Cycling TeamColnago - UAE Team Emirates 2025Cannondale - Team Rockets 2025Look - Team Cofidis 2025 2024 Colnago - UAE Team Emirates 2024Bianchi Arkea - B&B Hotels Pro Cycling Team 2024 All Team Bikes Road Road View all Condition NewPre-OwnedKM0 Product Type Complete BikesFramesetsComponents and Accessories Featured BianchiCervéloColnagoLapierreRidleyLimited Editions MTB MTB View all Condition NewPre-Owned Discipline XC / Cross CountryAll Mountain"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "🚴‍♂️💨 Hot DealsHOT🔥 Brands Brands View all Top Brands BMCCannondaleFactorGiantPinarelloScottSpecializedTrekWilier A-F 3TAmflowBassoBottecchiaCanyonCinelliDe RosaEnveEvolve G-Z GuerciottiGustoLookMegamoMeridaOrbeaSartoSekaWinspace Build Your Bike About us Evaluation Tool Services Bike Finder Size guide Magazine Help EN | JP Language Country Select your language English Italiano Español Français Deutsch 繁體中文 简体中文 日本語 Polski Nederlands العربية Select your location Asia Afghanistan AFN ؋ Azerbaijan AZN ₼ Bahrain EUR € Bangladesh BDT ৳ Bhutan EUR € British Indian Ocean Territory USD $ Brunei BND $ Cambodia KHR ៛ China CNY ¥ Christmas Island AUD $ Cocos (Keeling) Islands AUD $ Hong Kong SAR HKD $ India INR ₹ Indonesia IDR Rp Iraq EUR € Israel ILS ₪ Japan JPY ¥ Jordan EUR € Kazakhstan KZT ₸ Kuwait EUR € Kyrgyzstan KGS som Laos LAK ₭ Lebanon LBP ل.ل Macao SAR MOP P Malaysia MYR RM Maldives MVR MVR Mongolia MNT ₮ Myanmar (Burma) MMK K Nepal NPR Rs.",
+      "source_url": "https://bike-room.com/collections/xc",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "Guadeloupe EUR € Guernsey GBP £ Hungary HUF Ft Iceland ISK kr Ireland EUR € Isle of Man GBP £ Italy EUR € Jersey EUR € Kosovo EUR € Latvia EUR € Liechtenstein CHF CHF Lithuania EUR € Luxembourg EUR € Malta EUR € Mayotte EUR € Moldova MDL L Monaco EUR € Montenegro EUR € Netherlands EUR € North Macedonia MKD ден Norway NOK kr Poland PLN zł Portugal EUR € Réunion EUR € Romania RON Lei San Marino EUR € Serbia RSD РСД Slovakia EUR € Slovenia EUR € Spain EUR € Svalbard & Jan Mayen NOK kr Sweden SEK kr Switzerland CHF CHF Türkiye EUR € Ukraine UAH ₴ United Kingdom GBP £ Vatican City EUR € Africa Algeria DZD د.ج Angola EUR € Ascension Island SHP £ Benin XOF Fr Botswana BWP P Burkina Faso XOF Fr Burundi BIF Fr Cameroon XAF CFA Cape Verde CVE $ Central African Republic XAF CFA Chad XAF CFA Comoros KMF Fr Congo - Brazzaville XAF CFA Congo - Kinshasa CDF Fr Côte d’Ivoire XOF Fr Djibouti DJF Fdj Egypt EGP ج.م Equatorial Guinea XAF CFA Eritrea EUR € Eswatini EUR € Ethiopia ETB Br French Southern Territories EUR € Gabon XOF Fr Gambia GMD D Ghana EUR € Guinea GNF Fr Guinea-Bissau XOF Fr Kenya KES KSh Lesotho EUR € Liberia EUR € Libya EUR € Madagascar EUR € Malawi MWK MK Mali XOF Fr Mauritania EUR € Mauritius MUR ₨ Morocco MAD د.م.",
+      "source_url": "https://bike-room.com/pages/help",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "UAE Team Emirates 2025 | Bikeroom 95 Victories.",
+      "source_url": "https://bike-room.com/pages/uae-team-emirates-2025",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "🚴‍♂️💨 Hot DealsHOT🔥 Brands Brands View all Top Brands BMCCannondaleFactorGiantPinarelloScottSpecializedTrekWilier A-F 3TAmflowBassoBottecchiaCanyonCinelliDe RosaEnveEvolve G-Z GuerciottiGustoLookMegamoMeridaOrbeaSartoSekaWinspace Build Your Bike About us Evaluation Tool Services Bike Finder Size ",
+    "tax_guide": "Guadeloupe EUR € Guernsey GBP £ Hungary HUF Ft Iceland ISK kr Ireland EUR € Isle of Man GBP £ Italy EUR € Jersey EUR € Kosovo EUR € Latvia EUR € Liechtenstein CHF CHF Lithuania EUR € Luxembourg EUR € Malta EUR € Mayotte EUR € Moldova MDL L Monaco EUR € Montenegro EUR € Netherlands EUR € North Macedo",
+    "fee_guide": "UAE Team Emirates 2025 | Bikeroom 95 Victories.",
+    "shipping_url": "https://bike-room.com/collections/xc",
+    "tax_url": "https://bike-room.com/pages/help",
+    "fee_url": "https://bike-room.com/pages/uae-team-emirates-2025"
+  },
+  "update_error": null
+}

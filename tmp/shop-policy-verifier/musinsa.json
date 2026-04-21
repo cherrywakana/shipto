@@ -1,0 +1,120 @@
+{
+  "shop": {
+    "id": "c21aa55e-65dc-4857-ba75-9fb81172a8f9",
+    "slug": "musinsa",
+    "name": "Musinsa（ムシンサ）",
+    "url": "https://global.musinsa.com"
+  },
+  "checked_at": "2026-04-18T04:45:16.397Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      },
+      {
+        "url": "https://global.musinsa.com/choose-location",
+        "preview": "MUSINSA\nGLOBAL MUSINSA\nCHOOSE YOUR LOCATION\nGLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "MUSINSA GLOBAL MUSINSA CHOOSE YOUR LOCATION GLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand",
+      "source_url": "https://global.musinsa.com/choose-location",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "MUSINSA GLOBAL MUSINSA CHOOSE YOUR LOCATION GLOBAL MUSINSA CHOOSE YOUR LOCATION ASIA Japan Hong Kong SAR Indonesia Malaysia Philippines Singapore Taiwan Region Thailand Vietnam NORTH AMERICA Canada United States OCEANIA Australia New Zealand",
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": "https://global.musinsa.com/choose-location",
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

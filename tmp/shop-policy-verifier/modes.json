@@ -1,0 +1,76 @@
+{
+  "shop": {
+    "id": "0f2eee70-436e-4122-b70d-09adcdb34907",
+    "slug": "modes",
+    "name": "Modes（モード）",
+    "url": "https://www.modes.com"
+  },
+  "checked_at": "2026-04-18T04:50:56.126Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://modes.com/en-jp/policies/privacy-policy",
+        "preview": "Privacy policy – MODES\nJust added\nCurrency Shopping in a different currency?\nPrivacy policy\nReceive updates on the newest looks and upcoming events.\nSkip to content Skip to search Women Men Objects Stores Series Japan (JP) ¥ 0 0 Just added View cart 🔍 Clear Women Men Objects Stores Series Japan (¥) A unique style destination: italian, inspiring, insightful. Modes. ©2026. Currency Shopping in a different currency? You are currently in the Japan store To place your order in a different currency, please select from the list below. Prices and delivery fees will be updated in line with your new currency and shopping destination. Choose a new location Japan (¥) Albania (L) Algeria (د.ج) Andorra (€) Angola (Kz) Anguilla ($) Antigua & Barbuda ($) Argentina ($) Armenia (դր.) Aruba (ƒ) Australia ($"
+      },
+      {
+        "url": "https://modes.com/en-jp/pages/cookie-policy",
+        "preview": "Cookie Policy – MODES\nJust added\nCurrency Shopping in a different currency?\nCookie Policy\nEssential Cookies\nReporting and Analytics Cookies\nMarketing And Retargeting Cookies\nFunctional Cookies\nReceive updates on the newest looks and upcoming events.\nSkip to content Skip to search Women Men Objects Stores Series Japan (JP) ¥ 0 0 Just added View cart 🔍 Clear Women Men Objects Stores Series Japan (¥) A unique style destination: italian, inspiring, insightful. Modes. ©2026. Currency Shopping in a different currency? You are currently in the Japan store To place your order in a different currency, please select from the list below. Prices and delivery fees will be updated in line with your new currency and shopping destination. Choose a new location Japan (¥) Albania (L) Algeria (د.ج) Andorra "
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://modes.com/en-jp/blogs/modes-people/anna-deller-yee-x-modes",
+        "preview": "Anna Deller-Yee X Modes – MODES\nJust added\nCurrency Shopping in a different currency?\nExplore Anna Deller-Yee's captivating artwork in her recreated Intimate Creative Studio at MODES Milano\nRead more\nDeep dive into Phoebe Philo Era with an exclusive interview by NSS G-Club\nInto the Process of Becoming a Model- A Talk with Sasha Payton\nIn conversation with Anna Deller-Yee\nThe Big White Blue Focus on Fabrics: Denim\nMandalaki Studios presents the HALO Edition Project\nEBIT Enjoy Being In Transition\nIn conversation with the designer Ludovic de Saint Sernin\nAngelica Montini Studios - Collection 002\nSkip to content Skip to search Women Men Objects Stores Series Japan (JP) ¥ 0 0 Just added View cart 🔍 Clear Women Men Objects Stores Series Japan (¥) A unique style destination: italian, inspiring, "
+      },
+      {
+        "url": "https://modes.com/en-jp/policies/privacy-policy",
+        "preview": "Privacy policy – MODES\nJust added\nCurrency Shopping in a different currency?\nPrivacy policy\nReceive updates on the newest looks and upcoming events.\nSkip to content Skip to search Women Men Objects Stores Series Japan (JP) ¥ 0 0 Just added View cart 🔍 Clear Women Men Objects Stores Series Japan (¥) A unique style destination: italian, inspiring, insightful. Modes. ©2026. Currency Shopping in a different currency? You are currently in the Japan store To place your order in a different currency, please select from the list below. Prices and delivery fees will be updated in line with your new currency and shopping destination. Choose a new location Japan (¥) Albania (L) Algeria (د.ج) Andorra (€) Angola (Kz) Anguilla ($) Antigua & Barbuda ($) Argentina ($) Armenia (դր.) Aruba (ƒ) Australia ($"
+      },
+      {
+        "url": "https://modes.com/en-jp/pages/cookie-policy",
+        "preview": "Cookie Policy – MODES\nJust added\nCurrency Shopping in a different currency?\nCookie Policy\nEssential Cookies\nReporting and Analytics Cookies\nMarketing And Retargeting Cookies\nFunctional Cookies\nReceive updates on the newest looks and upcoming events.\nSkip to content Skip to search Women Men Objects Stores Series Japan (JP) ¥ 0 0 Just added View cart 🔍 Clear Women Men Objects Stores Series Japan (¥) A unique style destination: italian, inspiring, insightful. Modes. ©2026. Currency Shopping in a different currency? You are currently in the Japan store To place your order in a different currency, please select from the list below. Prices and delivery fees will be updated in line with your new currency and shopping destination. Choose a new location Japan (¥) Albania (L) Algeria (د.ج) Andorra "
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://modes.com/en-jp/policies/privacy-policy",
+        "preview": "Privacy policy – MODES\nJust added\nCurrency Shopping in a different currency?\nPrivacy policy\nReceive updates on the newest looks and upcoming events.\nSkip to content Skip to search Women Men Objects Stores Series Japan (JP) ¥ 0 0 Just added View cart 🔍 Clear Women Men Objects Stores Series Japan (¥) A unique style destination: italian, inspiring, insightful. Modes. ©2026. Currency Shopping in a different currency? You are currently in the Japan store To place your order in a different currency, please select from the list below. Prices and delivery fees will be updated in line with your new currency and shopping destination. Choose a new location Japan (¥) Albania (L) Algeria (د.ج) Andorra (€) Angola (Kz) Anguilla ($) Antigua & Barbuda ($) Argentina ($) Armenia (դր.) Aruba (ƒ) Australia ($"
+      },
+      {
+        "url": "https://modes.com/en-jp/pages/cookie-policy",
+        "preview": "Cookie Policy – MODES\nJust added\nCurrency Shopping in a different currency?\nCookie Policy\nEssential Cookies\nReporting and Analytics Cookies\nMarketing And Retargeting Cookies\nFunctional Cookies\nReceive updates on the newest looks and upcoming events.\nSkip to content Skip to search Women Men Objects Stores Series Japan (JP) ¥ 0 0 Just added View cart 🔍 Clear Women Men Objects Stores Series Japan (¥) A unique style destination: italian, inspiring, insightful. Modes. ©2026. Currency Shopping in a different currency? You are currently in the Japan store To place your order in a different currency, please select from the list below. Prices and delivery fees will be updated in line with your new currency and shopping destination. Choose a new location Japan (¥) Albania (L) Algeria (د.ج) Andorra "
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "You are currently in the Japan store To place your order in a different currency, please select from the list below.",
+      "source_url": "https://modes.com/en-jp/policies/privacy-policy",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "Essential Shopify 1 min _cmp_a Used for managing customer privacy settings.",
+      "source_url": "https://modes.com/en-jp/pages/cookie-policy",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "Prices and delivery fees will be updated in line with your new currency and shopping destination.",
+      "source_url": "https://modes.com/en-jp/policies/privacy-policy",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "You are currently in the Japan store To place your order in a different currency, please select from the list below.",
+    "tax_guide": "Essential Shopify 1 min _cmp_a Used for managing customer privacy settings.",
+    "fee_guide": "Prices and delivery fees will be updated in line with your new currency and shopping destination.",
+    "shipping_url": "https://modes.com/en-jp/policies/privacy-policy",
+    "tax_url": "https://modes.com/en-jp/pages/cookie-policy",
+    "fee_url": "https://modes.com/en-jp/policies/privacy-policy"
+  },
+  "update_error": null
+}

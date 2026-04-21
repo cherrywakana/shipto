@@ -1,0 +1,45 @@
+{
+  "shop": {
+    "id": "7e3e3fb5-1ef2-40ec-8636-711ca72842b6",
+    "slug": "nordstrom",
+    "name": "Nordstrom（ノードストローム）",
+    "url": "https://www.nordstrom.com"
+  },
+  "checked_at": "2026-04-18T04:36:48.907Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [],
+    "tax": [],
+    "fee": []
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": null,
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": null,
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

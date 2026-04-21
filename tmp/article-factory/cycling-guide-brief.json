@@ -1,0 +1,28 @@
+{
+  "title": "【2026年最新】自転車海外通販おすすめ12選！Wiggle亡き後の「新・御三家」とは？安い・安全なサイトを徹底比較",
+  "slug": "overseas-cycling-shopping-guide-2026",
+  "category": "fashion",
+  "tags": ["自転車", "海外通販", "ロードバイク", "パーツ", "比較"],
+  "target_keyword": "海外通販 自転車 おすすめ",
+  "primaryKeyword": "海外通販 自転車 おすすめ",
+  "secondaryKeywords": ["ロードバイク 海外通販", "自転車 パーツ 安い", "Merlin Cycles 評判", "Bikeinn 買い方"],
+  "searchIntent": "2026年最新の信頼できる自転車海外通販サイトを知りたい。特にWiggle等が使えなくなった後の代替ショップや、関税・送料・日本発送の注意点を把握したい。",
+  "canonicalTarget": "category:fashion:cycling-guide",
+  "topShops": [
+    { "name": "Merlin Cycles", "slug": "merlin-cycles", "brandUrl": "https://www.merlincycles.com/", "shopUrl": "https://www.merlincycles.com/" },
+    { "name": "Bikeinn", "slug": "bikeinn", "brandUrl": "https://www.tradeinn.com/bikeinn/jp", "shopUrl": "https://www.tradeinn.com/bikeinn/jp" },
+    { "name": "Bike24", "slug": "bike24", "brandUrl": "https://www.bike24.com/", "shopUrl": "https://www.bike24.com/" },
+    { "name": "Canyon", "slug": "canyon", "brandUrl": "https://www.canyon.com/ja-jp/", "shopUrl": "https://www.canyon.com/ja-jp/" }
+  ],
+  "internalLinks": [
+    { "title": "海外通販の関税・消費税ガイド", "href": "/guide/customs-duty-and-tax" },
+    { "title": "全ブランドガイド一覧", "href": "/brands" }
+  ],
+  "focus_points": [
+    "Wiggle/CRCの日本発送停止、PBKの閉鎖という最新事実を強調",
+    "Merlin Cycles, Bikeinn, Bike24を新御三家として紹介",
+    "関税・消費税（16,666円ルール）の分かりやすい解説",
+    "メーカーによる日本発送制限（シマノ等）の現状",
+    "ショップごとのスクリーンショットを必ず挿入"
+  ]
+}

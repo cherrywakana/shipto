@@ -1,0 +1,27 @@
+{
+  "slug": "overseas-fashion-shopping-ultimate-guide",
+  "title": "【2026年最新】海外通販ファッションサイトおすすめ25選！安い・安全な人気ショップを徹底比較",
+  "canonicalTarget": "category:fashion:best-overseas-shopping-sites",
+  "primaryKeyword": "海外通販 ファッション",
+  "secondaryKeywords": [
+    "海外ファッション通販 おすすめ",
+    "海外通販 安全",
+    "海外通販 安い"
+  ],
+  "internalLinks": [
+    "/articles/arcteryx-overseas-shopping-guide",
+    "/articles/kith-brand-overseas-shopping-guide",
+    "/articles/comme-des-garcons-overseas-shopping-guide"
+  ],
+  "topShops": [
+    { "name": "SSENSE", "brandUrl": "https://www.ssense.com/" },
+    { "name": "FARFETCH", "brandUrl": "https://www.farfetch.com/" },
+    { "name": "StockX", "brandUrl": "https://stockx.com/" },
+    { "name": "END.", "brandUrl": "https://www.endclothing.com/" },
+    { "name": "MYTHERESA", "brandUrl": "https://www.mytheresa.com/" },
+    { "name": "LUISAVIAROMA", "brandUrl": "https://www.luisaviaroma.com/" },
+    { "name": "SELFRIDGES", "brandUrl": "https://www.selfridges.com/" },
+    { "name": "HARRODS", "brandUrl": "https://www.harrods.com/" },
+    { "name": "HBX", "brandUrl": "https://hbx.com/" }
+  ]
+}

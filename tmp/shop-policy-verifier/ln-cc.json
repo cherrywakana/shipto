@@ -1,0 +1,45 @@
+{
+  "shop": {
+    "id": "cfcfa64a-ac52-4bb7-84c9-27320c51e715",
+    "slug": "ln-cc",
+    "name": "LN-CC（エルエヌ・シーシー）",
+    "url": "https://www.ln-cc.com"
+  },
+  "checked_at": "2026-04-18T04:45:55.817Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [],
+    "tax": [],
+    "fee": []
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": null,
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": null,
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

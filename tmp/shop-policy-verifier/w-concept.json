@@ -1,0 +1,45 @@
+{
+  "shop": {
+    "id": "1331e030-3d6a-4c6e-a324-6255695c89e7",
+    "slug": "w-concept",
+    "name": "W Concept (Wコンセプト)",
+    "url": "https://us.wconcept.com/"
+  },
+  "checked_at": "2026-04-18T04:48:29.139Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [],
+    "tax": [],
+    "fee": []
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": null,
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": null,
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

@@ -1,0 +1,50 @@
+{
+  "shop": {
+    "id": "f7204dea-bcff-4a67-b88a-96078a10ea55",
+    "slug": "juice-store",
+    "name": "JUICE Store（ジュース・ストア）",
+    "url": "https://juicestore.com/"
+  },
+  "checked_at": "2026-04-18T04:34:54.434Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://juicestore.com/pages/order-delivery",
+        "preview": "JUICESTORE | Order Delivery\nType the keyword or SKU\nShopping Cart\nGreat to have you back!\nReset your password\nShipping, Handling And Delivery Dates\nOrder Processing & Dispatch\nInternational Delivery\nDelivery within Hong Kong\nOrder Tracking\nDelivery and Processing\nNEW SHOP Categories All New Arrivals Sale Women's Kids T-Shirts Hoodies Sweatshirts Knitwear Outerwear Shirts Bottoms Footwear Accessories Essentials Pet BRANDS adidas adidas Originals by EDC Andersson Bell aNYthing Asics Basketcase.gallery BAPE® x CLOT CLESSTE CLOT Coach x CLOT CLOT x NEIGHBORHOOD CLOT x Malbon CLOT | Universal by Laowang CLOT x LỰU ĐẠN Crocs CRTFD DOMREBEL FDMTL FilMelange #FR2 FOG Essentials Howlin' Industry of All Nations™ Infrathin IS-NESS KAKAWOW KidSuper Kuumba Meryll Rogge nanamica Needles New Balance Ne"
+      }
+    ],
+    "tax": [],
+    "fee": []
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Reset your password Shipping, Handling And Delivery Dates Order Processing & Dispatch International Delivery Delivery within Hong Kong Order Tracking Delivery and Processing NEW SHOP Categories All New Arrivals Sale Women's Kids T-Shirts Hoodies Sweatshirts Knitwear Outerwear Shirts Bottoms Footwear Accessories Essentials Pet BRANDS adidas adidas Originals by EDC Andersson Bell aNYthing Asics Basketcase.gallery BAPE® x CLOT CLESSTE CLOT Coach x CLOT CLOT x NEIGHBORHOOD CLOT x Malbon CLOT | Universal by Laowang CLOT x LỰU ĐẠN Crocs CRTFD DOMREBEL FDMTL FilMelange #FR2 FOG Essentials Howlin' Industry of All Nations™ Infrathin IS-NESS KAKAWOW KidSuper Kuumba Meryll Rogge nanamica Needles New Balance New Era Norda Oakley Factory Team ON Online Ceramics P.A.M (Perks And Mini) Pas De Mer Rafu READYMADE Reebok Saint Michael Salomon SCI-FI Fantasy Sporty & Rich SOMEIT SONGAADON SSUR Steiff x Alaia The H.W.Dog & Co.",
+      "source_url": "https://juicestore.com/pages/order-delivery",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Reset your password Shipping, Handling And Delivery Dates Order Processing & Dispatch International Delivery Delivery within Hong Kong Order Tracking Delivery and Processing NEW SHOP Categories All New Arrivals Sale Women's Kids T-Shirts Hoodies Sweatshirts Knitwear Outerwear Shirts Bottoms Footwear",
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": "https://juicestore.com/pages/order-delivery",
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

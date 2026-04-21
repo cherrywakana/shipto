@@ -1,0 +1,60 @@
+{
+  "shop": {
+    "id": "7d87c853-4ac2-4b95-a847-86af73a4cd49",
+    "slug": "feature",
+    "name": "Feature (フィーチャー)",
+    "url": "https://feature.com/"
+  },
+  "checked_at": "2026-04-18T05:01:48.074Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://feature.com/en-jp/collections/mastermind-japan",
+        "preview": "Mastermind Japan – Feature\nFEATURE\nASICS\nHonor the Gift\nOn\nSALOMON\nSTUSSY\nMastermind Japan\nMastermind Japan\nFEATURE GIFT CARDS\nTHE OFFICIAL FEATURE APP\nNOTIFY ME\nMy Cart Your cart is currently empty. One or more of the items in your cart is a deferred, subscription, or recurring purchase. By continuing, I agree to the cancellation policy and authorize you to charge my payment method at the prices, frequency and dates listed on this page until my order is fulfilled or I cancel, if permitted. LATEST NEW ARRIVALS Adidas Originals Astrum Billionaire Boys Club By Parra Metalwood Studio Rick Owens DRKSHDW SEKRIT FEATURED RELEASES Adidas x Wales Bonner FEATURE Bundles Honor the Gift Spring '26 Kids FEATURE Academy Nike Foamposite 'University Blue' Nike General Purpose 'Bricolage' PUMA x Nahmias R"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://feature.com/en-jp/collections/mastermind-japan",
+        "preview": "Mastermind Japan – Feature\nFEATURE\nASICS\nHonor the Gift\nOn\nSALOMON\nSTUSSY\nMastermind Japan\nMastermind Japan\nFEATURE GIFT CARDS\nTHE OFFICIAL FEATURE APP\nNOTIFY ME\nMy Cart Your cart is currently empty. One or more of the items in your cart is a deferred, subscription, or recurring purchase. By continuing, I agree to the cancellation policy and authorize you to charge my payment method at the prices, frequency and dates listed on this page until my order is fulfilled or I cancel, if permitted. LATEST NEW ARRIVALS Adidas Originals Astrum Billionaire Boys Club By Parra Metalwood Studio Rick Owens DRKSHDW SEKRIT FEATURED RELEASES Adidas x Wales Bonner FEATURE Bundles Honor the Gift Spring '26 Kids FEATURE Academy Nike Foamposite 'University Blue' Nike General Purpose 'Bricolage' PUMA x Nahmias R"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://feature.com/en-jp/collections/mastermind-japan",
+        "preview": "Mastermind Japan – Feature\nFEATURE\nASICS\nHonor the Gift\nOn\nSALOMON\nSTUSSY\nMastermind Japan\nMastermind Japan\nFEATURE GIFT CARDS\nTHE OFFICIAL FEATURE APP\nNOTIFY ME\nMy Cart Your cart is currently empty. One or more of the items in your cart is a deferred, subscription, or recurring purchase. By continuing, I agree to the cancellation policy and authorize you to charge my payment method at the prices, frequency and dates listed on this page until my order is fulfilled or I cancel, if permitted. LATEST NEW ARRIVALS Adidas Originals Astrum Billionaire Boys Club By Parra Metalwood Studio Rick Owens DRKSHDW SEKRIT FEATURED RELEASES Adidas x Wales Bonner FEATURE Bundles Honor the Gift Spring '26 Kids FEATURE Academy Nike Foamposite 'University Blue' Nike General Purpose 'Bricolage' PUMA x Nahmias R"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Mastermind JAPAN was founded by Masaaki Homma in 1997; following an aesthetic of mystery and darke",
+      "source_url": "https://feature.com/en-jp/collections/mastermind-japan",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Mastermind JAPAN was founded by Masaaki Homma in 1997; following an aesthetic of mystery and darke",
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": "https://feature.com/en-jp/collections/mastermind-japan",
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

@@ -1,0 +1,867 @@
+{
+  "source": "skimlinks",
+  "mode": "csv",
+  "fetchedAt": "2026-04-18T15:17:36.570Z",
+  "request": {
+    "startDate": "2026-03-21",
+    "endDate": "2026-04-17",
+    "report": "merchant",
+    "timezone": "Asia/Tokyo"
+  },
+  "inputPath": "/Users/reona/Downloads/Publisher merchant report (JA).csv",
+  "totals": {
+    "rows": 94,
+    "clicks": 114647,
+    "sales": 307,
+    "revenue": 576629.2024999999
+  },
+  "rows": [
+    {
+      "Merchant": "Hyperlite Mountain Gear",
+      "Clicks": 1735,
+      "Sales": 68,
+      "Conversion Rate": "3.9193%",
+      "Order Value": 4127377.5881,
+      "Revenue": 291077.2097,
+      "EPC": 167.7678
+    },
+    {
+      "Merchant": "End Clothing ROW",
+      "Clicks": 20665,
+      "Sales": 50,
+      "Conversion Rate": "0.242%",
+      "Order Value": 1558299.6025,
+      "Revenue": 70861.4352,
+      "EPC": 3.4291
+    },
+    {
+      "Merchant": "Ellis Brigham",
+      "Clicks": 14506,
+      "Sales": 58,
+      "Conversion Rate": "0.3998%",
+      "Order Value": 1723459.4069,
+      "Revenue": 54554.6343,
+      "EPC": 3.7608
+    },
+    {
+      "Merchant": "SEVENSTORE",
+      "Clicks": 7162,
+      "Sales": 18,
+      "Conversion Rate": "0.2513%",
+      "Order Value": 1234642.8444,
+      "Revenue": 49481.0226,
+      "EPC": 6.9088
+    },
+    {
+      "Merchant": "FARFETCH",
+      "Clicks": 8223,
+      "Sales": 11,
+      "Conversion Rate": "0.1338%",
+      "Order Value": 359400.9227,
+      "Revenue": 20542.7422,
+      "EPC": 2.4982
+    },
+    {
+      "Merchant": "JD Sports ROW",
+      "Clicks": 3435,
+      "Sales": 12,
+      "Conversion Rate": "0.3493%",
+      "Order Value": 339925.5193,
+      "Revenue": 16657.2587,
+      "EPC": 4.8493
+    },
+    {
+      "Merchant": "Sneakersnstuff",
+      "Clicks": 9029,
+      "Sales": 18,
+      "Conversion Rate": "0.1994%",
+      "Order Value": 412488.2816,
+      "Revenue": 16358.0418,
+      "EPC": 1.8117
+    },
+    {
+      "Merchant": "StockX Holdings LLC",
+      "Clicks": 4390,
+      "Sales": 18,
+      "Conversion Rate": "0.41%",
+      "Order Value": 477029.3045,
+      "Revenue": 9751.8598,
+      "EPC": 2.2214
+    },
+    {
+      "Merchant": "www.ldmountaincentre.com",
+      "Clicks": 9217,
+      "Sales": 5,
+      "Conversion Rate": "0.0542%",
+      "Order Value": 154585.6043,
+      "Revenue": 8656.7938,
+      "EPC": 0.9392
+    },
+    {
+      "Merchant": "Outdoorplay (US)",
+      "Clicks": 296,
+      "Sales": 3,
+      "Conversion Rate": "1.0135%",
+      "Order Value": 111606.3601,
+      "Revenue": 7812.4452,
+      "EPC": 26.3934
+    },
+    {
+      "Merchant": "Wildbounds",
+      "Clicks": 1097,
+      "Sales": 4,
+      "Conversion Rate": "0.3646%",
+      "Order Value": 107668.2091,
+      "Revenue": 5710.7915,
+      "EPC": 5.2058
+    },
+    {
+      "Merchant": "Giglio",
+      "Clicks": 2159,
+      "Sales": 3,
+      "Conversion Rate": "0.139%",
+      "Order Value": 110146.9273,
+      "Revenue": 5447.5771,
+      "EPC": 2.5232
+    },
+    {
+      "Merchant": "Jenson USA",
+      "Clicks": 1777,
+      "Sales": 4,
+      "Conversion Rate": "0.2251%",
+      "Order Value": 106547.8953,
+      "Revenue": 3729.3408,
+      "EPC": 2.0987
+    },
+    {
+      "Merchant": "REVOLVE",
+      "Clicks": 1543,
+      "Sales": 4,
+      "Conversion Rate": "0.2592%",
+      "Order Value": 46066.6513,
+      "Revenue": 3224.6656,
+      "EPC": 2.0899
+    },
+    {
+      "Merchant": "Moosejaw",
+      "Clicks": 97,
+      "Sales": 2,
+      "Conversion Rate": "2.0619%",
+      "Order Value": 61835.7803,
+      "Revenue": 2597.9056,
+      "EPC": 26.7825
+    },
+    {
+      "Merchant": "Fitstore24 - Premium Fitness Company - Online-Shop für Radsport und Fitness",
+      "Clicks": 924,
+      "Sales": 1,
+      "Conversion Rate": "0.1082%",
+      "Order Value": 51996.1673,
+      "Revenue": 1819.8659,
+      "EPC": 1.9696
+    },
+    {
+      "Merchant": "Bodega",
+      "Clicks": 2480,
+      "Sales": 3,
+      "Conversion Rate": "0.121%",
+      "Order Value": 76829.5611,
+      "Revenue": 1613.5186,
+      "EPC": 0.6506
+    },
+    {
+      "Merchant": "Chain Reaction Cycles",
+      "Clicks": 2183,
+      "Sales": 1,
+      "Conversion Rate": "0.0458%",
+      "Order Value": 19031.9472,
+      "Revenue": 1331.9816,
+      "EPC": 0.6102
+    },
+    {
+      "Merchant": "Saks Fifth Avenue OFF 5TH",
+      "Clicks": 846,
+      "Sales": 1,
+      "Conversion Rate": "0.1182%",
+      "Order Value": 26108.1567,
+      "Revenue": 1279.2108,
+      "EPC": 1.5121
+    },
+    {
+      "Merchant": "stadium_goods_us",
+      "Clicks": 3383,
+      "Sales": 2,
+      "Conversion Rate": "0.0591%",
+      "Order Value": 40634.9889,
+      "Revenue": 1144.5907,
+      "EPC": 0.3383
+    },
+    {
+      "Merchant": "Footasylum",
+      "Clicks": 1362,
+      "Sales": 3,
+      "Conversion Rate": "0.2203%",
+      "Order Value": 35184.7655,
+      "Revenue": 858.8674,
+      "EPC": 0.6306
+    },
+    {
+      "Merchant": "Merlin Cycles",
+      "Clicks": 813,
+      "Sales": 3,
+      "Conversion Rate": "0.369%",
+      "Order Value": 56346.9042,
+      "Revenue": 617.7761,
+      "EPC": 0.7599
+    },
+    {
+      "Merchant": "Mr Porter",
+      "Clicks": 3787,
+      "Sales": 1,
+      "Conversion Rate": "0.0264%",
+      "Order Value": 27337.1991,
+      "Revenue": 574.0812,
+      "EPC": 0.1516
+    },
+    {
+      "Merchant": "CampSaver.com",
+      "Clicks": 9,
+      "Sales": 1,
+      "Conversion Rate": "11.1111%",
+      "Order Value": 35295.4003,
+      "Revenue": 350.3502,
+      "EPC": 38.9278
+    },
+    {
+      "Merchant": "Standout.co.uk",
+      "Clicks": 156,
+      "Sales": 1,
+      "Conversion Rate": "0.641%",
+      "Order Value": 9671.9721,
+      "Revenue": 337.8881,
+      "EPC": 2.1659
+    },
+    {
+      "Merchant": "SSENSE",
+      "Clicks": 181,
+      "Sales": 1,
+      "Conversion Rate": "0.5525%",
+      "Order Value": 26485.5913,
+      "Revenue": 185.4831,
+      "EPC": 1.0248
+    },
+    {
+      "Merchant": "Yoox",
+      "Clicks": 2536,
+      "Sales": 2,
+      "Conversion Rate": "0.0789%",
+      "Order Value": 540.0576,
+      "Revenue": 37.804,
+      "EPC": 0.0149
+    },
+    {
+      "Merchant": "AliExpress by Alibaba.com",
+      "Clicks": 11,
+      "Sales": 4,
+      "Conversion Rate": "36.3636%",
+      "Order Value": 0,
+      "Revenue": 12.3641,
+      "EPC": 1.124
+    },
+    {
+      "Merchant": "Tweeks Cycles",
+      "Clicks": 918,
+      "Sales": 1,
+      "Conversion Rate": "0.1089%",
+      "Order Value": 44.6249,
+      "Revenue": 1.2014,
+      "EPC": 0.0013
+    },
+    {
+      "Merchant": "Marks and Spencer",
+      "Clicks": 8,
+      "Sales": 2,
+      "Conversion Rate": "25.0%",
+      "Order Value": 0,
+      "Revenue": 0.4954,
+      "EPC": 0.0619
+    },
+    {
+      "Merchant": "HBX",
+      "Clicks": 2,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "The Clymb",
+      "Clicks": 10,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Prime Video",
+      "Clicks": 1,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "ASOS",
+      "Clicks": 606,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Gossamer Gear",
+      "Clicks": 15,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Mountain Hardwear",
+      "Clicks": 43,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Hipstore",
+      "Clicks": 721,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Sneakersnstuff",
+      "Clicks": 955,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "www.brother2brother.co.uk",
+      "Clicks": 2,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "G-Star.com",
+      "Clicks": 37,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Selfridges",
+      "Clicks": 183,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "The Hut UK",
+      "Clicks": 84,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "ribblecycles.co.uk",
+      "Clicks": 340,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "The North Face UK",
+      "Clicks": 22,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "FORWARD by elyse walker",
+      "Clicks": 22,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Circle Fashion",
+      "Clicks": 5,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "The North Face",
+      "Clicks": 1,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Footpatrol",
+      "Clicks": 2,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "JD Sports UK",
+      "Clicks": 3,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "GO Outdoors",
+      "Clicks": 1,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Coggles",
+      "Clicks": 63,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Slam Jam",
+      "Clicks": 2,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Allike",
+      "Clicks": 32,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Foot District",
+      "Clicks": 1,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Footshop - COM",
+      "Clicks": 1327,
+      "Sales": 2,
+      "Conversion Rate": "0.1507%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "24S",
+      "Clicks": 23,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Probikekit JP",
+      "Clicks": 79,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Shopbop",
+      "Clicks": 133,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Cettire",
+      "Clicks": 3,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "J.Crew",
+      "Clicks": 1,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "What Goes Around Comes Around",
+      "Clicks": 63,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Yesstyle",
+      "Clicks": 11,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "End Clothing UK",
+      "Clicks": 12,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Everlane",
+      "Clicks": 7,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Steep and Cheap",
+      "Clicks": 16,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Zappos.com",
+      "Clicks": 14,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "MATCHESFASHION.COM",
+      "Clicks": 11,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "PacSun",
+      "Clicks": 677,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "MCLABELS",
+      "Clicks": 2,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "MountainSteals.com",
+      "Clicks": 16,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Evans Cycles",
+      "Clicks": 126,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Flannels",
+      "Clicks": 115,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Condor Cycles",
+      "Clicks": 146,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Wolf Tooth Components",
+      "Clicks": 189,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Klekt",
+      "Clicks": 1,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Backcountry.com",
+      "Clicks": 234,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "THE OUTNET.COM",
+      "Clicks": 44,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Saks Fifth Avenue",
+      "Clicks": 6,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Aphrodite",
+      "Clicks": 4,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Fat Buddha Store",
+      "Clicks": 44,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Beyond Retro",
+      "Clicks": 36,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "KicksCrew",
+      "Clicks": 1,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Rebag",
+      "Clicks": 362,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Harvey Nichols",
+      "Clicks": 4,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Campmor",
+      "Clicks": 12,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "State Bicycle CO.",
+      "Clicks": 70,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Vestiaire Collective",
+      "Clicks": 188,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Outdoorplay",
+      "Clicks": 27,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Sigma Sports",
+      "Clicks": 102,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Triads",
+      "Clicks": 7,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "TradeInn",
+      "Clicks": 1129,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "LN-CC",
+      "Clicks": 1310,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "Bloomingdale's",
+      "Clicks": 4,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    },
+    {
+      "Merchant": "evo",
+      "Clicks": 10,
+      "Sales": 0,
+      "Conversion Rate": "0%",
+      "Order Value": 0,
+      "Revenue": 0,
+      "EPC": 0
+    }
+  ],
+  "raw": null
+}

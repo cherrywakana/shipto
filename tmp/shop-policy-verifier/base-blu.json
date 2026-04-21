@@ -1,0 +1,88 @@
+{
+  "shop": {
+    "id": "cf129fd1-03b2-4de8-9f89-925e0d6d156a",
+    "slug": "base-blu",
+    "name": "Base Blu（ベースブルー）",
+    "url": "https://www.baseblu.com/"
+  },
+  "checked_at": "2026-04-18T04:50:20.514Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/shipping-and-returns",
+        "preview": "Shipping and Returns | Base Blu\nShipping and Returns\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling"
+      },
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/privacy-policy",
+        "preview": "Privacy Policy | Base Blu\nPrivacy Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - "
+      },
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/privacy-policy",
+        "preview": "Privacy Policy | Base Blu\nPrivacy Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - "
+      },
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/cookie-policy",
+        "preview": "Cookie Policy | Base Blu\nCookie Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - € "
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/privacy-policy",
+        "preview": "Privacy Policy | Base Blu\nPrivacy Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - "
+      },
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/privacy-policy",
+        "preview": "Privacy Policy | Base Blu\nPrivacy Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - "
+      },
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/cookie-policy",
+        "preview": "Cookie Policy | Base Blu\nCookie Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - € "
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/privacy-policy",
+        "preview": "Privacy Policy | Base Blu\nPrivacy Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - "
+      },
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/privacy-policy",
+        "preview": "Privacy Policy | Base Blu\nPrivacy Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - "
+      },
+      {
+        "url": "https://www.baseblu.com/en-roa/pages/cookie-policy",
+        "preview": "Cookie Policy | Base Blu\nCookie Policy\nShopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions. This field is mandatory Checkout Select Language Country Japan Åland Islands - € Albania - € Algeria - € Andorra - € Angola - € Anguilla - € Antigua & Barbuda - € Argentina - € Armenia - € Aruba - € Australia - $ Austria - € Azerbaijan - € Bahamas - € Bahrain - € Bangladesh - € Barbados - € Belgium - € Belize - € Benin - € Bermuda - € Bhutan - € Bolivia - € Botswana - € Brazil - € British Indian Ocean Territory - € British Virgin Islands - € Brunei - € Bulgaria - € Burkina Faso - € Cambodia - € Cameroon - € Canada - $ Cape Verde - € Cayman Islands - € Chad - € Chile - € China - ¥ Christmas Island - € Cocos (Keeling) Islands - € "
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Search result Products Search result Woman Woman New In Clothing Shoes Bags Accessories View all Clothing Coats Jackets Down Jackets Blazers Dresses Knitwear Shirts Sweatshirts T-shirts Tops Jeans Pants Skirts Shorts Beachwear Underwear View all Bags Shoulder Bags Handbags Tote bags Bucket Bags Clutch Bags Backpacks View all Shoes Ballerinas Pumps Sandals Boots Sneakers Formal shoes Mules View all Accessories Wallets & Cardholders Belts Hats Scarves Gloves Sunglasses Jewellery Socks Keyrings Beauty Cases Extras View all Designers Alaïa Balenciaga Bottega Veneta Brunello Cucinelli Chloè Fendi Gucci Jacquemus Jimmy Choo Loewe Prada Saint Laurent The Attico Valentino Garavani View all View all Man Man New In Clothing Shoes Bags Accessories View all Clothing Coats Jackets Down Jackets Blazers Suits Knitwear Shirts Sweatshirts Polo T-Shirts Jeans Pants Shorts Beachwear Underwear View all Bags Shoulder Bags Handbags Backpacks Belt Bag Travel Bags View all Shoes Boots Sneakers Loafers & Lace-Ups Sandals & Slides View all Accessories Wallets & Cardholders Belts Hats Scarves & Gloves Sunglasses Ties Socks Keyrings Beauty Cases Jewellery View all Designers Alexander McQueen Balenciaga Bottega Veneta Brunello Cucinelli Burberry Fendi Gucci Jil Sander Margiela New balance Prada Saint Laurent Valentino Garavani View all View all Kids Lifestyle Designers Bistrot Sales Sales Woman Sales Man Sales View all Wishlist Login Shipping to Japan (¥) - EN Woman New In Clothing Shoes Bags Accessories View all Clothing Coats Jackets Down Jackets Blazers Dresses Knitwear Shirts Sweatshirts T-shirts Tops Jeans Pants Skirts Shorts Beachwear Underwear View all Bags Shoulder Bags Handbags Tote bags Bucket Bags Clutch Bags Backpacks View all Shoes Ballerinas Pumps Sandals Boots Sneakers Formal shoes Mules View all Accessories Wallets & Cardholders Belts Hats Scarves Gloves Sunglasses Jewellery Socks Keyrings Beauty Cases Extras View all Designers Alaïa Balenciaga Bottega Veneta Brunello Cucinelli Chloè Fendi Gucci Jacquemus Jimmy Choo Loewe Prada Saint Laurent The Attico Valentino Garavani View all Man New In Clothing Shoes Bags Accessories View all Clothing Coats Jackets Down Jackets Blazers Suits Knitwear Shirts Sweatshirts Polo T-Shirts Jeans Pants Shorts Beachwear Underwear View all Bags Shoulder Bags Handbags Backpacks Belt Bag Travel Bags View all Shoes Boots Sneakers Loafers & Lace-Ups Sandals & Slides View all Accessories Wallets & Cardholders Belts Hats Scarves & Gloves Sunglasses Ties Socks Keyrings Beauty Cases Jewellery View all Designers Alexander McQueen Balenciaga Bottega Veneta Brunello Cucinelli Burberry Fendi Gucci Jil Sander Margiela New balance Prada Saint Laurent Valentino Garavani View all Kids Lifestyle Designers Bistrot Sales Woman Sales Man Sales Shipping and Returns FAQ Shipping and Returns Payment Methods Terms and Conditions Privacy Policy Cookie Policy Shipping and Returns DELIVERY OF GOODS Base Blu entrusts its shipments to DHL courier from Monday to Friday, from 9:00 to 16:00.",
+      "source_url": "https://www.baseblu.com/en-roa/pages/shipping-and-returns",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "Cookie Policy | Base Blu Cookie Policy Shopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions.",
+      "source_url": "https://www.baseblu.com/en-roa/pages/cookie-policy",
+      "confidence": "high"
+    },
+    "fee": {
+      "status": "free_over_threshold",
+      "summary": "Free Shipping for orders over 850€ Subscribe to our newsletter to get a 15% off* on your first order Search Pages Search result Articles Search result Collections Search result Were you looking for...",
+      "source_url": "https://www.baseblu.com/en-roa/pages/privacy-policy",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Search result Products Search result Woman Woman New In Clothing Shoes Bags Accessories View all Clothing Coats Jackets Down Jackets Blazers Dresses Knitwear Shirts Sweatshirts T-shirts Tops Jeans Pants Skirts Shorts Beachwear Underwear View all Bags Shoulder Bags Handbags Tote bags Bucket Bags Clut",
+    "tax_guide": "Cookie Policy | Base Blu Cookie Policy Shopping bag Your cart is empty Total ¥0 Taxes and Duties Excluded I accept the Privacy Policy and the Terms and conditions.",
+    "fee_guide": "Free Shipping for orders over 850€ Subscribe to our newsletter to get a 15% off* on your first order Search Pages Search result Articles Search result Collections Search result Were you looking for...",
+    "shipping_url": "https://www.baseblu.com/en-roa/pages/shipping-and-returns",
+    "tax_url": "https://www.baseblu.com/en-roa/pages/cookie-policy",
+    "fee_url": "https://www.baseblu.com/en-roa/pages/privacy-policy"
+  },
+  "update_error": null
+}

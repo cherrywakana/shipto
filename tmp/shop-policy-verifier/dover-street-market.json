@@ -1,0 +1,64 @@
+{
+  "shop": {
+    "id": "834091c7-99df-4998-9693-7adf07e5e59e",
+    "slug": "dover-street-market",
+    "name": "Dover Street Market (ドーバーストリートマーケット)",
+    "url": "https://shop.doverstreetmarket.com/"
+  },
+  "checked_at": "2026-04-18T04:40:16.381Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://shop.doverstreetmarket.com/pages/faqs_privacy-policy_our-privacy-policy",
+        "preview": "DSM Privacy Notice | Dover Street Market London\nDSM Privacy Notice\nWhat data do we collect about you?\nBasic contact information\nYour payment details\nTechnical information about your device and Website usage\nRecords of how you use our services\nRecords of communications you have with us\nOther information that you provide to us voluntarily\nDSM Client Account\nCookie Policy\nFor what purposes do we use data about you, and on what legal basis?\nPurpose: To setup and manage an account with us\nSkip to content We use cookies to provide you with the best experience. Read our privacy policy. Close Accept Dover Street Market DSMNY E-SHOP DSMG E-SHOP DSMS E-SHOP DSML E-SHOP Menu Close GB (£)▼ Login Wishlist DSMNY E-SHOP DSMG E-SHOP DSMS E-SHOP DSM HOME Login Cart Wishlist Contact Subscribe Search GB (£)▼"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://shop.doverstreetmarket.com/collections/private-label-customised-watches",
+        "preview": "PRIVATE LABEL DUBAI LTD | Dover Street Market London\nPRIVATE LABEL DUBAI LTD\nPrivate Label Dubai Ltd Customised Rolex Datejust Mint Green\nPrivate Label Dubai Ltd Customised Rolex Datejust Blueberry Blue\nPrivate Label Dubai Ltd Customised Rolex Datejust Apple Green\nPrivate Label Dubai Ltd Customised Rolex Datejust Grape Purple\nPrivate Label Dubai Ltd Customised Rolex Datejust Rose Pink\nPrivate Label Dubai Ltd Customised Rolex Datejust Lemon Yellow\nPrivate Label Dubai Ltd Customised Rolex Datejust Sorbet White\nPrivate Label Dubai Ltd Piaget White Gold Lapis Watch White Gold\nPrivate Label Dubai Ltd Piaget 9741 Yellow Gold\nShipping Location\nSkip to content We use cookies to provide you with the best experience. Read our privacy policy. Close Accept Dover Street Market DSMNY E-SHOP DSMG E-SHOP "
+      },
+      {
+        "url": "https://shop.doverstreetmarket.com/pages/faqs_privacy-policy_our-privacy-policy",
+        "preview": "DSM Privacy Notice | Dover Street Market London\nDSM Privacy Notice\nWhat data do we collect about you?\nBasic contact information\nYour payment details\nTechnical information about your device and Website usage\nRecords of how you use our services\nRecords of communications you have with us\nOther information that you provide to us voluntarily\nDSM Client Account\nCookie Policy\nFor what purposes do we use data about you, and on what legal basis?\nPurpose: To setup and manage an account with us\nSkip to content We use cookies to provide you with the best experience. Read our privacy policy. Close Accept Dover Street Market DSMNY E-SHOP DSMG E-SHOP DSMS E-SHOP DSML E-SHOP Menu Close GB (£)▼ Login Wishlist DSMNY E-SHOP DSMG E-SHOP DSMS E-SHOP DSM HOME Login Cart Wishlist Contact Subscribe Search GB (£)▼"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://shop.doverstreetmarket.com/pages/faqs_privacy-policy_our-privacy-policy",
+        "preview": "DSM Privacy Notice | Dover Street Market London\nDSM Privacy Notice\nWhat data do we collect about you?\nBasic contact information\nYour payment details\nTechnical information about your device and Website usage\nRecords of how you use our services\nRecords of communications you have with us\nOther information that you provide to us voluntarily\nDSM Client Account\nCookie Policy\nFor what purposes do we use data about you, and on what legal basis?\nPurpose: To setup and manage an account with us\nSkip to content We use cookies to provide you with the best experience. Read our privacy policy. Close Accept Dover Street Market DSMNY E-SHOP DSMG E-SHOP DSMS E-SHOP DSML E-SHOP Menu Close GB (£)▼ Login Wishlist DSMNY E-SHOP DSMG E-SHOP DSMS E-SHOP DSM HOME Login Cart Wishlist Contact Subscribe Search GB (£)▼"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Anderson Kiko Kostadinov Lemaire Maison Margiela Marie Adam-Leenaerdt Miu Miu Niccolò Pasqualetti noir kei ninomiya Our Legacy Prada Rick Owens The Row sacai Sandy Liang Shushu/Tong Simone Rocha Valentino Wales Bonner Sneaker Space Back Sneaker Space View All Adidas Asics Diemme CDG Play Converse Converse Hoka New Balance Nike On-Running Salomon Vans Jewellery Space Back Jewellery Space View All Bracelets Earrings Necklaces Pendants Rings Watches View All 13 Lucky Monkey Alabaster Industries Bunney Casio Castro CDG Jewellery Completedworks Courtney Mc Doble Vintage Watches Duffy Farbey & Myszczynski Fervent Moon Francesca Villa Fraser Hamilton Frederick Grove Georgia Kemball Hum Nikolle Radi Noguchi Bijoux Omeyer O Thongthai Old Jewelry Patcharavipa Private Label Watches Seb Brown Shihara Sketch24 Ltd Solange Sophie Buhai Sophie Gardner Sophie Glover Spinelli Kilcollin Suzanne Kalan Tom Wood Weinan Pan William Welstead T-Shirt Space Back T-Shirt Space View All Always Do What You Should Do B.Eautiful Better With Age BYE JEREMY Cactus Store Cav Empt Deathmask Fugazi Henry Johnson Human Made Online Ceramics Passion Paly Rassvet Small Talk Undercover Westfall Designers A-Z Back Designers A-Z DSM Privacy Notice This website (the “Website”) and our store at 18-22 Haymarket, London, SW1Y 4DG (the “Store”) are owned and operated by Dover Street Market International (DSMI) Ltd., Third Floor, 33-34 Great Pulteney Street, London W1F 9NP (“we”, “us”, or “our”), company number 07877671.",
+      "source_url": "https://shop.doverstreetmarket.com/pages/faqs_privacy-policy_our-privacy-policy",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "PRIVATE LABEL DUBAI LTD | Dover Street Market London PRIVATE LABEL DUBAI LTD Private Label Dubai Ltd Customised Rolex Datejust Mint Green Private Label Dubai Ltd Customised Rolex Datejust Blueberry Blue Private Label Dubai Ltd Customised Rolex Datejust Apple Green Private Label Dubai Ltd Customised Rolex Datejust Grape Purple Private Label Dubai Ltd Customised Rolex Datejust Rose Pink Private Label Dubai Ltd Customised Rolex Datejust Lemon Yellow Private Label Dubai Ltd Customised Rolex Datejust Sorbet White Private Label Dubai Ltd Piaget White Gold Lapis Watch White Gold Private Label Dubai Ltd Piaget 9741 Yellow Gold Shipping Location Skip to content We use cookies to provide you with the best experience.",
+      "source_url": "https://shop.doverstreetmarket.com/collections/private-label-customised-watches",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "Records of communications you have with us If you contact us with a question or to provide feedback, for instance, we will keep a record of your communications with us through email or telephone (although we don’t record your calls).",
+      "source_url": "https://shop.doverstreetmarket.com/pages/faqs_privacy-policy_our-privacy-policy",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Anderson Kiko Kostadinov Lemaire Maison Margiela Marie Adam-Leenaerdt Miu Miu Niccolò Pasqualetti noir kei ninomiya Our Legacy Prada Rick Owens The Row sacai Sandy Liang Shushu/Tong Simone Rocha Valentino Wales Bonner Sneaker Space Back Sneaker Space View All Adidas Asics Diemme CDG Play Converse Co",
+    "tax_guide": "PRIVATE LABEL DUBAI LTD | Dover Street Market London PRIVATE LABEL DUBAI LTD Private Label Dubai Ltd Customised Rolex Datejust Mint Green Private Label Dubai Ltd Customised Rolex Datejust Blueberry Blue Private Label Dubai Ltd Customised Rolex Datejust Apple Green Private Label Dubai Ltd Customised ",
+    "fee_guide": "Records of communications you have with us If you contact us with a question or to provide feedback, for instance, we will keep a record of your communications with us through email or telephone (although we don’t record your calls).",
+    "shipping_url": "https://shop.doverstreetmarket.com/pages/faqs_privacy-policy_our-privacy-policy",
+    "tax_url": "https://shop.doverstreetmarket.com/collections/private-label-customised-watches",
+    "fee_url": "https://shop.doverstreetmarket.com/pages/faqs_privacy-policy_our-privacy-policy"
+  },
+  "update_error": null
+}

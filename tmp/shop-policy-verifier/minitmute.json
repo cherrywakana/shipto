@@ -1,0 +1,60 @@
+{
+  "shop": {
+    "id": "5b4428ae-79b4-4e5c-b336-6b8f11caa4aa",
+    "slug": "minitmute",
+    "name": "minitmute（ミニミュート）",
+    "url": "https://minitmute.jp/"
+  },
+  "checked_at": "2026-04-18T04:30:38.740Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://minitmute.jp/policies/privacy-policy",
+        "preview": "プライバシーポリシー – minitmute.jp\nカートが空です\nプライバシーポリシー\nミニットミュートへようこそ\nお客様サポート\nお問い合わせ\nフォローミニットミュート\nメルマガ\nフォローミニットミュート\nコンテンツに進む カートが空です 買い物を続ける アカウントをお持ちですか? ログイン することで、チェックアウトがスピーディーに行えます。 ご購入前に、ご確認をお願い致します。 New Arrival Bag All Bags JP Exclusive Totes Crossbody Bags Mini Bags Shoulder Bags minitmute sporty Mood Vintage Bag Ferretti Bag Twin Bag Clo Bag Minimal Bag Acc Collection About Brand Story Showroom Account Notice Contact Us JP KR EN Search Search Wish Cart(0) Log in New Arrival Bag Bag All Bags JP Exclusive Totes Crossbody Bags Mini Bags Shoulder Bags minitmute sporty Mood Vintage Bag Ferretti Bag Twin Bag Clo Bag Minimal Bag Acc Collection About About Brand Story Showroom Account Notice Contact Us KR JP EN プライバシーポリシー （同）エム ビレッジ（以下「会社」という）は、お客様から個人情報をご提供いただくにあたり当該個人情報の重要性を深く認識し、お客様へ安心·安全·信頼の製品およ"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://minitmute.jp/policies/privacy-policy",
+        "preview": "プライバシーポリシー – minitmute.jp\nカートが空です\nプライバシーポリシー\nミニットミュートへようこそ\nお客様サポート\nお問い合わせ\nフォローミニットミュート\nメルマガ\nフォローミニットミュート\nコンテンツに進む カートが空です 買い物を続ける アカウントをお持ちですか? ログイン することで、チェックアウトがスピーディーに行えます。 ご購入前に、ご確認をお願い致します。 New Arrival Bag All Bags JP Exclusive Totes Crossbody Bags Mini Bags Shoulder Bags minitmute sporty Mood Vintage Bag Ferretti Bag Twin Bag Clo Bag Minimal Bag Acc Collection About Brand Story Showroom Account Notice Contact Us JP KR EN Search Search Wish Cart(0) Log in New Arrival Bag Bag All Bags JP Exclusive Totes Crossbody Bags Mini Bags Shoulder Bags minitmute sporty Mood Vintage Bag Ferretti Bag Twin Bag Clo Bag Minimal Bag Acc Collection About About Brand Story Showroom Account Notice Contact Us KR JP EN プライバシーポリシー （同）エム ビレッジ（以下「会社」という）は、お客様から個人情報をご提供いただくにあたり当該個人情報の重要性を深く認識し、お客様へ安心·安全·信頼の製品およ"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://minitmute.jp/policies/privacy-policy",
+        "preview": "プライバシーポリシー – minitmute.jp\nカートが空です\nプライバシーポリシー\nミニットミュートへようこそ\nお客様サポート\nお問い合わせ\nフォローミニットミュート\nメルマガ\nフォローミニットミュート\nコンテンツに進む カートが空です 買い物を続ける アカウントをお持ちですか? ログイン することで、チェックアウトがスピーディーに行えます。 ご購入前に、ご確認をお願い致します。 New Arrival Bag All Bags JP Exclusive Totes Crossbody Bags Mini Bags Shoulder Bags minitmute sporty Mood Vintage Bag Ferretti Bag Twin Bag Clo Bag Minimal Bag Acc Collection About Brand Story Showroom Account Notice Contact Us JP KR EN Search Search Wish Cart(0) Log in New Arrival Bag Bag All Bags JP Exclusive Totes Crossbody Bags Mini Bags Shoulder Bags minitmute sporty Mood Vintage Bag Ferretti Bag Twin Bag Clo Bag Minimal Bag Acc Collection About About Brand Story Showroom Account Notice Contact Us KR JP EN プライバシーポリシー （同）エム ビレッジ（以下「会社」という）は、お客様から個人情報をご提供いただくにあたり当該個人情報の重要性を深く認識し、お客様へ安心·安全·信頼の製品およ"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": null,
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": null,
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

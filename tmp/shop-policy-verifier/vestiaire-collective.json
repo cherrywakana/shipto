@@ -1,0 +1,45 @@
+{
+  "shop": {
+    "id": "583e5bf6-eb12-485e-9890-05ea584cf880",
+    "slug": "vestiaire-collective",
+    "name": "Vestiaire Collective（ヴェスティエール・コレクティブ）",
+    "url": "https://www.vestiairecollective.com"
+  },
+  "checked_at": "2026-04-18T05:02:39.640Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [],
+    "tax": [],
+    "fee": []
+  },
+  "result": {
+    "shipping": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": null,
+    "tax_guide": null,
+    "fee_guide": null,
+    "shipping_url": null,
+    "tax_url": null,
+    "fee_url": null
+  },
+  "update_error": null
+}

@@ -1,0 +1,144 @@
+{
+  "type": "brand-guide",
+  "canonicalTarget": "brand:nike:cheap-overseas-shopping",
+  "slug": "nike-overseas-shopping-guide",
+  "title": "【2026年最新】Nikeが安い海外通販サイトおすすめ8選",
+  "primaryKeyword": "Nike 安い 海外通販",
+  "secondaryKeywords": [
+    "Nike どこで買う",
+    "Nike 本物 買える"
+  ],
+  "searchIntent": "ブランド商品を安く安全に買える海外通販サイトを探したい",
+  "monetizationGoal": "ブランド詳細から高意図でショップへ送客する",
+  "recommendedSections": [
+    "Nikeが安い海外通販サイトおすすめ8選",
+    "Nikeを海外通販で買うメリット",
+    "Nikeを買う前に確認したいポイント",
+    "Nikeのおすすめショップ比較表",
+    "Nikeに強いショップの選び方",
+    "まとめ: Nikeを買うならどこが有力か"
+  ],
+  "internalLinks": [
+    "/brands/nike",
+    "/shops/ssense",
+    "/shops/farfetch",
+    "/shops/selfridges",
+    "/shops/end",
+    "/shops/hbx",
+    "/articles/overseas-shopping-beginners-guide",
+    "/articles/overseas-shopping-customs-tax"
+  ],
+  "topShops": [
+    {
+      "rankHint": 1,
+      "name": "SSENSE（エッセンス）",
+      "slug": "ssense",
+      "category": "ラグジュアリー・ハイブランド",
+      "country": "カナダ",
+      "shipsToJapan": true,
+      "popularityScore": 100,
+      "brandUrl": "https://www.ssense.com/ja-jp/men/designers/nike",
+      "shopUrl": "https://www.ssense.com/ja-jp/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/ssense.webp",
+      "description": "SSENSE（エッセンス）はカナダ・モントリオールを拠点とする、世界で最も影響力のあるラグジュアリー・ストリート・アバンギャルドファッションのプラットフォームです。ハイエンドなデザイナーブランドから新進気鋭のインディーブランドまで、圧倒的でエッジの効いた品ぞろえが強みです。"
+    },
+    {
+      "rankHint": 2,
+      "name": "FARFETCH（ファーフェッチ）",
+      "slug": "farfetch",
+      "category": "ラグジュアリー・ハイブランド",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 98,
+      "brandUrl": "https://www.farfetch.com/jp/shopping/men/nike/items.aspx",
+      "shopUrl": "https://www.farfetch.com/jp/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/farfetch.webp",
+      "description": "FARFETCH（ファーフェッチ）は、世界中の名門ブティックやブランドと直接提携しているイギリス発の巨大なラグジュアリー・オンラインマーケットプレイスです。日本語完全対応のサイトとサポート体制があり、希少なラグジュアリーアイテムを安心して購入できるのが強みです。"
+    },
+    {
+      "rankHint": 3,
+      "name": "SELFRIDGES（セルフリッジズ）",
+      "slug": "selfridges",
+      "category": "コスメ・ビューティー",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 94,
+      "brandUrl": "https://www.selfridges.com/JP/en/cat/nike/",
+      "shopUrl": "https://www.selfridges.com",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/selfridges.webp",
+      "description": "Selfridges（セルフリッジズ）は、ロンドンで圧倒的な人気と実績を誇る高級百貨店の一つです。最新のハイファッションから高級コスメ、独占販売の限定品まで、実店舗の熱気をそのままオンラインで体験することができます。"
+    },
+    {
+      "rankHint": 4,
+      "name": "END.（エンド）",
+      "slug": "end",
+      "category": "ストリート・スニーカー",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 90,
+      "brandUrl": "https://www.endclothing.com/jp/brands/nike",
+      "shopUrl": "https://www.endclothing.com",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/end-clothing.webp?t=1772403770389",
+      "description": "英国発、世界最大級のハイエンド・セレクトショップ。ラグジュアリーからストリートまで圧倒的な品揃えと、独自の抽選システム（Launches）で知られる。"
+    },
+    {
+      "rankHint": 5,
+      "name": "HBX（エイチビーエックス）",
+      "slug": "hbx",
+      "category": "韓国・アジアトレンド",
+      "country": "香港",
+      "shipsToJapan": true,
+      "popularityScore": 90,
+      "brandUrl": "https://hbx.com/jp/search?q=nike",
+      "shopUrl": "https://hbx.com/jp",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/hbx.webp",
+      "description": "世界的なストリートメディア「Hypebeast」が運営するセレクトショップ。ハイエンドからアジア発の新鋭ブランドまで、厳選された最先端のコレクションを扱います。"
+    },
+    {
+      "rankHint": 6,
+      "name": "AliExpress（アリエクスプレス）",
+      "slug": "aliexpress",
+      "category": "韓国・アジアトレンド",
+      "country": "中国",
+      "shipsToJapan": true,
+      "popularityScore": 90,
+      "brandUrl": "https://www.aliexpress.com/w/wholesale-nike.html",
+      "shopUrl": "https://best.aliexpress.com/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/aliexpress.webp?t=1773536090134",
+      "description": "アリババグループが運営する世界最大級の越境ECサイト。ファッションから電子機器まで膨大な出品があり、個人輸入の定番サイトです。"
+    },
+    {
+      "rankHint": 7,
+      "name": "Evans Cycles（エバンスサイクル）",
+      "slug": "evans-cycles",
+      "category": "自転車・パーツ",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 85,
+      "brandUrl": "https://www.evanscycles.com/brand/nike",
+      "shopUrl": "https://www.evanscycles.com/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/evans-cycles.webp?t=1773492261846",
+      "description": "イギリスで100年以上の歴史を持つ老舗自転車店。完成車からパーツまで幅広く扱い、信頼性の高いサービスを提供しています。"
+    },
+    {
+      "rankHint": 8,
+      "name": "JD Sports (JDスポーツ)",
+      "slug": "jd-sports",
+      "category": "ストリート・スニーカー",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 60,
+      "brandUrl": "https://www.jdsports.co.uk/brand/nike/",
+      "shopUrl": "https://www.jdsports.co.uk/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/jd-sports.webp?t=1773492269117",
+      "description": "イギリス最大級のスポーツファッション小売店で、NikeやAdidasの限定モデル（JD Exclusive）やアパレルを豊富に取り扱っています。"
+    }
+  ],
+  "writingGuidelines": [
+    "見出し直後に、どの読者に向いている記事かを明示する。",
+    "ショップごとに「向いている人」「注意点」「直送可否」を短く書く。",
+    "公式サイトCTAは各ショップ節の終わりに入れる。",
+    "比較表や要点リストを使って、スクロールせず価値が伝わるようにする。",
+    "情報系に寄りすぎず、最終的にショップ遷移したくなる構成にする。"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "shop": {
+    "id": "a4aa29a2-e296-4464-9358-3b5a1ba00ac6",
+    "slug": "solebox",
+    "name": "Solebox (ソールボックス)",
+    "url": "https://www.solebox.com/"
+  },
+  "checked_at": "2026-04-18T04:47:34.505Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.solebox.com/en-int/dataprotection",
+        "preview": "solebox | Dataprotection\nPrivacy Notice, as of May 2025\nSPRING SALE - 25% OFFSHOP NOWEXPLORE THE NEW SOLEBOX APPDOWNLOAD NOWint Discover MBCY! SaleNewReleasesShop ByFootwearApparelAccessoriesBrands The HUB All Footwear Apparel Accessories Brands A Bathing Ape adidas Originals Asics Sportstyle Birkenstock Carhartt WIP New Balance New Era Polo Ralph Lauren UGG All Footwear Apparel Accessories Our Picks Gift Guide Spring / Summer Essentials Styles Blokecore Gorpcore Minimalist Y2K All Sneaker Running Basketball Fashion Court Casual Shoes Outdoor Performance Running Sandals & Slides Winter Boots Low Profile Essentials White Sneaker Limited Style Favorites adidas adizero adidas BW Army adidas Gazelle adidas Handball Spezial adidas Samba adidas Superstar adidas Terrace adidas ZX 8000 Asics Gel-1"
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.solebox.com/en-int/dataprotection",
+        "preview": "solebox | Dataprotection\nPrivacy Notice, as of May 2025\nSPRING SALE - 25% OFFSHOP NOWEXPLORE THE NEW SOLEBOX APPDOWNLOAD NOWint Discover MBCY! SaleNewReleasesShop ByFootwearApparelAccessoriesBrands The HUB All Footwear Apparel Accessories Brands A Bathing Ape adidas Originals Asics Sportstyle Birkenstock Carhartt WIP New Balance New Era Polo Ralph Lauren UGG All Footwear Apparel Accessories Our Picks Gift Guide Spring / Summer Essentials Styles Blokecore Gorpcore Minimalist Y2K All Sneaker Running Basketball Fashion Court Casual Shoes Outdoor Performance Running Sandals & Slides Winter Boots Low Profile Essentials White Sneaker Limited Style Favorites adidas adizero adidas BW Army adidas Gazelle adidas Handball Spezial adidas Samba adidas Superstar adidas Terrace adidas ZX 8000 Asics Gel-1"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.solebox.com/en-int/b/lacoste-1063",
+        "preview": "Shop Lacoste apparel and accessories at solebox\nLacoste\nMary Jane Umpire 126 2 SMA\nT-Shirt\nT-Shirt\nT-Shirt\nT-Shirt\nSpinor 1261 SMA\nCap Small Croc\nShorts\nLogo Tanktop\nShorts\nCap Small Croc\nEXPLORE THE NEW SOLEBOX APPDOWNLOAD NOWint Discover MBCY! SaleNewReleasesShop ByFootwearApparelAccessoriesBrands The HUB All Footwear Apparel Accessories Brands A Bathing Ape adidas Originals Asics Sportstyle Birkenstock Carhartt WIP New Balance New Era Polo Ralph Lauren UGG All Footwear Apparel Accessories Our Picks Gift Guide Spring / Summer Essentials Styles Blokecore Gorpcore Minimalist Y2K All Sneaker Running Basketball Fashion Court Casual Shoes Outdoor Performance Running Sandals & Slides Winter Boots Low Profile Essentials White Sneaker Limited Style Favorites adidas adizero adidas BW Army adidas "
+      },
+      {
+        "url": "https://www.solebox.com/en-int/dataprotection",
+        "preview": "solebox | Dataprotection\nPrivacy Notice, as of May 2025\nSPRING SALE - 25% OFFSHOP NOWEXPLORE THE NEW SOLEBOX APPDOWNLOAD NOWint Discover MBCY! SaleNewReleasesShop ByFootwearApparelAccessoriesBrands The HUB All Footwear Apparel Accessories Brands A Bathing Ape adidas Originals Asics Sportstyle Birkenstock Carhartt WIP New Balance New Era Polo Ralph Lauren UGG All Footwear Apparel Accessories Our Picks Gift Guide Spring / Summer Essentials Styles Blokecore Gorpcore Minimalist Y2K All Sneaker Running Basketball Fashion Court Casual Shoes Outdoor Performance Running Sandals & Slides Winter Boots Low Profile Essentials White Sneaker Limited Style Favorites adidas adizero adidas BW Army adidas Gazelle adidas Handball Spezial adidas Samba adidas Superstar adidas Terrace adidas ZX 8000 Asics Gel-1"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "Martens Eastpak Futur GESTALTEN Verlag GR10K Gramicci Harmony Hartcopy HOKA Hypebeast Magazine ICECREAM La MJC Lacoste Medicom Toy MightyJaxx Mizuno Moon Boot Needles New Balance New Era No Problemo Norse Projects Oakley Factory Team Oakley ON Opening Ceremony Our Legacy Phaidon Pleasures Polo Ralph Lauren Puma Reebok Rizzoli New York ROA Salomon Saucony solebox Soulland Stanley Sunflower Taschen The North Face thisisneverthat Timberland Transparent TwoJeys UGG Umbro by Slam Jam Vans Veja Zellerfeld Search Top Brandsadidas OriginalsA Bathing ApeNew BalanceTop CategoriesFootwearHoodiesCoats, Jackets & VestsCollectiblesBooks & MagazinesProductsadidas OriginalsWmns Gazelle Stack70,57 €Clarks Originalsx solebox Wallabee Boot117,63 €A Bathing Apex Solebox Bape Sta252,09 €adidas OriginalsWmns Gazelle Stack50,41 €Clarks Originalsx solebox Wmns Wallabee Boot117,63 €Reebokx solebox Club C 85 Vintage100,83 €ASICS SportStyleGel-NYC126,04 €ASICS SportStyleGel-113084,02 €Worldwide Shipping within 4-6 business daysQuick Feedback from our Customer ServiceTracked Delivery with UPS ExpressPrivacy Notice, as of May 2025We appreciate your interest in our website.",
+      "source_url": "https://www.solebox.com/en-int/dataprotection",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "If other companies are commissioned to process and send the newsletter, they will also be obliged to protect your data in accordance with data protection regulations and to use it only for the specified purpose.In detail, the following data may be processedData that you provide to us when you subscribe to the solebox & MBCY newsletter (e-mail address, title if applicable, first name, surname, address, zip code, shoe size, preferred brands, interests, date of birth);Data that we need to prove your consent to receive the solebox & MBCY newsletter and the processing of your data (IP address and time stamp of the newsletter order and the click on the link in the confirmation e-mail, declarations of consent given);Data that we receive when you read the solebox & MBCY newsletter (opening the newsletter, clicks on links contained in the newsletter, data on the end device used, data on the location based on the IP address, accessibility of the e-mail address, execution of a purchase on www.solebox.com or an action on the website after clicking on an offer)Data that we receive when you participate in a competition organized by us (details of the competition, answers);Data that we receive when you register a user account on our website (title, first name, surname, email address, zip code, date of registration, date of last login);Data about your purchases made at solebox online or in the store (goods/services, payment amount, currency, location, checkout or terminal ID and time and number of the transaction as well as store ID, discount amount);Data that we receive when redeeming vouchers or coupons and activating credit (redeemed vouchers and coupons from solebox, date and place of redemption);Data collected when you use our website www.solebox.com (pages viewed, services used, wish list, preferences);Data that we receive when using customer surveys (survey results);Data that we generate based on the evaluation of the aforementioned data (customer segments, presumed product preferences).We only process the aforementioned data if we actually receive it, for example when you use our website features, place an order on www.solebox.com or take part in one of our competitions.",
+      "source_url": "https://www.solebox.com/en-int/dataprotection",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "fixed",
+      "summary": "Martens Eastpak Futur GESTALTEN Verlag GR10K Gramicci Harmony Hartcopy HOKA Hypebeast Magazine ICECREAM La MJC Lacoste Medicom Toy MightyJaxx Mizuno Moon Boot Needles New Balance New Era No Problemo Norse Projects Oakley Factory Team Oakley ON Opening Ceremony Our Legacy Phaidon Pleasures Polo Ralph Lauren Puma Reebok Rizzoli New York ROA Salomon Saucony solebox Soulland Stanley Sunflower Taschen The North Face thisisneverthat Timberland Transparent TwoJeys UGG Umbro by Slam Jam Vans Veja Zellerfeld Search Top Brandsadidas OriginalsA Bathing ApeNew BalanceTop CategoriesFootwearHoodiesCoats, Jackets & VestsCollectiblesBooks & MagazinesProductsadidas OriginalsWmns Gazelle Stack70,57 €Clarks Originalsx solebox Wallabee Boot117,63 €A Bathing Apex Solebox Bape Sta252,09 €adidas OriginalsWmns Gazelle Stack50,41 €Clarks Originalsx solebox Wmns Wallabee Boot117,63 €Reebokx solebox Club C 85 Vintage100,83 €ASICS SportStyleGel-NYC126,04 €ASICS SportStyleGel-113084,02 €Worldwide Shipping within 4-6 business daysQuick Feedback from our Customer ServiceTracked Delivery with UPS ExpressPrivacy Notice, as of May 2025We appreciate your interest in our website.",
+      "source_url": "https://www.solebox.com/en-int/dataprotection",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Martens Eastpak Futur GESTALTEN Verlag GR10K Gramicci Harmony Hartcopy HOKA Hypebeast Magazine ICECREAM La MJC Lacoste Medicom Toy MightyJaxx Mizuno Moon Boot Needles New Balance New Era No Problemo Norse Projects Oakley Factory Team Oakley ON Opening Ceremony Our Legacy Phaidon Pleasures Polo Ralph",
+    "tax_guide": "If other companies are commissioned to process and send the newsletter, they will also be obliged to protect your data in accordance with data protection regulations and to use it only for the specified purpose.In detail, the following data may be processedData that you provide to us when you subscr",
+    "fee_guide": "Martens Eastpak Futur GESTALTEN Verlag GR10K Gramicci Harmony Hartcopy HOKA Hypebeast Magazine ICECREAM La MJC Lacoste Medicom Toy MightyJaxx Mizuno Moon Boot Needles New Balance New Era No Problemo Norse Projects Oakley Factory Team Oakley ON Opening Ceremony Our Legacy Phaidon Pleasures Polo Ralph",
+    "shipping_url": "https://www.solebox.com/en-int/dataprotection",
+    "tax_url": "https://www.solebox.com/en-int/dataprotection",
+    "fee_url": "https://www.solebox.com/en-int/dataprotection"
+  },
+  "update_error": null
+}

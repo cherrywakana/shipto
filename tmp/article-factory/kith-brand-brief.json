@@ -1,0 +1,105 @@
+{
+  "type": "brand-guide",
+  "canonicalTarget": "brand:kith-brand:cheap-overseas-shopping",
+  "slug": "kith-brand-overseas-shopping-guide",
+  "title": "【2026年最新】Kithが安い海外通販サイトおすすめ5選",
+  "primaryKeyword": "Kith 安い 海外通販",
+  "secondaryKeywords": [
+    "Kith どこで買う",
+    "Kith 本物 買える"
+  ],
+  "searchIntent": "ブランド商品を安く安全に買える海外通販サイトを探したい",
+  "monetizationGoal": "ブランド詳細から高意図でショップへ送客する",
+  "recommendedSections": [
+    "Kithが安い海外通販サイトおすすめ5選",
+    "Kithを海外通販で買うメリット",
+    "Kithを買う前に確認したいポイント",
+    "Kithのおすすめショップ比較表",
+    "Kithに強いショップの選び方",
+    "まとめ: Kithを買うならどこが有力か"
+  ],
+  "internalLinks": [
+    "/brands/kith-brand",
+    "/shops/farfetch",
+    "/shops/stockx",
+    "/shops/aliexpress",
+    "/shops/hbx",
+    "/shops/kith",
+    "/articles/overseas-shopping-beginners-guide",
+    "/articles/overseas-shopping-customs-tax"
+  ],
+  "topShops": [
+    {
+      "rankHint": 1,
+      "name": "FARFETCH（ファーフェッチ）",
+      "slug": "farfetch",
+      "category": "ラグジュアリー・ハイブランド",
+      "country": "イギリス",
+      "shipsToJapan": true,
+      "popularityScore": 98,
+      "brandUrl": "https://www.farfetch.com/jp/shopping/men/kith/items.aspx",
+      "shopUrl": "https://www.farfetch.com/jp/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/farfetch.webp",
+      "description": "FARFETCH（ファーフェッチ）は、世界中の名門ブティックやブランドと直接提携しているイギリス発の巨大なラグジュアリー・オンラインマーケットプレイスです。日本語完全対応のサイトとサポート体制があり、希少なラグジュアリーアイテムを安心して購入できるのが強みです。"
+    },
+    {
+      "rankHint": 2,
+      "name": "StockX（ストックエックス）",
+      "slug": "stockx",
+      "category": "ストリート・スニーカー",
+      "country": "アメリカ",
+      "shipsToJapan": true,
+      "popularityScore": 92,
+      "brandUrl": "https://stockx.com/search?s=kithbrand",
+      "shopUrl": "https://stockx.com",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/stockx.webp",
+      "description": "StockX（ストックエックス）は、株取引のような値動きシステムを取り入れた世界最大の「スニーカー＆ストリートカルチャーの株式市場」です。リアルタイムで適正価格が変動し、厳格な鑑定を経た本物だけが売買される圧倒的な信用度があります。"
+    },
+    {
+      "rankHint": 3,
+      "name": "AliExpress（アリエクスプレス）",
+      "slug": "aliexpress",
+      "category": "韓国・アジアトレンド",
+      "country": "中国",
+      "shipsToJapan": true,
+      "popularityScore": 90,
+      "brandUrl": "https://www.aliexpress.com/w/wholesale-kith-brand.html",
+      "shopUrl": "https://best.aliexpress.com/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/aliexpress.webp?t=1773536090134",
+      "description": "アリババグループが運営する世界最大級の越境ECサイト。ファッションから電子機器まで膨大な出品があり、個人輸入の定番サイトです。"
+    },
+    {
+      "rankHint": 4,
+      "name": "HBX（エイチビーエックス）",
+      "slug": "hbx",
+      "category": "韓国・アジアトレンド",
+      "country": "香港",
+      "shipsToJapan": true,
+      "popularityScore": 90,
+      "brandUrl": "https://hbx.com/jp/search?q=kith",
+      "shopUrl": "https://hbx.com/jp",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/hbx.webp",
+      "description": "世界的なストリートメディア「Hypebeast」が運営するセレクトショップ。ハイエンドからアジア発の新鋭ブランドまで、厳選された最先端のコレクションを扱います。"
+    },
+    {
+      "rankHint": 5,
+      "name": "Kith (キス)",
+      "slug": "kith",
+      "category": "ストリート・スニーカー",
+      "country": "アメリカ",
+      "shipsToJapan": true,
+      "popularityScore": 70,
+      "brandUrl": "https://kith.com/search?q=kith-brand",
+      "shopUrl": "https://kith.com/",
+      "imageUrl": "https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/kith.webp?t=1773492271053",
+      "description": "ニューヨーク発、ストリートシーンを牽引するプレミアムセレクトショップ兼ブランド。圧倒的な影響力を持ち、限定アイテムは即完売必至です。"
+    }
+  ],
+  "writingGuidelines": [
+    "見出し直後に、どの読者に向いている記事かを明示する。",
+    "ショップごとに「向いている人」「注意点」「直送可否」を短く書く。",
+    "公式サイトCTAは各ショップ節の終わりに入れる。",
+    "比較表や要点リストを使って、スクロールせず価値が伝わるようにする。",
+    "情報系に寄りすぎず、最終的にショップ遷移したくなる構成にする。"
+  ]
+}

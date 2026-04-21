@@ -1,0 +1,100 @@
+{
+  "shop": {
+    "id": "8d4f70c0-5348-4663-85cb-d58d8d0f6f23",
+    "slug": "temu",
+    "name": "Temu（テム）",
+    "url": "https://www.temu.com/jp"
+  },
+  "checked_at": "2026-04-18T04:26:58.268Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.temu.com/shipping-info.html",
+        "preview": "Temu | Shipping InfoShipping optionsYou may choose standard shipping, express shipping or Click & Collect depending on the items in your order and your location. As your orders may be handed over to local carriers for the final leg of delivery, tracking may not be available every step of the way.Shipping addressPlease make sure that you have provided the correct and current address for shipping and delivery. You may use P.O. boxes as your shipping address. But certain items can only be delivered to physical addresses. Large products, valuables, perishables, products with age-based restrictions, or items shipped via private carriers may require a physical mailing address or signature confirmation to be successfully delivered. Merchandise partners may also indicate in the product listings th"
+      },
+      {
+        "url": "https://www.temu.com/jp",
+        "preview": "Temu Japan | Explore the Latest Clothing, Beauty, Home, Jewelry & More\nタイムセール\ntemusm調教グッズCategoriessubmitお客様限定送料無料限定特典タイムセール期間限定-86% 期間限定1,336円-23% 期間限定352円-17% 期間限定1,669円-25% 期間限定1,060円-54% 期間限定3,467円594円-29% 残り2日321円-45% 期間限定900円-72% 期間限定4,022円-60% 残り3日409円会社情報Temuについてお問い合わせメディアカスタマーサービス利用規約返品・返金に関するポリシー知的財産に関するポリシー配送についてお支払い情報ヘルプサポートセンターサイトマッププライバシー設定Temu購入者保護プログラムご注文方法追跡する方法© 2022－2026 Whaleco Inc.ジュエリー・アクセサリーレディースファッションホーム・キッチン子供用ファッションメンズファッションスポーツ・アウトドアバッグ・旅行カバン美容・健康レディースシューズおもちゃ・ゲームメンズ下着・パジャマ電子機器自動車ペット用品オフィス・学校用品レディース下着・パジャマビジネス、産業、科学レディース大きいサイズ工具・ホーム修繕用品ベビー・マタニティ用品ガーデニング楽器健康・家庭用具電化製品メンズシューズスマートホームメンズプラスサイズ携帯電話・アクセサリー子供用シューズ美術・工芸・裁縫食品と食料品書籍＆ ビーチウェア家具GermanyFranceItalyMexicoNetherlandsJapan"
+      },
+      {
+        "url": "https://www.temu.com/return-and-refund-policy.html",
+        "preview": "Temu | Return and\nTemu | Return and Refund Policy\nTemu | Return and Refund PolicyLast Updated: Mar 22, 2026 PDTIf you are not satisfied with what you bought on Temu, you may be eligible to return it and get a refund by following the simple procedure set out in this Return and Refund Policy.1. How do I make a return?2. Is the return shipping free?3. Where can I find the return label after applying?4. How long do I have before making a return?5. Refunds6. Refund timeline7. Important Notice1. How do I make a return?You can make a return by following these steps:I. Please go to your Temu account on Temu.com or on the app to request a refund. If you do not have a Temu account, please click on \"Save your Order\" in your Temu order email to make a return.II. Find the relevant order in \"Your Orders"
+      },
+      {
+        "url": "https://www.temu.com/intellectual-property-policy.html",
+        "preview": "Temu | Intellectual property\nIntellectual property policy\nTemu | Intellectual Property Policy\n1. Report Infringement\n2. Report Copyright Infringement Using Copyright Infringement Notice under DMCA\n3. Counter-Notice to Copyright Infringement Claim under DMCA\n4. Withdrawal of Report\n5. False Notice\nIntellectual property policyTemu | Intellectual Property PolicyLast updated: March 2nd, 2025We are committed to protecting everyone's intellectual property and have a comprehensive policy to that end. This Intellectual Property Policy explains how we address allegations of infringement, how authorized parties can submit reports of infringement regarding content on our website and mobile applications, and how responsible parties can respond when their listings are affected by a report. We will remo"
+      },
+      {
+        "url": "https://www.temu.com/bgp-privacy-policy-and-setting.html",
+        "preview": "Temu | Privacy policy and setting\nPrivacy\nRequired cookies & technologies\nAdditional privacy options\nPrivacyRequired cookies & technologiesAlways onFor details on how we use your data, see our Privacy Policy and Cookie and Similar Technologies Policy.Additional privacy optionsClick here to make access, deletion or other specific requests relating to your personal information.If you do not have a Temu account, you may exercise your privacy rights by clicking here or emailing us at privacy@temu.com.Want to delete your account? To start the process tap here."
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://www.temu.com/jp",
+        "preview": "Temu Japan | Explore the Latest Clothing, Beauty, Home, Jewelry & More\nタイムセール\ntemusm調教グッズCategoriessubmitお客様限定送料無料限定特典タイムセール期間限定-86% 期間限定1,336円-23% 期間限定352円-17% 期間限定1,669円-54% 期間限定3,467円-31% 期間限定948円594円-29% 残り2日321円-72% 期間限定4,022円-45% 期間限定900円-60% 残り3日409円会社情報Temuについてお問い合わせメディアカスタマーサービス利用規約返品・返金に関するポリシー知的財産に関するポリシー配送についてお支払い情報ヘルプサポートセンターサイトマッププライバシー設定Temu購入者保護プログラムご注文方法追跡する方法© 2022－2026 Whaleco Inc.ジュエリー・アクセサリーレディースファッションホーム・キッチン子供用ファッションメンズファッションスポーツ・アウトドアバッグ・旅行カバン美容・健康レディースシューズおもちゃ・ゲームメンズ下着・パジャマ電子機器自動車ペット用品オフィス・学校用品レディース下着・パジャマビジネス、産業、科学レディース大きいサイズ工具・ホーム修繕用品ベビー・マタニティ用品ガーデニング楽器健康・家庭用具電化製品メンズシューズスマートホームメンズプラスサイズ携帯電話・アクセサリー子供用シューズ美術・工芸・裁縫食品と食料品書籍＆ ビーチウェア家具GermanyFranceItalyMexicoNetherlandsJapan"
+      },
+      {
+        "url": "https://www.temu.com/return-and-refund-policy.html",
+        "preview": "Temu | Return and\nTemu | Return and Refund Policy\nTemu | Return and Refund PolicyLast Updated: Mar 22, 2026 PDTIf you are not satisfied with what you bought on Temu, you may be eligible to return it and get a refund by following the simple procedure set out in this Return and Refund Policy.1. How do I make a return?2. Is the return shipping free?3. Where can I find the return label after applying?4. How long do I have before making a return?5. Refunds6. Refund timeline7. Important Notice1. How do I make a return?You can make a return by following these steps:I. Please go to your Temu account on Temu.com or on the app to request a refund. If you do not have a Temu account, please click on \"Save your Order\" in your Temu order email to make a return.II. Find the relevant order in \"Your Orders"
+      },
+      {
+        "url": "https://www.temu.com/intellectual-property-policy.html",
+        "preview": "Temu | Intellectual property\nIntellectual property policy\nTemu | Intellectual Property Policy\n1. Report Infringement\n2. Report Copyright Infringement Using Copyright Infringement Notice under DMCA\n3. Counter-Notice to Copyright Infringement Claim under DMCA\n4. Withdrawal of Report\n5. False Notice\nIntellectual property policyTemu | Intellectual Property PolicyLast updated: March 2nd, 2025We are committed to protecting everyone's intellectual property and have a comprehensive policy to that end. This Intellectual Property Policy explains how we address allegations of infringement, how authorized parties can submit reports of infringement regarding content on our website and mobile applications, and how responsible parties can respond when their listings are affected by a report. We will remo"
+      },
+      {
+        "url": "https://www.temu.com/bgp-privacy-policy-and-setting.html",
+        "preview": "Temu | Privacy policy and setting\nPrivacy\nRequired cookies & technologies\nAdditional privacy options\nPrivacyRequired cookies & technologiesAlways onFor details on how we use your data, see our Privacy Policy and Cookie and Similar Technologies Policy.Additional privacy optionsClick here to make access, deletion or other specific requests relating to your personal information.If you do not have a Temu account, you may exercise your privacy rights by clicking here or emailing us at privacy@temu.com.Want to delete your account? To start the process tap here."
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://www.temu.com/jp",
+        "preview": "Temu Japan | Explore the Latest Clothing, Beauty, Home, Jewelry & More\nタイムセール\ntemusm調教グッズCategoriessubmitお客様限定送料無料限定特典タイムセール期間限定-86% 期間限定1,336円-23% 期間限定352円-17% 期間限定1,669円-54% 期間限定3,467円-31% 期間限定948円594円-29% 残り2日321円-72% 期間限定4,022円-45% 期間限定900円-60% 残り3日409円会社情報Temuについてお問い合わせメディアカスタマーサービス利用規約返品・返金に関するポリシー知的財産に関するポリシー配送についてお支払い情報ヘルプサポートセンターサイトマッププライバシー設定Temu購入者保護プログラムご注文方法追跡する方法© 2022－2026 Whaleco Inc.ジュエリー・アクセサリーレディースファッションホーム・キッチン子供用ファッションメンズファッションスポーツ・アウトドアバッグ・旅行カバン美容・健康レディースシューズおもちゃ・ゲームメンズ下着・パジャマ電子機器自動車ペット用品オフィス・学校用品レディース下着・パジャマビジネス、産業、科学レディース大きいサイズ工具・ホーム修繕用品ベビー・マタニティ用品ガーデニング楽器健康・家庭用具電化製品メンズシューズスマートホームメンズプラスサイズ携帯電話・アクセサリー子供用シューズ美術・工芸・裁縫食品と食料品書籍＆ ビーチウェア家具GermanyFranceItalyMexicoNetherlandsJapan"
+      },
+      {
+        "url": "https://www.temu.com/return-and-refund-policy.html",
+        "preview": "Temu | Return and\nTemu | Return and Refund Policy\nTemu | Return and Refund PolicyLast Updated: Mar 22, 2026 PDTIf you are not satisfied with what you bought on Temu, you may be eligible to return it and get a refund by following the simple procedure set out in this Return and Refund Policy.1. How do I make a return?2. Is the return shipping free?3. Where can I find the return label after applying?4. How long do I have before making a return?5. Refunds6. Refund timeline7. Important Notice1. How do I make a return?You can make a return by following these steps:I. Please go to your Temu account on Temu.com or on the app to request a refund. If you do not have a Temu account, please click on \"Save your Order\" in your Temu order email to make a return.II. Find the relevant order in \"Your Orders"
+      },
+      {
+        "url": "https://www.temu.com/intellectual-property-policy.html",
+        "preview": "Temu | Intellectual property\nIntellectual property policy\nTemu | Intellectual Property Policy\n1. Report Infringement\n2. Report Copyright Infringement Using Copyright Infringement Notice under DMCA\n3. Counter-Notice to Copyright Infringement Claim under DMCA\n4. Withdrawal of Report\n5. False Notice\nIntellectual property policyTemu | Intellectual Property PolicyLast updated: March 2nd, 2025We are committed to protecting everyone's intellectual property and have a comprehensive policy to that end. This Intellectual Property Policy explains how we address allegations of infringement, how authorized parties can submit reports of infringement regarding content on our website and mobile applications, and how responsible parties can respond when their listings are affected by a report. We will remo"
+      },
+      {
+        "url": "https://www.temu.com/bgp-privacy-policy-and-setting.html",
+        "preview": "Temu | Privacy policy and setting\nPrivacy\nRequired cookies & technologies\nAdditional privacy options\nPrivacyRequired cookies & technologiesAlways onFor details on how we use your data, see our Privacy Policy and Cookie and Similar Technologies Policy.Additional privacy optionsClick here to make access, deletion or other specific requests relating to your personal information.If you do not have a Temu account, you may exercise your privacy rights by clicking here or emailing us at privacy@temu.com.Want to delete your account? To start the process tap here."
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "restricted",
+      "summary": "Items cannot be delivered to security-restricted areas such as military bases.Shipping time and costAfter an order has been successfully paid and confirmed, you will see the delivery time and cost for shipping on your order confirmation page.",
+      "source_url": "https://www.temu.com/shipping-info.html",
+      "confidence": "medium"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "The original shipping fee and import tax are not refundable if your return is not a result of Temu's or the seller's fault.",
+      "source_url": "https://www.temu.com/return-and-refund-policy.html",
+      "confidence": "medium"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "The insurance costs, if any, are also non-refundable.",
+      "source_url": "https://www.temu.com/return-and-refund-policy.html",
+      "confidence": "medium"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Items cannot be delivered to security-restricted areas such as military bases.Shipping time and costAfter an order has been successfully paid and confirmed, you will see the delivery time and cost for shipping on your order confirmation page.",
+    "tax_guide": "The original shipping fee and import tax are not refundable if your return is not a result of Temu's or the seller's fault.",
+    "fee_guide": "The insurance costs, if any, are also non-refundable.",
+    "shipping_url": "https://www.temu.com/shipping-info.html",
+    "tax_url": "https://www.temu.com/return-and-refund-policy.html",
+    "fee_url": "https://www.temu.com/return-and-refund-policy.html"
+  },
+  "update_error": null
+}

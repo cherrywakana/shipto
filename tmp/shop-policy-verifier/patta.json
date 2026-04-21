@@ -1,0 +1,68 @@
+{
+  "shop": {
+    "id": "34a383b8-ebbd-4996-ae5a-d29062cbe413",
+    "slug": "patta",
+    "name": "Patta (パッタ)",
+    "url": "https://www.patta.nl/"
+  },
+  "checked_at": "2026-04-18T04:49:33.073Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://jp.patta.nl/pages/shipping-returns?shpxid=da606c8e-4fd3-4584-8737-cf077303c449",
+        "preview": "Shipping & Returns – Patta\nShipping & Returns\nShipping\nReturns\nEach One Teach One\nSkip to content Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Shop Exclusive Community Spring Summer 26 Menu JP/en Search Search Account Favorites Cart Shop New Arrivals Footwear Kids T-Shirts Basics Tops & Shirts Sports Jerseys Knitwear Outerwear Pants Shorts Denim Headwear Accessories Brands View All Exclusive Explore Patta x JFG Patta x Nike AM90 Patta x Havaianas Patta x Rapha Patta Spring Summer '26 Patta Autumn Winter '25 In-Store Exclusives Lookbooks Community Explore Stores News Patta Magazine Patta Running Patta Cycling Patta Soundsystem Patta Foundation Spri"
+      },
+      {
+        "url": "https://jp.patta.nl/policies/privacy-policy?shpxid=571e2f20-346c-48c5-8f53-7d579fcaf584",
+        "preview": "Privacy policy – Patta\nPrivacy policy\nEach One Teach One\nSkip to content Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Shop Exclusive Community Spring Summer 26 Menu JP/en Search Search Account Favorites Cart Shop New Arrivals Footwear Kids T-Shirts Basics Tops & Shirts Sports Jerseys Knitwear Outerwear Pants Shorts Denim Headwear Accessories Brands View All Exclusive Explore Patta x JFG Patta x Nike AM90 Patta x Havaianas Patta x Rapha Patta Spring Summer '26 Patta Autumn Winter '25 In-Store Exclusives Lookbooks Community Explore Stores News Patta Magazine Patta Running Patta Cycling Patta Soundsystem Patta Foundation Spring Summer 26 New Arrivals"
+      },
+      {
+        "url": "https://jp.patta.nl/?shpxid=1b721553-8b14-464b-982c-425b6fdd6699",
+        "preview": "Patta Exclusive Sneakers\nSpring Summer 2026\nPatta Graphic Tees\nPatta Croco T-shirt (Black)\nPatta Croco T-shirt (Oatmeal)\nPatta Croco T-shirt (White)\nPatta Graphic Tees\nPatta Gummi T-Shirt (Dusty Blue)\nPatta Gummi T-Shirt (Dusty Blue)\nPatta Boxing T-Shirt (White)\nPatta Boxing T-Shirt (White)\nPatta Victory T-Shirt (Black)\nPatta Victory T-Shirt (Black)\nSkip to content Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Shop Exclusive Community Spring Summer 26 Menu JP/en Search Search Account Favorites Cart Shop New Arrivals Footwear Kids T-Shirts Basics Tops & Shirts Sports Jerseys Knitwear Outerwear Pants Shorts Denim Headwear Accessories Brands View All "
+      }
+    ],
+    "tax": [
+      {
+        "url": "https://jp.patta.nl/policies/privacy-policy?shpxid=e6fbea61-1e91-4c77-9d66-0f548c783047",
+        "preview": "Privacy policy – Patta\nPrivacy policy\nEach One Teach One\nSkip to content Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Shop Exclusive Community Spring Summer 26 Menu JP/en Search Search Account Favorites Cart Shop New Arrivals Footwear Kids T-Shirts Basics Tops & Shirts Sports Jerseys Knitwear Outerwear Pants Shorts Denim Headwear Accessories Brands View All Exclusive Explore Patta x JFG Patta x Nike AM90 Patta x Havaianas Patta x Rapha Patta Spring Summer '26 Patta Autumn Winter '25 In-Store Exclusives Lookbooks Community Explore Stores News Patta Magazine Patta Running Patta Cycling Patta Soundsystem Patta Foundation Spring Summer 26 New Arrivals"
+      }
+    ],
+    "fee": [
+      {
+        "url": "https://jp.patta.nl/pages/shipping-returns?shpxid=ded54479-f9b2-4070-8937-7e5e5510d959",
+        "preview": "Shipping & Returns – Patta\nShipping & Returns\nShipping\nReturns\nEach One Teach One\nSkip to content Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Free Shipping on EU Orders above €250 Shop Exclusive Community Spring Summer 26 Menu JP/en Search Search Account Favorites Cart Shop New Arrivals Footwear Kids T-Shirts Basics Tops & Shirts Sports Jerseys Knitwear Outerwear Pants Shorts Denim Headwear Accessories Brands View All Exclusive Explore Patta x JFG Patta x Nike AM90 Patta x Havaianas Patta x Rapha Patta Spring Summer '26 Patta Autumn Winter '25 In-Store Exclusives Lookbooks Community Explore Stores News Patta Magazine Patta Running Patta Cycling Patta Soundsystem Patta Foundation Spri"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "supported",
+      "summary": "We may receive personal information from third parties that we have engaged to provide services to us, including payment processors (such as PayPal), international fulfilment providers (such as Bleckmann), ecommerce platforms (such as Shopify), other vendors and service providers that provide services related to shipping, returns, customer support, fraud mitigation, and email marketing, as well as from third parties that provide web analytics and usage information to us (such as Google Analytics).",
+      "source_url": "https://jp.patta.nl/policies/privacy-policy?shpxid=571e2f20-346c-48c5-8f53-7d579fcaf584",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "In addition, we may disclose information we maintain, including personal information: when permitted or required to do so by law; in response to a request from a law enforcement agency or authority or any regulatory authority; and/or to protect the integrity of the Services or our interests, rights, property, or health and safety, and/or that of our customers, users, and others.",
+      "source_url": "https://jp.patta.nl/policies/privacy-policy?shpxid=e6fbea61-1e91-4c77-9d66-0f548c783047",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "unknown",
+      "summary": "Continue shopping Continue shopping Continue shopping ⌘+K No results for \"\" Shipping & Returns Shipping Please noteImport duties are not included in the shipping costs and will be charged to you directly by UPS after clearing customs.",
+      "source_url": "https://jp.patta.nl/pages/shipping-returns?shpxid=ded54479-f9b2-4070-8937-7e5e5510d959",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "We may receive personal information from third parties that we have engaged to provide services to us, including payment processors (such as PayPal), international fulfilment providers (such as Bleckmann), ecommerce platforms (such as Shopify), other vendors and service providers that provide servic",
+    "tax_guide": "In addition, we may disclose information we maintain, including personal information: when permitted or required to do so by law; in response to a request from a law enforcement agency or authority or any regulatory authority; and/or to protect the integrity of the Services or our interests, rights,",
+    "fee_guide": "Continue shopping Continue shopping Continue shopping ⌘+K No results for \"\" Shipping & Returns Shipping Please noteImport duties are not included in the shipping costs and will be charged to you directly by UPS after clearing customs.",
+    "shipping_url": "https://jp.patta.nl/policies/privacy-policy?shpxid=571e2f20-346c-48c5-8f53-7d579fcaf584",
+    "tax_url": "https://jp.patta.nl/policies/privacy-policy?shpxid=e6fbea61-1e91-4c77-9d66-0f548c783047",
+    "fee_url": "https://jp.patta.nl/pages/shipping-returns?shpxid=ded54479-f9b2-4070-8937-7e5e5510d959"
+  },
+  "update_error": null
+}

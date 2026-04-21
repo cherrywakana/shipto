@@ -1,0 +1,33 @@
+{
+  "type": "brand-guide",
+  "slug": "aesop-overseas-shopping-guide",
+  "title": "【2026年最新】Aesopが安い海外通販サイトおすすめ3選",
+  "primaryKeyword": "Aesop 安い 海外通販",
+  "secondaryKeywords": [
+    "Aesop おすすめショップ",
+    "Aesop どこで買う"
+  ],
+  "searchIntent": "ブランド商品を安く安全に買える海外通販サイトを探したい",
+  "monetizationGoal": "ブランド詳細から高意図でショップへ送客する",
+  "recommendedSections": [
+    "Aesopが安い海外通販サイトおすすめ3選",
+    "Aesopを海外通販で買うメリット",
+    "Aesopを買う前に確認したいポイント",
+    "Aesopのおすすめショップ比較表",
+    "Aesopに強いショップの選び方",
+    "まとめ: Aesopを買うならどこが有力か"
+  ],
+  "internalLinks": [
+    "/brands/aesop",
+    "/articles/overseas-shopping-beginners-guide",
+    "/articles/overseas-shopping-customs-tax"
+  ],
+  "topShops": [],
+  "writingGuidelines": [
+    "見出し直後に、どの読者に向いている記事かを明示する。",
+    "ショップごとに「向いている人」「注意点」「直送可否」を短く書く。",
+    "公式サイトCTAは各ショップ節の終わりに入れる。",
+    "比較表や要点リストを使って、スクロールせず価値が伝わるようにする。",
+    "情報系に寄りすぎず、最終的にショップ遷移したくなる構成にする。"
+  ]
+}

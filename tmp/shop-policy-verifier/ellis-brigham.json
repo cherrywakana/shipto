@@ -1,0 +1,55 @@
+{
+  "shop": {
+    "id": "28dfed92-a241-4950-b1b5-31873d68b6b5",
+    "slug": "ellis-brigham",
+    "name": "Ellis Brigham (エリス・ブリガム)",
+    "url": "https://www.ellis-brigham.com/"
+  },
+  "checked_at": "2026-04-18T05:00:15.501Z",
+  "extraction_method": "local_rule_based",
+  "docs_by_field": {
+    "shipping": [
+      {
+        "url": "https://www.ellis-brigham.com/information/delivery-returns",
+        "preview": "Delivery & Returns\nshopguideinspireprotectContact UsDelivery & ReturnsFAQsEquipment HireSki WorkshopDemo For FreeTerms & ConditionsCookie DeclarationSAR & RTBFPrivacy & Cookie PolicyModern Slavery StatementAffiliate ProgrammeDelivery & ReturnsDeliveryInternational deliveriesWe only ship to the UK and the EU. We are unable to fulfil any international orders placed from outside of the UK and EU.Orders placed outside the UK will have VAT removed at checkout. Customers are responsible for any import taxes or duties charged by their country. The courier will contact you directly to collect these fees once your order has cleared customs.Click & collectWe offer free click & collect to our stores. If your chosen store has stock available, your order will be ready to collect within 24 hours. You wi"
+      }
+    ],
+    "tax": [],
+    "fee": [
+      {
+        "url": "https://www.ellis-brigham.com/information/delivery-returns",
+        "preview": "Delivery & Returns\nshopguideinspireprotectContact UsDelivery & ReturnsFAQsEquipment HireSki WorkshopDemo For FreeTerms & ConditionsCookie DeclarationSAR & RTBFPrivacy & Cookie PolicyModern Slavery StatementAffiliate ProgrammeDelivery & ReturnsDeliveryInternational deliveriesWe only ship to the UK and the EU. We are unable to fulfil any international orders placed from outside of the UK and EU.Orders placed outside the UK will have VAT removed at checkout. Customers are responsible for any import taxes or duties charged by their country. The courier will contact you directly to collect these fees once your order has cleared customs.Click & collectWe offer free click & collect to our stores. If your chosen store has stock available, your order will be ready to collect within 24 hours. You wi"
+      }
+    ]
+  },
+  "result": {
+    "shipping": {
+      "status": "restricted",
+      "summary": "Delivery methods & costsExpress Delivery(all items available at our warehouse)1-2 working daysEconomy Delivery(some items sourced from stores)5-7 working daysClick & collect(If your chosen store has stock available)Orders over £80FreeFreeFreeOrders under £80£3.95£3.95FreeReturnsHead to the returns portal to generate a returns label.Returns policyIf you're unhappy with your purchase and it's in a new and unused condition, you can return it within 30 days of receiving your order.International returnsIf you are returning unwanted items from outside the UK, you are responsible for arranging and paying for the shipping.",
+      "source_url": "https://www.ellis-brigham.com/information/delivery-returns",
+      "confidence": "high"
+    },
+    "tax": {
+      "status": "unknown",
+      "summary": "",
+      "source_url": "",
+      "confidence": "low"
+    },
+    "fee": {
+      "status": "fixed",
+      "summary": "Delivery methods & costsExpress Delivery(all items available at our warehouse)1-2 working daysEconomy Delivery(some items sourced from stores)5-7 working daysClick & collect(If your chosen store has stock available)Orders over £80FreeFreeFreeOrders under £80£3.95£3.95FreeReturnsHead to the returns portal to generate a returns label.Returns policyIf you're unhappy with your purchase and it's in a new and unused condition, you can return it within 30 days of receiving your order.International returnsIf you are returning unwanted items from outside the UK, you are responsible for arranging and paying for the shipping.",
+      "source_url": "https://www.ellis-brigham.com/information/delivery-returns",
+      "confidence": "high"
+    },
+    "overall_note": "Local rule-based extraction from official policy pages."
+  },
+  "update_payload": {
+    "shipping_guide": "Delivery methods & costsExpress Delivery(all items available at our warehouse)1-2 working daysEconomy Delivery(some items sourced from stores)5-7 working daysClick & collect(If your chosen store has stock available)Orders over £80FreeFreeFreeOrders under £80£3.95£3.95FreeReturnsHead to the returns p",
+    "tax_guide": null,
+    "fee_guide": "Delivery methods & costsExpress Delivery(all items available at our warehouse)1-2 working daysEconomy Delivery(some items sourced from stores)5-7 working daysClick & collect(If your chosen store has stock available)Orders over £80FreeFreeFreeOrders under £80£3.95£3.95FreeReturnsHead to the returns p",
+    "shipping_url": "https://www.ellis-brigham.com/information/delivery-returns",
+    "tax_url": null,
+    "fee_url": "https://www.ellis-brigham.com/information/delivery-returns"
+  },
+  "update_error": null
+}
