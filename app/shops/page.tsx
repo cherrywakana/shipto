@@ -56,7 +56,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
             display: grid;
             grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.8fr) auto;
             gap: 0.75rem;
-            max-width: 980px;
+            max-width: 800px;
             margin: 0 auto 1.5rem;
           }
           .search-input,
@@ -141,26 +141,19 @@ export default async function ShopsPage(props: ShopsPageProps) {
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                         <h1 style={{
                             fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 850,
-                            letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '2rem',
+                            letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '1.2rem',
                         }}>
                             海外通販サイト一覧
                         </h1>
                         <p style={{ 
-                            fontSize: 'clamp(1rem, 1.2vw, 1.15rem)', 
-                            color: 'var(--text-secondary)',
-                            lineHeight: 1.7,
-                            marginBottom: '3rem',
-                            textAlign: 'left',
-                            background: '#ffffff',
-                            padding: '2rem',
-                            borderRadius: '24px',
-                            border: '1px solid var(--border)',
-                            boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+                            fontSize: 'clamp(0.9rem, 1.1vw, 1rem)', 
+                            color: 'var(--text-muted)',
+                            fontFamily: 'var(--font-serif)',
+                            fontStyle: 'italic',
+                            marginBottom: '3.5rem',
+                            letterSpacing: '0.02em'
                         }}>
-                            日本へ直送可能な世界の有力通販サイトを網羅した完全インデックスです。
-                            当サイトの専門スタッフが、各ショップの<b>リアルな送料・関税計算方法・配送スピード</b>を実機検証し、
-                            初めての方でも安心して「現地価格」で買い物ができるよう詳細ガイドを完備しています。
-                            カテゴリー別・キーワード別で最適なショップを見つけてください。
+                            140+ premium merchants curated for your high-end shopping experience.
                         </p>
                     </div>
 
@@ -170,7 +163,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
                             name="q"
                             defaultValue={q || ''}
                             className="search-input"
-                            placeholder="ショップ名・ブランド名・カテゴリで検索"
+                            placeholder="ショップ名・カテゴリで検索"
                         />
                         <select name="category" defaultValue={category || ''} className="search-select">
                             <option value="">すべて</option>
@@ -212,34 +205,45 @@ export default async function ShopsPage(props: ShopsPageProps) {
                         <ShopList category={category} q={q} />
                     </Suspense>
 
-                    {/* SEO Footer Content Section */}
+                    {/* SEO Footer Content Section (案件の「ボトム・ヘビー」アプローチ) */}
                     <article style={{
-                        marginTop: '8rem',
-                        padding: '4rem',
+                        marginTop: '10rem',
+                        padding: '5rem clamp(2rem, 5vw, 6rem)',
                         background: '#ffffff',
                         borderRadius: '32px',
                         border: '1px solid var(--border)',
-                        color: '#111110'
+                        color: '#111110',
+                        boxShadow: '0 4px 30px rgba(0,0,0,0.02)'
                     }}>
-                        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', marginBottom: '2rem' }}>失敗しないための海外通販サイト選び</h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', lineHeight: 1.8 }}>
-                            <div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>① 日本発送の有無と送料を確認</h3>
-                                <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
-                                    海外通販サイト一覧の中でも、日本への直送（Direct International Shipping）に対応しているかは重要です。当サイトでは直送可能なショップを優先表示しており、一定額以上の購入で送料無料（Free Shipping）になるラインも各ショップガイドで公開しています。
-                                </p>
-                            </div>
-                            <div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>② 関税・消費税の支払い方式（DDP/DDU）</h3>
-                                <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
-                                    関税込み（DDP）か、受け取り時支払い（DDU）かで最終的な支払い総額が変わります。特に16,666円を超える注文の際は、当リスト内の各ショップ詳細ページにて「関税の精算方法」を事前にチェックすることをおすすめします。
-                                </p>
-                            </div>
-                            <div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>③ 信頼性と真贋鑑定のプロセス</h3>
-                                <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
-                                    当一覧に掲載されているショップは、世界的に評価の高い老舗百貨店や正規代理店、信頼できるマーケットプレイスのみを厳選しています。偽造品リスクのない、本物のアイテムを現地価格で手に入れましょう。
-                                </p>
+                        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>
+                                日本から安心して買える海外通販サイトの総覧
+                            </h2>
+                            <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '3rem' }}>
+                                本ページは、日本への直送（Direct International Shipping）に対応した、世界の有力通販サイトを網羅した完全な一覧です。
+                                当サイトの専門スタッフが、各ショップの<b>リアルな送料・関税計算方法（DDP/DDU）・配送スピード</b>を、実際に日本から注文して実機検証しています。
+                                初めての個人輸入でも、各ショップの個別詳細ガイドを確認することで、為替や通関の不安を解消し、安心・確実な「現地価格」での買い物を楽しむことができます。
+                            </p>
+
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', lineHeight: 1.8 }}>
+                                <div>
+                                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '1.2rem', color: '#111110' }}>① 送料と配送品質の検証</h3>
+                                    <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
+                                        海外通販サイト一覧の中でも、日本へのデリバリー品質が担保されているかを重視しています。一定額以上の購入で送料無料となるしきい値や、DHL/FedEx等のエクスプレス便の早さをショップごとに公開しています。
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '1.2rem', color: '#111110' }}>② 関税の不透明さをゼロに</h3>
+                                    <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
+                                        「結局いくらかかるのか」という不安を解消するため、関税込み（DDP）のショップか、受け取り時支払い（DDU）かを明確に区分。16,666円の免税ルールを最大限に活かす方法も各ガイドで解説しています。
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '1.2rem', color: '#111110' }}>③ 信頼できる正規店のみ掲載</h3>
+                                    <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
+                                        世界的に評価の高い老舗百貨店、大手セレクトショップ、公式ストアのみを厳選。偽造品リスクのない、確かな品質のアイテムを海外から直接取り寄せることが可能です。
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </article>
