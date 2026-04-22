@@ -12,8 +12,8 @@ const category = 'ガジェット・家電';
 const heroImg = '/tablet-hero.png';
 const imgBase = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails';
 
-// Real Images for the 4 uploaded shops, placeholder for AliExpress
-const aliImg = 'https://placehold.co/800x533/ffcce6/000000.png?text=AliExpress';
+// Real Images for all 5 shops (AliExpress recovered from existing DB)
+const aliImg = imgBase + '/aliexpress.webp';
 const bgImg = imgBase + '/banggood.webp';
 const gsImg = imgBase + '/gshopper.webp';
 const etImg = imgBase + '/etoren.png';
