@@ -147,8 +147,8 @@ export default async function ArticleDetailPage({
           .post-body li { margin-bottom: 0.8rem; padding-left: 0.4rem; }
           .post-body ul { list-style: none; }
           .post-body ul li::before { content: "•"; color: #a1a19f; font-weight: bold; display: inline-block; width: 1.2em; margin-left: -1.2em; }
-          .post-body table { width: 100%; margin: 3rem 0; border-collapse: collapse; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: block; overflow-x: auto; }
-          .post-body th { background: #111110; color: white; text-align: left; padding: 1rem 1.25rem; font-weight: 700; white-space: nowrap; }
+          .post-body table { width: 100%; margin: 3rem 0; border-collapse: collapse; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+          .post-body th { background: #111110; color: white; text-align: left; padding: 1rem 1.25rem; font-weight: 700; }
           .post-body td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-soft); vertical-align: middle; }
           .post-body tr:nth-child(even) { background: #fafaf9; }
           .post-body tr:hover { background: #f1f1ef; }
