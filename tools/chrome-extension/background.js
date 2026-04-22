@@ -33,24 +33,8 @@ function cleanPage() {
         } catch (e) { }
     });
 
-    // 全画面の50%以上を覆う「z-index過剰な要素」を強制削除するロジック
+    // スクロール禁止(overflow: hidden)などを強制リセット
     try {
-        const allElements = document.querySelectorAll('*');
-        const threshold = window.innerWidth * window.innerHeight * 0.4;
-        allElements.forEach(el => {
-            const style = window.getComputedStyle(el);
-            const isFixed = style.position === 'fixed' || style.position === 'absolute';
-            const zIndex = parseInt(style.zIndex, 10);
-            if (isFixed && zIndex > 5) {
-                const rect = el.getBoundingClientRect();
-                const area = rect.width * rect.height;
-                if (area > threshold) {
-                    el.style.display = 'none';
-                }
-            }
-        });
-
-        // スクロール禁止(overflow: hidden)などを強制リセット
         document.body.style.overflow = 'auto';
         document.documentElement.style.overflow = 'auto';
 
@@ -66,8 +50,8 @@ async function tryResizeWindow(tabId, windowId) {
             width: 1200,
             height: 800 + 40 // ナビゲーションバー分
         });
-        // 少し待つ
-        return new Promise(resolve => setTimeout(resolve, 800));
+        // すぐに完了にする
+        return Promise.resolve();
     } catch (e) {
         console.log("Could not resize window, continuing.");
         return Promise.resolve();
@@ -92,14 +76,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                     func: cleanPage,
                 });
 
-                await new Promise(resolve => setTimeout(resolve, 1500));
-
-                await chrome.scripting.executeScript({
-                    target: { tabId: tab.id },
-                    func: cleanPage,
-                });
-
-                await new Promise(resolve => setTimeout(resolve, 500));
+                // ウィンドウリサイズ後にブラウザが描画するのを一瞬だけ待つ（少しの遅延がないとキャプチャされない場合があるため最小限に）
+                await new Promise(resolve => setTimeout(resolve, 100));
 
                 const dataUrlPng = await chrome.tabs.captureVisibleTab(tab.windowId, { format: 'png' });
 
