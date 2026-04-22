@@ -5,7 +5,7 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
-const title = '【2026年最新】海外インテリア通販おすすめ5選！北欧家具・雑貨を安全に個人輸入する極意';
+const title = '【2026年最新】海外インテリア通販おすすめ11選！北欧家具・雑貨を安全に個人輸入する極意';
 const slug = 'interior-furniture-overseas-guide';
 const category = 'ライフスタイル';
 
@@ -15,6 +15,12 @@ const fdsImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=Finnish+Desi
 const royalImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=RoyalDesign';
 const anthroImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=Anthropologie';
 const westelmImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=West+elm';
+const uoImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=Urban+Outfitters';
+const kareImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=KARE';
+const conranImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=The+Conran+Shop';
+const flymeeImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=FLYMEe';
+const museImg = 'https://placehold.co/800x533/111110/FFFFFF.png?text=MUSE+HOME';
+const ssenseImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/ssense.webp';
 
 const comparisonTableHtml = `
 <div style="overflow-x: auto; margin: 2rem 0;">
@@ -30,15 +36,15 @@ const comparisonTableHtml = `
     <tbody>
       <tr>
         <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://www.nordicnest.jp/" target="_blank" rel="noopener"><strong>Nordic Nest</strong></a></td>
-        <td style="padding: 1rem; border: 1px solid #eee;">別（到着時支払）</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">別（到着時）</td>
         <td style="padding: 1rem; border: 1px solid #eee;"><strong>完璧な日本語</strong></td>
         <td style="padding: 1rem; border: 1px solid #eee;">北欧デザイン全般</td>
       </tr>
       <tr style="background: #f9f9f9;">
         <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://www.finnishdesignshop.com/" target="_blank" rel="noopener"><strong>Finnish Design Shop</strong></a></td>
-        <td style="padding: 1rem; border: 1px solid #eee;">込 / 別 選択可能</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">込 / 別 選択式</td>
         <td style="padding: 1rem; border: 1px solid #eee;">英語のみ</td>
-        <td style="padding: 1rem; border: 1px solid #eee;">本場フィンランド家具</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">本場フィンランド直</td>
       </tr>
       <tr>
         <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://royaldesign.jp/" target="_blank" rel="noopener"><strong>RoyalDesign</strong></a></td>
@@ -48,15 +54,51 @@ const comparisonTableHtml = `
       </tr>
       <tr style="background: #f9f9f9;">
         <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://www.anthropologie.com/" target="_blank" rel="noopener"><strong>Anthropologie</strong></a></td>
-        <td style="padding: 1rem; border: 1px solid #eee;">別（到着時支払）</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">別（到着時）</td>
         <td style="padding: 1rem; border: 1px solid #eee;">英語のみ</td>
         <td style="padding: 1rem; border: 1px solid #eee;">ボヘミアン・雑貨</td>
       </tr>
       <tr>
         <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://www.westelm.com/" target="_blank" rel="noopener"><strong>West elm</strong></a></td>
-        <td style="padding: 1rem; border: 1px solid #eee;">別（到着時支払）</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">別（到着時）</td>
         <td style="padding: 1rem; border: 1px solid #eee;">英語のみ</td>
         <td style="padding: 1rem; border: 1px solid #eee;">NYモダン・都会派</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://www.urbanoutfitters.com/" target="_blank" rel="noopener"><strong>Urban Outfitters</strong></a></td>
+        <td style="padding: 1rem; border: 1px solid #eee;">別（到着時）</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">英語のみ</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">US若年層トレンド</td>
+      </tr>
+      <tr>
+        <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://kare.co.jp/" target="_blank" rel="noopener"><strong>KARE (日本公式)</strong></a></td>
+        <td style="padding: 1rem; border: 1px solid #eee;">国内発送</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">日本語</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">ドイツ発・個性的</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://www.conranshop.jp/" target="_blank" rel="noopener"><strong>The Conran Shop</strong></a></td>
+        <td style="padding: 1rem; border: 1px solid #eee;">国内発送</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">日本語</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">UK発・プレミアム</td>
+      </tr>
+      <tr>
+        <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://flymee.jp/" target="_blank" rel="noopener"><strong>FLYMEe</strong></a></td>
+        <td style="padding: 1rem; border: 1px solid #eee;">国内発送</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">日本語</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">国内最大級セレクト</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://musehome.shop/" target="_blank" rel="noopener"><strong>MUSE HOME</strong></a></td>
+        <td style="padding: 1rem; border: 1px solid #eee;">国内発送</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">日本語</td>
+        <td style="padding: 1rem; border: 1px solid #eee;">大理石・ラグジュアリ</td>
+      </tr>
+      <tr>
+        <td style="padding: 1rem; border: 1px solid #eee;"><a href="https://www.ssense.com/ja-jp/everything-else" target="_blank" rel="noopener"><strong>SSENSE (Home)</strong></a></td>
+        <td style="padding: 1rem; border: 1px solid #eee;"><strong>関税込み</strong></td>
+        <td style="padding: 1rem; border: 1px solid #eee;"><strong>完璧な日本語</strong></td>
+        <td style="padding: 1rem; border: 1px solid #eee;">ハイブランド雑貨</td>
       </tr>
     </tbody>
   </table>
@@ -69,25 +111,25 @@ const content = `
 アルテックの美しい木目、ルイスポールセンの柔らかな照明、アンソロポロジーの華やかなラグ。
 これら海外の一流インテリアを日本の代理店で購入しようとすると、関税やマージンが上乗せされ、時に本国価格の2倍近くになることも珍しくありません。
 
-しかし、現在では優れた国際物流により、<strong>大型家具から繊細なガラス食器まで、誰でも安全に「個人輸入」できる時代</strong>になりました。
+しかし、現在では優れた国際物流により、<strong>大型家具から繊細なガラス食器まで、誰でも安全に「個人輸入」できる時代</strong>になりました。ハードルが心配な方のために、海外テイストをそのまま日本へ届けてくれる優秀な国内セレクトショップも存在します。
 
-本記事では、品質・配送ともに信頼できる<strong>2026年最新のおすすめ海外インテリア通販サイト5選</strong>をプロの視点で厳選。家具特有の関税ルールから電圧の違いまで、絶対に失敗しないための「完全実務マニュアル」とともに解説します。
+本記事では、品質・配送ともに信頼できる<strong>2026年最新のおすすめ海外インテリア通販サイト11選</strong>をプロの視点で徹底比較。家具特有の関税ルールから電圧の違いまで、絶対に失敗しないための「完全実務マニュアル」とともにお届けします。
 
 ---
 
-## 1. ひと目でわかる：海外インテリア通販 主要5社 比較表
+## 1. ひと目でわかる：海外インテリア通販 決定版11社 比較表
 
-ショップ名をクリックすると、公式サイトへ直接遷移し、現在のキャンペーンを確認できます。
+ショップ名をクリックすると、公式サイトでキャンペーン状況を直接確認できます。
 
 ${comparisonTableHtml}
 
 ---
 
-## 2. 絶対に外さない「海外インテリア通販」5選 徹底解説
+## 2. 絶対に外さない「海外インテリア通販」11選 徹底解説
 
-デザインの美しさはもちろん、「日本への発送が確実」である優良ショップのみを深掘りします。
+デザインの美しさはもちろん、「日本への到着・決済が確実」である優良ショップのみを深掘りします。前半は純粋な海外直送サイト、後半は国内から安心して買える海外テイストの強豪サイトです。
 
-### Nordic Nest（ノルディックネスト）：北欧インテリアの登竜門
+### 1. Nordic Nest（ノルディックネスト）：北欧インテリアの登竜門
 ![Nordic Nest](${nordicNestImg})
 
 スウェーデンから直送される <strong>Nordic Nest</strong> は、北欧インテリアを愛する日本人にとって「絶対的インフラ」と言えるショップです。
@@ -100,12 +142,12 @@ ${comparisonTableHtml}
 
 ---
 
-### Finnish Design Shop（フィニッシュデザインショップ）：本場フィンランドの巨匠が集う
+### 2. Finnish Design Shop（フィニッシュデザインショップ）：本場フィンランドの巨匠が集う
 ![Finnish Design Shop](${fdsImg})
 
 アルヴァ・アアルトの「Artek」や「Marimekko」など、フィンランドを代表するブランドの正規本拠地。圧倒的な在庫量と専門性を誇るのが <strong>Finnish Design Shop</strong> です。
 
-サイトは英語のみですが、チェックアウト時に関税を「事前支払い（DDP）」か「到着時支払い（DDU）」か選べる画期的なシステムを導入しています。大型家具の取り扱いにおいて世界最高峰の信頼性があり、一生もののダイニングテーブルやチェアを探すならここが最終到達点です。
+チェックアウト時に関税を「事前支払い（DDP）」か「到着時支払い（DDU）」か選べる画期的なシステムを導入しています。大型家具の取り扱いにおいて世界最高峰の信頼性があり、一生もののダイニングテーブルやチェアを探すならここがベストです。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.finnishdesignshop.com/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Finnish Design Shop 公式サイトへ ↗</a>
@@ -113,12 +155,12 @@ ${comparisonTableHtml}
 
 ---
 
-### RoyalDesign（ロイヤルデザイン）：食器・照明の最強コスパ
+### 3. RoyalDesign（ロイヤルデザイン）：食器・照明の最強コスパ
 ![RoyalDesign](${royalImg})
 
-スウェーデンを拠点とする <strong>RoyalDesign</strong> は、Iittala（イッタラ）やArabia（アラビア）をはじめとする北欧食器や、Louis Poulsen（ルイスポールセン）等の照明機器を驚異的な価格で提供するメガストアです。
+スウェーデンを拠点とする <strong>RoyalDesign</strong> は、Iittala（イッタラ）やArabia（アラビア）をはじめとする北欧食器や照明機器を驚異的な価格で提供するメガストアです。
 
-<strong>関税込み</strong>の明瞭な価格表示と、15,000円以上の購入で送料が大幅に安くなるシステムにより、大量の食器をまとめ買いする際や、新生活のセットアップにおいて比類なきコストパフォーマンスを発揮します。
+<strong>関税込み</strong>の明瞭な価格表示と、15,000円以上の購入で送料無料（または大幅割引）になるシステムにより、大量の食器をまとめ買いする際において比類なきコストパフォーマンスを発揮します。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://royaldesign.jp/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">RoyalDesign 公式サイトへ ↗</a>
@@ -126,12 +168,12 @@ ${comparisonTableHtml}
 
 ---
 
-### Anthropologie（アンソロポロジー）：圧倒的な華やかさ
+### 4. Anthropologie（アンソロポロジー）：圧倒的な華やかさ
 ![Anthropologie](${anthroImg})
 
-アメリカ発の <strong>Anthropologie</strong> は、ボヘミアンでアーティスティックな世界観で、世界中の女性たちを魅了し続けています。
+アメリカ発の <strong>Anthropologie</strong> は、ボヘミアンでアーティスティックな世界観で世界中の女性を魅了しています。
 
-日本ではアパレルのイメージが強いかもしれませんが、本国では家具やラグ、食器、さらには「引き出しの取っ手（ハードウェア）」に至るまで、細部までデザインされた圧倒的なホームコレクションを展開しています。シンプルな部屋に「主役」となる一点モノの魔法を加えたい時に、このサイトの右に出るものはありません。
+日本ではアパレルのイメージが強いですが、本国では家具やラグ、食器、さらには「引き出しの取っ手（ハードウェア）」に至るまで、圧倒的なホームコレクションを展開しています。シンプルな部屋に「主役」となる一点モノの魔法を加えたい時に最適です。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.anthropologie.com/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Anthropologie 公式サイトへ ↗</a>
@@ -139,15 +181,93 @@ ${comparisonTableHtml}
 
 ---
 
-### West elm（ウエストエルム）：NYブルックリン・モダン
+### 5. West elm（ウエストエルム）：NYブルックリン・モダン
 ![West elm](${westelmImg})
 
 NY・ブルックリンの洗練された香りをそのまま届けてくれるのが <strong>West elm</strong> です。ミッドセンチュリーとモダンを融合させた、都會的でエッジの効いた家具が揃います。
 
-木材と異素材（真鍮や大理石）を組み合わせたソリッドなデザインが多く、北欧の温もりとはまた違った「シティボーイ／シティガール」の空間を作るのに最適です。アメリカ本国からの発送となるため送料は要確認ですが、日本国内では絶対に被らない洗練された空間が手に入ります。
+木材と真鍮・大理石などの異素材を組み合わせたソリッドなデザインは、北欧の温もりとはまた違った「シティボーイ／シティガール」の空間を作るのにおすすめです。
 
 <div style="margin: 2rem 0; text-align: center;">
   <a href="https://www.westelm.com/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">West elm 公式サイトへ ↗</a>
+</div>
+
+---
+
+### 6. Urban Outfitters（アーバンアウトフィッターズ）：若年層の最先端トレンド
+![Urban Outfitters](${uoImg})
+
+アメリカ発。Anthropologieの姉妹ブランドでもありますが、こちらはさらに「若さ」と「遊び心」に突き抜けています。
+
+Y2Kテイストやレトロポップなレコードプレイヤー、ちょっとエッジの効いたネオンサインやクッションなど、部屋のアクセントになる尖ったアイテムが豊富。海外のティーンの部屋のような独自の空間を作りたい方に絶大な支持を得ています。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.urbanoutfitters.com/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">Urban Outfitters 公式サイトへ ↗</a>
+</div>
+
+---
+
+### 7. SSENSE（エッセンス）：ハイブランドのエッジイなホームグッズ
+![SSENSE](${ssenseImg})
+
+ファッション通販の王者 <strong>SSENSE</strong> には「EVERYTHING ELSE（それ以外すべて）」という隠れた名物カテゴリーがあります。
+
+ここにはMaison Margielaのキャンドルから、Alessiのキッチンウェア、Bang & Olufsenのスピーカーまで、モードファッションと親和性の高いデザイナーズ雑貨が凝縮されています。関税込みの明朗会計で、お洒落な男性・女性へのギフト探しにも最強の威力を発揮します。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.ssense.com/ja-jp/everything-else" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">SSENSE ホーム＆インテリア ↗</a>
+</div>
+
+---
+
+### 8. KARE（カレ）：ドイツ発・圧倒的インパクト
+![KARE](${kareImg})
+
+ドイツ・ミュンヘン発。とにかく「アヴァンギャルド」「ユーモラス」「クレイジー」なデザインを愛するなら <strong>KARE</strong> 一択です。
+
+動物をモチーフにしたサイドテーブルや、奇抜なカラーリングのアートなど、一般的なインテリアショップには絶対にない「劇薬」のようなアイテムが並びます。日本公式サイトであるため、配送や言語の壁を気にする必要がありません。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://kare.co.jp/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">KARE 日本公式ストアへ ↗</a>
+</div>
+
+---
+
+### 9. The Conran Shop（ザ・コンランショップ）：モダンデザインの最高峰
+![The Conran Shop](${conranImg})
+
+イギリス発。テレンス・コンランによって設立された、世界中から「本当に質の高いモダンデザイン」だけを集めたプレミアムなショップです。
+
+巨匠のマスターピースから若手デザイナーの新作まで、ここに置かれている物こそが世界の基準と言っても過言ではありません。価格帯は高いですが、日本の代理店経由で完璧な品質管理のもと購入できるのは大きなメリットです。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://www.conranshop.jp/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">The Conran Shop 公式へ ↗</a>
+</div>
+
+---
+
+### 10. FLYMEe（フライミー）：日本最大級のセレクトの壁
+![FLYMEe](${flymeeImg})
+
+海外から取り寄せるのが不安な場合や、数百のブランドを一度に比較したい場合の最終兵器が <strong>FLYMEe</strong> です。
+
+国内外500以上のブランドを取り扱う日本最大級のインテリア通販であり、CassinaやVitraなどの海外トップブランドも網羅しています。独自のポイント還元などが手厚いため、高額な家具を買う際は実質的な安藤を見込めることも多いです。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://flymee.jp/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">FLYMEe 公式サイトへ ↗</a>
+</div>
+
+---
+
+### 11. MUSE HOME（ミューズホーム）：SNSで話題の「海外風」
+![MUSE HOME](${museImg})
+
+「手軽に海外ドラマのような部屋を作りたい」という若い女性を中心に爆発的な人気を誇るのが <strong>MUSE HOME</strong> です。
+
+大理石柄のテーブル、ゴールドのフレーム、ベロア素材のチェアなど、SNS映えするラグジュアリーなアイテムが驚くほど手頃な価格で揃います。厳密には輸入代行・セレクトの形をとっているため、日本の住環境にサイズ感がフィットしやすいのも魅力です。
+
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="https://musehome.shop/" target="_blank" rel="noopener" style="display: inline-block; background: #000; color: #fff; padding: 1.2rem 2.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">MUSE HOME 公式サイトへ ↗</a>
 </div>
 
 ---
@@ -200,7 +320,7 @@ async function publishArticle() {
     console.error('Error publishing:', error);
     process.exit(1);
   } else {
-    console.log('Successfully published INTERIOR GUIDE: Full HTML Table, 100% CTAs, and Pro Manual!');
+    console.log('Successfully published INTERIOR GUIDE V2: 11 Shops Arsenal!');
     process.exit(0);
   }
 }
