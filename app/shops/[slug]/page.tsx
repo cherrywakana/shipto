@@ -199,6 +199,7 @@ export default async function ShopDetailPage({
                                                 src={shop.image_url} 
                                                 alt={shop.name} 
                                                 fill 
+                                                unoptimized
                                                 style={{ objectFit: 'cover' }}
                                                 sizes="(max-width: 1024px) 100vw, 500px"
                                             />
@@ -316,7 +317,7 @@ export default async function ShopDetailPage({
                                     <Link key={item.slug} href={`/shops/${item.slug}`} className="card" style={{ overflow: 'hidden' }}>
                                         <div style={{ aspectRatio: '16/9', position: 'relative', background: 'var(--bg)' }}>
                                             {item.image_url ? (
-                                                <Image src={item.image_url} alt={item.name} fill style={{ objectFit: 'cover' }} />
+                                                <Image src={item.image_url} alt={item.name} fill unoptimized style={{ objectFit: 'cover' }} />
                                             ) : null}
                                         </div>
                                         <div style={{ padding: '1.5rem' }}>

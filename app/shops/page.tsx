@@ -245,13 +245,14 @@ async function ShopList({ category }: { category: string | undefined }) {
                             }}>直送不可</div>
                         )}
                         {shop.image_url ? (
-                            <Image
-                                src={shop.image_url}
-                                alt={shop.name}
-                                fill
-                                style={{ objectFit: 'cover' }}
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            />
+                                <Image
+                                    src={shop.image_url}
+                                    alt={shop.name}
+                                    fill
+                                    unoptimized
+                                    style={{ objectFit: 'cover' }}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
                         ) : (
                             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem' }}>🛍️</div>
                         )}

@@ -515,6 +515,7 @@ export default async function Home() {
                           src={shop.image_url}
                           alt={shop.name}
                           fill
+                          unoptimized
                           sizes="(max-width: 980px) 100vw, 50vw"
                           style={{ objectFit: 'cover' }}
                         />
