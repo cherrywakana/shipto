@@ -508,7 +508,15 @@ export default async function Home() {
 
               <div className="results-grid">
                 {featuredShops.map((shop) => (
-                  <article key={shop.id} className="result-card">
+                  <article key={shop.id} className="result-card" style={{ position: 'relative' }}>
+                    {/* カード全体を公式サイトへのリンクにするオーバーレイ */}
+                    <a 
+                      href={shop.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}
+                      aria-label={`${shop.name}の公式サイトへ移動`}
+                    />
                     <div className="result-image">
                       {shop.image_url ? (
                         <Image
@@ -525,7 +533,7 @@ export default async function Home() {
                         </div>
                       )}
                     </div>
-                    <div className="result-body">
+                    <div className="result-body" style={{ position: 'relative', zIndex: 0 }}>
                       <div className="result-badges">
                         {shop.category && <span className="result-badge">{shop.category}</span>}
                         {shop.country && <span className="result-badge">{shop.country}</span>}
@@ -537,7 +545,7 @@ export default async function Home() {
                       {shop.description && (
                         <p className="result-desc">{shop.description}</p>
                       )}
-                      <div className="result-actions">
+                      <div className="result-actions" style={{ position: 'relative', zIndex: 2 }}>
                         <Link href={`/shops/${shop.slug}`} style={{ fontSize: '0.83rem', fontWeight: 700 }}>
                           詳細を見る →
                         </Link>

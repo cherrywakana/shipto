@@ -227,6 +227,7 @@ async function ShopList({ category }: { category: string | undefined }) {
         }}>
             {shops.map((shop) => (
                 <div key={shop.id} className="shop-card" style={{ position: 'relative' }}>
+                    {/* カード全体を公式サイトへのリンクにするオーバーレイ */}
                     <a 
                         href={shop.url} 
                         target="_blank" 
@@ -234,6 +235,7 @@ async function ShopList({ category }: { category: string | undefined }) {
                         style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}
                         aria-label={`${shop.name}の公式サイトへ移動`}
                     />
+
                     <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
                         {shop.ships_to_japan === false && (
                             <div style={{
@@ -258,8 +260,8 @@ async function ShopList({ category }: { category: string | undefined }) {
                         )}
                     </div>
 
-                    <div style={{ padding: '2rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap', position: 'relative', zIndex: 2 }}>
+                    <div style={{ padding: '2rem', flexGrow: 1, display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 0 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                             <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#111110', background: 'rgba(17,17,16,0.06)', padding: '0.25rem 0.75rem', borderRadius: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                                 {shop.category}
                             </span>
@@ -279,13 +281,16 @@ async function ShopList({ category }: { category: string | undefined }) {
                             </span>
                         </div>
 
-                        <h3 style={{ fontSize: '1.4rem', fontWeight: 850, color: '#111110', marginBottom: '1rem', position: 'relative', zIndex: 2, letterSpacing: '-0.025em', lineHeight: 1.2 }}>{shop.name}</h3>
-                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '2rem', flexGrow: 1, position: 'relative', zIndex: 2 }}>
+                        <h3 style={{ fontSize: '1.4rem', fontWeight: 850, color: '#111110', marginBottom: '1rem', letterSpacing: '-0.025em', lineHeight: 1.2 }}>{shop.name}</h3>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '2rem', flexGrow: 1 }}>
                             {shop.description}
                         </p>
 
                         <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', position: 'relative', zIndex: 2 }}>
-                            <div
+                            <a
+                                href={shop.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 style={{
                                     flex: 1,
                                     textAlign: 'center',
@@ -302,7 +307,7 @@ async function ShopList({ category }: { category: string | undefined }) {
                                 }}
                             >
                                 公式サイト ↗
-                            </div>
+                            </a>
                             {shop.slug && (
                                 <Link
                                     href={`/shops/${shop.slug}`}
