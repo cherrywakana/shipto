@@ -35,14 +35,6 @@ export default function GuidePage() {
                 { title: '海外通販で偽物をつかまないための見分け方', slug: 'overseas-shopping-avoid-fakes' },
                 { title: '海外通販の関税が高すぎた場合はどうする？', slug: 'overseas-shopping-customs-too-high' },
             ]
-        },
-        {
-            title: 'おすすめショップ',
-            icon: '🛍️',
-            articles: [
-                { title: '【2026年最新】メンズ海外通販サイトおすすめ10選', slug: 'fashionshop/lists/mens' },
-                { title: '海外通販でゴルフ用品を安く買う方法｜ショップ選びと注意点', slug: 'overseas-shopping-golf-equipment' },
-            ]
         }
     ]
 
