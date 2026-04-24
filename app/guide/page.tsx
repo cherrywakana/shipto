@@ -41,6 +41,7 @@ export default function GuidePage() {
             icon: '🛍️',
             articles: [
                 { title: '【2026年最新】メンズ海外通販サイトおすすめ10選', slug: 'fashionshop/lists/mens' },
+                { title: '海外通販でゴルフ用品を安く買う方法｜ショップ選びと注意点', slug: 'overseas-shopping-golf-equipment' },
             ]
         }
     ]
