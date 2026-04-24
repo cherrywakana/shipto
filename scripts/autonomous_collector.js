@@ -157,6 +157,9 @@ const SHOP_RULES = {
     'julian-fashion': (slug) => `https://www.julian-fashion.com/en-jp/designer/${slug}`,
     'base-blu': (slug) => `https://www.baseblu.com/en-jp/designer/${slug}`,
     'd-aniello': (slug) => `https://daniello.com/it-it/collections/${slug}`,
+    'urban-outfitters': (slug) => `https://www.urbanoutfitters.com/search?q=${slug}`,
+    'lids': (slug) => `https://www.lids.com/search?query=${slug}`,
+    'amazingstore': (slug) => `https://amazingstore.jp/?mode=srh&keyword=${slug}`,
 };
 
 const NEGATIVE_KEYWORDS = [
