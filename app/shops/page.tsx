@@ -226,17 +226,26 @@ async function ShopList({ category }: { category: string | undefined }) {
             gap: '2.5rem',
         }}>
             {shops.map((shop) => (
-                <div key={shop.id} className="shop-card" style={{ position: 'relative' }}>
-                    {/* カード全体を公式サイトへのリンクにするオーバーレイ */}
+                <div key={shop.id} className="shop-card" style={{ position: 'relative', display: 'flex', flexDirection: 'column' }}>
+                    {/* 1. 最背面に公式サイトへのリンクを配置 */}
                     <a 
                         href={shop.url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}
+                        style={{ 
+                            position: 'absolute', 
+                            top: 0, 
+                            left: 0, 
+                            right: 0, 
+                            bottom: 0, 
+                            zIndex: 1,
+                            borderRadius: '18px'
+                        }}
                         aria-label={`${shop.name}の公式サイトへ移動`}
                     />
 
-                    <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
+                    {/* 2. 画像エリア（ここも背後のリンクを通すために zIndex: 0） */}
+                    <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
                         {shop.ships_to_japan === false && (
                             <div style={{
                                 position: 'absolute', top: '10px', right: '10px',
@@ -260,7 +269,16 @@ async function ShopList({ category }: { category: string | undefined }) {
                         )}
                     </div>
 
-                    <div style={{ padding: '2rem', flexGrow: 1, display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 0 }}>
+                    {/* 3. コンテンツエリア */}
+                    <div style={{ 
+                        padding: '2rem', 
+                        flexGrow: 1, 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        position: 'relative', 
+                        zIndex: 2, /* リンクより上に配置 */
+                        pointerEvents: 'none' /* 背後のリンクをクリック可能にする */
+                    }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                             <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#111110', background: 'rgba(17,17,16,0.06)', padding: '0.25rem 0.75rem', borderRadius: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                                 {shop.category}
@@ -286,7 +304,8 @@ async function ShopList({ category }: { category: string | undefined }) {
                             {shop.description}
                         </p>
 
-                        <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', position: 'relative', zIndex: 2 }}>
+                        {/* 4. ボタンエリア（ここだけクリックを有効化） */}
+                        <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', pointerEvents: 'auto' }}>
                             <a
                                 href={shop.url}
                                 target="_blank"
@@ -303,7 +322,9 @@ async function ShopList({ category }: { category: string | undefined }) {
                                     textDecoration: 'none',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    justifyContent: 'center'
+                                    justifyContent: 'center',
+                                    position: 'relative',
+                                    zIndex: 3
                                 }}
                             >
                                 公式サイト ↗
@@ -325,7 +346,9 @@ async function ShopList({ category }: { category: string | undefined }) {
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)'
+                                        transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                                        position: 'relative',
+                                        zIndex: 3
                                     }}
                                 >
                                     解説ガイド →

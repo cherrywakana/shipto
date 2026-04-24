@@ -508,16 +508,24 @@ export default async function Home() {
 
               <div className="results-grid">
                 {featuredShops.map((shop) => (
-                  <article key={shop.id} className="result-card" style={{ position: 'relative' }}>
-                    {/* カード全体を公式サイトへのリンクにするオーバーレイ */}
+                  <article key={shop.id} className="result-card" style={{ position: 'relative', display: 'flex', flexDirection: 'column' }}>
+                    {/* 1. 最背面に公式サイトへのリンクを配置 */}
                     <a 
                       href={shop.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}
+                      style={{ 
+                        position: 'absolute', 
+                        top: 0, 
+                        left: 0, 
+                        right: 0, 
+                        bottom: 0, 
+                        zIndex: 1,
+                        borderRadius: '18px'
+                      }}
                       aria-label={`${shop.name}の公式サイトへ移動`}
                     />
-                    <div className="result-image">
+                    <div className="result-image" style={{ zIndex: 0 }}>
                       {shop.image_url ? (
                         <Image
                           src={shop.image_url}
@@ -533,7 +541,11 @@ export default async function Home() {
                         </div>
                       )}
                     </div>
-                    <div className="result-body" style={{ position: 'relative', zIndex: 0 }}>
+                    <div className="result-body" style={{ 
+                      position: 'relative', 
+                      zIndex: 2, 
+                      pointerEvents: 'none' 
+                    }}>
                       <div className="result-badges">
                         {shop.category && <span className="result-badge">{shop.category}</span>}
                         {shop.country && <span className="result-badge">{shop.country}</span>}
@@ -545,7 +557,7 @@ export default async function Home() {
                       {shop.description && (
                         <p className="result-desc">{shop.description}</p>
                       )}
-                      <div className="result-actions" style={{ position: 'relative', zIndex: 2 }}>
+                      <div className="result-actions" style={{ position: 'relative', zIndex: 3, pointerEvents: 'auto' }}>
                         <Link href={`/shops/${shop.slug}`} style={{ fontSize: '0.83rem', fontWeight: 700 }}>
                           詳細を見る →
                         </Link>
