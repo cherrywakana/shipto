@@ -1,18 +1,19 @@
 export const SHOP_CATEGORIES = [
     { label: 'すべて', href: '/shops' },
-    { label: 'ラグジュアリー・ハイブランド', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・ハイブランド') },
-    { label: 'ストリート・スニーカー', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
+    { label: 'ファッション・スニーカー', href: '/shops?category=' + encodeURIComponent('ファッション・スニーカー') },
     { label: 'スポーツ・アウトドア', href: '/shops?category=' + encodeURIComponent('スポーツ・アウトドア') },
-    { label: '自転車・パーツ', href: '/shops?category=' + encodeURIComponent('自転車・パーツ') },
-    { label: '韓国・アジアトレンド', href: '/shops?category=' + encodeURIComponent('韓国・アジアトレンド') },
-    { label: 'コスメ・ビューティー', href: '/shops?category=' + encodeURIComponent('コスメ・ビューティー') },
+    { label: 'コスメ・ヘルスケア', href: '/shops?category=' + encodeURIComponent('コスメ・ヘルスケア') },
+    { label: 'ホーム・ライフスタイル', href: '/shops?category=' + encodeURIComponent('ホーム・ライフスタイル') },
+    { label: 'ガジェット・家電', href: '/shops?category=' + encodeURIComponent('ガジェット・家電') },
+    { label: '総合・マーケットプレイス', href: '/shops?category=' + encodeURIComponent('総合・マーケットプレイス') },
 ] as const
 
 export const HOME_CATEGORY_CARDS = [
-    { label: 'ストリート・スニーカー', sub: '国内未発売も即購入', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
-    { label: 'ラグジュアリー・ハイブランド', sub: '公式より安く、正規品で', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・ハイブランド') },
-    { label: '韓国・アジアトレンド', sub: '世界のセレクトを一気に', href: '/shops?category=' + encodeURIComponent('韓国・アジアトレンド') },
-    { label: 'スポーツ・アウトドア', sub: '希少モデルを国内定価以下で', href: '/shops?category=' + encodeURIComponent('スポーツ・アウトドア') },
-    { label: 'コスメ・ビューティー', sub: '正規品を最安値で', href: '/shops?category=' + encodeURIComponent('コスメ・ビューティー') },
-    { label: '自転車・パーツ', sub: '海外限定パーツも比較しやすく', href: '/shops?category=' + encodeURIComponent('自転車・パーツ') },
+    { label: 'ファッション・スニーカー', sub: 'ハイブランドから限定スニーカーまで', href: '/shops?category=' + encodeURIComponent('ファッション・スニーカー') },
+    { label: 'スポーツ・アウトドア', sub: 'キャンプ・自転車・バイク用品を網羅', href: '/shops?category=' + encodeURIComponent('スポーツ・アウトドア') },
+    { label: 'コスメ・ヘルスケア', sub: '美容液からサプリメントまで正規品を', href: '/shops?category=' + encodeURIComponent('コスメ・ヘルスケア') },
+    { label: 'ホーム・ライフスタイル', sub: 'インテリア・キッズ・お酒で暮らしを彩る', href: '/shops?category=' + encodeURIComponent('ホーム・ライフスタイル') },
+    { label: 'ガジェット・家電', sub: '最先端のデジタル機器を世界から直送', href: '/shops?category=' + encodeURIComponent('ガジェット・家電') },
+    { label: '総合・マーケットプレイス', sub: 'Amazon・eBayなど世界最大の品揃え', href: '/shops?category=' + encodeURIComponent('総合・マーケットプレイス') },
 ] as const
+

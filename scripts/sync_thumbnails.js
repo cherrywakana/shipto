@@ -35,9 +35,7 @@ async function uploadFile(slug, filePath) {
         return;
     }
 
-    // キャッシュバスターとしてタイムスタンプを付与
-    const timestamp = Date.now();
-    const imageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/shop-thumbnails/${fileName}?t=${timestamp}`;
+    const imageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/shop-thumbnails/${fileName}`;
 
     console.log(`  🔗 Updating database for ${slug}...`);
     const { error: dbError } = await supabase

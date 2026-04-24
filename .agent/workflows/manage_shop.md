@@ -18,6 +18,15 @@ node scripts/register_new_shop.js --url [SHOP_HOME_URL] --name [SHOP_NAME] --cat
   3. `docs/assets/skimlinks_merchants.csv` と照合し、アフィリエイト提携状況を判定。
   4. すべての情報を `shops` テーブルに INSERT/UPSERT。
 
+### ショップ登録の品質基準（最重要）
+ショップを登録・更新する際は、以下の基準を厳守してください：
+- **image_url 以外のすべての項目を完備する**: 
+  - `country`（発送国）, `category`（統合後のカテゴリ名）, `description`（簡潔で魅力的な紹介文）, `ships_to_japan`（直送可否）は必須です。
+  - `image_url` のみ、後のステップ（Step 2）で自動更新されるため、登録時は空でも許容されます。
+- **情報の正確性**: AIによる自動スクレイピングの結果が不十分、または誤っている場合は、必ず手動でDBを修正またはスクリプトを再実行してください。
+
+---
+
 ## Step 2: ショップ画像（サムネイル）の準備
 ショップのロゴやスクショを `/Users/reona/projects/directfound/scripts/assets/shops/[slug].webp` に配置します。
 
@@ -26,6 +35,8 @@ node scripts/register_new_shop.js --url [SHOP_HOME_URL] --name [SHOP_NAME] --cat
 npm run sync-thumbnails
 ```
 - これにより、Supabase StorageへのアップロードとDBの `image_url` 更新が自動で行われます。
+
+---
 
 ## Step 3: 自動巡回（Collector）へのURLパターン登録
 新ショップが扱っているブランドを自動検知するため、URLルールを追加します。
@@ -49,4 +60,4 @@ npm run sync-thumbnails
 - **全ショップポリシー再調査**: `node scripts/verify_shop_policies.js --limit 100`
 
 > [!IMPORTANT]
-> **自動調査の限界**: AIによるスクレイピングが失敗した、あるいは確信度が低い（Confidence: low）場合は、DBの `shipping_guide` 等を直接編集して修正してください。
+> **データの完全性**: `image_url` を除くすべてのフィールドが正しく埋まっていないショップは、記事生成の対象外としたり、ランキングから除外したりする可能性があります。AIの調査結果を鵜呑みにせず、必ず最終確認を行ってください。

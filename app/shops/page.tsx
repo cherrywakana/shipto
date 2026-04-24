@@ -8,15 +8,16 @@ import Footer from '@/components/Footer'
 import { SHOP_CATEGORIES } from '@/lib/shopCategories'
 
 export const metadata: Metadata = {
-    title: '海外通販サイト一覧 | 日本から安心・安く買える人気ショップ140選【完全版】',
+    title: '海外通販サイト一覧 | 日本から安心・安く買える人気ショップ200選以上【完全版】',
     description: '日本発送に対応した世界中の有力海外通販サイトを一覧でまとめて紹介。ファッション、自転車、コスメ、アウトドア等、カテゴリー別に送料や関税の扱いを専門家が徹底調査。日本語ガイド付きで初めての個人輸入も安心です。',
     openGraph: {
         title: '海外通販サイト一覧 | Original Price',
-        description: '専門家が厳選した日本から買える海外ショップ140選。関税・送料の不安を解消する詳細ガイド付き。',
+        description: '専門家が厳選した日本から買える海外ショップ200選以上。関税・送料の不安を解消する詳細ガイド付き。',
     }
 }
 
 export const revalidate = 60 
+export const dynamic = 'force-dynamic'
 
 type ShopsPageProps = {
     searchParams?: Promise<{
@@ -114,7 +115,7 @@ export default async function ShopsPage(props: ShopsPageProps) {
                             marginBottom: '4rem',
                             letterSpacing: '0.02em'
                         }}>
-                            140+ premium merchants curated for your high-end shopping experience.
+                            200+ premium merchants curated for your high-end shopping experience.
                         </p>
                     </div>
 

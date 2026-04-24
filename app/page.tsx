@@ -21,11 +21,12 @@ type FeaturedShop = {
 
 const SEARCH_SUGGESTIONS = [
   { label: 'SSENSE', href: '/shops?q=SSENSE' },
-  { label: 'スニーカー', href: '/shops?category=' + encodeURIComponent('ストリート・スニーカー') },
-  { label: '韓国ブランド', href: '/shops?category=' + encodeURIComponent('韓国・アジアトレンド') },
-  { label: 'ラグジュアリー', href: '/shops?category=' + encodeURIComponent('ラグジュアリー・ハイブランド') },
-  { label: '自転車パーツ', href: '/shops?category=' + encodeURIComponent('自転車・パーツ') },
-  { label: 'コスメ', href: '/shops?category=' + encodeURIComponent('コスメ・ビューティー') },
+  { label: 'スニーカー', href: '/shops?category=' + encodeURIComponent('ファッション・スニーカー') },
+  { label: 'アウトドア', href: '/shops?category=' + encodeURIComponent('スポーツ・アウトドア') },
+  { label: 'ガジェット', href: '/shops?category=' + encodeURIComponent('ガジェット・家電') },
+  { label: 'サプリメント', href: '/shops?category=' + encodeURIComponent('コスメ・ヘルスケア') },
+  { label: 'ウイスキー', href: '/shops?category=' + encodeURIComponent('ホーム・ライフスタイル') },
+  { label: 'Amazon US', href: '/shops?category=' + encodeURIComponent('総合・マーケットプレイス') },
 ] as const
 
 function formatCount(value: number | null | undefined, fallback: string) {
