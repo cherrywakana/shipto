@@ -223,6 +223,16 @@ const SHOP_RULES = {
     'ultralight-outdoor-gear': (slug) => `https://ultralightoutdoorgear.co.uk/search?q=${slug}`,
     'w-concept': (slug) => `https://us.wconcept.com/search?q=${slug}`,
     'varuste': (slug) => `https://varuste.net/en/search?q=${slug}`,
+
+    // --- AUTO-GENERATED FALLBACK SEARCH RULES ---
+    'fc-moto': (slug) => `https://www.fc-moto.de/search?q=${slug}`,
+    'xlmoto': (slug) => `https://www.xlmoto.com/search?q=${slug}`,
+    'motardinn': (slug) => `https://www.tradeinn.com/motardinn/ja/search?q=${slug}`,
+    'louis-motorrad': (slug) => `https://www.louis.eu/search?q=${slug}`,
+    'chromeburner': (slug) => `https://www.chromeburner.com/search?q=${slug}`,
+    'champion-helmets': (slug) => `https://www.championhelmets.com/search?q=${slug}`,
+    'revzilla': (slug) => `https://www.revzilla.com/search?q=${slug}`,
+    'burnout-italy': (slug) => `https://www.burnoutmotor.com/search?q=${slug}`,
 };
 
 const NEGATIVE_KEYWORDS = [
