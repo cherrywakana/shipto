@@ -17,9 +17,9 @@ const endImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/publi
 const uoImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/urbanoutfitters.webp';
 const sxImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/stockx.webp';
 
-// Placeholders for newly registered shops requiring screenshots
-const lidsImg = 'https://placehold.co/800x533/ffcce6/000000.png?text=Lids';
-const amzImg = 'https://placehold.co/800x533/ffcce6/000000.png?text=Amazingstore';
+// Real Images replacing Placeholders
+const lidsImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/lids.webp';
+const amzImg = 'https://ggmcgokdtmflioqezrqk.supabase.co/storage/v1/object/public/shop-thumbnails/amazingstore.webp';
 
 const comparisonTableHtml = `
 <div style="overflow-x: auto; margin: 2rem 0;">
