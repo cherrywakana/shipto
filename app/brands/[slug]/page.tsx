@@ -183,9 +183,18 @@ export default async function BrandDetailPage({
                                 <div key={shop.slug} style={{
                                     background: 'white', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0',
                                     boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)', transition: 'all 0.3s', height: '100%',
-                                    display: 'flex', flexDirection: 'column'
+                                    display: 'flex', flexDirection: 'column', position: 'relative'
                                 }}>
-                                    <div style={{ aspectRatio: '16/9', background: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
+                                    {/* 1. カード全体をショップ公式サイト（ブランドページ）へのリンクにする */}
+                                    <a 
+                                        href={shop.brand_url || shop.url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}
+                                        aria-label={`${shop.name}で${brand.name}を見る`}
+                                    />
+
+                                    <div style={{ aspectRatio: '16/9', background: '#f1f5f9', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
                                         {shop.image_url ? (
                                             <Image
                                                 src={shop.image_url}
@@ -199,7 +208,8 @@ export default async function BrandDetailPage({
                                             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8' }}>No Image</div>
                                         )}
                                     </div>
-                                    <div style={{ padding: '1.5rem', flex: 1 }}>
+
+                                    <div style={{ padding: '1.5rem', flex: 1, position: 'relative', zIndex: 0 }}>
                                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.8rem' }}>
                                             {getBrandShopBadges(shop).map((badge) => (
                                                 <span key={badge} style={{ fontSize: '0.72rem', fontWeight: 700, color: '#111110', background: '#f3f3f1', padding: '0.28rem 0.6rem', borderRadius: '999px' }}>
@@ -210,21 +220,20 @@ export default async function BrandDetailPage({
                                         <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem' }}>{shop.name}</h3>
                                         <p style={{
                                             fontSize: '0.875rem', color: '#64748b', lineHeight: 1.6,
-                                            display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden'
+                                            display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden',
+                                            marginBottom: '1rem'
                                         }}>
                                             {shop.description}
                                         </p>
-                                        <p style={{ fontSize: '0.82rem', color: '#475569', lineHeight: 1.6, marginTop: '0.85rem', marginBottom: 0 }}>
+                                        <p style={{ fontSize: '0.82rem', color: '#475569', lineHeight: 1.6, marginTop: 'auto', marginBottom: 0 }}>
                                             {getBrandShopReason(shop)}
                                         </p>
                                     </div>
-                                        <div style={{ padding: '1rem 1.5rem', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
-                                            <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
-                                            <a href={shop.brand_url || shop.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#111110', textDecoration: 'none' }}>このブランドを見る ↗</a>
-                                            <Link href={`/shops/${shop.slug}`} style={{ fontSize: '0.875rem', fontWeight: 600, color: '#64748b', textDecoration: 'none' }}>比較情報を見る</Link>
-                                            </div>
-                                            <span style={{ fontSize: '0.82rem', color: '#64748b' }}>最終確認 {formatJapaneseDate(getLastVerifiedAt(shop)) || '未登録'}</span>
-                                        </div>
+
+                                    <div style={{ padding: '1rem 1.5rem', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap', position: 'relative', zIndex: 2, pointerEvents: 'none' }}>
+                                        <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#111110', textDecoration: 'none' }}>このショップで{brand.name}を見る ↗</span>
+                                        <span style={{ fontSize: '0.82rem', color: '#64748b' }}>最終確認 {formatJapaneseDate(getLastVerifiedAt(shop)) || '未登録'}</span>
+                                    </div>
                                 </div>
                             ))}
                         </div>
