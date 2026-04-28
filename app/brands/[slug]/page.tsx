@@ -191,6 +191,7 @@ export default async function BrandDetailPage({
                                                 src={shop.image_url}
                                                 alt={shop.name}
                                                 fill
+                                                unoptimized
                                                 sizes="(max-width: 1000px) 100vw, 320px"
                                                 style={{ objectFit: 'cover' }}
                                             />
