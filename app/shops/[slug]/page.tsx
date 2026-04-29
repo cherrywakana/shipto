@@ -89,6 +89,8 @@ export default async function ShopDetailPage({
         ).values()
     )
     const similarShops = (similarResponse.data as SimilarShop[] | null) || []
+    
+    // shopDetail.ts の戻り値に合わせる
     const shopTakeaways = getShopTakeaways(shop)
     const shopChecklist = getShopChecklist(shop)
 
@@ -204,14 +206,14 @@ export default async function ShopDetailPage({
 
                                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                                     {officialLinks.length > 0 && (
-                                        <a href={officialLinks[0].url} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>
+                                        <a href={officialLinks[0].href} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>
                                             公式サイトを見る ↗
                                         </a>
                                     )}
                                 </div>
                             </div>
 
-                            {/* 2. Visual Card (Comes next on mobile) */}
+                            {/* 2. Visual Card */}
                             <div className="fade-up delay-1">
                                 <div className="visual-card">
                                     <div style={{ aspectRatio: '16/10', position: 'relative', background: 'var(--accent-brand-soft)' }}>
@@ -248,32 +250,30 @@ export default async function ShopDetailPage({
 
                 <div className="container" style={{ padding: '5rem 0' }}>
                     <div style={{ display: 'grid', gap: '5rem', gridTemplateColumns: '1fr' }}>
-                        {/* 3. Takeaways */}
+                        {/* 3. Reference Notes */}
                         <section className="fade-up">
                             <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>Quick Takeaways</h2>
                             <div className="policy-grid">
-                                {shopTakeaways.map((item, i) => (
+                                {referenceNotes.map((item, i) => (
                                     <div key={i} className="policy-card">
-                                        <div style={{ fontSize: '1.5rem' }}>{item.icon}</div>
-                                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{item.title}</h3>
-                                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.description}</p>
+                                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{item.label}</h3>
+                                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.body}</p>
                                     </div>
                                 ))}
                             </div>
                         </section>
 
                         <div style={{ display: 'grid', gap: '5rem', gridTemplateColumns: '1fr' }}>
-                            {/* 4. Details / Checklist */}
+                            {/* 4. Checklist */}
                             <section className="fade-up">
                                 <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '2rem', letterSpacing: '-0.02em' }}>Shopping Checklist</h2>
                                 <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '2rem' }}>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '1.5rem' }}>
                                         {shopChecklist.map((item, i) => (
                                             <li key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                                                <span style={{ color: 'var(--accent-brand)', fontSize: '1.25rem', lineHeight: 1 }}>{item.is_good ? '✓' : 'ℹ'}</span>
+                                                <span style={{ color: 'var(--accent-brand)', fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
                                                 <div>
-                                                    <p style={{ fontWeight: 700, marginBottom: '0.25rem' }}>{item.label}</p>
-                                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.value}</p>
+                                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>{item}</p>
                                                 </div>
                                             </li>
                                         ))}
@@ -321,14 +321,14 @@ export default async function ShopDetailPage({
                                 </section>
                             )}
 
-                            {/* 7. Reference / Footer Links */}
+                            {/* 7. Reference Links */}
                             <section className="fade-up" style={{ padding: '3rem', background: '#fafaf9', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)' }}>
-                                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Shopping Reference</p>
+                                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Official Guides</p>
                                 <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-                                    {CORE_GUIDE_LINKS.map((guide) => (
-                                        <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontWeight: 600 }}>
-                                            {guide.title} →
-                                        </Link>
+                                    {officialLinks.map((link) => (
+                                        <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'var(--text-primary)', fontWeight: 600 }}>
+                                            {link.label} ↗
+                                        </a>
                                     ))}
                                 </div>
                             </section>
