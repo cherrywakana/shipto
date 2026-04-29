@@ -25,7 +25,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                 fontWeight: 500
             }}>
                 <li style={{ display: 'flex', alignItems: 'center' }}>
-                    <Link href="/" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} className="breadcrumb-link">
+                    <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>
                         ホーム
                     </Link>
                 </li>
@@ -34,7 +34,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                     <li key={index} style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ margin: '0 0.6rem', color: '#cbd5e1', fontSize: '0.75rem' }}>&gt;</span>
                         {item.href ? (
-                            <Link href={item.href} style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} className="breadcrumb-link">
+                            <Link href={item.href} style={{ color: 'inherit', textDecoration: 'none' }}>
                                 {item.label}
                             </Link>
                         ) : (
@@ -43,11 +43,6 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                     </li>
                 ))}
             </ol>
-            <style jsx>{`
-                .breadcrumb-link:hover {
-                    color: #1e293b;
-                }
-            `}</style>
         </nav>
     )
 }
