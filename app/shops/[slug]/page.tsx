@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { CORE_GUIDE_LINKS } from '@/lib/shopInsights'
 import { formatJapaneseDate, getLastVerifiedAt } from '@/lib/utils'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import {
     getOfficialLinks,
     getShopChecklist,
@@ -167,9 +168,10 @@ export default async function ShopDetailPage({
                         <div className="shop-header">
                             {/* 1. Name & Meta */}
                             <div className="fade-up">
-                                <Link href="/shops" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '2.5rem', fontWeight: 500 }}>
-                                    ← ショップ一覧
-                                </Link>
+                                <Breadcrumbs items={[
+                                    { label: 'ショップから探す', href: '/shops' },
+                                    { label: shop.name }
+                                ]} />
                                 
                                 <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
                                     <span className="tag">{shop.category || 'Shop Profile'}</span>
@@ -180,14 +182,33 @@ export default async function ShopDetailPage({
                                 </div>
 
                                 <h1 style={{ 
-                                    fontFamily: 'var(--font-serif)', 
-                                    fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', 
+                                    fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
+                                    fontWeight: 850, 
                                     lineHeight: 1.1, 
                                     letterSpacing: '-0.04em',
-                                    marginBottom: '2rem'
+                                    marginBottom: '1.5rem',
+                                    color: 'var(--text-primary)'
                                 }}>
                                     {shop.name}
                                 </h1>
+
+                                <p style={{ 
+                                    fontSize: 'clamp(1.1rem, 2vw, 1.25rem)', 
+                                    lineHeight: 1.6, 
+                                    color: 'var(--text-secondary)',
+                                    marginBottom: '2.5rem',
+                                    maxWidth: '600px'
+                                }}>
+                                    {lead}
+                                </p>
+
+                                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                                    {officialLinks.length > 0 && (
+                                        <a href={officialLinks[0].url} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>
+                                            公式サイトを見る ↗
+                                        </a>
+                                    )}
+                                </div>
                             </div>
 
                             {/* 2. Visual Card (Comes next on mobile) */}
@@ -209,164 +230,113 @@ export default async function ShopDetailPage({
                                             </div>
                                         )}
                                     </div>
+                                    <div style={{ padding: '1.5rem', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', borderTop: '1px solid var(--border)' }}>
+                                        <div>
+                                            <p style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Ships To</p>
+                                            <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>{shop.ships_to_japan ? '🇯🇵 Japan' : 'Global'}</p>
+                                        </div>
+                                        <div>
+                                            <p style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Popularity</p>
+                                            <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>{shop.popularity_score ? `${shop.popularity_score}/100` : 'Normal'}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
 
-                            {/* 3. Lead & CTA (Bottom area) */}
-                            <div className="fade-up delay-2" style={{ gridColumn: '1 / -1', maxWidth: '800px', marginTop: '1rem' }}>
-                                {lead && (
-                                    <p style={{ fontSize: '1.15rem', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '2.5rem' }}>
-                                        {lead}
-                                    </p>
-                                )}
+                <div className="container" style={{ padding: '5rem 0' }}>
+                    <div style={{ display: 'grid', gap: '5rem', gridTemplateColumns: '1fr' }}>
+                        {/* 3. Takeaways */}
+                        <section className="fade-up">
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>Quick Takeaways</h2>
+                            <div className="policy-grid">
+                                {shopTakeaways.map((item, i) => (
+                                    <div key={i} className="policy-card">
+                                        <div style={{ fontSize: '1.5rem' }}>{item.icon}</div>
+                                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{item.title}</h3>
+                                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
 
-                                <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                                    <a href={shop.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.8rem' }}>
-                                        公式サイトで探す →
-                                    </a>
-                                    
-                                    {officialLinks.filter(l => l.label !== '公式サイト').map(link => (
-                                        <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-secondary)', borderBottom: '1px solid var(--border)' }}>
-                                            {link.label}
-                                        </a>
+                        <div style={{ display: 'grid', gap: '5rem', gridTemplateColumns: '1fr' }}>
+                            {/* 4. Details / Checklist */}
+                            <section className="fade-up">
+                                <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '2rem', letterSpacing: '-0.02em' }}>Shopping Checklist</h2>
+                                <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '2rem' }}>
+                                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '1.5rem' }}>
+                                        {shopChecklist.map((item, i) => (
+                                            <li key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                                                <span style={{ color: 'var(--accent-brand)', fontSize: '1.25rem', lineHeight: 1 }}>{item.is_good ? '✓' : 'ℹ'}</span>
+                                                <div>
+                                                    <p style={{ fontWeight: 700, marginBottom: '0.25rem' }}>{item.label}</p>
+                                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.value}</p>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </section>
+
+                            {/* 5. Related Brands */}
+                            {relatedBrands.length > 0 && (
+                                <section className="fade-up">
+                                    <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '2rem', letterSpacing: '-0.02em' }}>Available Brands at {shop.name}</h2>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                                        {relatedBrands.map((brand) => (
+                                            <Link key={brand.slug} href={`/brands/${brand.slug}`} className="brand-tag">
+                                                {brand.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
+
+                            {/* 6. Similar Shops */}
+                            {similarShops.length > 0 && (
+                                <section className="fade-up">
+                                    <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>Similar Shops</h2>
+                                    <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+                                        {similarShops.map((item) => (
+                                            <Link key={item.slug} href={`/shops/${item.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                                <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', overflow: 'hidden', height: '100%' }}>
+                                                    <div style={{ aspectRatio: '16/8', position: 'relative' }}>
+                                                        {item.image_url ? (
+                                                            <Image src={item.image_url} alt={item.name} fill unoptimized style={{ objectFit: 'cover' }} />
+                                                        ) : (
+                                                            <div style={{ width: '100%', height: '100%', background: 'var(--border-soft)' }} />
+                                                        )}
+                                                    </div>
+                                                    <div style={{ padding: '1.25rem' }}>
+                                                        <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.5rem' }}>{item.name}</h3>
+                                                        <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.description}</p>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
+
+                            {/* 7. Reference / Footer Links */}
+                            <section className="fade-up" style={{ padding: '3rem', background: '#fafaf9', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)' }}>
+                                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Shopping Reference</p>
+                                <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+                                    {CORE_GUIDE_LINKS.map((guide) => (
+                                        <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontWeight: 600 }}>
+                                            {guide.title} →
+                                        </Link>
                                     ))}
                                 </div>
-                            </div>
+                            </section>
                         </div>
                     </div>
-                </section>
-
-                {/* Policies & Guides */}
-                <section style={{ padding: '6rem 0', background: 'white' }}>
-                    <div className="container">
-                        <div style={{ marginBottom: '4rem' }}>
-                            <p className="section-label">Shopping Policy</p>
-                            <h2 className="section-title">配送・関税の基礎情報</h2>
-                        </div>
-
-                        <div className="policy-grid">
-                            {referenceNotes.map((note, idx) => (
-                                <div key={note.label} className={`policy-card fade-up delay-${idx + 1}`}>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                        <h3 style={{ fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-                                            {note.label === '日本発送' ? '📦 ' + note.label : note.label === '関税・消費税' ? '🏛️ ' + note.label : '✈️ ' + note.label}
-                                        </h3>
-                                    </div>
-                                    <p style={{ fontSize: '1rem', lineHeight: 1.7, fontWeight: 500, color: 'var(--text-primary)', margin: 0 }}>
-                                        {note.body}
-                                    </p>
-                                    <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
-                                        {idx === 0 && shop.shipping_url && <a href={shop.shipping_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', fontWeight: 600, borderBottom: '1px solid var(--border)' }}>公式配送ルールを確認 ↗</a>}
-                                        {idx === 1 && shop.tax_url && <a href={shop.tax_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', fontWeight: 600, borderBottom: '1px solid var(--border)' }}>公式の税金案内 ↗</a>}
-                                        {idx === 2 && shop.fee_url && <a href={shop.fee_url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', fontWeight: 600, borderBottom: '1px solid var(--border)' }}>公式の送料ガイド ↗</a>}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Checklist */}
-                        <div style={{ marginTop: '5rem', background: 'var(--bg)', borderRadius: 'var(--radius-lg)', padding: '3rem' }} className="fade-up delay-3">
-                            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', marginBottom: '1.5rem' }}>利用のヒント</h3>
-                            <div style={{ display: 'grid', gap: '1.25rem' }}>
-                                {shopChecklist.map((tip) => (
-                                    <div key={tip} style={{ display: 'flex', gap: '1rem', alignItems: 'start' }}>
-                                        <span style={{ flexShrink: 0, marginTop: '0.2rem' }}>✦</span>
-                                        <p style={{ margin: 0, fontWeight: 500, lineHeight: 1.6 }}>{tip}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Brands Area */}
-                <section style={{ padding: '6rem 0' }}>
-                    <div className="container">
-                        <div style={{ marginBottom: '3rem' }}>
-                            <p className="section-label">Available Brands</p>
-                            <h2 className="section-title">取扱ブランドの一例</h2>
-                        </div>
-                        
-                        {relatedBrands.length > 0 ? (
-                            <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
-                                {relatedBrands.map((brand) => (
-                                    <Link key={brand.slug} href={`/brands/${brand.slug}`} className="brand-tag">
-                                        {brand.name}
-                                    </Link>
-                                ))}
-                                <span className="brand-tag" style={{ background: 'transparent', borderStyle: 'dashed' }}>
-                                    & more available on site
-                                </span>
-                            </div>
-                        ) : (
-                            <p style={{ color: 'var(--text-muted)' }}>ブランド情報は準備中です。公式サイトで全ラインナップを確認できます。</p>
-                        )}
-                    </div>
-                </section>
-
-                {/* Similar Shops */}
-                {similarShops.length > 0 && (
-                    <section style={{ padding: '6rem 0', background: 'var(--surface)', borderTop: '1px solid var(--border-soft)' }}>
-                        <div className="container">
-                            <div style={{ marginBottom: '3rem' }}>
-                                <p className="section-label">Comparison</p>
-                                <h2 className="section-title">似ているショップを比較</h2>
-                            </div>
-                            <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
-                                {similarShops.map((item) => (
-                                    <Link key={item.slug} href={`/shops/${item.slug}`} className="card" style={{ overflow: 'hidden' }}>
-                                        <div style={{ aspectRatio: '16/9', position: 'relative', background: 'var(--bg)' }}>
-                                            {item.image_url ? (
-                                                <Image src={item.image_url} alt={item.name} fill unoptimized style={{ objectFit: 'cover' }} />
-                                            ) : null}
-                                        </div>
-                                        <div style={{ padding: '1.5rem' }}>
-                                            <h4 style={{ fontWeight: 700, marginBottom: '0.5rem' }}>{item.name}</h4>
-                                            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                                                {item.description || `${item.country || '海外'}拠点の有力${shop.category}ショップ。`}
-                                            </p>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* Footer Guide Links */}
-                <section style={{ padding: '6rem 0', borderTop: '1px solid var(--border-soft)' }}>
-                    <div className="container" style={{ maxWidth: '600px' }}>
-                        <p className="section-label">Shopping Guides</p>
-                        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', marginBottom: '2rem' }}>
-                            初めての個人輸入でも安心なガイド
-                        </h2>
-                        <style>{`
-                            .footer-guide-link {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                padding: 1.25rem;
-                                border: 1px solid var(--border);
-                                border-radius: var(--radius-md);
-                                font-weight: 600;
-                                background: white;
-                                transition: all 0.2s;
-                            }
-                            .footer-guide-link:hover {
-                                border-color: var(--text-primary);
-                            }
-                        `}</style>
-                        <div style={{ display: 'grid', gap: '1rem' }}>
-                            {CORE_GUIDE_LINKS.map(link => (
-                                <Link key={link.href} href={link.href} className="footer-guide-link">
-                                    {link.title} <span>→</span>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                </div>
+                <Footer />
             </main>
-            <Footer />
         </>
     )
 }

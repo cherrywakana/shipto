@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
     title: '取り扱いブランド一覧 - Original Price',
@@ -42,20 +43,25 @@ export default async function BrandsPage() {
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem',
                     background: '#fafaf9',
-                    textAlign: 'center',
+                    textAlign: 'left',
                     borderBottom: '1px solid #e2e8f0',
                 }}>
-                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        <h1 style={{
-                            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 800,
-                            letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '1.5rem',
-                            fontFamily: 'var(--font-serif)',
-                        }}>
-                            ブランド一覧
-                        </h1>
-                        <p style={{ fontSize: '1rem', color: '#6b6b69', lineHeight: 1.6 }}>
-                            お気に入りのブランドを取り扱うショップを探す
-                        </p>
+                    <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                        <Breadcrumbs items={[
+                            { label: 'ブランドから探す' }
+                        ]} />
+                        <div style={{ maxWidth: '800px', textAlign: 'center', margin: '0 auto' }}>
+                            <h1 style={{
+                                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 800,
+                                letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '1.5rem',
+                                fontFamily: 'var(--font-serif)',
+                            }}>
+                                ブランド一覧
+                            </h1>
+                            <p style={{ fontSize: '1rem', color: '#6b6b69', lineHeight: 1.6 }}>
+                                お気に入りのブランドを取り扱うショップを探す
+                            </p>
+                        </div>
                     </div>
                 </section>
 

@@ -6,12 +6,14 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import { CORE_GUIDE_LINKS, getBrandShopBadges, getBrandShopReason, type ShopInsight } from '@/lib/shopInsights'
 import { formatJapaneseDate, getLastVerifiedAt } from '@/lib/utils'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 type BrandRecord = {
     id: number
     name: string
     slug: string
     created_at?: string | null
+    updated_at?: string | null
 }
 
 type ShopBrandRow = {
@@ -114,6 +116,10 @@ export default async function BrandDetailPage({
                     borderBottom: '1px solid #e2e8f0',
                 }}>
                     <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                        <Breadcrumbs items={[
+                            { label: 'ブランドから探す', href: '/brands' },
+                            { label: brand.name }
+                        ]} />
                         <Link href="/brands" style={{ color: '#111110', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, display: 'inline-block', marginBottom: '2rem' }}>
                             ← ブランド一覧へ戻る
                         </Link>

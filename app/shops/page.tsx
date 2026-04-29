@@ -6,6 +6,7 @@ import { supabase } from '@/lib/supabase'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { SHOP_CATEGORIES } from '@/lib/shopCategories'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
     title: '海外通販サイト一覧 | 日本から安心・安く買える人気ショップ200選以上【完全版】',
@@ -98,42 +99,48 @@ export default async function ShopsPage(props: ShopsPageProps) {
                 <section style={{
                     padding: 'clamp(8rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) 4rem',
                     background: 'transparent',
-                    textAlign: 'center',
+                    textAlign: 'left',
                 }}>
-                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        <h1 style={{
-                            fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 850,
-                            letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '1.2rem',
-                        }}>
-                            海外通販サイト一覧
-                        </h1>
-                        <p style={{ 
-                            fontSize: 'clamp(0.9rem, 1.1vw, 1rem)', 
-                            color: 'var(--text-muted)',
-                            fontFamily: 'var(--font-serif)',
-                            fontStyle: 'italic',
-                            marginBottom: '4rem',
-                            letterSpacing: '0.02em'
-                        }}>
-                            200+ premium merchants curated for your high-end shopping experience.
-                        </p>
-                    </div>
+                    <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                        <Breadcrumbs items={[
+                            { label: category ? 'カテゴリから探す' : 'ショップから探す', href: '/shops' },
+                            ...(category ? [{ label: category }] : [])
+                        ]} />
+                        <div style={{ maxWidth: '800px', textAlign: 'center', margin: '0 auto' }}>
+                            <h1 style={{
+                                fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 850,
+                                letterSpacing: '-0.04em', color: '#111110', lineHeight: 1.1, marginBottom: '1.2rem',
+                            }}>
+                                海外通販サイト一覧
+                            </h1>
+                            <p style={{ 
+                                fontSize: 'clamp(0.9rem, 1.1vw, 1rem)', 
+                                color: 'var(--text-muted)',
+                                fontFamily: 'var(--font-serif)',
+                                fontStyle: 'italic',
+                                marginBottom: '4rem',
+                                letterSpacing: '0.02em'
+                            }}>
+                                200+ premium merchants curated for your high-end shopping experience.
+                            </p>
+                        </div>
 
-                    <div style={{
-                        display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '1000px', margin: '0 auto'
-                    }}>
-                        {SHOP_CATEGORIES.map((cat) => {
-                            const isActive = (!category && cat.label === 'すべて') || (category === cat.label);
-                            return (
-                                <Link
-                                    key={cat.label}
-                                    href={buildShopHref(cat.label)}
-                                    className={`cat-tab ${isActive ? 'active' : 'inactive'}`}
-                                >
-                                    {cat.label}
-                                </Link>
-                            );
-                        })}
+                        <div style={{
+                            display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: '1000px', margin: '0 auto'
+                        }}>
+                            {SHOP_CATEGORIES.map((cat) => {
+                                const isActive = (!category && cat.label === 'すべて') || (category === cat.label);
+                                return (
+                                    <Link
+                                        key={cat.label}
+                                        href={buildShopHref(cat.label)}
+                                        className={`cat-tab ${isActive ? 'active' : 'inactive'}`}
+                                    >
+                                        {cat.label}
+                                    </Link>
+                                );
+                            })}
+                        </div>
                     </div>
                 </section>
 
@@ -148,105 +155,53 @@ export default async function ShopsPage(props: ShopsPageProps) {
                         <ShopList category={category} />
                     </Suspense>
 
-                    <article style={{
-                        marginTop: '10rem',
-                        padding: '5rem clamp(2rem, 5vw, 6rem)',
-                        background: '#ffffff',
-                        borderRadius: '32px',
-                        border: '1px solid var(--border)',
-                        color: '#111110',
-                        boxShadow: '0 4px 30px rgba(0,0,0,0.02)'
-                    }}>
-                        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-                            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>
-                                日本から安心して買える海外通販サイトの総覧
-                            </h2>
-                            <p style={{ fontSize: '1.rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '3rem' }}>
-                                本ページは、日本への直送（Direct International Shipping）に対応した、世界の有力通販サイトを網羅した完全な一覧です。
-                                当サイトの専門スタッフが、各ショップの<b>リアルな送料・関税計算方法（DDP/DDU）・配送スピード</b>を、実際に日本から注文して実機検証しています。
-                                初めての個人輸入でも、各ショップの個別詳細ガイドを確認することで、為替や通関の不安を解消し、安心・確実な「現地価格」での買い物を楽しむことができます。
-                            </p>
-
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', lineHeight: 1.8 }}>
-                                <div>
-                                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '1.2rem', color: '#111110' }}>① 送料と配送品質の検証</h3>
-                                    <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
-                                        海外通販サイト一覧の中でも、日本へのデリバリー品質が担保されているかを重視しています。一定額以上の購入で送料無料となるしきい値や、DHL/FedEx等のエクスプレス便の早さをショップごとに公開しています。
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '1.2rem', color: '#111110' }}>② 関税の不透明さをゼロに</h3>
-                                    <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
-                                        「結局いくらかかるのか」という不安を解消するため、関税込み（DDP）のショップか、受け取り時支払い（DDU）かを明確に区分。16,666円の免税ルールを最大限に活かす方法も各ガイドで解説しています。
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '1.2rem', color: '#111110' }}>③ 信頼できる正規店のみ掲載</h3>
-                                    <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
-                                        世界的に評価の高い老舗百貨店、大手セレクトショップ、公式ストアのみを厳選。偽造品リスクのない、確かな品質のアイテムを海外から直接取り寄せることが可能です。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                    <div style={{ marginTop: '8rem', padding: '4rem 2rem', background: '#fafaf9', borderRadius: '40px', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 850, marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
+                            お探しのショップが見つかりませんか？
+                        </h2>
+                        <p style={{ color: '#64748b', marginBottom: '2.5rem', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+                            特定のブランドがどのショップで買えるか知りたい場合は、ブランド一覧から検索することも可能です。
+                        </p>
+                        <Link href="/brands" className="cat-tab active" style={{ padding: '1rem 3rem' }}>
+                            ブランド一覧を見る
+                        </Link>
+                    </div>
                 </section>
+
                 <Footer />
             </main>
         </>
-    )
+    );
 }
 
-async function ShopList({ category }: { category: string | undefined }) {
+async function ShopList({ category }: { category?: string }) {
     let query = supabase
         .from('shops')
-        .select('id, name, slug, url, country, category, image_url, description, is_affiliate, ships_to_japan, popularity_score')
+        .select('*')
         .order('is_affiliate', { ascending: false })
-        .order('ships_to_japan', { ascending: false, nullsFirst: false })
         .order('popularity_score', { ascending: false })
-        .order('name', { ascending: true })
 
-    if (category) {
+    if (category && category !== 'すべて') {
         query = query.eq('category', category)
     }
 
-    const { data: shops, error } = await query
-
-    if (error) {
-        return <div style={{ textAlign: 'center', padding: '5rem 0', color: '#ef4444' }}><p>読み込みエラーが発生しました</p></div>
-    }
+    const { data: shops } = await query
 
     if (!shops || shops.length === 0) {
-        return <div style={{ textAlign: 'center', padding: '5rem 0' }}><p style={{ color: '#64748b' }}>該当するショップが見つかりませんでした。</p></div>
+        return <div style={{ textAlign: 'center', padding: '4rem' }}>ショップが見つかりませんでした。</div>
     }
 
     return (
-        <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))',
-            gap: '2.5rem',
-        }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))', gap: '2.5rem' }}>
             {shops.map((shop) => (
-                <div key={shop.id} className="shop-card" style={{ position: 'relative', display: 'flex', flexDirection: 'column' }}>
-                    {/* 1. 最背面に公式サイトへのリンクを配置 */}
-                    <a 
-                        href={shop.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        style={{ 
-                            position: 'absolute', 
-                            top: 0, 
-                            left: 0, 
-                            right: 0, 
-                            bottom: 0, 
-                            zIndex: 1,
-                            borderRadius: '18px'
-                        }}
-                        aria-label={`${shop.name}の公式サイトへ移動`}
-                    />
-
-                    {/* 2. 画像エリア（ここも背後のリンクを通すために zIndex: 0） */}
-                    <div style={{ width: '100%', aspectRatio: '16/9', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
-                        {shop.ships_to_japan === false && (
+                <Link key={shop.slug} href={`/shops/${shop.slug}`} className="shop-card">
+                    <div style={{ 
+                        aspectRatio: '16/9', 
+                        background: '#f1f5f9', 
+                        position: 'relative', 
+                        overflow: 'hidden' 
+                    }}>
+                        {!shop.ships_to_japan && (
                             <div style={{
                                 position: 'absolute', top: '10px', right: '10px',
                                 background: 'rgba(239, 68, 68, 0.9)', color: 'white',
@@ -268,95 +223,36 @@ async function ShopList({ category }: { category: string | undefined }) {
                             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem' }}>🛍️</div>
                         )}
                     </div>
-
-                    {/* 3. コンテンツエリア */}
-                    <div style={{ 
-                        padding: '2rem', 
-                        flexGrow: 1, 
-                        display: 'flex', 
-                        flexDirection: 'column', 
-                        position: 'relative', 
-                        zIndex: 2, /* リンクより上に配置 */
-                        pointerEvents: 'none' /* 背後のリンクをクリック可能にする */
-                    }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
-                            <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#111110', background: 'rgba(17,17,16,0.06)', padding: '0.25rem 0.75rem', borderRadius: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
+                            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', letterSpacing: '0.05em' }}>
                                 {shop.category}
                             </span>
-                            <span style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 500 }}>📍 {shop.country}</span>
-                            <span style={{
-                                fontSize: '0.75rem',
-                                fontWeight: 600,
-                                color: shop.ships_to_japan === false ? '#ef4444' : '#10b981',
-                                background: shop.ships_to_japan === false ? 'rgba(239, 68, 68, 0.08)' : 'rgba(16, 185, 129, 0.08)',
-                                padding: '0.25rem 0.75rem',
-                                borderRadius: '6px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.25rem'
-                            }}>
-                                {shop.ships_to_japan === false ? '❌ 直送不可' : '✈️ 日本直送OK'}
+                            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#94a3b8' }}>
+                                {shop.country}
                             </span>
                         </div>
-
-                        <h3 style={{ fontSize: '1.4rem', fontWeight: 850, color: '#111110', marginBottom: '1rem', letterSpacing: '-0.025em', lineHeight: 1.2 }}>{shop.name}</h3>
-                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '2rem', flexGrow: 1 }}>
+                        <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#111110', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>
+                            {shop.name}
+                        </h2>
+                        <p style={{ 
+                            fontSize: '0.9rem', 
+                            color: '#64748b', 
+                            lineHeight: 1.6,
+                            display: '-webkit-box',
+                            WebkitLineClamp: 3,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                            marginBottom: '1rem'
+                        }}>
                             {shop.description}
                         </p>
-
-                        {/* 4. ボタンエリア（ここだけクリックを有効化） */}
-                        <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', pointerEvents: 'auto' }}>
-                            <a
-                                href={shop.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    flex: 1,
-                                    textAlign: 'center',
-                                    background: '#111110',
-                                    color: 'white',
-                                    padding: '0.9rem',
-                                    borderRadius: '14px',
-                                    fontSize: '0.875rem',
-                                    fontWeight: 700,
-                                    textDecoration: 'none',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    position: 'relative',
-                                    zIndex: 3
-                                }}
-                            >
-                                公式サイト ↗
-                            </a>
-                            {shop.slug && (
-                                <Link
-                                    href={`/shops/${shop.slug}`}
-                                    style={{
-                                        flex: 1,
-                                        textAlign: 'center',
-                                        background: 'white',
-                                        color: '#111110',
-                                        padding: '0.9rem',
-                                        borderRadius: '14px',
-                                        fontSize: '0.875rem',
-                                        fontWeight: 700,
-                                        textDecoration: 'none',
-                                        border: '1px solid var(--border)',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-                                        position: 'relative',
-                                        zIndex: 3
-                                    }}
-                                >
-                                    解説ガイド →
-                                </Link>
-                            )}
+                        <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#111110' }}>VIEW DETAILS</span>
+                            <span style={{ fontSize: '1rem' }}>→</span>
                         </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     )
